@@ -1,0 +1,593 @@
+﻿
+@model evolCorner.Models.ProductViewModel
+@{
+    ViewBag.Title = "Index";
+    // Layout = null;
+}
+    <style>
+        label.error{
+            font-size:11px;
+            color:red;
+            margin:0;
+        }
+        .direct-chat-msg > .direct-chat-text {
+            background: #d2d6de;
+            border-color: #afafaf;
+            color: #232323;
+        }
+            .direct-chat-msg > .direct-chat-text:after,
+            .direct-chat-msg > .direct-chat-text:before {
+                border-right-color: #afafaf;
+            }
+        .direct-chat-msg.right > .direct-chat-text {
+            background: #e4b49e;
+            border-color: #b1765a;
+            color: #3c1506;
+        }
+            .direct-chat-msg.right > .direct-chat-text:after,
+            .direct-chat-msg.right > .direct-chat-text:before {
+                border-left-color: #b1765a;
+            }
+        .form-control.form-control-lg{
+            width:100%;
+        }
+        .upload-imageList{
+            overflow:auto;
+            white-space:nowrap;
+            margin-bottom:10px;
+        }
+        .upload-imageList > .img-responsive.thumbnail{
+            display:inline-block;
+            margin-bottom:0px;
+            height:200px;
+        }
+    </style>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.10.0/jquery.validate.min.js"></script>
+<link href="~/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" />
+<script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="~/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="~/Scripts/date.format.js"></script>
+<script src="~/Scripts/bootstrap-datepicker.js"></script>
+<script src="~/Scripts/bootstrap-datepicker.min.js"></script>
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Ticket</h3>
+                </div>
+
+                <form role="form" id="addform">
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="DepartmentId">Department</label>
+                                    @Html.HiddenFor(m => m.departmentId, new { id = "departmentId" })
+                                    <select class="form-control form-control-lg" id="selDepartmentId" name="selDepartmentId">
+                                        <option selected="selected" value="0">Select Department Name</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Description">Description</label>
+                                    @Html.TextAreaFor(m => m.TicketDescription, new { @class = "form-control form-control-lg" })
+                                    @Html.ValidationMessageFor(m => m.TicketDescription)
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="IssueType">Issue Type</label>
+                                    @Html.HiddenFor(m => m.IssueType, new { id = "IssueType" })
+                                    <select class="form-control form-control-lg" id="selIssueType" name="selIssueType">
+                                        <option selected="selected" value="0">Select Issue Type</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6" style="display:none" id="divPriority">
+                                <div class="form-group">
+                                    <label for="Priority">Priority</label>
+                                    @Html.HiddenFor(m => m.priority, new { id = "priority" })
+                                    <select class="form-control form-control-lg" id="selPriority" name="selPriority">
+                                        <option selected="selected" value="0">Select Priority</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6" id="divcomments">
+                                <div class="form-group">
+                                    <label for="Description">comments</label>
+                                    @Html.TextAreaFor(m => m.comments, new { @class = "form-control form-control-lg" })
+                                    @Html.ValidationMessageFor(m => m.comments)
+                                </div>
+                            </div>
+
+                            <div class="col-md-6" style="display:none" id="divforecastdate">
+                                <div class="form-group">
+                                    <label for="forecastdate">Forecast Date</label>
+                                    @Html.TextBoxFor(x => x.forecastdate, "{0:yyyy-MM-dd}", new { @class = "form-control form-control-lg", @type = "date" })
+                                    @Html.ValidationMessageFor(m => m.forecastdate)
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="imageBrowes">File input</label>
+                                    <input type="file" id="imageBrowes" name="imageBrowes[]" />
+                                </div>
+
+                                <div id="imgPreview" class="thumbnail" style="display:none">
+                                    <img class="img-responsive" id="targetImg" />
+                                    <div class="caption">
+                                        <a href="#" onclick="ClearPreview()"><i class="glyphicon glyphicon-trash"></i></a>
+                                        <span id="description"></span>
+                                    </div>
+                                    <a href="#" class="btn btn-default" onclick="Uploadimage()">Upload</a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-9">
+                                <div class="upload-imageList" id="uploadedImage">
+                                </div>
+                            </div>
+                        </div>
+                      
+                        <div class="direct-chat-messages" style="display:none;" >
+                            <div class="chat-upload">
+                            </div>
+                            <div class="input-group">
+                                <input type="text" id="chatmsg" name="message" placeholder="Type Message ..." class="form-control">
+                                <span class="input-group-btn">
+                                    <button type="button" id="sendmsg" class="btn btn-warning btn-flat">Send</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+
+                    <div class="box-footer">
+                        <input type="submit" id="btnAddTicket" value="Create" class="btn btn-primary" />
+                        <input type="submit" id="btnUpdateTicket" value="Update" class="btn btn-success" style="display:none" />
+                        <input type="button" id="Closeissue" value="Issue Closed" class="btn btn-success" style="display:none" />
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+        
+    </div>
+</section>
+
+
+
+<div class="modal fade-in" id="Okaypopup" role="dialog" style="display:none">
+
+    <div class="modal-dialog modal-custom">
+        @*<label id="succ"></label>*@
+        <div class="modal-content">
+            <div class="modal-header">
+               
+                <h4 class="modal-title" id="PopupticketId"></h4>
+            </div>
+
+            <div class="modal-body">
+                <p id="Msgforalltickets" style="margin-bottom:auto;"></p>
+            </div>
+            <div class="modal-footer" style="text-align:left;">
+
+
+                <button type="button" id="btnOkay" class="btn btn-clr1" onclick="LoadAllTicketss()">Okay</button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+        //$(document).ready(function () {
+        //    
+            $.ajax({
+                type: "POST",
+                url: "/Ticket/GetDepartment",
+
+
+                datatype: "Json",
+                success: function (data) {
+                    
+                    $.each(data, function (index, value) {
+                        $('#selDepartmentId').append('<option value="' + value.Did + '">' + value.DepartmentName + '</option>');
+                    });
+
+                },
+                error: function (data) {
+                    alert('Error');
+                }
+
+
+            });
+            $.ajax({
+                type: "POST",
+                url: "/Ticket/GetPriority",
+
+
+                datatype: "Json",
+                success: function (data) {
+                    
+                    $.each(data, function (index, value) {
+                        $('#selPriority').append('<option value="' + value.TPID + '">' + value.Description + '</option>');
+                    });
+
+                },
+                error: function (data) {
+                    alert('Error');
+                }
+
+
+            });
+
+            $("#selDepartmentId").change(function () {
+                $('#selIssueType option:first-child').nextAll('option').remove();
+                
+                var Did = $("#selDepartmentId option:selected").val();
+
+                $.ajax({
+
+                    type: "POST",
+                    url: "/Ticket/IssueType?Did=" + Did,
+
+
+                    datatype: "Json",
+                    success: function (data) {
+                        
+                        $.each(data, function (index, value) {
+                            $('#selIssueType').append('<option value="' + value.ITID + '">' + value.Description + '</option>');
+                        });
+
+                    },
+                    error: function (data) {
+                        alert('Error');
+                    }
+
+
+                });
+            });
+        //});
+
+    if (@ViewBag.Tid != 0) {
+
+        editticket();
+
+    }
+
+    $('#sendmsg').click(function () {
+        
+
+              $.ajax({
+            url: "/Ticket/chatsendmsg?Tid=@ViewBag.Tid" + "&chat=" + $("#chatmsg").val(),
+            data: "GET",
+            dataType: "JSON",
+            success: function (data) {
+
+
+                $("#chatmsg").val("");
+            }
+
+        })
+         $("#uploadedImage").empty();
+        $(".chat-upload").empty();
+        $("#chatmsg").val("");
+
+
+        editticket();
+    });
+
+    function editticket() {
+          $.ajax({
+                url: "/Ticket/GetTicketsByID?Tid=@ViewBag.Tid",
+                type: "Get",
+                dataType: "json",
+                success: function (res) {
+                    $(".direct-chat-messages").show();
+                    $("#divPriority").show();
+                    $("#divforecastdate").show();
+                    $("#btnUpdateTicket").show();
+                    $("#btnAddTicket").hide();
+                    $("#divcomments").hide();
+                    $("#selDepartmentId").prop("disabled", true);
+                    $("#TicketDescription").prop("disabled", true);
+                    $("#selIssueType").prop("disabled", true);
+                    if (res[0].IsTicketsAuthority == true) {
+                        $("#selPriority").prop("disabled", false);
+                        $("#forecastdate").prop("disabled", false);
+                        $("#Closeissue").show();
+                    }
+                    else {
+                        $("#selPriority").prop("disabled", true);
+                        $("#forecastdate").prop("disabled", true);
+                    }
+
+
+
+                    var upImg = $("#uploadedImage");
+                    var upChat = $(".chat-upload");
+                    $('#selDepartmentId option[value=' + res[0].DepartmentID + ']').attr('selected', 'selected');
+
+                    
+                    $('#selIssueType option:first-child').nextAll('option').remove();
+
+                    var Did = res[0].DepartmentID ;
+
+                    $.ajax({
+
+                        type: "POST",
+                        url: "/Ticket/IssueType?Did=" + Did,
+
+
+                        datatype: "Json",
+                        success: function (data) {
+                            
+                            $.each(data, function (index, value) {
+                                $('#selIssueType').append('<option value="' + value.ITID + '">' + value.Description + '</option>');
+                            });
+
+                        },
+                        error: function (data) {
+                            alert('Error');
+                        }
+
+
+                    });
+
+
+                    $("#TicketDescription").val(res[0].Description);
+
+                    setTimeout(function () {
+                        $('#selIssueType option[value=' + res[0].TypeOfIssue + ']').attr('selected', 'selected');
+                    }, 1000);
+
+
+                    $('#selPriority option[value=' + res[0].Priority + ']').attr('selected', 'selected');
+                    var dateforcaste = res[0].Ticket_Forecast_date.split(" ");
+                    //$("#forecastdate").val(dateforcaste[0].replace(/\//g, "-"));
+
+                    $("#forecastdate").val(dateforcaste[0].replace(/(\d\d)\/(\d\d)\/(\d{4})/, "$3-$1-$2"));
+                    var comments = res[0].comments;
+                    $.each(comments, function (i, order) {
+                        if (comments[i].Active == true) {
+                            upChat.append('<div class="direct-chat-msg right"> <div class="direct-chat-info clearfix"> <span class="direct-chat-name pull-left"> ' + comments[i].UserName + ' </span> <span class="direct-chat-timestamp pull-right">23 Jan 2:00 pm</span> </div> <!-- /.direct-chat-info --> <img class="direct-chat-img" src="/Content/images/user.png" alt="message user image"> <!-- /.direct-chat-img --> <div class="direct-chat-text"> ' + comments[i].CommentName + ' </div> <!-- /.direct-chat-text --> </div>');
+                        } else {
+                            upChat.append('<div class="direct-chat-msg"> <div class="direct-chat-info clearfix"> <span class="direct-chat-name pull-left"> ' + comments[i].UserName + ' </span> <span class="direct-chat-timestamp pull-right">23 Jan 2:00 pm</span> </div> <!-- /.direct-chat-info --> <img class="direct-chat-img" src="/Content/images/user.png" alt="message user image"> <!-- /.direct-chat-img --> <div class="direct-chat-text"> ' + comments[i].CommentName + ' </div> <!-- /.direct-chat-text --> </div>');
+                        }
+
+
+                    });
+                    var tcImg = res[0].ticketImages;
+                    $.each(tcImg, function (i, order) {
+                        upImg.append("<img src='/TicketUploadedImage/" + tcImg[i].ImageName + "' class='img-responsive thumbnail' />");
+                    });
+                },
+                error: function (msg) {
+                }
+            });
+
+    }
+
+
+</script>
+
+
+
+<script>
+
+    $(document).ready(function () {
+
+        $("#imageBrowes").change(function () {
+
+            var File = this.files;
+
+            if (File && File[0]) {
+                ReadImage(File[0]);
+            }
+
+        })
+
+    })
+
+
+    var ReadImage = function (file) {
+
+        var reader = new FileReader;
+        var image = new Image;
+
+        reader.readAsDataURL(file);
+        reader.onload = function (_file) {
+
+            image.src = _file.target.result;
+            image.onload = function () {
+
+                var height = this.height;
+                var width = this.width;
+                var type = file.type;
+                var size = ~~(file.size / 1024) + "KB";
+
+                $("#targetImg").attr('src', _file.target.result);
+                $("#description").text("Size:" + size + ", " + height + "X " + width + ", " + type + "");
+                $("#imgPreview").show();
+
+            }
+
+        }
+
+    }
+
+    var ClearPreview = function () {
+        $("#imageBrowes").val('');
+        $("#description").text('');
+        $("#imgPreview").hide();
+
+    }
+
+    var Uploadimage = function () {
+
+        var file = $("#imageBrowes").get(0).files;
+
+        var data = new FormData;
+        data.append("ImageFile", file[0]);
+        data.append("ProductName", "SamsungA8");
+
+        $.ajax({
+
+            type: "POST",
+            url: "/Ticket/ImageUpload",
+            data: data,
+            contentType: false,
+            processData: false,
+            success: function (response) {
+                ClearPreview();
+
+                $("#uploadedImage").append('<img src="/TicketUploadedImage/' + response + '" class="img-responsive thumbnail"/>');
+
+
+            }
+
+        })
+
+    }
+
+
+
+</script>
+
+
+<script type="text/javascript">
+    $.validator.addMethod("valueNotEquals", function (value, element, arg) {
+        return arg !== value;
+    }, "Value must not equal arg.");
+
+    $("#addform").validate({
+        rules: {
+            selDepartmentId: { valueNotEquals: "0" },
+            TicketDescription: {
+                required: true,
+            },
+
+            //"imageBrowes[]": {
+            //    required: true,
+            //    extension: "jpg|jpeg|png"
+            //},
+            selIssueType: { valueNotEquals: "0" },
+
+
+        },
+        messages: {
+            selDepartmentId: { valueNotEquals: "Please select Department" },
+            TicketDescription: "Enter Ticket Description",
+            //"imageBrowes[]": {
+            //    required: "Please upload atleast 1 photo",
+            //    extension: "Only png / jpg files is allowed!"
+            //},
+            selIssueType: { valueNotEquals: "selIssueType" },
+
+        },
+        submitHandler: function (form) {
+            
+            var imagespath = $('#uploadedImage').children('img').map(function () {
+                return $(this).attr('src')
+            }).get();
+            var Imagename1 = [];
+            $("#uploadedImage > img").each(function () {
+                Imagename1.push({
+                    "Imagename": $(this).attr('src'),
+                });
+            })
+            console.log(Imagename1);
+            //var jk = $('input[type=file][name="imageBrowes[]"]').val().split('\\').pop();
+            //var kg = $('input[type=file][name="imageBrowes[]"]').val().replace(/C:\\fakepath\\/i, '')
+            var DepartmentId = $("#selDepartmentId option:selected").val();
+            var TicketDescription = $("textarea#TicketDescription").val();
+            var IssueType = $("#selIssueType option:selected").val();
+            var Priority = $("#selPriority option:selected").val();
+            var comments = $("textarea#comments").val();
+            var forecastdate = $("#forecastdate").val();
+            var Tid = @ViewBag.Tid;
+
+            var formdata = new FormData();
+            formdata.append("departmentId", parseInt(DepartmentId));
+            formdata.append("IssueType", parseInt(IssueType));
+            formdata.append("priority", parseInt(Priority));
+            formdata.append("comments", comments);
+            formdata.append("forecastdate", forecastdate);
+            formdata.append("TicketDescription", TicketDescription);
+            formdata.append("Tid", Tid);
+            formdata.append("TImages", JSON.stringify(Imagename1));
+
+            //formdata.append("TImages", Imagename1);
+            console.log(formdata);
+            $.ajax({
+                url: "/Ticket/createTicket",
+                type: "POST",
+                contentType: false,
+                processData: false,
+                data: formdata,
+                success: function (data) {
+
+                    if (data == "1") {
+                        $("#Okaypopup").modal('show');
+                        $("#Msgforalltickets").html("Ticket Raised Successfully");
+                        $("#PopupticketId").html("Add Ticket");
+                    }
+                 
+                
+                        else if (dat == "2")
+                    {
+                $("#Okaypopup").modal('show');
+                        $("#Msgforalltickets").html("Ticket Updated Successfully");
+                        $("#PopupticketId").html("Update Ticket");
+                    }
+
+
+                }
+
+            })
+        }
+    })
+
+    $("#Closeissue").click(function () {
+        
+        $.ajax({
+            url: "/Ticket/Closeissue?Tid=@ViewBag.Tid",
+            data: "GET",
+            dataType: "JSON",
+            success: function (data) {
+
+                $("#Okaypopup").modal('show');
+                $("#Msgforalltickets").html("Issue Closed");
+                $("#PopupticketId").html("Issue Close");
+            }
+
+        })
+
+    })
+
+    $("#btnOkay").click(function () {
+        window.location.href = "/Ticket/GetllTickets";
+    });
+
+</script>

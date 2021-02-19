@@ -1,0 +1,560 @@
+﻿@model Evolutyz.Entities.InterviewCandidateEntity
+@{
+                /**/
+
+                ViewBag.Title = "Interview Candidates";
+                //  Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.10.0/jquery.validate.min.js"></script>
+<link href="~/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" />
+<script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="~/plugins/datatables/dataTables.bootstrap.min.js"></script>
+@*<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css">*@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
+@*<script src="~/Scripts/date.format.js"></script>
+    <script src="~/plugins/jQueryUI/jquery-ui-1.10.3.min.js"></script>*@
+<style>
+    label.error {
+        position: absolute;
+        bottom: -20px;
+        left: 15px;
+        font-size: 10px;
+        color: red;
+    }
+
+    .form-control.validate_msg ~ span.field-validation-valid:before {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 15px;
+        font-size: 10px;
+        color: red;
+    }
+
+    #UsT_UserTypeCode.validate_msg ~ span:before {
+        content: "Employee Code Already Existed";
+    }
+
+    #UsT_UserType.validate_msg ~ span:before {
+        content: "Employee Type Already Existed";
+    }
+
+    .box.box-solid.box-brown {
+        border: 1px solid #aaaaaa;
+    }
+
+        .box.box-solid.box-brown > .box-header {
+            /*background-color: #a3765b;
+        color: #fff;*/
+            border-color: #aaaaaa;
+            background: #cccccc url(../Content/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png) 50% 50% repeat-x;
+            color: #222222;
+        }
+
+        .box.box-solid.box-brown .btn-warning {
+            background-color: #f97045;
+            border-color: #fe450b;
+        }
+
+        .box.box-solid.box-brown .btn-success {
+            background-color: #fea728;
+            border-color: #FF9800;
+        }
+
+    #divhiduserid ~ label {
+        margin: 7px auto;
+    }
+</style>
+
+<div class="modal fade-in" id="ContainerGridDetail" role="dialog">
+
+    <div class="modal-dialog modal-custom">
+        @*<label id="succ"></label>*@
+        <div class="modal-content">
+            <div class="modal-header">
+
+            </div>
+            <form id="myform">
+                <div class="modal-body">
+
+                    <div class="row" style="display:none;">
+                        <div class="form-group col-md-6">
+                            <label for="ICID">ICID</label>
+                            @Html.TextBoxFor(m => m.ICID, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.ICID)
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="APID">APID</label>
+                            @Html.TextBoxFor(m => m.APID, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.APID)
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="RecrutementUserid">RecrutementUserid</label>
+                            @Html.TextBoxFor(m => m.RecrutementUserid, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.RecrutementUserid)
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label for="FirstName">FirstName<font style="color:red;">*</font></label>
+                            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.FirstName)
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="LastName">LastName<font style="color:red;">*</font></label>
+                            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.LastName)
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="Email">Email<font style="color:red;">*</font></label>
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Email)
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="MobileNumber">MobileNumber<font style="color:red;">*</font></label>
+                            @Html.TextBoxFor(m => m.MobileNumber, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.MobileNumber)
+                        </div>
+                        <div class="form-group col-md-4" id="Pswd">
+                            <label for="Password">Password<font style="color:red;">*</font></label>
+                            @Html.TextBoxFor(m => m.Password, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Password)
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="AssessmentDate">AssignmentDate<font style="color:red;">*</font></label>
+                            @*@Html.TextBoxFor(m => m.AssignmentDate, new { @class = "form-control date-input", autocomplete = "off", type = "date" })*@
+                            @Html.TextBoxFor(m => m.AssignmentDate, new { @class = "form-control date-input", autocomplete = "off" })
+                            @Html.ValidationMessageFor(m => m.AssignmentDate)
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="AssignmentTime">AssessmentTime<font style="color:red;">*</font></label>
+                            
+                            @Html.TextBoxFor(m => m.AssignmentTime, new { @class = "form-control time-input", autocomplete = "off" })
+                            @Html.ValidationMessageFor(m => m.AssignmentTime)
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="InterviewForPositionname">InterviewForPositionname<font style="color:red;">*</font></label>
+                            @Html.DropDownListFor(m => m.InterviewForPositionname, new SelectList(ViewBag.PositionNames, "value", "text"), "Select Position", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.InterviewForPositionname)
+                        </div>
+                        @*<div class="form-group col-md-4">
+                                <label for="isDeleted">Active Status<font style="color:red;">*</font></label>
+                                @Html.DropDownListFor(m => m.isdeleted, new SelectList(new List<Object>{
+
+                               new { value = false, text = "Active"},
+                               new { value = true, text = "InActive"}  }, "value", "text", 2), "Select Status", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.isdeleted)
+                            </div>*@
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" id="btnadd" class="btn btn-clr" style="display:none;">Add</button>
+                    <button type="submit" id="btnupdate" class="btn btn-clr" style="display:none;">Update</button>
+                    <button type="button" class="btn btn-clr1" data-target="#warningmsg" data-toggle="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="block-content">
+    <div class="">
+        <h4 class="heading-fancy">Interview Candidates</h4>
+        <input type="button" id="btnAddModel" value="+" data-toggle="modal" data-target="#ContainerGridDetail" class="btn" />
+    </div>
+    <div class="table-responsive">
+        <div class="clearfix table-block">
+            <table id="table">
+                <thead>
+                    <tr>
+
+                        @*<th>FirstName</th>
+                        <th>LastName</th>*@
+                        <th>ICID</th>
+                        <th>CandidateName</th>
+                        <th>Email</th>
+                        <th>MobileNumber</th>
+                        <th>Password</th>
+                        <th>InterviewForPositionname</th>
+                        <th>AssessmentDate&Time</th>
+                        <th>Login Id</th>
+                        <th>Result</th>
+                        <th>RecrutementUserid</th>
+                        <th>Recruiter</th>
+                        <th>SessionUsr</th>
+                        <th>status</th>
+                        @*<th>AssignmentDate</th>
+                        <th>AssignmentTime</th>*@
+                        <th id="actions">Action</th>
+                        @*<th>Delete</th>*@
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="warningmsg" class="modal" role="dialog">
+    <div class="modal-dialog">
+        <div id="divAdv" class="modal-content">
+            <div class="modal-header">
+                @*<button type="button" class="close" data-dismiss="modal">×</button>*@
+
+            </div>
+            <div class="modal-body">
+                <h3>Do you really want to close the window.</h3>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-clr" data-dismiss="modal" value="1" id="btnclose">Yes</button>
+                <button type="button" class="btn btn-clr1" value="2" data-dismiss="modal" id="cancel">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+
+    var GetUserID = '';
+ 
+
+    function EditUser(ICID) {
+        
+        $("#edit").show();
+        $("#add").hide();
+        $("#btnadd").hide();
+        $("#Pswd").hide();
+
+        $("#btnupdate").show();
+        $.ajax({
+
+            url: '/InterviewCandidates/GetCandidateByICID?ICID=' + ICID,
+            type: 'Get',
+            //contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                
+                var ICID = data.ICID;
+                var FirstName = data.FirstName;
+                var LastName = data.LastName;
+                var Email = data.Email;
+                var MobileNumber = data.MobileNumber;
+               // var Password = data.Password;
+                var AssignmentDate = data.AssignmentDate;
+                var AssignmentTime = data.AssignmentTime;
+                var InterviewForPositionname = data.InterviewForPositionname;
+                var APID = data.APID;
+
+                var status = data.isdeleted;
+
+
+
+                $("#ICID").val(ICID);
+                $("#FirstName").val(FirstName);
+                $("#LastName").val(LastName);
+                $("#Email").val(Email);
+                $("#MobileNumber").val(MobileNumber);
+               // $("#Password").val(Password);
+                $("#InterviewForPositionname").val(APID);
+                $("#AssignmentDate").val(AssignmentDate);
+                $("#AssignmentTime").val(AssignmentTime);
+                //$("#isdeleted").val(status);
+                //if (status === 1) {
+                //    $("#isdeleted").val("True");
+                //} else {
+                //    $("#isdeleted").val("False");
+                //}
+            },
+            error: function () {
+                //alert(Response.text);
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        loaddata();
+       
+
+        $("#AssignmentDate.date-input").datetimepicker({
+            //todayHighlight: true,
+            //autoclose: true,
+            //format: 'L'
+            format: 'DD/MM/YYYY'
+        }).on('change', function () {
+        });
+        $("#AssignmentTime.time-input").datetimepicker({
+            //todayHighlight: true,
+            //autoclose: true,
+            //format: 'LT'
+            format: 'HH:mm A'
+        }).on('change', function () {
+        });
+        $("#btnAddModel").click(function () {
+            $("#btnadd").show();
+            $("#btnupdate").hide();
+        });
+        $("#btnclose").click(function () {
+            window.location.reload();
+        });
+
+        $(document).on("click", "#btnAddModel", function (event) {
+            $("#btnadd").on("click", function () {
+                
+                $('#myform').validate({
+                    rules: {
+                        FirstName: {
+                            required: true,
+                        },
+                        LastName: {
+                            required: true,
+                        },
+                        Email: {
+                            required: true,
+                        },
+                        MobileNumber: {
+                            required: true,
+                        },
+                        Password: {
+                            required: true,
+                        },
+                        InterviewForPositionname: {
+                            required: true,
+                        },
+                        AssignmentDate: {
+                            required: true,
+                        },
+                        AssignmentTime: {
+                            required: true,
+                        },
+
+                    },
+                    submitHandler: function (form) {
+                        
+                        var FirstName = $("#FirstName").val();
+                        var LastName = $("#LastName").val();
+                        var Email = $("#Email").val();
+                        var MobileNumber = $("#MobileNumber").val();
+                        var Password = $("#Password").val();
+                        var InterviewForPositionname = $("#InterviewForPositionname").val();
+                        var AssignmentDate = $("#AssignmentDate").val();
+                        var AssignmentTime = $("#AssignmentTime").val();
+
+                        $.ajax({
+                            type: "POST",
+                            url: "/InterviewCandidates/CreateInterviewCandidate",
+                            data: {
+                                FirstName: FirstName,
+                                LastName: LastName,
+                                Email: Email,
+                                MobileNumber: MobileNumber,
+                                Password: Password,
+                                InterviewForPositionname: InterviewForPositionname,
+                                AssignmentDate: AssignmentDate,
+                                AssignmentTime: AssignmentTime
+
+                            },
+                            cache: false,
+                            success: function (data) {
+                                
+                                // $("#resultarea").text(data);
+                                //if (data === "Already Exists") {
+                                //    $("#Description").addClass("validate_msg");
+                                //} else {
+                                //    $("#Description").removeClass("validate_msg");
+
+                                //    function explode() {
+                                //        alert(data);
+                                //    }
+                                //    setTimeout(explode, 15);
+
+                                window.location.reload();
+                                //}
+
+
+                            }
+                        });
+
+                    }
+                });
+
+
+            });
+
+        });
+
+        $("#btnupdate").click(function () {
+            $('#myform').validate({
+                rules: {
+                    ICID: {
+                        required: true,
+                    },
+                    FirstName: {
+                        required: true,
+                    },
+                    LastName: {
+                        required: true,
+                    },
+                    Email: {
+                        required: true,
+                    },
+                    MobileNumber: {
+                        required: true,
+                    },
+                    Password: {
+                        required: true,
+                    },
+                    InterviewForPositionname: {
+                        required: true,
+                    },
+                    AssignmentDate: {
+                        required: true,
+                    },
+                    AssignmentTime: {
+                        required: true,
+                    },
+                },
+                submitHandler: function (form) {
+                    var ICID = $("#ICID").val();
+                    var FirstName = $("#FirstName").val();
+                    var LastName = $("#LastName").val();
+                    var Email = $("#Email").val();
+                    var MobileNumber = $("#MobileNumber").val();
+                    var InterviewForPositionname = $("#InterviewForPositionname").val();
+                    var AssignmentDate = $("#AssignmentDate").val();
+                    var AssignmentTime = $("#AssignmentTime").val();
+
+
+                    $.ajax({
+                        type: "POST",
+                        url: "/InterviewCandidates/UpdateInterviewCandidates?id=" + ICID,
+                        data: {
+                            FirstName: FirstName,
+                            LastName: LastName,
+                            Email: Email,
+                            MobileNumber: MobileNumber,
+                            InterviewForPositionname: InterviewForPositionname,
+                            AssignmentDate: AssignmentDate,
+                            AssignmentTime: AssignmentTime,
+                            //Email: Email,
+
+                url: '/InterviewCandidates/GetCandidateByICID?ICID=' + ICID,
+                type: 'Get',
+                //contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    
+                    var ICID = data.ICID;
+                    var FirstName = data.FirstName;
+                    var LastName = data.LastName;
+                    var Email = data.Email;
+                    var MobileNumber = data.MobileNumber;
+                    var Password = data.Password;
+                    var InterviewForPositionname = data.InterviewForPositionname;
+                    var AssignmentDate = data.AssignmentDate;
+                    var AssignmentTime = data.AssignmentTime;
+
+                    var status = data.isdeleted;
+
+
+                                window.location.reload();
+                            }
+
+                        }
+                    });
+                }
+            });
+        });
+
+
+
+
+        function loaddata() {
+             var Rusrid = '@ViewBag.Userid';
+            var RecrutementUsrid = $("#RecrutementUserid").val();
+
+            $('#loading-image').attr("style", "display: block;");
+            $.ajax({
+                url: "/InterviewCandidates/GetInterviewCandidates",
+                type: "Get",
+                dataType: "json",
+                success: function (res) {               
+                    $('#table').DataTable({
+                        'data': res,
+                        'paginate': true,
+                        'sort': true,
+                        'Processing': true,
+
+                        'columns': [
+
+                            //  { 'data': 'DepartmentID', "visible": false  },
+                            { 'data': 'FirstName' },
+                            { 'data': 'LastName' },
+                            { 'data': 'Email' },
+                            { 'data': 'MobileNumber' },
+                            { 'data': 'Password', "visible": false },
+                            { 'data': 'InterviewForPositionname' },
+                            { 'data': 'AssignmentDate' },
+                            { 'data': 'ICID' },
+                            { 'data': 'Result' },
+                            { 'data': 'RecrutementUserid', "visible": false },
+                            { 'data': 'Recruiter' },
+                            { 'data': 'SessionUsr', "visible": false },
+                            { 'data': 'status', "visible": false },
+                            //{ 'data': 'AssignmentTime' },
+                            {
+                                "render": function (ICID, type, full, meta) {
+                                    @*var permissions = '@ViewBag.a';
+                                    if (permissions === "Read/Write") {*@
+                                    
+                                    if ('@TempData["adminroleid"]' == "1002") {
+
+
+                                        return '<a class="btn btn-icn" id="viewresult" onclick="Viewresult(' + full.ICID + ')"><i class="fa fa-eye" title="ViewResult"></i></a>';
+                                    }
+                                    else {
+                                        return '<a class="btn btn-icn btn-icn-hide  edit" data-toggle="modal" id="editbtn" data-target="#ContainerGridDetail" onclick="EditUser(' + full.ICID + ')"><i class="fa fa-edit" title="Edit"></i></a><a class="btn btn-icn btn-icn-hide" id="deletebtn" style="" data-target="#containerDelete" data-toggle="modal" data-id="' + full.ICID + '" onclick="Getid(' + full.ICID + ')" "></a>';
+                                    }
+
+                                        // return null;
+
+                                        //  else {
+                                        //   return '<a class="btn btn-icn" data-toggle="modal" id="editbtn" data-target="#ContainerGridDetail" onclick="EditUser(' + full.DepartmentId + ')"><i class="fa fa-edit" title="Edit"></i></a><a class="btn btn-icn" id="deletebtn" data-target="#containerDelete" style="display:none" data-toggle="modal" data-id="' + full.DepartmentId + '" onclick="Getid(' + full.DepartmentId + ')" "><i class="fa fa-remove" title="Delete"></i></a>';
+
+                                        //  }
+
+                                    }
+
+                                },
+
+
+
+                        ]
+                    });
+                },
+                complete: function () {
+                    $('#loading-image').attr("style", "display: none;");
+                },
+                error: function (msg) {
+                    // alert(msg.responseText);
+                }
+            });
+        }
+
+
+
+    });
+
+    function Viewresult(ICID) {
+        
+        window.location.href = "/Ticket/Getallexamresult?Userid=" + ICID;
+    }
+
+
+</script>

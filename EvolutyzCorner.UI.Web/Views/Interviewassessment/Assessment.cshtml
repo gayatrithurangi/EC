@@ -1,0 +1,1449 @@
+﻿@using EvolutyzCorner.UI.Web.Controllers
+@{
+    InterviewassessmentController inv = new InterviewassessmentController();
+    Layout = null;
+    var ques = inv.getAllQuestion(Convert.ToInt32(@TempData["ExamUid"]));
+    var Userdata = inv.getAllUsers(Convert.ToInt32(@TempData["ExamUid"]));
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=11,Chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Exam - Evolutyz Corner</title>
+    <link rel='shortcut icon' href='~/Content/Images/favicon.png' type='image/png' />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <!-- Fonticons -->
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="~/Content/css/ionicons.min.css">
+    <!-- LayoutCSS -->
+    <link rel="stylesheet" href="~/Content/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="~/Content/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <style>
+        @@media (min-width:992px) {
+            .modal.fade .modal-dialog:not(.modal-min) {
+                margin: 5% auto;
+                width: 50%;
+                -webkit-transform: none;
+                -ms-transform: none;
+                -o-transform: none;
+                transform: none;
+            }
+
+            [id^="alertmodal"].modal > .modal-dialog.modal-min {
+                margin: 18em auto;
+            }
+        }
+
+        [id^="alertmodal"].modal > .modal-dialog.modal-min .modal-header {
+            border-bottom-color: #d0d0d0;
+            background: linear-gradient(45deg, #cacaca, #e0e0e0);
+            color: #545454;
+        }
+
+            [id^="alertmodal"].modal > .modal-dialog.modal-min .modal-header > h4.modal-title {
+                font-weight: 600;
+                font-size: 24px;
+                display:inline-block;
+            }
+
+        [id^="alertmodal"].modal > .modal-dialog.modal-min .modal-body {
+            color: #505050;
+            font-size: 18px;
+        }
+
+        [id^="alertmodal"].modal > .modal-dialog.modal-min .modal-footer {
+            border-top-color: #d4d4d4;
+            text-align: center;
+        }
+
+            [id^="alertmodal"].modal > .modal-dialog.modal-min .modal-footer > .btn.btn-outline-grey {
+                border-color: #636363;
+                background: -webkit-linear-gradient(135deg,#828282,#a7a7a7);
+                background: linear-gradient(135deg,#828282,#a7a7a7);
+            }
+
+            [id^="alertmodal"].modal > .modal-dialog.modal-min .modal-footer > .btn.btn-outline-green {
+                border-color: #558B2F;
+                background: -webkit-linear-gradient(135deg,#8BC34A,#7CB342);
+                background: linear-gradient(135deg,#8BC34A,#7CB342);
+            }
+
+        .Stepup-options::-webkit-scrollbar {
+            width: 13px;
+            height: 13px;
+        }
+
+        .Stepup-options::-webkit-scrollbar-track {
+            background: #e4e4e4;
+            box-shadow: 3px 3px 10px rgba(0,0,0,.25) inset;
+        }
+
+        .Stepup-options::-webkit-scrollbar-thumb {
+            background: #20487a;
+            border-radius: 10px;
+            border: 1px solid rgba(0,0,0,0.3);
+            box-shadow: -3px -3px 6px rgb(37, 90, 156) inset, 3px 3px 3px rgb(107, 150, 204) inset;
+        }
+
+        .Stepup-options::-webkit-scrollbar-button:horizontal {
+            width: 15px;
+        }
+
+        .Stepup-options::-webkit-scrollbar-button:vertical {
+            height: 15px;
+        }
+
+            .Stepup-options::-webkit-scrollbar-button:vertical:decrement {
+                background-image: url(/Content/assets/img/stepup-icn/scroll/arrow-up.png), -webkit-linear-gradient(left, #20487a 50%,#255a9c 100%);
+                background-repeat: no-repeat;
+                background-position: 3px 4px, 0 0;
+                border-radius: 15px 15px 0px 0px;
+            }
+
+            .Stepup-options::-webkit-scrollbar-button:vertical:increment {
+                background-image: url(/Content/assets/img/stepup-icn/scroll/arrow-down.png), -webkit-linear-gradient(left, #20487a 50%,#255a9c 100%);
+                background-repeat: no-repeat;
+                background-position: 3px 5px, 0 0;
+                border-radius: 0px 0px 15px 15px;
+            }
+
+        .Stepup-options::-webkit-scrollbar-button:horizontal:decrement {
+            background-image: url(/Content/assets/img/stepup-icn/scroll/arrow-left.png), -webkit-linear-gradient(top, #20487a 50%,#255a9c 100%);
+            background-repeat: no-repeat;
+            background-position: 4px 3px, 0 0;
+            border-radius: 15px 0px 0px 15px;
+        }
+
+        .Stepup-options::-webkit-scrollbar-button:horizontal:increment {
+            background-image: url(/Content/assets/img/stepup-icn/scroll/arrow-right.png), -webkit-linear-gradient(top, #20487a 50%,#255a9c 100%);
+            background-repeat: no-repeat;
+            background-position: 5px 3px, 0 0;
+            border-radius: 0px 15px 15px 0px;
+        }
+
+        .Stepup-options::-webkit-resizer {
+            background: #F2F2F2 url(/Content/assets/img/stepup-icn/scroll/resizer.png)no-repeat 2px 4px;
+            border-top: 1px solid #D9D9D9;
+            border-left: 1px solid #D9D9D9;
+        }
+
+        .Stepup-options::-webkit-scrollbar-corner {
+            background: #d2d2d2 url(/Content/assets/img/stepup-icn/scroll/resizer.png)no-repeat 2px 4px;
+            border-top: 1px solid #D9D9D9;
+            border-left: 1px solid #D9D9D9;
+        }
+
+        ul.list_questions {
+            counter-reset: li;
+            list-style: none;
+            font-family: 'Raleway', sans-serif;
+            padding: 0;
+            font-size: 18px;
+            margin: auto;
+        }
+
+            ul.list_questions > li > p:before {
+                content: counter(li);
+                counter-increment: li;
+                position: relative;
+                font-weight: 600;
+                left: -10px;
+            }
+
+            ul.list_questions > li {
+                position: relative;
+                display: block;
+                padding: 10px 15px 10px 15px;
+                margin: 10px auto;
+                color: #555;
+                -moz-border-radius: 10px;
+                -webkit-border-radius: 10px;
+                border-radius: 10px;
+                transition: all .2s ease-in-out;
+            }
+
+                ul.list_questions > li > p {
+                    display: inline-block;
+                    text-indent: 10px;
+                }
+
+                ul.list_questions > li > span {
+                    float: right;
+                }
+
+                    ul.list_questions > li > span > i {
+                        border-radius: 50%;
+                        height: 40px;
+                        width: 40px;
+                        line-height: 33px;
+                        background-color: #20487a;
+                        color: #fff;
+                        text-align: center;
+                        vertical-align: middle;
+                        border: 5px solid #fff;
+                        box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.1);
+                    }
+
+                        ul.list_questions > li > span > i.fa + i.fa {
+                            margin-left: 10px;
+                        }
+
+
+
+        ul.list_options {
+            *list-style: inside;
+            *list-style-type: upper-alpha;
+            list-style: none;
+            counter-reset: li;
+            font-family: 'Raleway', sans-serif;
+            padding: 0;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+
+            ul.list_options.list-flex {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            ul.list_options > li {
+                /*padding: 10px 0;*/
+                padding: 25px 0;
+            }
+
+                ul.list_options > li:last-child {
+                    padding-bottom: 0;
+                }
+
+                ul.list_options > li > .check_opt {
+                    display: flex;
+                    width: 100%;
+                    align-items: center;
+                }
+
+                    ul.list_options > li > .check_opt > label.lbl_check > input[type=radio] {
+                        width: 100%;
+                        opacity: 0.00000001;
+                        position: absolute;
+                        left: 0;
+                        margin: auto;
+                        height: 100%;
+                    }
+
+                    ul.list_options > li > .check_opt > label.lbl_check {
+                        min-height: 20px;
+                        cursor: pointer;
+                        margin-bottom: 0;
+                        position: relative;
+                    }
+
+                        ul.list_options > li > .check_opt > label.lbl_check > .helper {
+                            position: absolute;
+                            top: -4px;
+                            left: -4px;
+                            cursor: pointer;
+                            display: block;
+                            font-size: 16px;
+                            user-select: none;
+                            color: #e7e7e7;
+                        }
+
+                            ul.list_options > li > .check_opt > label.lbl_check > .helper:before {
+                                content: '';
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                                margin: 5px 10px;
+                                width: 18px;
+                                height: 18px;
+                                transition: transform 0.28s ease;
+                                border-radius: 50%;
+                                border: 1px solid #717171;
+                                background-color: #f7f7f7;
+                            }
+
+                            ul.list_options > li > .check_opt > label.lbl_check > .helper:after {
+                                content: '';
+                                display: block;
+                                width: 12px;
+                                height: 12px;
+                                -webkit-transform: rotate(-45deg) scale(0);
+                                -moz-transform: rotate(-45deg) scale(0);
+                                -ms-transform: rotate(-45deg) scale(0);
+                                transform: rotate(-45deg) scale(0);
+                                position: absolute;
+                                top: 7.5px;
+                                left: 13px;
+                                background-color: #20487a;
+                                border-radius: 50%;
+                            }
+
+                        ul.list_options > li > .check_opt > label.lbl_check > input[type="radio"]:checked ~ .helper::before {
+                            color: #183e6d;
+                        }
+
+                        ul.list_options > li > .check_opt > label.lbl_check > input[type="radio"]:checked ~ .helper::after {
+                            -webkit-transform: rotate(-45deg) scale(1);
+                            -moz-transform: rotate(-45deg) scale(1);
+                            -ms-transform: rotate(-45deg) scale(1);
+                            transform: rotate(-45deg) scale(1);
+                        }
+
+                    ul.list_options > li > .check_opt > span {
+                        display: block;
+                        width: 50%;
+                        padding-left: 30px;
+                    }
+
+        .box-circle > span {
+            box-shadow: none;
+            background-color: #fff;
+            color: #212121;
+            font-weight: normal;
+            font-size: 16px;
+            border: 1px solid #20487b;
+            border-radius: 40px;
+            display: table;
+            margin: -30px auto auto;
+            padding: 5px 15px;
+        }
+
+        ul.list_options > li p {
+            margin-bottom: auto;
+            text-align: justify;
+        }
+
+        ul.list_options > li textarea.form-control[disabled],
+        .box-circle > textarea.form-control[disabled] {
+            background-color: #fff;
+            color: #212121;
+            font-size: 15px;
+            border: 0;
+            box-shadow: none;
+            cursor: default;
+            padding: 4px 0;
+            resize: none;
+            overflow: hidden;
+        }
+
+        .box-footer > ul.pager {
+            margin: auto;
+        }
+
+            .box-footer > ul.pager > li > a,
+            .box-footer > ul.pager > li > a:hover,
+            .box-footer > ul.pager > li > a:focus,
+            .box-footer > ul.pager > li > a:active {
+                border: 0;
+                cursor: pointer;
+                background-color: #ffffff;
+                color: #6b6b6b;
+                border-radius: 20px;
+                font-size: 15px;
+            }
+
+            .box-footer > ul.pager i.fa {
+                border-radius: 4px;
+                color: #969696;
+                width: auto;
+                font-size: 15px;
+            }
+
+            .box-footer > ul.pager > li.previous i.fa {
+                padding: 4px 0px 4px 4px;
+                margin-right: 10px;
+            }
+
+            .box-footer > ul.pager > li.next i.fa {
+                padding: 4px 4px 4px 8px;
+                margin-left: 10px;
+            }
+
+            .box-footer > ul.pager i.fa-caret-right {
+                color: #fff;
+                background: linear-gradient(to right, #26487f,#042354);
+                padding: 4px 10px 4px 8px;
+                margin-right: 10px;
+            }
+
+            .box-footer > ul.pager i.fa-caret-left {
+                color: #fff;
+                background: linear-gradient(to left, #26487f,#042354);
+                padding: 4px 8px 4px 10px;
+                margin-left: 10px;
+            }
+
+        .btn-outline {
+            display: inline-block;
+            padding: 6px 12px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            background-color: transparent;
+            color: #20487a;
+            border: 0;
+        }
+
+            .btn-outline > i {
+                border-radius: 50%;
+                height: 30px;
+                width: 30px;
+                line-height: 30px;
+                background-color: #20487a;
+                color: #fff;
+                text-align: center;
+                vertical-align: middle;
+                margin-right: 10px;
+            }
+
+        [class^="button-radius"],
+        [class^="button-radius"]:hover,
+        [class^="button-radius"]:active,
+        [class^="button-radius"]:focus {
+            display: inline-block;
+            padding: 2px 20px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            background-color: white;
+            border: 1px solid #cecece;
+            /*border-radius: 30px;*/
+            margin: 0 -3px;
+            outline: none;
+            text-decoration: none;
+            box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.15);
+        }
+
+        .button-radius-green,
+        .button-radius-green:hover,
+        .button-radius-green:focus,
+        .button-radius-green:active {
+            color: #71c64f;
+            /*border-color: #71c64f;*/
+        }
+
+        .button-radius-red,
+        .button-radius-red:hover,
+        .button-radius-red:focus,
+        .button-radius-red:active {
+            color: #da6b6b;
+            /*border-color: #da6b6b;*/
+        }
+
+
+        .box-circle {
+            border: 2px solid #1a4377;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        @@media(min-width: 992px) {
+            .Stepup-options {
+                min-height: .01%;
+                max-height: 30em;
+                overflow: auto;
+            }
+
+            ul.list_options > li > .check_opt > span {
+                width: 25%;
+            }
+        }
+
+        .note-editor ~ ul.list_options:not(.list-flex) > li {
+            float: left;
+        }
+
+        .note-editor ~ ul.list_options > li[id] {
+            width: 50%;
+        }
+
+        .note-editor ~ ul.list_options > li:not([id]),
+        .note-editor ~ ul.list_options > li > .check_opt > span {
+            width: 100%;
+        }
+    </style>
+
+    <style type="text/css">
+        body.modal-color-black .modal-backdrop {
+            background-color: #0c4b94 !important;
+        }
+
+            body.modal-color-black .modal-backdrop.show {
+                opacity: 0.25 !important;
+            }
+
+        body.modal-color-black #myCarousel.box-circle.carousel {
+            opacity: 0.05;
+        }
+
+        button.btn-outline {
+            /*float: right;*/
+            outline: 0;
+            border: 1px solid #20487b;
+            border-radius: 30px;
+            color: #20487b;
+            margin-right: 20px;
+        }
+    </style>
+    <style>
+        .cke_inner {
+            display: none;
+        }
+
+        .box-circle.ckedit.cke_show_borders.cke_focus,
+        .box-circle.ckedit.cke_show_borders.cke_focus:focus {
+            box-shadow: none !important;
+            border: 0 !important;
+        }
+
+        .box-circle > span > i {
+            position: absolute;
+            z-index: 1;
+            right: 0;
+            top: 0;
+            cursor: pointer;
+            font-size: 20px;
+            color: #383838;
+            margin: -18px -15px;
+            border: 2px solid;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            line-height: 27px;
+            text-align: center;
+            background-color: white;
+        }
+
+        ul.list_options > li > .check_opt {
+            position: relative;
+        }
+
+            ul.list_options > li > .check_opt > input[type=radio] {
+                width: 100%;
+                opacity: 0.00000001;
+                position: absolute;
+                left: 0;
+                margin: auto;
+                height: 100%;
+                cursor: pointer;
+            }
+
+            ul.list_options > li > .check_opt > input[type="radio"] ~ label[for] {
+                /*box-shadow: 1px 3px 4px 1px #dddddd;
+                width: 100%;
+                max-width: 99%;
+                border-radius: 15px;
+                padding: 5px 10px;
+                position:relative;*/
+                box-shadow: 1px 3px 4px 1px #dddddd;
+                width: 100%;
+                max-width: calc(100% - 4em);
+                margin: auto;
+                border-radius: 15px;
+                padding: 10px 45px;
+                line-height: 1.5;
+            }
+
+                ul.list_options > li > .check_opt > input[type="radio"] ~ label[for]:before {
+                    content: counter(li);
+                    content: counter(li, upper-alpha);
+                    counter-increment: li;
+                    position: absolute;
+                    left: 0;
+                    margin-left: 2.3em;
+                    top: 50%;
+                    margin-top: -1em;
+                    background: #ffe2d5;
+                    height: 2em;
+                    width: 2em;
+                    line-height: 1.5em;
+                    border: .3em solid #ffd0bb;
+                    text-align: center;
+                    font-weight: bold;
+                    -moz-border-radius: 2em;
+                    -webkit-border-radius: 2em;
+                    border-radius: 2em;
+                }
+
+                ul.list_options > li > .check_opt > input[type="radio"] ~ label[for]:after {
+                    content: "";
+                    font-family: FontAwesome;
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    margin-right: 2.5em;
+                    margin-top: -1.1em;
+                    height: 2em;
+                    width: 2em;
+                    line-height: 2em;
+                    text-align: center;
+                    font-weight: bold;
+                    -moz-border-radius: 2em;
+                    -webkit-border-radius: 2em;
+                    border-radius: 2em;
+                }
+
+            ul.list_options > li > .check_opt > input[type="radio"]:checked ~ label[for] {
+                box-shadow: 1px 3px 4px 1px #6f6f6f;
+                background-color: #dedede;
+            }
+
+                ul.list_options > li > .check_opt > input[type="radio"]:checked ~ label[for]:after {
+                    content: "\f00c";
+                    background: #fafafa;
+                    color: #689F38;
+                    border: 1px solid #696969;
+                }
+
+        ol.questions-list {
+            position: static;
+            padding-left: 0;
+            margin: auto;
+            text-align: center;
+            list-style: none;
+        }
+
+            ol.questions-list > li {
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                line-height: 25px;
+                border-radius: 50%;
+                margin: 1px;
+                text-indent: 0px;
+                cursor: pointer;
+                background-color: #000\9;
+                background-color: rgba(0,0,0,0);
+                border: 1px solid #fff;
+            }
+
+                ol.questions-list > li.active {
+                    width: 30px;
+                    height: 30px;
+                    background-color: #20487b;
+                    border-color: #133663;
+                    color: #fff;
+                }
+
+        ul.list_options > li:first-child {
+            font-weight: bold;
+        }
+
+        ul.list_options > li > .check_opt > label.lbl_check > input[type=radio]:checked {
+            border: 3px solid #fff;
+            background-color: #20487b;
+            box-shadow: 0px 0px 0px 1px #999;
+        }
+
+        ul.list_options > li > .check_opt > span {
+            width: auto;
+            padding: 0;
+            padding-left: 30px;
+        }
+
+        #myCarousel.box-circle.carousel {
+            padding-right: 0px;
+        }
+
+        .box-circle.carousel {
+            /*height: 100%;
+            border-radius: 0;*/
+            margin-top: 0px;
+            margin-bottom: 0px;
+            height: 90%;
+            border-color: #ddd;
+            border-radius: 15px 15px 0 0;
+            background-color: #f5f5f5;
+        }
+
+            .box-circle.carousel > ul.carousel-inner {
+                padding: 0;
+                margin: auto;
+                height: 100%;
+            }
+
+                .box-circle.carousel > ul.carousel-inner > li.item {
+                    height: 100%;
+                    overflow: auto;
+                }
+
+                    .box-circle.carousel > ul.carousel-inner > li.item > .box-circle {
+                        padding: 0;
+                        margin: 0px;
+                        /*margin: 15px 10px auto;*/
+                        line-height: 1;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        border: 0;
+                        position: absolute;
+                    }
+
+                    .box-circle.carousel > ul.carousel-inner > li.item .questionArea {
+                        padding: 15px;
+                        background: linear-gradient(45deg, #c1c1c1, #d6d6d6);
+                        color: #272727;
+                        padding-left: 50px;
+                        text-indent: -40px;
+                        /*background: linear-gradient(45deg, #9C27B0 15%, #E91E63 40%, #FFC107 100%);
+                        color: #fff;*/
+                        border-radius: 15px 15px 0px 0px;
+                        font-size: 25px;
+                    }
+
+        @@media (max-width: 768px) {
+            .box-circle.carousel {
+                margin-top: 0px;
+                padding: 0 0 80px;
+            }
+        }
+
+        .box-circle > span {
+            margin-top: -40px;
+            background-color: transparent;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            /*margin-top: -22px;*/
+        }
+
+        .box-circle > time,
+        .box-circle > h4[id] {
+            position: absolute;
+            z-index: 1;
+            right: 0;
+            top: 0;
+            /*margin: 15px 35px 0px 0px;*/
+            margin: -35px 35px 0px 0px;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: 400;
+            color: #20487b;
+            line-height: 1;
+            vertical-align: 0;
+            display: inline-block;
+        }
+
+        .box-circle > p {
+            display: inline-block
+        }
+
+        .box-circle > span > i {
+            position: absolute;
+            z-index: 1;
+            right: 0;
+            top: 0;
+            cursor: pointer;
+            font-size: 20px;
+            color: #383838;
+            margin: -18px -15px;
+            border: 2px solid;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            line-height: 27px;
+            text-align: center;
+            background-color: white;
+        }
+    </style>
+    <style>
+        body.skin-blue header.main-header > nav.navbar.navbar-static-top {
+            background-color: #e0e0e0;
+        }
+        body.sidebar-mini .main-header > nav.navbar.navbar-static-top a {
+            color: #212121 !important;
+            font-size: 20px;
+            font-weight:600;
+        }
+        body.sidebar-mini .main-header > nav.navbar.navbar-static-top a:hover {
+            cursor: auto;
+            background: transparent;
+        }
+        body.sidebar-mini .main-header > nav.navbar.navbar-static-top > a.counterCarousel {
+            position:absolute;
+            left:calc(50% - 5em);
+            top:0;
+            padding:10px;
+        }
+        .skin-blue header.main-header > a.logo {
+            background-color: #e0e0e0;
+        }
+    header.main-header > a.logo > [class^="logo-"] > img { height: 30px; max-width: 100%; display: inline-block; }
+        header.main-header > a.logo > .logo-lg > img {
+            height: 45px;
+        }
+        .main-footer {
+            color: #c3c3c3;
+        }
+
+            .main-footer a[target] {
+                color: #fff;
+            }
+
+                .main-footer a[target]:hover,
+                .main-footer a[target]:focus,
+                .main-footer a[target]:active {
+                    color: #f5f5f5;
+                }
+
+        .skin-blue .wrapper {
+            background-color: #ffe2d5;
+        }
+
+        .navbar-nav > .user-menu > .dropdown-menu > li.user-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+        }
+
+            .navbar-nav > .user-menu > .dropdown-menu > li.user-header > img.img-circle {
+                max-width: 100%;
+                display: inline-block;
+                height: 50px;
+            }
+
+            .navbar-nav > .user-menu > .dropdown-menu > li.user-header > p {
+                margin-bottom: 0px;
+            }
+
+        .box-circle.carousel > .box-footer {
+            margin-bottom: -60px;
+            background-color: transparent;
+            border: 0;
+        }
+        .box-circle.describe-option {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: start;
+            align-content: flex-start;
+        }
+        .form-group.form-group-lg > .form-control.form-control-lg{
+            width:100%;
+        }
+        .box-circle.carousel > ul.carousel-inner > li.item .questionArea > p{
+            display:inline;
+            margin:0;
+        }
+        @@media(min-width: 768px) {
+            .wrapper > header.main-header {
+                position: fixed;
+                left: 0;
+                right: 0;
+            }
+
+            .sidebar-mini .content-wrapper {
+                margin: 0px !important;
+                height: 100%;
+            }
+
+            .content-wrapper > section.content-header {
+                background: transparent;
+                display: none;
+            }
+
+            .content-wrapper > section.content {
+                height: 100%;
+                padding: 70px 15px 60px;
+            }
+            .box-circle.carousel > ul.carousel-inner > li.item > .box-circle.describe-option > .questionArea {
+                width: 100%;
+                flex: 0 0 100%;
+            }
+            .box-circle.carousel > ul.carousel-inner > li.item > .box-circle.describe-option > ul.list_options {
+                max-width: 75%;
+                flex: 0 0 75%;
+            }
+        .box-circle.carousel > ul.carousel-inner > li.item > .box-circle.describe-option > .form-group.form-group-lg {
+            max-width: 25%;
+            flex: 0 0 25%;
+            margin-top: 20px;
+            padding-right: 15px;
+        }
+            .box-circle.carousel > .box-footer {
+                position: absolute;
+                bottom: 0px;
+                right: 0;
+                left: 0;
+            }
+
+            .box-circle.carousel {
+                padding: 0 0 55px;
+            }
+
+            footer.main-footer {
+                position: absolute;
+                left: 0;
+                right: 0px;
+                bottom: 0;
+            }
+        }
+    </style>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <!-- Site wrapper -->
+    <div class="wrapper">
+
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="https://www.evolutyz.com/" target="_blank" class="logo">
+                @*<span class="logo-mini"><b>Evolutyz</b></span>
+                    <span class="logo-lg"><b>Evolutyz</b>&nbsp;Assessment</span>*@
+                <span class="logo-mini"><img src="~/LoginCssNew/images/evolutyzcorplogo.png" /></span>
+                <span class="logo-lg"><img src="~/LoginCssNew/images/evolutyzcorplogo.png" /></span>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top">
+                <a href="#" class="counterCarousel">
+                    <span id="counterCarousel"></span>
+                </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#" id="demo"></a>
+                        </li>
+                        @*<li class="dropdown user user-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="~/Content/images/user.png" class="user-image" alt="User Image">
+                                    <span class="hidden-xs">@Userdata.Name</span>
+                                </a>
+                                <ul class="dropdown-menu">
+
+                                    <li class="user-header">
+                                        <img src="~/Content/images/user.png" class="img-circle" alt="User Image">
+                                        <p>@TempData["Name"] <small>@Userdata.InterviewForPositionname</small></p>
+                                    </li>
+                                    <li class="user-footer text-right">
+                                        <a href="#" class="btn btn-default btn-flat" id="signout">Sign out</a>
+                                    </li>
+                                </ul>
+                            </li>*@
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-- =============================================== -->
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Assesment
+                    <small>it all starts here</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li class="active">Assesment</li>
+                </ol>
+            </section>
+
+            <!-- Main content -->
+            <section class="content">
+
+                <div id="myCarousel" class="carousel slide box-circle" data-ride="carousel" data-wrap="false" data-interval="false">
+                    @*<span>@TempData["topicname"]<i class="fa fa-remove" onclick="vietopic()"></i></span>
+                        <span id="counterCarousel"></span>
+                        <h4 id="demo"></h4>*@
+                    <ul class="carousel-inner">
+
+
+                        @foreach (var grd in ques)
+                        {
+
+                            <li class="item" value="@grd.index">
+
+                                <div class="box-circle describe-option">
+                                    <textarea class="form-control" id="txtQuestion" name="Question" placeholder="Question" disabled="disabled">@grd.Number. @grd.Question1</textarea>
+                                    @*<label id="questName"></label>*@
+
+                                    <ul class="list_options">
+                                        <li>
+                                            <div class="check_opt">
+
+                                                <input type="radio" name="radiobtn_@grd.QBID" class="selectedAns" id="radioopt_@grd.QBID-1" value="1" />
+
+
+                                                <label for="radioopt_@grd.QBID-1">
+                                                    <textarea class="form-control" id="opt1" name="QuizOpt1" placeholder="Option 1" rows="1">@grd.Option1</textarea>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="check_opt">
+
+                                                <input type="radio" name="radiobtn_@grd.QBID" class="selectedAns" id="radioopt_@grd.QBID-2" value="2" />
+
+
+                                                <label for="radioopt_@grd.QBID-2">
+                                                    <textarea class="form-control" id="opt2" name="QuizOpt2" placeholder="Option 2" rows="1">@grd.Option2</textarea>
+                                                </label>
+
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="check_opt">
+                                                <input type="radio" name="radiobtn_@grd.QBID" class="selectedAns" id="radioopt_@grd.QBID-3" value="3" />
+
+
+                                                <label for="radioopt_@grd.QBID-3">
+                                                    <textarea class="form-control" id="opt3" name="QuizOpt3" placeholder="Option 3" rows="1">@grd.Option3</textarea>
+                                                </label>
+
+                                            </div>
+                                        </li>
+
+
+                                        <li>
+                                            <div class="check_opt">
+
+                                                <input type="radio" name="radiobtn_@grd.QBID" class="selectedAns" id="radioopt_@grd.QBID-4" value="4" />
+
+
+                                                <label for="radioopt_@grd.QBID-4">
+                                                    <textarea class="form-control" id="opt4" name="QuizOpt4" placeholder="Option 4" rows="1">@grd.Option4</textarea>
+                                                </label>
+
+
+                                            </div>
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="form-group form-group-lg">
+                                        <label>Describe why you have choosen this option</label>
+                                        <textarea class="form-control form-control-lg" rows="10" placeholder="Enter Description..."></textarea>
+                                    </div>
+                                </div>
+                            </li>
+
+                        }
+
+                    </ul>
+
+                    <div class="box-footer">
+                        <ul class="pager">
+                            <li class="previous">
+                                <a href="#myCarousel" data-slide="prev"><i class="fa fa-arrow-left"></i>Previous</a>
+
+                            </li>
+                            <li class="next">
+                                <a href="#myCarousel" data-slide="next">Next<i class="fa fa-arrow-right"></i></a>
+                                <button class="btn-outline" id="btnSubmit" type="submit">Submit Assessment</button>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </div>
+                <!-- / mycarousel -->
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+        <footer class="main-footer">
+            <strong>Copyright &copy; 2020 <a href="https://www.evolutyz.com/" target="_blank">Evolutyz Corp</a>.</strong> All rights reserved.
+        </footer>
+
+        <div class="control-sidebar-bg"></div>
+    </div>
+    <!-- ./wrapper -->
+    <div id="alertmodalforexam" class="modal" role="dialog" data-bdcolor="black" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-min">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Welcome to Assessment</h4>
+                </div>
+                <div class="modal-body">
+                    <p><sup style="color:red">*</sup> Assessment has total @Userdata.QuestionCount Questions</p>
+                    <p><sup style="color:red">*</sup> Total Time for the Assessment is @Userdata.Assessment_TimePeriod_in_sec minutes</p>
+                    <p><sup style="color:red">*</sup> No negative marking</p>
+
+
+                    <input type="hidden" id="hdntimeinsec" value="@Userdata.Assessment_TimePeriod_in_sec" />
+                    <input type="hidden" id="hdnactualtimeinsec" value="@Userdata.Actualtimeinsec" />
+
+                    
+                </div>
+                <div class="modal-footer">
+                    <p>Best of Luck for your Assessment </p>
+                    <div class="row">
+                    </div>
+                    <div class="row">
+                    </div>
+                    <button type="button" class="btn btn-outline-grey" id="Yesforexam">Start Assessment</button>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="alertmodalResult" class="modal" role="dialog">
+        <div class="modal-dialog modal-min">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Assessment</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    You have attempted all the questions, Click "yes" to submit and exit the assessment.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-green" id="SaveResult">Yes</button>
+
+                    <button type="button" class="btn btn-outline-red" data-dismiss="modal">No</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="alertmodalResult1" class="modal" role="dialog">
+        <div class="modal-dialog modal-min">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Assessment</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    You have not attempted all the questions, Click "no" to revisit them Or "yes" to submit and exit the assessment.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-green" id="SaveResult1">Yes</button>
+
+                    <button type="button" class="btn btn-outline-red" data-dismiss="modal">No</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    var Countofquestions = 0;
+
+    var id = $("#myCarousel>.carousel-inner>.item:first-child").addClass("active");
+    $("#myCarousel>.questions-list>li[data-slide-to]:first-child").addClass("active");
+    console.log(id.val());
+    $('ul.list_options > li').each(function () {
+        var k = $(this).find('textarea.form-control').val();
+        var html = $.parseHTML(k);
+        $(this).find('textarea.form-control').replaceWith(html);
+    });
+
+
+    var count = 1;
+    var Obj = [];
+    var currentIndex = id;
+
+        $('input[name^="radiobtn_"]').change(function () {
+            
+        currentIndex = $('li.item.active').val();
+        var QuestinNo = currentIndex;
+        Countofquestions = 8;
+        var i = 0;
+        var repArray = @Html.Raw(Json.Encode(ques));
+        if (Obj.length == 0) {
+
+            $.each(repArray, function () {
+                i++;
+                Obj.push({ "QuesNo": (i), "Ans": "", "Actualquesno": this.QBID, "Description" : ""});
+            });
+        }
+        if (QuestinNo == 1) {
+            Obj[0]["Ans"] = $('input[name^=radiobtn_]:checked').val();
+            
+        }
+        else {
+            for (var i = 1; i < Obj.length; i++) {
+                if ((QuestinNo) == Obj[i]["QuesNo"]) {
+                    Obj[i]["Ans"] = $(this).val();
+                    break;
+                }
+            }
+        }
+
+
+      //  $("#myCarousel").carousel("next");
+     });
+
+
+
+    setTimeout(function () {
+        $(document).ready(function () {
+            checkitem();
+               var clickEvent = false;
+        });
+
+
+
+        $('input[type=radio]').change(function () {
+
+        var k = $(this).find('textarea.form-control').val();
+        var html = $.parseHTML(k);
+        $(this).find('textarea.form-control').replaceWith(html);
+
+        });
+
+
+        var totalItems = $('.box-circle.carousel > ul.carousel-inner > li.item').length;
+        var currentIndex = $('.box-circle.carousel > ul.carousel-inner > li.item.active').index() + 1;
+        $('span#counterCarousel').html('' + currentIndex + '/' + totalItems + '');
+
+        $('#myCarousel').on('slid.bs.carousel', function () {
+            
+            checkitem();
+            currentIndex = $('.box-circle.carousel > ul.carousel-inner > li.item.active').index() + 1;
+            $('span#counterCarousel').html('' + currentIndex + '/' + totalItems + '');
+        });
+        $('#myCarousel').on('slide.bs.carousel', function (e) {
+            
+            currentIndex = $('li.item.active').val();
+            var QuestinNo = currentIndex;
+            for (var i = 1; i < Obj.length; i++) {
+                if ((QuestinNo) == Obj[i]["QuesNo"]) {
+                    Obj[i]["Description"] = $('li.item.active > .box-circle.describe-option').find("textarea.form-control.form-control-lg").val();;
+                }
+            }
+        });
+        //$('#myCarousel').on('slid.bs.carousel', checkitem);
+
+        function checkitem() {
+            currentIndex = $('li.item.active').val();
+              var $this = $('#myCarousel');
+            if ($('.carousel-inner > .item:only-child').hasClass('active')) {
+                $this.children(".box-footer").find("li").children("a[data-slide]").hide();
+            }
+            else {
+            if ($('.carousel-inner .item:first').hasClass('active')) {
+                $this.children(".box-footer").find("li.previous").children("a[data-slide]").hide();
+                //$this.children(".box-footer").find("li.next").children("button").hide();
+            } else if ($('.carousel-inner .item:last').hasClass('active')) {
+                $this.children(".box-footer").find("li.next").children("a[data-slide]").hide();
+                //$this.children(".box-footer").find("li.next").children("button").show();
+            } else {
+                $this.children(".box-footer").find("li").children("a[data-slide]").show();
+              //$this.children(".box-footer").find("li.next").children("button").hide();
+            }
+        }
+      }
+    }, 300);
+
+
+    var questionid;
+    function closequestionsstepup() {
+        window.location = document.referrer;
+    }
+    function getstepupquestions(id) {
+
+        $.ajax({
+                 url: "@Url.Action("GetStepupquestions", "Topic")",
+                  type: 'GET',
+                  data: { QuestID: id },
+                  dataType: "json",
+                  success: function (data) {
+                      console.log(data);
+                      var complexitystatus = data.complexityid;
+                      if (complexitystatus == 1) {
+                          $('#btnEasy').parent().addClass('apply');
+                          $('#btnMedium').parent().removeClass('apply');
+                          $('#btnHard').parent().removeClass('apply');
+                      }
+                      if (complexitystatus == 2) {
+                          $('#btnMedium').parent().addClass('apply');
+                          $('#btnEasy').parent().removeClass('apply');
+                          $('#btnHard').parent().removeClass('apply');
+                      }
+                      if (complexitystatus == 3) {
+                          $('#btnHard').parent().addClass('apply');
+                          $('#btnEasy').parent().removeClass('apply');
+                          $('#btnMedium').parent().removeClass('apply');
+                      }
+                  },
+                  error: function (xhr, textStatus, errorThrown) {
+                           console.log('Error');
+                  }
+        })
+        }
+        $('#signout').click(function () {
+            
+            window.location.href = "/Interviewassessment/Index";
+        });
+
+
+    $('#btnSubmit').click(function () {
+        var check = true;
+        $("ul.list_options > li > .check_opt > input[name^='radiobtn_']").each(function () {
+            var name = $(this).attr("name");
+            if ($("input:radio[name=" + name + "]:checked").length == 0) {
+                check = false;
+            }
+        });
+
+        if (check) {
+            $("#alertmodalResult").modal('show');
+        } else {
+            $("#alertmodalResult1").modal('show');
+        }
+    });
+        var EXPIRED2 = 0;
+
+        $("#SaveResult").click(function () {
+            
+            EXPIRED2 = 2;
+
+            if (Obj.length == 0) {
+                var repArray = @Html.Raw(Json.Encode(ques));
+
+                $.each(repArray, function (i,v) {
+                    Obj.push({ "QuesNo": (i), "Ans": "", "Actualquesno": this.QBID, "Description":""  });
+                 });
+              }
+            var values = Obj;
+            values = JSON.stringify({ 'values': values });
+            $.ajax({
+                type: 'Post',
+                url: '/Interviewassessment/SaveResult',
+                dataType: 'json',
+                data: values,
+                contentType: 'application/json; charset=utf-8',
+                async: false,
+                success: function (data) {
+                    
+                    console.log(data);
+                    window.location.replace("/Interviewassessment/ThankYou");
+                },
+                error: function (err) { alert(err.responseText); }
+            });
+        });
+
+           $("#SaveResult1").click(function () {
+            
+               EXPIRED2 = 2;
+            if (Obj.length == 0) {
+                var repArray = @Html.Raw(Json.Encode(ques));
+
+                $.each(repArray, function (i,v) {
+                    Obj.push({ "QuesNo": (i), "Ans": "", "Actualquesno": this.QBID, "Description": ""});
+                 });
+              }
+            var values = Obj;
+            values = JSON.stringify({ 'values': values });
+            $.ajax({
+                type: 'Post',
+                url: '/Interviewassessment/SaveResult',
+                dataType: 'json',
+                data: values,
+                contentType: 'application/json; charset=utf-8',
+                async: false,
+                success: function (data) {
+                    
+                    console.log(data);
+                    window.location.replace("/Interviewassessment/ThankYou");
+                },
+                error: function (err) { alert(err.responseText); }
+            });
+        });
+
+        
+
+    </script>
+
+    <script>
+        var script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+        document.head.appendChild(script);
+        $('.box-circle > textarea.form-control[disabled]').each(function () {
+            var k = $(this).val();
+            var html = $.parseHTML("<div class='questionArea'>" + k + "</div>");
+            $(this).replaceWith(html);
+        });
+    </script>
+    <script type="text/javascript">
+        var EXPIRED1 = 0;
+        $(document).ready(function () {
+            $("#alertmodalforexam.modal").on("show.bs.modal", function () {
+                $('body').addClass('modal-color-' + $(this).data('bdcolor'));
+            }).modal("show");
+            $("#alertmodalforexam.modal").on("hide.bs.modal", function () {
+                $('body').removeClass('modal-color-' + $(this).data('bdcolor'));
+            });
+
+            $("#Yesforexam").click(function () {
+                
+                $("#alertmodalforexam.modal").modal("hide");
+                var sec = $("#hdnactualtimeinsec").val();
+                var countDownDate = new Date();
+                console.log(countDownDate.setSeconds(countDownDate.getSeconds() + parseInt(sec)));
+                // var countDownDate = new Date("Aug 8, 2020 17:37:25").getTime();
+                //var countDownDate = new Date(nowCount).getTime();
+                var x = setInterval(function () {
+                    var now = new Date().getTime();
+
+                    var distance = countDownDate - now;
+
+                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                    document.getElementById("demo").innerHTML = hours + "h "
+                        + minutes + "m " + seconds + "s ";
+
+                    if (distance < 0) {
+                        EXPIRED1 = 2;
+                        clearInterval(x);
+                        document.getElementById("demo").innerHTML = "EXPIRED";
+                        $("#SaveResult").trigger("click");
+                    }
+                }, 10);
+
+            });
+        });
+
+        window.onbeforeunload = function () {
+            if (EXPIRED1 != 2 && EXPIRED2 != 2 && EXPIRED2 != 2) {
+                return 'You have unsaved changes!';
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>
+
+

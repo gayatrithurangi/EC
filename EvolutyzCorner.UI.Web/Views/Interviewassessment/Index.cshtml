@@ -1,0 +1,124 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=11,Chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Exam - Evolutyz Corner</title>
+    <link rel='shortcut icon' href='~/Content/Images/favicon.png' type='image/png' />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <!-- Fonticons -->
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="~/Content/css/ionicons.min.css">
+    <!-- LayoutCSS -->
+    <link rel="stylesheet" href="~/Content/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="~/Content/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <style>
+        body.login-page {
+            /*background: linear-gradient(45deg, #ffdead, #ffb446);*/
+            background: linear-gradient(45deg, #ffdead, #e2e2e2);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+            body.login-page > .login-box {
+                margin: 10% auto;
+            }
+                /*body.login-page > .login-box > .login-logo {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                }*/
+                body.login-page > .login-box > .login-logo > img {
+                    height: 50px;
+                    margin: auto;
+                    display: block;
+                    max-width: 100%;
+                }
+
+                body.login-page > .login-box .form-group.has-feedback > .form-control {
+                    width: 100%;
+                }
+    </style>
+</head>
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <div class="login-logo">
+            <img src="~/LoginCssNew/images/evolutyzcorplogo.png" />
+            @*<div><b>Exam</b>Board</div>*@
+            <div class="text-center">Assessment</div>
+        </div>
+        <!-- /.login-logo -->
+        <div class="login-box-body">
+            <p class="login-box-msg">Sign in to start your exam</p>
+
+            <form role="form">
+                <div class="form-group has-feedback">
+                    <input type="text" id="txtuserName" required class="form-control" placeholder="Enter UserId">
+                    <span class="fa fa-user-circle form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="password" id="txtUserPassword" required class="form-control" placeholder="Enter Password">
+                    <span class="fa fa-lock form-control-feedback"></span>
+                </div>
+                <div class="row">
+                    <!-- /.col -->
+                    <div class="col-md-offset-8 col-md-4 col-xs-offset-4 col-xs-8">
+                        <button type="button" id="btnSignin" class="btn btn-primary btn-block btn-flat" onclick="">Sign In</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </form>
+            <div class="social-auth-links text-center">
+                <p style="color:red;font-size:10px;"></p>
+            </div>
+        </div>
+        <!-- /.login-box-body -->
+    </div>
+    <!-- /.login-box -->
+    <script type="text/javascript" src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
+
+<script type="text/javascript">
+    $("#btnSignin").click(function () {
+        
+
+            var Username = $("#txtuserName").val();
+            var Password = $("#txtUserPassword").val();
+
+            $.ajax({
+                url: "/Interviewassessment/Login?Username=" + Username + "&Password=" + Password,
+                data: "GET",
+                dataType: "JSON",
+                success: function (data) {
+                    
+                    $(".social-auth-links.text-center > p").empty();
+                    if (data == "1") {
+                        window.location.href = "/Interviewassessment/Assessment";
+                    }
+                    else if (data == "2") {
+
+                        $(".social-auth-links.text-center > p").html("Incorrect Userid Or Password");
+
+                    }
+                    else if (data == "3") {
+                        $(".social-auth-links.text-center > p").html("Assessment already completed");
+                    }
+                    else {
+                        window.location.href = "/Interviewassessment/Index";
+                    }
+                   
+                }
+
+            })
+        
+    })
+</script>

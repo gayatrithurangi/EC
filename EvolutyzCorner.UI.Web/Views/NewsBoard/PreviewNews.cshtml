@@ -1,0 +1,186 @@
+﻿
+@{
+    ViewBag.Title = "PreviewNews";
+}
+<style type="text/css">
+    .product-list-in-box.products-list > .item {
+        display: table;
+        width: 100%;
+    }
+        .products-list .product-description {
+        color: #999;
+        white-space: normal;
+        text-overflow: ellipsis;
+        word-break: break-all;
+        overflow: hidden;
+        margin-top: 1em;
+        display: -webkit-box;
+        height: 165px;
+        -webkit-line-clamp: 8;
+        -webkit-box-orient: vertical;
+    }
+            .products-list .product-description::first-letter {
+                font-size: 200%;
+                color: #8A2BE2;
+            }
+    .products-list .product-img {
+        float: none;
+        display: table-cell;
+        height: 200px;
+        width: 200px;
+        vertical-align: middle;
+    }
+        .products-list .product-img img {
+            max-width: 100%;
+            width:auto;
+            height: 200px;
+        }
+    .products-list .product-info {
+        margin-left: 0px;
+        padding-left:10px;
+        display: table-cell;
+    }
+    .main-overview button.close, .main-overview button.close:hover, .main-overview button.close:focus {
+        right: -15px;
+        top: -10px;
+    }
+
+    .modal-dialog.main-overview .modal-header {
+        overflow: initial;
+    }
+
+    .main-overview button.close > img {
+        background-color: #000;
+        border-radius: 50%;
+    }
+    @@media (min-width:992px) {
+        /*.content-wrapper, .right-side {
+            min-height: 100% !important;
+        }
+
+        html, body {
+            height: 100% !important;
+            min-height: inherit !important;
+        }*/
+
+        .block-content > .box-body {
+            padding: 0 0 4em;
+        }
+
+            .block-content > .box-body > ul.products-list.product-list-in-box {
+                max-height: 30em;
+                overflow: auto;
+            }
+
+        .content-wrapper + footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+</style>
+<div class="block-content">
+    <div class="">
+        <h4 class="heading-fancy"> News Board </h4>
+    </div>
+    <div class="box-body">
+        <ul class="products-list product-list-in-box">
+            @foreach (var types in ViewBag.news)
+            {
+                <li class="item" data-toggle="modal" data-target="#overview-article" id="@types.NewsBoardId">
+                    <div class="product-img">
+                        <img src="/uploadimages/Images/@types.Image" alt="Article-1">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-title">
+                            @types.Title, Published  By  @types.Name
+                            <span class="article-date">  @types.CreatedDate</span>
+                        </span>
+                        <span class="product-description">
+                            @types.Description
+                        </span>
+                    </div>
+                </li>
+            }
+
+        </ul>
+    </div>
+</div>
+
+
+
+<div id="overview-article" class="modal fade">
+    <div class="modal-dialog main-overview">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="img-div" id="newsimage">
+                    @*<img src="https://image.freepik.com/free-vector/facebook-background-with-likes-and-hearts_23-2147855033.jpg" class="img-responsive" alt="Mr M V Gowtama" />*@
+                </div>
+                <div class="article-title">
+                    <h4 class="modal-title" id="Name">Published By &nbsp; </h4>
+                    <h3 id="date"></h3>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    <img src="~/Content/images/modal-close-icon.png" />
+                </button>
+                <div class="modal-btn-print">
+                    <a href="javascript:void(0);" onclick="printWithCss()">
+                        <i class="fa fa-print"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="article-widget" id="newsdata">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var date;
+    function dateConversion(value) {
+        if (value === null) return "";
+        var pattern = /Date\(([^)]+)\)/;
+        var results = pattern.exec(value);
+        var dt = new Date(parseFloat(results[1]));
+
+        date = (dt.getMonth() + 1) + "/" + dt.getDate() + "/" + dt.getFullYear();
+
+    }
+    $(document).ready(function () {
+        $(".item").click(function () {
+
+            var id = $(this).attr("id");
+            console.log(id);
+            $.ajax({
+                url: "/NewsBoard/GetNewsById?id=" + id,
+                type: "POST",
+                success: function (res) {
+
+                    $("#newsimage").empty();
+                    $("#newsimage").append("<img src='" + "/uploadimages/Images/" + res.Image + "' alt='No Image Uploaded'  width='150' height='55' id='ImageName'   />");
+                    $("#Name").text("Published By " + res.Name);
+                    dateConversion(res.CreatedDate);
+                    $("#date").text(date);
+                    $("#newsdata").text(res.Description);
+
+
+                },
+                complete: function () {
+                    $('#loading-image').attr("style", "display: none;");
+                },
+
+                error: function (Result) {
+
+
+
+                }
+
+            });
+        });
+    });
+  
+</script>

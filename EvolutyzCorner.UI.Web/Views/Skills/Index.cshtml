@@ -1,0 +1,594 @@
+﻿
+@{@model Evolutyz.Entities.SkillEntity
+
+
+ViewBag.Title = "Index";
+Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+@*<script src="~/Scripts/bootstrap.min.js"></script>*@
+@*<script src="~/Scripts/jquery.validate.js"></script>*@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.10.0/jquery.validate.min.js"></script>
+<link href="~/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" />
+<script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="~/plugins/datatables/dataTables.bootstrap.min.js"></script>
+
+<style>
+    @@media(min-width: 768px) {
+        .modal-dialog.modal-xs {
+            width: 400px;
+            margin: 80px auto;
+        }
+    }
+
+    .form-control.validate_msg ~ span.field-validation-valid:before {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 15px;
+        font-size: 10px;
+        color: red;
+    }
+
+    #table.actions > thead > tr > th:last-child,
+    #table.actions > tbody > tr > td:last-child {
+        display: none
+    }
+
+    #SkillTitle.validate_msg ~ span:before {
+        content: "Skill Already Exists";
+    }
+
+    .register {
+        /*background: -webkit-linear-gradient(left, #797980, #00c6ff);*/
+        background: -webkit-linear-gradient(left, #9c8c84, #f5aa88);
+        margin-top: 3%;
+        padding: 0 3% 3%;
+    }
+
+    label.error {
+        position: absolute;
+        bottom: -20px;
+        left: 15px;
+        font-size: 10px;
+        color: red;
+    }
+
+
+    .register-left {
+        text-align: center;
+        color: #fff;
+        margin-top: 4%;
+    }
+
+        .register-left input {
+            border: none;
+            border-radius: 1.5rem;
+            padding: 2%;
+            width: 60%;
+            background: #f8f9fa;
+            font-weight: bold;
+            color: #383d41;
+            margin-top: 30%;
+            margin-bottom: 3%;
+            cursor: pointer;
+        }
+
+    .register-right {
+        background: #f8f9fa;
+        border-top-left-radius: 10% 50%;
+        border-bottom-left-radius: 10% 50%;
+    }
+
+    .register-left img {
+        margin-top: 15%;
+        margin-bottom: 5%;
+        width: 25%;
+        -webkit-animation: mover 2s infinite alternate;
+        animation: mover 1s infinite alternate;
+    }
+
+    .register-left p {
+        font-weight: lighter;
+        padding: 12%;
+        margin-top: -9%;
+    }
+
+    .register .register-form {
+        padding: 10%;
+        margin-top: 0;
+    }
+
+    .btnRegister {
+        float: right;
+        margin-top: 10%;
+        border: none;
+        border-radius: 1.5rem;
+        padding: 2%;
+        /*background: #0062cc;*/
+        background: -webkit-linear-gradient(135deg, rgb(243, 122, 65), rgb(248, 194, 108));
+        border-color: rgb(253, 174, 129);
+        color: #fff;
+        font-weight: 600;
+        width: 50%;
+        cursor: pointer;
+    }
+
+    .register .nav-tabs {
+        margin-top: 3%;
+        border: none;
+        background: #0062cc;
+        border-radius: 1.5rem;
+        width: 28%;
+        float: right;
+    }
+
+        .register .nav-tabs .nav-link {
+            padding: 2%;
+            height: 34px;
+            display: inline-block;
+            font-weight: 600;
+            width: 100px;
+            color: #0062cc;
+            border: 2px solid #0062cc !important;
+            border-radius: 1.5rem;
+        }
+
+            .register .nav-tabs .nav-link:hover {
+                border: none;
+            }
+
+    .register-heading {
+        margin-top: 2%;
+        margin-bottom: 1%;
+        color: #fbfbfb;
+    }
+</style>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="modal fade-in" id="ContainerGridDetail" role="dialog">
+
+    <div class="modal-dialog modal-custom">
+        @*<label id="succ"></label>*@
+        <div class="modal-content">
+            <form id="myform">
+                <div class="modal-header">
+                    @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
+                    <h4 class="modal-title" id="headtitle">Add Skills</h4>
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="row">
+                        <div class="form-group col-md-4" style="display:none;">
+                            <label for="SkillId">SkillId</label>
+                            @Html.TextBoxFor(m => m.SkillId, new { @class = "form-control" })
+
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="SkillTitle">Skill Title<font style="color:red;">*</font></label>
+                            @Html.TextBoxFor(m => m.SkillTitle, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.SkillTitle)
+
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="ShortDescription">Short Description<font style="color:red;">*</font></label>
+                            @Html.TextBoxFor(m => m.ShortDescription, new { @type = "text", @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.ShortDescription)
+
+                        </div>
+
+                    </div>
+                    <div class="row">
+
+                        <div class="form-group col-md-6">
+                            <label for="Sk_isDeleted">Status<font style="color:red;">*</font></label>
+
+                            @Html.DropDownListFor(m => m.Sk_isDeleted, new SelectList(new List<Object>{
+
+                         new { value = false, text = "Active"},
+                         new { value = true, text = "InActive"}  }, "value", "text", 2), "Select Status", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Sk_isDeleted)
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" id="btnUpdate" class="btn btn-clr" style="display:none">Update</button>
+                    <button type="submit" id="btnAdd" class="btn btn-clr" style="display:none">Add</button>
+                    <button type="button" class="btn btn-clr1" data-dismiss="modal" id="btnclose">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="block-content">
+    <div class="">
+        <h4 class="heading-fancy">Skills </h4>
+        <input type="button" id="btnAddModel" value="+" data-toggle="modal" data-target="#ContainerGridDetail" class="btn" />
+    </div>
+    <div class="table-responsive">
+        <div class="clearfix table-block">
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th>SkillId</th>
+                        <th>Skill Title</th>
+                        <th>Short Description</th>
+                        <th>Status</th>
+                        <th id="actions">Actions</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+<div id="containerDelete" class="modal" role="dialog">
+    <div class="modal-dialog">
+        <div id="divAdv" class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+
+                <h4 class="modal-title">Delete Skill</h4>
+            </div>
+            <div class="modal-body">
+                <h3>Do you really want to Delete the skill</h3>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-clr" value="1" id="btnYes" onclick="DeleteSkill(delid)">Yes</button>
+                <button type="button" class="btn btn-clr1" value="2" data-dismiss="modal" id="cancel">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    loaddata();
+    function loaddata() {
+        $('#loading-image').attr("style", "display: block;");
+
+        $.ajax({
+            url: "/Skills/GetAccountSkills",
+            type: "Get",
+            dataType: "json",
+            success: function (res) {
+
+                $('#table').DataTable({
+                    'data': res,
+                    'paginate': true,
+                    'sort': true,
+                    'Processing': true,
+                    'columns': [
+
+
+                        { 'data': 'SkillId', visible: false },
+
+
+                        { 'data': 'SkillTitle' },
+                        { 'data': 'ShortDescription' },
+
+
+                        {
+                            'data': 'Sk_isDeleted',
+                            "render": function (Sk_isDeleted, type, full, meta) {
+                                 var permissions = '@ViewBag.a';
+                                if (permissions === "Read/Write") {
+                                    if (Sk_isDeleted === true) {
+                                        return '<div class="statuscheck"> <input type="checkbox" id="check_02" onclick="CheckStatus(' + full.SkillId + ')"> <label for="check_02"></label> </div>';
+ }
+                                    else {
+                                        return '<div class="statuscheck"> <input type="checkbox" id="check_01" checked onclick="UnCheckStatus(' + full.SkillId + ')"> <label for="check_01"></label> </div>';
+                                   }
+                                } else {
+                                    if (Sk_isDeleted === true) {
+                                        return '<div class="statuscheck"> <input type="checkbox" id="check_02" onclick="CheckStatus(' + full.SkillId + ')" disabled> <label for="check_02"></label> </div>';
+  }
+                                    else {
+                                        return '<div class="statuscheck"> <input type="checkbox" id="check_01" checked onclick="UnCheckStatus(' + full.SkillId + ')" disabled> <label for="check_01"></label> </div>';
+                                   }
+                                }
+                            }
+                        },
+                        {
+                            "render": function (SkillId, type, full, meta) {
+                                 var permissions = '@ViewBag.a';
+                                if (permissions === "Read/Write") {
+                                    return '<a class="btn btn-icn" data-toggle="modal"  data-target="#ContainerGridDetail" onclick="edit(' + full.SkillId + ')" ><i class="fa fa-edit" id="editbtn" aria-hidden="true"></i></a><a class="btn btn-icn" data-target="#containerDelete" data-toggle="modal" style="display:none"  id="deletebtn" onclick="Deletehc(' + full.SkillId + ')" ><i class="fa fa-trash" aria-hidden="true"></i></a>';
+
+                                }
+                                else{
+                                    return '<a class="btn btn-icn" data-toggle="modal" style="display:none"  data-target="#ContainerGridDetail"   onclick="edit(' + full.HolidayCalendarID + ')" ><i class="fa fa-edit" id="editbtn" aria-hidden="true"></i></a><a class="btn btn-icn" id="deletebtn" style="display:none" onclick=" Deletehc(' + full.HolidayCalendarID + ')" ><i class="fa fa-trash" aria-hidden="true"></i></a>';
+
+
+                                }
+
+                            }
+
+                        }
+
+
+
+                    ]
+                });
+            },
+            complete: function () {
+                $('#loading-image').attr("style", "display: none;");
+            },
+            error: function (msg) {
+
+            }
+        });
+    }
+
+    function edit(skillid) {
+        $("#btnAdd").hide();
+        $("#btnUpdate").show();
+        $("#headtitle").text("Edit Skill");
+        $('#loading-image').attr("style", "display: block;");
+
+        $.ajax({
+            url: "/Skills/Getskillbyid?id=" + skillid,
+            type: "POST",
+
+            dataType: "json",
+            success: function (data) {
+
+                $("#SkillId").val(data.SkillId);
+                $("#SkillTitle").val(data.SkillTitle);
+                $("#ShortDescription").val(data.ShortDescription);
+
+
+
+                var status = data.Sk_isDeleted;
+
+                if (status === 1) {
+                    $("#Sk_isDeleted").val("True");
+                } else {
+                    $("#Sk_isDeleted").val("False");
+                }
+
+
+
+
+            },
+            complete: function () {
+                $('#loading-image').attr("style", "display: none;");
+            }
+
+        });
+    }
+    var delid;
+    function Deletehc(skillId) {
+        delid = skillId;
+
+    }
+    function DeleteSkill(delid) {
+        //
+        $.ajax({
+
+            type: "POST",
+            url: '/User/DeleteSkill?skillid=' + delid,
+            dataType: "json",
+            //   cache: false,
+            complete: function (res) {
+            //    function hh() {
+            //    var prom = ezBSAlert({
+
+            //            messageText: "Record Deleted",
+            //            alertType: "danger"
+            //        }).done(function (e) {
+            //            $("body").append('<div>Callback from alert</div>');
+            //        });
+            //}
+            //    setTimeout(hh, 15);
+                alert("Skill Deleted");
+                //loaddata();
+                window.location.href = "/Skills/Index";
+
+            },
+
+            error: function (Result) {
+
+                //alert("Error");
+
+            }
+
+        })
+
+    }
+
+    $(document).ready(function () {
+        $("#Sk_isDeleted").val("False");
+        $("#btnAddModel").click(function () {
+            $("#btnAdd").show();
+            $("#btnUpdate").hide();
+            $("#headtitle").text("Add Skills");
+        });
+        $("#btnclose").click(function () {
+            window.location.reload();
+        });
+
+        $("#btnAdd").on("click", function () {
+            $('#myform').validate({
+                rules: {
+                    SkillTitle: {
+                        required: true,
+
+                    },
+                    ShortDescription: {
+                        required: true,
+                        //  regx: /^[a-zA-Z]*$/
+                    },
+                    Sk_isDeleted: {
+                        required: true,
+                        // regx: /^[a-zA-Z]*$/
+                    }
+                },
+                submitHandler: function (form) {
+                    var skillTitle = $("#SkillTitle").val();
+                    var Description = $("#ShortDescription").val();
+                    var status = $("#Sk_isDeleted").val();
+                    $.ajax({
+                        type: "POST",
+                        url: "/Skills/AddSkills",
+                        data: {
+                            skillTitle: skillTitle,
+                            Description: Description,
+                            status: status
+
+                        },
+                        cache: false,
+                        success: function (data) {
+                            //
+                            // $("#resultarea").text(data);
+                            if (data === "Skill Already Exists") {
+                                $("#SkillTitle").addClass("validate_msg");
+                            } else {
+                                $("#SkillTitle").removeClass("validate_msg");
+
+                                function explode() {
+                                    alert(data);
+                                }
+                                setTimeout(explode, 15);
+
+                                window.location.reload();
+                            }
+
+
+                        }
+                    });
+
+                }
+            });
+
+
+        });
+
+        $("#btnUpdate").click(function () {
+            $('#myform').validate({
+                rules: {
+                    SkillTitle: {
+                        required: true,
+
+                    },
+                    ShortDescription: {
+                        required: true,
+                        //  regx: /^[a-zA-Z]*$/
+                    },
+                    Sk_isDeleted: {
+                        required: true,
+                        // regx: /^[a-zA-Z]*$/
+                    },
+
+
+
+
+                },
+                submitHandler: function (form) {
+                    var skillid = $("#SkillId").val();
+                    var skillTitle = $("#SkillTitle").val();
+                    var Description = $("#ShortDescription").val();
+                    var status = $("#Sk_isDeleted").val();
+
+
+                    $.ajax({
+                        type: "POST",
+                        url: "/Skills/UpdateSkills?id=" + skillid,
+                        data: {
+                            skillTitle: skillTitle,
+                            Description: Description,
+                            status: status
+
+                        },
+                        cache: false,
+                        success: function (data) {
+                            if (data === "Skill Already Exists") {
+                                $("#SkillTitle").addClass("validate_msg");
+                            } else {
+                                $("#SkillTitle").removeClass("validate_msg");
+                                function explode() {
+                                    alert(data);
+                                }
+                                setTimeout(explode, 15);
+
+                                window.location.reload();
+                            }
+
+                        }
+                    });
+                }
+            });
+        });
+
+    });
+
+</script>
+
+<script type="text/javascript">
+    function UnCheckStatus(id) {
+        $.ajax({
+            url: "/User/SkillChangeStatus",
+            type: "POST",
+            data: {
+                'id': id,
+                'status': true
+            },
+
+            //dataType: "json",
+            success: function (data) {
+
+                alert(data);
+                window.location.reload();
+            },
+            complete: function () {
+                $('#loading-image').attr("style", "display: none;");
+            },
+        });
+    }
+    function CheckStatus(id) {
+        $.ajax({
+            url: "/User/SkillChangeStatus",
+            type: "POST",
+            data: {
+                'id': id,
+                'status': false
+            },
+
+            //dataType: "json",
+            success: function (data) {
+
+                alert(data);
+                window.location.reload();
+            },
+            complete: function () {
+                $('#loading-image').attr("style", "display: none;");
+            },
+        });
+    }
+    $(document).ready(function () {
+        $("#skills").addClass("active");
+        $("#skills").siblings().removeClass("active");
+
+         var permissions = '@ViewBag.a';
+
+        if (permissions === "Read/Write")
+        {
+            $("#btnAddModel").show();
+            $("#table").removeClass("actions");
+
+        }
+        else
+        {
+            $("#btnAddModel").hide();
+            $("#table").addClass("actions");
+         }
+    });
+</script>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="417e07fb578e4f0fb2387b5c0b5c5945" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Acc_Spec_OptionalHolidays" Width="1.5" PointX="2.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Account" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AccountClient" Width="1.5" PointX="4.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AccountDepartment" Width="1.5" PointX="9.75" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AccountSocialMediaProfile" Width="1.5" PointX="11.75" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AccountSpecificTask" Width="1.5" PointX="0.75" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AspNetRole" Width="1.5" PointX="17.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AspNetUserClaim" Width="1.5" PointX="22.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AspNetUserLogin" Width="1.5" PointX="17.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AspNetUser" Width="1.5" PointX="20" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Assessment_For_Position" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AttachmentsinTimesheet" Width="1.5" PointX="13" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CandidateInterviewResult" Width="1.5" PointX="17.25" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ClientProject" Width="1.5" PointX="20" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ClientProjectsTask" Width="1.5" PointX="19.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ClientsBusiness" Width="1.5" PointX="11.75" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.comment" Width="1.5" PointX="19.75" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ComponentType" Width="1.5" PointX="19.75" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ContentType" Width="1.5" PointX="13.75" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Country" Width="1.5" PointX="15.75" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Department" Width="1.5" PointX="5.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Device" Width="1.5" PointX="0.75" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.DocumentType" Width="1.5" PointX="21.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.EmployeeBankDetail" Width="1.5" PointX="21.75" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.EmployeeSalaryComponent" Width="1.5" PointX="17.75" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.EmployeeSalarySlip" Width="1.5" PointX="21.75" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.EmployeeSalaryStructure" Width="1.5" PointX="19.75" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.EmployeeSalaryStructureDetail" Width="1.5" PointX="21.75" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ErrorLog" Width="1.5" PointX="22.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.FinancialYear" Width="1.5" PointX="5.75" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.GenericRole" Width="1.5" PointX="7.75" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.GenericTask" Width="1.5" PointX="9.75" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.HireType" Width="1.5" PointX="22.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.History_Account" Width="1.5" PointX="23.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.History_LeaveComments" Width="1.5" PointX="23.75" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.History_LeaveScheme" Width="1.5" PointX="23.75" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.History_LeaveType" Width="1.5" PointX="24.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.History_Projects" Width="1.5" PointX="24.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.History_Role" Width="1.5" PointX="11.75" PointY="26.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.History_UserProjects" Width="1.5" PointX="13.75" PointY="26.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.History_Users" Width="1.5" PointX="25.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.History_UserType" Width="1.5" PointX="25.75" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.History_WFHComments" Width="1.5" PointX="25.75" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.HolidayCalendar" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Interview_Position_TechnologyStack" Width="1.5" PointX="15" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.InterviewCandidate" Width="1.5" PointX="15" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Issuetype" Width="1.5" PointX="8" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.LeaveScheme" Width="1.5" PointX="21.75" PointY="27.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.LeaveStatu" Width="1.5" PointX="23.75" PointY="27.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.LeaveType" Width="1.5" PointX="25.75" PointY="27.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Master_Module" Width="1.5" PointX="26.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Master_Sub_Module" Width="1.5" PointX="26.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Master_TimesheetMode" Width="1.5" PointX="5.75" PointY="28.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MobileNotificationTemplate" Width="1.5" PointX="7.75" PointY="28.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ModuleAccessType" Width="1.5" PointX="15.75" PointY="28.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.NewsBoard" Width="1.5" PointX="17.75" PointY="28.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PayMode" Width="1.5" PointX="27.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Phase" Width="1.5" PointX="27.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Policy" Width="1.5" PointX="27.75" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Project_workstatus" Width="1.5" PointX="27.75" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ProjectPhas" Width="1.5" PointX="27.75" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Project" Width="1.5" PointX="17.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ProjectSpecificTask" Width="1.5" PointX="28.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.QuestionBank" Width="1.5" PointX="15" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RoleModule" Width="1.5" PointX="0.75" PointY="30.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Role" Width="1.5" PointX="3" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SalarySlipDetail" Width="1.5" PointX="2.75" PointY="30.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Skill" Width="1.5" PointX="28.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SocialMedia" Width="1.5" PointX="27.75" PointY="30.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.State" Width="1.5" PointX="4.75" PointY="31.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SubPolicy" Width="1.5" PointX="29.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SubPolicyDocument" Width="1.5" PointX="9.75" PointY="31.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TaskDetail" Width="1.5" PointX="11.75" PointY="31.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TechnologyStack" Width="1.5" PointX="12.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TicketImage" Width="1.5" PointX="10.25" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TicketPriority" Width="1.5" PointX="29.75" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Ticket" Width="1.5" PointX="8" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TicketsAuthority" Width="1.5" PointX="8" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TIMESHEET" Width="1.5" PointX="10.75" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Timesheet_Comments" Width="1.5" PointX="29.75" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.UserDevicesToken" Width="1.5" PointX="29.75" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.UserGender" Width="1.5" PointX="23.75" PointY="31.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.UserLeaf" Width="1.5" PointX="29.75" PointY="28.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.UserLeaveTypeConsumed" Width="1.5" PointX="30.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.UserProjectEngagement" Width="1.5" PointX="30.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.UserProject" Width="1.5" PointX="6.75" PointY="32.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.User" Width="1.5" PointX="5.25" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.UserSalaryCalculation" Width="1.5" PointX="13.75" PointY="32.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.UsersForProject" Width="1.5" PointX="15.75" PointY="32.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.UserSkill" Width="1.5" PointX="17.75" PointY="32.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.UserSocialMediaProfile" Width="1.5" PointX="31.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.UsersProfile" Width="1.5" PointX="7.5" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.UserTitle" Width="1.5" PointX="31.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.UserType" Width="1.5" PointX="3" PointY="25.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.UserworkfromHome" Width="1.5" PointX="31.75" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.USSalaryComponent" Width="1.5" PointX="31.75" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.VisaType" Width="1.5" PointX="19.75" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RequestMessage" Width="1.5" PointX="31.75" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.database_firewall_rules" Width="1.5" PointX="31.75" PointY="27.125" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK__HolidayCa__Accou__7D439ABD" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Account_Acc_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Roles_AccountID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Users_AccountID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_UserType_AccountID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Interview__Asses__43ABF605" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Interview__Asses__45943E77" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Attachmen__TimeS__3CFEF876" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Attachmen__TimeS__3DF31CAF" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Candidate__Candi__3EE740E8" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ClientProjects_Projects" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Issuetype__Depar__468862B0" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Tickets__Departm__4B4D17CD" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__TicketsAu__Depar__4C413C06" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__HolidayCa__Creat__7E37BEF6" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__HolidayCa__Modif__7F2BE32F" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Interview__Techn__44A01A3E" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__QuestionB__Techn__477C86E9" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Roles_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__TicketIma__Ticke__4A58F394" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Users_UserTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_UsersProfile_Master_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

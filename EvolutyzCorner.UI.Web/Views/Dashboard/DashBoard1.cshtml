@@ -1,0 +1,1248 @@
+﻿@model  Evolutyz.Entities.DashboardMails
+
+@{
+    ViewBag.Title = "DashBoard features";
+
+
+}
+
+
+<style type="text/css">
+
+    .main-overview button.close, .main-overview button.close:hover, .main-overview button.close:focus {
+        right: -15px;
+        top: -10px;
+    }
+
+    .modal-dialog.main-overview .modal-header {
+        overflow: initial;
+    }
+
+    .main-overview button.close > img {
+        background-color: #000;
+        border-radius: 50%;
+    }
+
+    .dataTables_filter {
+        display: none;
+    }
+
+    .dataTables_info {
+        display: none;
+    }
+
+    #UserGridPanel[style="display: none;"] + .col-md-6 {
+        width: 100%;
+    }
+
+    #UserGridData td > span.badge.badge-radius[id="Saved Timesheet"],
+    #ManagerGridData td > span.badge.badge-radius[id="Saved Timesheet"] {
+        background-color: yellow;
+    }
+
+    #UserGridData td > span.badge.badge-radius[id="Waiting for Approval at Both Managers"],
+    #ManagerGridData td > span.badge.badge-radius[id="Waiting for Approval at Both Managers"] {
+        background-color: deepskyblue;
+    }
+
+    #UserGridData td > span.badge.badge-radius[id="Waiting for Approval at Level_1 Manager"],
+    #ManagerGridData td > span.badge.badge-radius[id="Waiting for Approval at Level_1 Manager"] {
+        background-color: deepskyblue;
+    }
+
+    #UserGridData td > span.badge.badge-radius[id="Waiting for Approval at Level_2 Manager"],
+    #ManagerGridData td > span.badge.badge-radius[id="Waiting for Approval at Level_2 Manager"] {
+        background-color: deepskyblue;
+    }
+
+    #UserGridData td > span.badge.badge-radius[id="Waiting for Approval"],
+    #ManagerGridData td > span.badge.badge-radius[id="Waiting for Approval"] {
+        background-color: deepskyblue;
+    }
+
+    #UserGridData td > span.badge.badge-radius[id="Waiting for Approval at Both Managers"],
+    #ManagerGridData td > span.badge.badge-radius[id="Waiting for Approval at Both Managers"] {
+        background-color: deepskyblue;
+    }
+
+    #UserGridData td > span.badge.badge-radius[id="Approved by Both Managers"],
+    #ManagerGridData td > span.badge.badge-radius[id="Approved by Both Managers"] {
+        background-color: green;
+    }
+
+    #UserGridData td > span.badge.badge-radius[id="Approved By Level_1 Manager"],
+    #ManagerGridData td > span.badge.badge-radius[id="Approved By Level_1 Manager"] {
+        background-color: green;
+    }
+
+
+    #UserGridData td > span.badge.badge-radius[id="Approved By Level_2 Manager"],
+    #ManagerGridData td > span.badge.badge-radius[id="Approved By Level_2 Manager"] {
+        background-color: green;
+    }
+
+
+    #UserGridData td > span.badge.badge-radius[id="Approved By Level_1 Manager and Pending at Level_2 Manager"],
+    #ManagerGridData td > span.badge.badge-radius[id="Approved By Level_1 Manager and Pending at Level_2 Manager"] {
+        background-color: #deaa7c;
+    }
+
+    #UserGridData td > span.badge.badge-radius[id="Pending at Level_1 Manager and Approved by Level_2 Manager"],
+    #ManagerGridData td > span.badge.badge-radius[id="Pending at Level_1 Manager and Approved by Level_2 Manager"] {
+        background-color: orange;
+    }
+
+    #UserGridData td > span.badge.badge-radius[id="Rejected at Level_1 Manager"],
+    #ManagerGridData td > span.badge.badge-radius[id="Rejected at Level_1 Manager"] {
+        background-color: red;
+    }
+
+    #UserGridData td > span.badge.badge-radius[id="Rejected"],
+    #ManagerGridData td > span.badge.badge-radius[id="Rejected"] {
+        background-color: red;
+    }
+
+    #UserGridData td > span.badge.badge-radius[id="Rejected at Level_2 Manager"],
+    #ManagerGridData td > span.badge.badge-radius[id="Rejected at Level_2 Manager"] {
+        background-color: red;
+    }
+
+    #UserGridData td > span.badge.badge-radius[id="Rejected at Admin"],
+    #ManagerGridData td > span.badge.badge-radius[id="Rejected at Admin"] {
+        background-color: red;
+    }
+
+    .bo .customisable-highlight {
+        color: #fff !important;
+    }
+
+    table.dataTable {
+        width: 100% !important;
+    }
+
+    .badge.badge-radius {
+        width: 15px;
+        height: 15px;
+        display: inline-block;
+        border-radius: 50%;
+        float: none;
+    }
+
+    .panel-default > .panel-heading {
+        background-color: #ececec;
+    }
+
+    section.content > .row > .col-lg-3.col-xs-6:nth-child(1) > .small-box,
+    section.content > .row[id^="for"] > [class^="col-md-"]:nth-child(1) > .small-box {
+        background-color: #fceee1;
+        color: #828282;
+    }
+
+    section.content > .row > .col-lg-3.col-xs-6:nth-child(2) > .small-box,
+    section.content > .row[id^="for"] > [class^="col-md-"]:nth-child(2) > .small-box {
+        background-color: #f2d4d6;
+        color: #828282;
+    }
+
+    section.content > .row > .col-lg-3.col-xs-6:nth-child(3) > .small-box,
+    section.content > .row[id^="for"] > [class^="col-md-"]:nth-child(3) > .small-box {
+        background-color: #d6fff5;
+        color: #828282;
+    }
+
+    section.content > .row > .col-lg-3.col-xs-6:nth-child(4) > .small-box,
+    section.content > .row[id^="for"] > [class^="col-md-"]:nth-child(4) > .small-box {
+        background-color: #c0cdde;
+        color: #828282;
+    }
+
+    #calendar .datepicker table tr td, #calendar .datepicker table tr th {
+        line-height: 53px;
+        height: auto;
+    }
+
+    #calendar > .datepicker-inline {
+        padding: 0;
+    }
+
+    [class^="box box-light"] {
+        border: 1px solid;
+    }
+
+    .box.box-lightbrown {
+        border-color: #fde2c9;
+    }
+
+    .box.box-lightred {
+        border-color: #f2d4d6;
+    }
+
+    .box.box-lightgreen {
+        border-color: #d6fff5;
+    }
+
+    .box.box-lightblue {
+        border-color: #c0cdde;
+    }
+
+    .box.box-lightprimary {
+        border-color: #eed2f3;
+    }
+
+    .box-lightbrown > .box-header {
+        background-color: #fceee1;
+        color: #828282;
+    }
+
+    .box-lightred > .box-header {
+        background-color: #f2d4d6;
+        color: #828282;
+    }
+
+    .box-lightred.nav-tabs-custom > .nav-tabs {
+        background-color: #f2d4d6;
+    }
+
+        .box-lightred.nav-tabs-custom > .nav-tabs > li.header {
+            color: #828282;
+        }
+
+    .box-lightgreen > .box-header {
+        background-color: #d6fff5;
+        color: #828282;
+    }
+
+    .box-lightblue > .box-header {
+        background-color: #dae2ed;
+        color: #828282;
+    }
+
+    .box-lightprimary > .box-header {
+        background-color: #fce9ff;
+        color: #908692;
+    }
+
+    #calendar > .ui-datepicker-inline {
+        width: 100%;
+    }
+
+    #calendar .ui-datepicker td {
+        line-height: 4.9;
+    }
+
+    #calendar > .ui-widget-content .ui-state-default {
+        text-align: center;
+    }
+</style>
+
+<style>
+    .small-box > .icon  > img{
+        height: 80px;
+        filter: opacity(0.4);
+        -webkit-filter: opacity(0.4);
+    }
+    input.article-date {
+        border: 0;
+        outline: 0;
+        padding: 0;
+        box-shadow: none;
+        background-color: transparent;
+    }
+
+    #loading-image {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 1035;
+        background-color: rgba(243, 243, 243, 0.75);
+        /*opacity: .8;*/
+    }
+
+        #loading-image > img {
+            /*width: 56px;
+            height: 56px;
+            border: 8px solid rgba(255, 87, 34, 0.25);
+            border-top-color: #f37a41;
+            border-radius: 50%;*/
+            position: absolute;
+            /* animation: loader-rotate 1s linear infinite; */
+            top: 50%;
+            left: 50%;
+            margin: -60px auto 0;
+            max-width: 100%;
+            display: block;
+            height: 100px;
+        }
+
+        #loading-image > span {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            animation: loader-circles 1s linear infinite;
+            top: 50%;
+            left: 50%;
+            margin: -20px auto 0;
+        }
+
+        #loading-image > strong {
+            position: absolute;
+            top: 50%;
+            left: 48%;
+            margin: 0px auto 0;
+            font-size: 10px;
+        }
+
+    @@keyframes loader-circles {
+        0% {
+            box-shadow: 0 -85px 0 0 rgba(255, 87, 34, 0.05), 61px -61px 0 0 rgba(255, 87, 34, 0.1), 85px 0 0 0 rgba(255, 87, 34, 0.2), 61px 61px 0 0 rgba(255, 87, 34, 0.3), 0 85px 0 0 rgba(255, 87, 34, 0.4), -61px 61px 0 0 rgba(255, 87, 34, 0.6), -85px 0 0 0 rgba(255, 87, 34, 0.8), -61px -61px 0 0 #f37a41;
+        }
+
+        12.5% {
+            box-shadow: 0 -85px 0 0 #f37a41, 61px -61px 0 0 rgba(255, 87, 34, 0.05), 85px 0 0 0 rgba(255, 87, 34, 0.1), 61px 61px 0 0 rgba(255, 87, 34, 0.2), 0 85px 0 0 rgba(255, 87, 34, 0.3), -61px 61px 0 0 rgba(255, 87, 34, 0.4), -85px 0 0 0 rgba(255, 87, 34, 0.6), -61px -61px 0 0 rgba(255, 87, 34, 0.8);
+        }
+
+        25% {
+            box-shadow: 0 -85px 0 0 rgba(255, 87, 34, 0.8), 61px -61px 0 0 #f37a41, 85px 0 0 0 rgba(255, 87, 34, 0.05), 61px 61px 0 0 rgba(255, 87, 34, 0.1), 0 85px 0 0 rgba(255, 87, 34, 0.2), -61px 61px 0 0 rgba(255, 87, 34, 0.3), -85px 0 0 0 rgba(255, 87, 34, 0.4), -61px -61px 0 0 rgba(255, 87, 34, 0.6);
+        }
+
+        37.5% {
+            box-shadow: 0 -85px 0 0 rgba(255, 87, 34, 0.6), 61px -61px 0 0 rgba(255, 87, 34, 0.8), 85px 0 0 0 #f37a41, 61px 61px 0 0 rgba(255, 87, 34, 0.05), 0 85px 0 0 rgba(255, 87, 34, 0.1), -61px 61px 0 0 rgba(255, 87, 34, 0.2), -85px 0 0 0 rgba(255, 87, 34, 0.3), -61px -61px 0 0 rgba(255, 87, 34, 0.4);
+        }
+
+        50% {
+            box-shadow: 0 -85px 0 0 rgba(255, 87, 34, 0.4), 61px -61px 0 0 rgba(255, 87, 34, 0.6), 85px 0 0 0 rgba(255, 87, 34, 0.8), 61px 61px 0 0 #f37a41, 0 85px 0 0 rgba(255, 87, 34, 0.05), -61px 61px 0 0 rgba(255, 87, 34, 0.1), -85px 0 0 0 rgba(255, 87, 34, 0.2), -61px -61px 0 0 rgba(255, 87, 34, 0.3);
+        }
+
+        62.5% {
+            box-shadow: 0 -85px 0 0 rgba(255, 87, 34, 0.3), 61px -61px 0 0 rgba(255, 87, 34, 0.4), 85px 0 0 0 rgba(255, 87, 34, 0.6), 61px 61px 0 0 rgba(255, 87, 34, 0.8), 0 85px 0 0 #f37a41, -61px 61px 0 0 rgba(255, 87, 34, 0.05), -85px 0 0 0 rgba(255, 87, 34, 0.1), -61px -61px 0 0 rgba(255, 87, 34, 0.2);
+        }
+
+        75% {
+            box-shadow: 0 -85px 0 0 rgba(255, 87, 34, 0.2), 61px -61px 0 0 rgba(255, 87, 34, 0.3), 85px 0 0 0 rgba(255, 87, 34, 0.4), 61px 61px 0 0 rgba(255, 87, 34, 0.6), 0 85px 0 0 rgba(255, 87, 34, 0.8), -61px 61px 0 0 #f37a41, -85px 0 0 0 rgba(255, 87, 34, 0.05), -61px -61px 0 0 rgba(255, 87, 34, 0.1);
+        }
+
+        87.5% {
+            box-shadow: 0 -85px 0 0 rgba(255, 87, 34, 0.1), 61px -61px 0 0 rgba(255, 87, 34, 0.2), 85px 0 0 0 rgba(255, 87, 34, 0.3), 61px 61px 0 0 rgba(255, 87, 34, 0.4), 0 85px 0 0 rgba(255, 87, 34, 0.6), -61px 61px 0 0 rgba(255, 87, 34, 0.8), -85px 0 0 0 #f37a41, -61px -61px 0 0 rgba(255, 87, 34, 0.05);
+        }
+
+        100% {
+            box-shadow: 0 -85px 0 0 rgba(255, 87, 34, 0.05), 61px -61px 0 0 rgba(255, 87, 34, 0.1), 85px 0 0 0 rgba(255, 87, 34, 0.2), 61px 61px 0 0 rgba(255, 87, 34, 0.3), 0 85px 0 0 rgba(255, 87, 34, 0.4), -61px 61px 0 0 rgba(255, 87, 34, 0.6), -85px 0 0 0 rgba(255, 87, 34, 0.8), -61px -61px 0 0 #f37a41;
+        }
+    }
+</style>
+<!-- Horizontal Form -->
+<div id="loading-image" style="display:none">
+
+    <span></span>
+    <strong>Loading Please Wait....</strong>
+</div>
+
+<body onload="paint()">
+    <section class="content-header">
+        <h4 class="heading-fancy"> Dashboard  </h4>
+        @*<label id="userid">@ViewBag.userid</label>
+            <label id="roleid">@ViewBag.username</label>*@
+        @*<ol @ViewBag.lastName class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Dashboard</li>
+            </ol>*@
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="row" id="foradmin">
+            <div class="col-md-4">
+                <!-- small box -->
+                <div class="small-box">
+                    <div class="inner">
+                        <h3>@ViewBag.projects</h3>
+                        <p>Projects</p>
+                    </div>
+                    <div class="icon"> <i class="fa fa-clipboard"></i> </div>
+                    <a href="@Url.Action("Index", "Project")" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-md-4">
+                <!-- small box -->
+                <div class="small-box">
+                    <div class="inner">
+                        <h3>@ViewBag.timesheetscnt<sup style="font-size: 20px">%</sup></h3>
+                        <p>Time Sheet</p>
+                    </div>
+                    <div class="icon"> @*<i class="ion ion-stats-bars"></i>*@<img src="~/Content/images/leftmenu/inActive_Timesheet_management.png" /> </div>
+                    <a href="#divPreviewTimesheet" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-md-4">
+                <!-- small box -->
+                <div class="small-box">
+                    <div class="inner">
+                        <h3>@ViewBag.users</h3>
+                        <p>Employees</p>
+                    </div>
+                    <div class="icon"> @*<i class="fa fa-group"></i>*@ <img src="~/Content/images/leftmenu/inActive_Employees.png" /> </div>
+                    <a href="@Url.Action("Index", "User")" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <!-- ./col -->
+        </div>
+        <div class="row" id="forsuperadmin">
+            <div class="col-md-6">
+                <!-- small box -->
+                <div class="small-box">
+                    <div class="inner">
+                        <h3>@ViewBag.acountcount</h3>
+                        <p>Accounts</p>
+                    </div>
+                    <div class="icon"> @*<i class="fa fa-clipboard"></i>*@ <img src="~/Content/images/leftmenu/inActive_Accounts.png" /></div>
+                    <a href="@Url.Action("Index", "OrganizationAccount")" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-md-6">
+                <!-- small box -->
+                <div class="small-box">
+                    <div class="inner">
+                        <h3>@ViewBag.allusers</h3>
+                        <p>Users</p>
+                    </div>
+                    <div class="icon"> <i class="ion ion-stats-bars"></i> </div>
+                    <a href="@Url.Action("Index", "User")" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row" id="formanager">
+            <div class="col-md-4">
+                <!-- small box -->
+                <div class="small-box">
+                    <div class="inner">
+                        <h3>@ViewBag.projects</h3>
+                        <p>Projects</p>
+                    </div>
+                    <div class="icon"> <i class="fa fa-clipboard"></i> </div>
+                    <a href="@Url.Action("Index", "Project")" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-md-4">
+                <!-- small box -->
+                <div class="small-box">
+                    <div class="inner">
+                        <h3>@ViewBag.timesheetscnt<sup style="font-size: 20px">%</sup></h3>
+                        <p>Time Sheet</p>
+                    </div>
+                    <div class="icon"> @*<i class="ion ion-stats-bars"></i>*@ <img src="~/Content/images/leftmenu/inActive_Timesheet_management.png" /> </div>
+                    <a href="#divPreviewTimesheet" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-md-4">
+                <!-- small box -->
+                <div class="small-box">
+                    <div class="inner">
+                        <h3>@ViewBag.users</h3>
+                        <p>Employees</p>
+                    </div>
+                    <div class="icon"> @*<i class="fa fa-group"></i>*@ <img src="~/Content/images/leftmenu/inActive_Employees.png" /> </div>
+                    <a href="@Url.Action("Index", "User")" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <!-- ./col -->
+        </div>
+        <!-- /.row -->
+        <!-- Main row -->
+        <div class="row" id="socialmedia">
+            <div class="col-lg-6 connectedSortable">
+                <!-- Social Network Updates PRIMARY -->
+                <div class="box box-lightred nav-tabs-custom">
+                    <!-- Tabs within a box -->
+                    <ul class="nav nav-tabs pull-right">
+                        <li class="active"><a href="#twitter_evolutyz" data-toggle="tab"><i class="fa fa-twitter fa-2x"></i></a></li>
+                        <li><a href="#facebook_evolutyz" data-toggle="tab"><i class="fa fa-facebook fa-2x"></i></a></li>
+                        <li><a href="#linkedin_evolutyz" data-toggle="tab"><i class="fa fa-linkedin fa-2x"></i></a></li>
+                        <li class="pull-left header">Social Network Updates</li>
+                    </ul>
+                    <div class="tab-content no-padding" style="max-height: 43.75em;overflow: auto;">
+                        <div class="active tab-pane" id="twitter_evolutyz">
+                            <a class="twitter-timeline" href="https://twitter.com/evolutyz" style="color:white;">Tweets by Evolutyz</a>
+                        </div>
+                        <div class="tab-pane text-center" id="facebook_evolutyz">
+                            @*<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FEvolutyzCorp%2F&tabs=timeline&width=700&height=530&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=true&appId" width="700" height="530" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>*@
+                            <div class="fb-page" data-href="https://www.facebook.com/EvolutyzCorp/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-width="800" data-height="800" data-colorscheme="light" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/EvolutyzCorp/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/EvolutyzCorp/">Evolutyz Corp</a></blockquote></div>
+                        </div>
+                        <div class="tab-pane" id="linkedin_evolutyz">
+                            @*<blockquote class="embedly-card"><h4><a href="https://www.linkedin.com/company/evolutyz-corp">Evolutyz Corp | LinkedIn</a></h4><p>Learn about working at Evolutyz Corp. Join LinkedIn today for free. See who you know at Evolutyz Corp, leverage your professional network, and get hired.</p></blockquote>*@
+                            <a class="embedly-card" data-card-controls="0" href="https://www.linkedin.com/company/evolutyz-corp">Evolutyz Corp | LinkedIn</a>
+                            @*<div class="taggbox-container" style="width:100%;height:100%;overflow: auto;">
+                                <div class="taggbox-socialwall" data-wall-id="https://www.linkedin.com/company/evolutyz-corp">  </div>
+                            </div>*@
+                        </div>
+                    </div>
+                </div>
+                <!-- /.nav-tabs-custom -->
+
+            </div>
+            <div class="col-lg-6 connectedSortable">
+                <div class="box box-lightprimary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">NEWS</h3>
+
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <ul class="products-list product-list-in-box" style="height:40em;">
+                            @foreach (var types in ViewBag.news)
+                            {
+                                <li class="item" data-toggle="modal" data-target="#overview-article" id="@types.NewsBoardId">
+                                    <div class="product-img">
+                                        <img src="/uploadimages/Images/@types.Image" alt="Article-1">
+                                    </div>
+                                    <div class="product-info">
+                                        <span class="product-title">
+                                            @types.Title
+                                            <span class="article-date">@types.CreatedDate</span>
+                                        </span>
+                                        <span class="product-description">
+                                            Published By @types.Name
+                                        </span>
+                                    </div>
+                                </li>
+                            }
+
+                        </ul>
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer text-center">
+                        <a href="@Url.Action("PreviewNews", "NewsBoard")" class="uppercase">View All</a>
+                    </div>
+                    <!-- /.box-footer -->
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="box box-lightgreen" id="divPreviewTimesheet">
+                <div class="box-header with-border">
+                    <h3 class="box-title"><b style="font-family: 'Ubuntu', sans-serif;">Timesheets Management</b></h3>
+
+                </div>
+                <div class="box-body" id="body">
+                    <div class="row" style=" margin-left:0;">
+                        <div class="col-md-6 no-padding" id="UserGridPanel">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">My Timesheets</h3>
+                                </div>
+                                <div class="panel-body">
+
+                                    <table id="UserGridData">
+                                        <thead id="tblheadid">
+                                            <tr>
+                                                <th>TimesheetID</th>
+                                                <th>Client</th>
+                                                <th>Project</th>
+                                                <th>Resource</th>
+                                                <th>Month</th>
+                                                <th>Actual Hours</th>
+                                                <th>Worked Hours</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="panel panel-default no-margin" id="ManagerGridPanel">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Resource Timesheets</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <table id="ManagerGridData" style="display:none">
+                                        <thead id="tblheadid">
+                                            <tr>
+                                                <th>TimesheetID</th>
+                                                <th>Client</th>
+                                                <th>Project</th>
+                                                <th>Resource</th>
+                                                <th>Month</th>
+                                                <th>Actual Hours</th>
+                                                <th>Worked Hours</th>
+                                                <th>Status</th>
+
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    @if ((Session["roleid"].ToString() == "1007") || (Session["roleid"].ToString() == "1002") || (Session["roleid"].ToString() == "1010") || (Session["roleid"].ToString() == "1011") || (Session["roleid"].ToString() == "1053"))
+                    {
+                        <div class="text-right">
+                            <input type="button" id="btnloadall" style="display:none" class="btn btn-primary" value="View all Timesheets" onclick="LoadAllTimesheets()" />
+
+
+                        </div>
+
+                    }
+                    else
+                    {
+                        if ((Session["TimesheetMode"].ToString() == "1"))
+                        {
+                            <div class="text-right">
+                                <input type="button" id="btnloadallforemp" style="display:none" class="btn btn-primary" value="View all Timesheets" onclick="LoadAllTimesheets()" />
+
+                            </div>
+                        }
+                        if ((Session["TimesheetMode"].ToString() == "2"))
+                        {
+                            <div class="text-right">
+                                <input type="button" id="btnloadallbyweekly" style="display:none" class="btn btn-primary" value="View all Timesheets" onclick="LoadAllByWeeklyTimesheets()" />
+
+                            </div>
+                        }
+
+                        if ((Session["TimesheetMode"].ToString() == "3"))
+                        {
+                            <div class="text-right">
+                                <input type="button" id="btnloadallweekly" style="display:none" class="btn btn-primary" value="View all Timesheets" onclick="LoadAllWeeklyTimesheets()" />
+
+                            </div>
+                        }
+                        if ((Session["TimesheetMode"].ToString() == "4"))
+                        {
+                            <div class="text-right">
+                                <input type="button" id="btnloadallbimonthly" style="display:none" class="btn btn-primary" value="View all Timesheets" onclick="LoadAllBiMonthlyTimesheets()" />
+
+                            </div>
+                        }
+                    }
+
+                    @*<orm>*@
+                </div>
+
+                <div class="control-sidebar-bg"></div>
+            </div>
+        </div>
+
+    </section>
+
+    <div id="overview-article" class="modal fade">
+        <div class="modal-dialog main-overview">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="img-div" id="newsimage">
+                        @*<img src="https://image.freepik.com/free-vector/facebook-background-with-likes-and-hearts_23-2147855033.jpg" class="img-responsive" alt="Mr M V Gowtama" />*@
+                    </div>
+                    <div class="article-title">
+                        <h4 class="modal-title" id="Name">Published By &nbsp;</h4>
+                        <h3 id="date"></h3>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        <img src="~/Content/images/modal-close-icon.png" />
+                    </button>
+                    @*<div class="modal-btn-print">
+                            <a href="javascript:void(0);" onclick="printWithCss()">
+                                <i class="fa fa-print"></i>
+                            </a>
+                        </div>*@
+                </div>
+                <div class="modal-body">
+                    <div class="article-widget" id="newsdata">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript">
+    function load(id) {
+        //
+        //if (id === null) return "";
+
+        //var pattern = /Date\(([^)]+)\)/;
+        //var results = pattern.exec(id);
+        //var dt = new Date(parseFloat(results[1]));
+        //document.getElementById(id).value = (dt.getMonth() + 1) + "/" + dt.getDate() + "/" + dt.getFullYear() + "</br>" + dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+        ////return (dt.getMonth() + 1) + "/" + dt.getDate() + "/" + dt.getFullYear() + "</br>" + dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+
+    }
+    var serviceurl = "http://localhost:8086/mantisbt/getlistofbugs.php";
+    $(document).ready(function () {
+
+
+        $("#tabCon").empty();
+        $('#loading-image').attr("style", "display: block;");
+        $.ajax({
+            url: "/DashBoard/GetDashboardTimeSheet",
+            type: "GET",
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'JSON',
+            // cache: false,
+            success: function (resultData) {
+
+                if (resultData.roleid) {
+                    var objUserSessionId = resultData.roleid;
+                    if ((objUserSessionId == '1001') || (objUserSessionId == '1002') || (objUserSessionId == '1007') || (objUserSessionId === "1010") || (objUserSessionId == "1011") || (objUserSessionId == "1053")) {
+
+                        if ((objUserSessionId === '1007') || (objUserSessionId === "1010") || (objUserSessionId == "1011") || (objUserSessionId == "1053")) {
+                            $("#UserGridData").attr("style", "display: table;");
+                            $("#ManagerGridData").attr("style", "display: table;");
+
+                            if (resultData.timesheetsforapproval.length > 0) {
+                                console.log('sree');
+                                $("#btnloadall").attr("style", "display: block;");
+
+                            }
+
+                        }
+                        else {
+
+                            $("#UserGridData").attr("style", "display: none;");
+                            $("#ManagerGridData").attr("style", "display: table;");
+                            $("#UserGridPanel").attr("style", "display: none;");
+
+                            if (resultData.timesheetsforapproval.length > 0) {
+                                //  $("#btnloadall").attr("style", "display: block;");
+
+                            }
+
+
+
+                        }
+                        if (resultData.mytimesheets) {
+                            var objUsertimesheets = resultData.mytimesheets;
+
+                            $('#UserGridData').DataTable({
+                                // 'destroy': true,
+                                'data': objUsertimesheets,
+                                'paginate': false,
+                                'sort': false,
+                                'Processing': true,
+                                'columns': [
+                                    { 'data': 'TimesheetID', 'visible': false, },
+                                    { 'data': 'ProjectName' },
+                                    { 'data': 'ClientProjectName'},
+                                    { 'data': 'Usr_Username' },
+                                    { 'data': 'Month_Year' },
+                                    { 'data': 'CompanyBillingHours' },
+                                    { 'data': 'ResourceWorkingHours' },
+                                    //{ 'data': 'TimesheetApprovalStatus' },
+                                    {
+                                        "data": "TimesheetApprovalStatus",
+                                        "data": "ManagerApprovalStatus",
+                                        "data": function (data) {
+                                            return '<span class="badge badge-radius" data-toggle="tooltip" id="' + data.TimesheetApprovalStatus + '" title="' + data.ManagerApprovalStatus + '" ></span>'
+                                        }
+                                    },
+
+                                ]
+                            });
+
+                        }
+
+                        if (resultData.timesheetsforapproval) {
+                            var objManagertimesheets = resultData.timesheetsforapproval;
+                            
+                            console.log(objManagertimesheets);
+                            $('#ManagerGridData').DataTable({
+                                //   'destroy': true,
+                                'data': objManagertimesheets,
+                                'paginate': false,
+                                'sort': false,
+                                'Processing': true,
+                                'columns': [
+
+                                    { 'data': 'TimesheetID', 'visible': false, },
+                                    { 'data': 'ProjectName' },
+                                    { 'data': 'ClientProjectName' },
+                                    { 'data': 'Usr_Username' },
+                                    { 'data': 'Month_Year' },
+                                    { 'data': 'CompanyBillingHours' },
+                                    { 'data': 'ResourceWorkingHours' },
+                                    //{ 'data': 'TimesheetApprovalStatus', 'className': false },
+                                    {
+                                        "data": "TimesheetApprovalStatus",
+                                        "data": "ManagerApprovalStatus",
+                                        "data": function (data) {
+
+                                            return '<span class="badge badge-radius" data-toggle="tooltip" id="' + data.TimesheetApprovalStatus + '" title="' + data.ManagerApprovalStatus + '" ></span>'
+                                        }
+                                    },
+
+
+
+                                ]
+                            });
+                          
+                        }
+
+                    }
+                    else {
+                        $("#ManagerGridData").attr("style", "display: none;");
+                        $("#UserGridData").attr("style", "display: table;");
+                        $("#UserGridData").closest('.col-md-6.no-padding').css("width", "100%");
+                        $("#ManagerGridPanel").attr("style", "display: none;");
+
+                        if (resultData.mytimesheets.length > 0) {
+
+                            $("#btnloadall").attr("style", "display: block;");
+                            $("#btnloadallbyweekly").attr("style", "display: block;");
+                            $("#btnloadallweekly").attr("style", "display: block;");
+                        }
+                        if (resultData.mytimesheets) {
+                            objUsertimesheets = resultData.mytimesheets;
+
+                            $('#UserGridData').DataTable({
+                                // 'destroy': true,
+                                'data': objUsertimesheets,
+                                'paginate': false,
+                                'sort': false,
+                                'Processing': true,
+                                'columns': [
+
+                                    { 'data': 'TimesheetID', 'visible': false, },
+                                    { 'data': 'ProjectName' },
+                                    { 'data': 'ClientProjectName' },
+                                    { 'data': 'Usr_Username' },
+                                    { 'data': 'Month_Year' },
+                                    { 'data': 'CompanyBillingHours' },
+                                    { 'data': 'ResourceWorkingHours' },
+                                    {
+                                        "data": "TimesheetApprovalStatus",
+                                        "data": "ManagerApprovalStatus",
+                                        "data": function (data) {
+
+                                            return '<span class="badge badge-radius" data-toggle="tooltip" id="' + data.TimesheetApprovalStatus + '" title="' + data.ManagerApprovalStatus + '" ></span>'
+                                        }
+                                    },
+
+
+                                ]
+                            });
+
+                            
+                        }
+
+
+                    }
+
+                }
+
+
+
+            },
+            complete: function () {
+                $('#loading-image').attr("style", "display: none;");
+            },
+            error: function (data) {
+                //  alert(data.responseText);
+            }
+        });
+
+    });
+
+    var date;
+    function dateConversion(value) {
+        if (value === null) return "";
+        var pattern = /Date\(([^)]+)\)/;
+        var results = pattern.exec(value);
+        var dt = new Date(parseFloat(results[1]));
+
+        date = (dt.getMonth() + 1) + "/" + dt.getDate() + "/" + dt.getFullYear();
+
+    }
+
+    $(document).ready(function () {
+
+        $(".item").click(function () {
+
+            var id = $(this).attr("id");
+            console.log(id);
+            $.ajax({
+                url: "/NewsBoard/GetNewsById?id=" + id,
+                type: "POST",
+                success: function (res) {
+
+                    $("#newsimage").empty();
+                    $("#newsimage").append("<img src='" + "/uploadimages/Images/" + res.Image + "' alt='No Image Uploaded'  width='150' height='55' id='ImageName'   />");
+                    $("#Name").text("Published By " + res.Name);
+                    dateConversion(res.CreatedDate);
+                    $("#date").text(date);
+                    $("#newsdata").text(res.Description);
+
+
+                },
+                complete: function () {
+                    $('#loading-image').attr("style", "display: none;");
+                },
+
+                error: function (Result) {
+
+
+
+                }
+
+            });
+        });
+
+        bugs();
+
+        function bugs() {
+
+            $('#loading-image').attr("style", "display: block;");
+            $.ajax({
+                url: serviceurl,
+                type: 'GET',
+                crossDomain: true,
+
+                dataType: 'Json',
+                success: function (res) {
+                    //  console.log(res.Bugs);
+                    $('#bugstable').DataTable({
+                        'data': res.Bugs,
+                        'paginate': true,
+                        'sort': true,
+                        'Processing': true,
+                        'columns': [
+                            { 'data': 'username' },
+                            { 'data': 'summary' },
+                            // { 'data': 'status' }
+                        ]
+                    });
+
+                },
+                complete: function () {
+                    $('#loading-image').attr("style", "display: none;");
+                },
+
+
+            });
+        }
+
+        $("#dashboard").addClass("active");
+
+        $("#dashboard").siblings().removeClass("active");
+        var line = new Morris.Line({
+            element: 'line-chart',
+            resize: true,
+            data: [
+                { y: '2011 Q1', item1: 2666 },
+                { y: '2011 Q2', item1: 2778 },
+                { y: '2011 Q3', item1: 4912 },
+                { y: '2011 Q4', item1: 3767 },
+                { y: '2012 Q1', item1: 6810 },
+                { y: '2012 Q2', item1: 5670 },
+                { y: '2012 Q3', item1: 4820 },
+                { y: '2012 Q4', item1: 15073 },
+                { y: '2013 Q1', item1: 10687 },
+                { y: '2013 Q2', item1: 8432 }
+            ],
+            xkey: 'y',
+            ykeys: ['item1'],
+            labels: ['Item 1'],
+            lineColors: ['#3c8dbc'],
+            hideHover: 'auto'
+        });
+
+
+    });
+
+
+    var widgetCSS = "" +
+
+        ".timeline-Tweet-text[dir=ltr] { font-size: 15px !important; line-height: 20px !important; }" +
+        ".timeline-Widget { max-width: inherit;}";
+
+    function paint() {
+        var w = document.getElementById("twitter-widget-0").contentDocument;
+
+        var s = document.createElement("style");
+        s.innerHTML = widgetCSS;
+        s.type = "text/css";
+        w.head.appendChild(s);
+    }
+</script>
+<script>
+    $(document).on('click', 'a[href^="#divPreviewTimesheet"]', function (e) {
+        // target element id
+        $('html, body').animate({
+            scrollTop: $("#divPreviewTimesheet").offset().top
+        }, 2000);
+    });
+    function loaddate(d) {
+        //
+        console.log(d);
+    }
+</script>
+
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery-ui-1.11.4.js"></script>
+<script src="~/Scripts/jquery.signalR-2.4.0.min.js"></script>
+<script src="~/signalr/hubs" type="text/javascript"></script>
+<link href="~/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" />
+<script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="~/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<div id="fb-root"></div>
+<script async="1" defer="1" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&amp;version=v3.2"></script>
+<script async src="https://cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
+
+<script>
+    var rolename = '@ViewBag.username';
+    if (rolename === "Super Admin") {
+        $("#forsuperadmin").show();
+        $("#divPreviewTimesheet").hide();
+        $("#foradmin").hide();
+        $("#formanager").hide();
+        $("#chating").hide();
+        $("#socialmedia").hide();
+        $("#bugreport").hide();
+    } else if (rolename === "Admin") {
+        $("#forsuperadmin").hide();
+        $("#formanager").hide();
+        $("#foradmin").show();
+    } else if (rolename === "Manager") {
+        $("#forsuperadmin").hide();
+        $("#formanager").show();
+        $("#foradmin").hide();
+    }else {
+        $("#forsuperadmin").hide();
+        $("#foradmin").hide();
+        $("#formanager").hide();
+    }
+    var objHub = $.connection.myHub;
+    $(document).ready(function () {
+        $("#calendar").datepicker();
+        $("#divChat").show();
+
+        loadClientMethods(objHub);
+
+        $.connection.hub.start().done(function () {
+
+            var name = $("#username").val();
+            console.log(name);
+
+            // var name = "SuperAdmin@evolutyz.in";
+            // var pass = "Welcome@123";
+            var pass = $("#password").val();
+
+            // alert(name);
+            objHub.server.connect(name, pass);
+            // loadEvents(objHub);
+
+        });
+
+    });
+
+
+
+
+
+    $('#btnSendMessage').click(function () {
+
+        //  alert();
+
+        var msg = $("#txtMessage").val();
+
+
+        if (msg.length > 0) {
+
+
+            // var userName = $('#hUserName').val();
+            var userName = $('#username').val();
+
+            //var userName = "SuperAdmin@evolutyz.in";
+
+            // connection.logging = true;
+            // connection.start();
+            // <<<<<-- ***** Return to Server [  SendMessageToGroup  ] *****
+            objHub.server.sendMessageToGroup(userName, msg);
+
+        }
+    });
+
+
+    $("#txtPassword").keypress(function (e) {
+        if (e.which === 13) {
+            $("#btnLogin").click();
+        }
+    });
+
+    $("#txtMessage").keypress(function (e) {
+        if (e.which === 13) {
+            $('#btnSendMessage').click();
+        }
+    });
+
+
+    // }
+
+
+
+    function loadClientMethods(objHub) {
+
+        //   alert();
+        objHub.client.NoExistAdmin = function () {
+            var divNoExist = $('<div><p>There is no Admin to response you try again later</P></div>');
+            $("#divChat").show();
+            // $("#divLogin").show();
+
+            $(divNoExist).hide();
+            $('#divalarm').prepend(divNoExist);
+            $(divNoExist).fadeIn(900).delay(9000).fadeOut(900);
+        };
+
+        objHub.client.getMessages = function (userName, message) {
+
+            $("#txtMessage").val('');
+            var imagepath = "~/Content/dist/img/user8-128x128.jpg";
+            // if (userName == $("#username").val()) {
+            $('#divMessage').append('<div class="direct-chat-msg"><div class="direct-chat-info clearfix"> <span class="direct-chat-name">' + userName + '</span> </div><img class="direct-chat-img" src="' + imagepath + '" alt="Message User Image"><div class="direct-chat-text"><p>' + message + '</p></div></div>');
+            //  }
+
+            // else {
+
+
+            //   $('#divMessage').append('<div class="direct-chat-info clearfix"> <span class="direct-chat-msg right"></span> </div><img class="direct-chat-img" src="' + imagepath+'" alt="Message User Image"><div class="direct-chat-text"><p>' + userName + ': ' + message + '</p></div>');
+
+            //}
+            var height = $('#divMessage')[0].scrollHeight;
+            $('#divMessage').scrollTop(height);
+        };
+
+        objHub.client.onConnected = function (id, userName, UserID, userGroup) {
+
+            var strWelcome = 'Welcome' + +userName;
+            $('#welcome').append('<div><p>Welcome: ' + userName + '</p></div>');
+
+            $('#hId').val(id);
+            $('#hUserId').val(UserID);
+            $('#hUserName').val(userName);
+            $('#hGroup').val(userGroup);
+
+            $("#divChat").show();
+            //   $("#divLogin").hide();
+
+
+        };
+
+
+    }
+</script>
+
+
+<script>
+
+    $(document).ready(function () {
+        var items = [];
+        Emailto();
+        var inputData = JSON.stringify({
+            'Subject': $("#subject").val(),
+            'Message': $("#message").val(),
+            'ProjectId': $('#Proj_ProjectID').val()
+        });
+        function Emailto() {
+            $("#emailto").autocomplete({
+                source: function (request, response) {
+
+                    $.ajax({
+                        url: "/DashBoard/getprofiles",
+                        type: "POST",
+                        dataType: "json",
+                        data: { Prefix: request.term, inputData },
+                        success: function (data) {
+                            response($.map(data, function (item) {
+                                return { label: item.UsrP_EmailID, value: item.UsrP_EmailID };
+                            }));
+                        }
+                    });
+                },
+                messages: {
+                    noResults: "",
+                    results: function (count) {
+                        return count + (count > 1 ? ' results' : ' result ') + ' found';
+                    }
+                }
+            });
+        }
+
+        $("#sendEmail").click(function () {
+
+            var inputData = JSON.stringify({
+                'Subject': $("#subject").val(),
+                'Message': $("#message").val(),
+                'ProjectId': $('#Proj_ProjectID').val(),
+                'Emailid': $('#emailto').val()
+            });
+            $.ajax({
+                url: "/DashBoard/DashboardMail",
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                data: inputData,
+                datatype: 'json',
+                success: function (data, status) {
+                    alert("Mail Sent Successfully");
+                    location.reload();
+                }
+            });
+        });
+    });
+
+
+    function LoadAllTimesheets() {
+
+
+        window.location = '/Timesheet/PreviewTimesheets';
+    }
+
+
+    function LoadAllByWeeklyTimesheets() {
+
+
+
+        window.location = '/Timesheet/PreviewbyMonthlyTimesheets';
+
+
+
+    }
+
+    function LoadAllWeeklyTimesheets() {
+        window.location = '/Timesheet/PreviewWeeklyTimesheets';
+
+    }
+    function LoadAllBiMonthlyTimesheets() {
+        window.location = '/Timesheet/PreviewBymonthlytimesheets15days';
+    }
+
+    $('#Gropchat input').on('keypress', function (e) {
+        return e.which !== 13;
+    });
+
+</script>
+
+
+
+
+

@@ -1,0 +1,1179 @@
+﻿@using EvolutyzCorner.UI.Web.Controllers
+@{
+
+
+    ViewBag.Title = "Getallexamresult";
+    //var ques = inv.getAllQuestion(Convert.ToInt32(@TempData["Userid"]));
+    TicketController t = new TicketController();
+    var ques = t.getAllQuestionResult(Convert.ToInt32(@TempData["Userid"]));
+}
+<style>
+    .Stepup-options::-webkit-scrollbar {
+        width: 13px;
+        height: 13px;
+    }
+
+    .Stepup-options::-webkit-scrollbar-track {
+        background: #e4e4e4;
+        box-shadow: 3px 3px 10px rgba(0,0,0,.25) inset;
+    }
+
+    .Stepup-options::-webkit-scrollbar-thumb {
+        background: #20487a;
+        border-radius: 10px;
+        border: 1px solid rgba(0,0,0,0.3);
+        box-shadow: -3px -3px 6px rgb(37, 90, 156) inset, 3px 3px 3px rgb(107, 150, 204) inset;
+    }
+
+    .Stepup-options::-webkit-scrollbar-button:horizontal {
+        width: 15px;
+    }
+
+    .Stepup-options::-webkit-scrollbar-button:vertical {
+        height: 15px;
+    }
+
+        .Stepup-options::-webkit-scrollbar-button:vertical:decrement {
+            background-image: url(/Content/assets/img/stepup-icn/scroll/arrow-up.png), -webkit-linear-gradient(left, #20487a 50%,#255a9c 100%);
+            background-repeat: no-repeat;
+            background-position: 3px 4px, 0 0;
+            border-radius: 15px 15px 0px 0px;
+        }
+
+        .Stepup-options::-webkit-scrollbar-button:vertical:increment {
+            background-image: url(/Content/assets/img/stepup-icn/scroll/arrow-down.png), -webkit-linear-gradient(left, #20487a 50%,#255a9c 100%);
+            background-repeat: no-repeat;
+            background-position: 3px 5px, 0 0;
+            border-radius: 0px 0px 15px 15px;
+        }
+
+    .Stepup-options::-webkit-scrollbar-button:horizontal:decrement {
+        background-image: url(/Content/assets/img/stepup-icn/scroll/arrow-left.png), -webkit-linear-gradient(top, #20487a 50%,#255a9c 100%);
+        background-repeat: no-repeat;
+        background-position: 4px 3px, 0 0;
+        border-radius: 15px 0px 0px 15px;
+    }
+
+    .Stepup-options::-webkit-scrollbar-button:horizontal:increment {
+        background-image: url(/Content/assets/img/stepup-icn/scroll/arrow-right.png), -webkit-linear-gradient(top, #20487a 50%,#255a9c 100%);
+        background-repeat: no-repeat;
+        background-position: 5px 3px, 0 0;
+        border-radius: 0px 15px 15px 0px;
+    }
+
+    .Stepup-options::-webkit-resizer {
+        background: #F2F2F2 url(/Content/assets/img/stepup-icn/scroll/resizer.png)no-repeat 2px 4px;
+        border-top: 1px solid #D9D9D9;
+        border-left: 1px solid #D9D9D9;
+    }
+
+    .Stepup-options::-webkit-scrollbar-corner {
+        background: #d2d2d2 url(/Content/assets/img/stepup-icn/scroll/resizer.png)no-repeat 2px 4px;
+        border-top: 1px solid #D9D9D9;
+        border-left: 1px solid #D9D9D9;
+    }
+
+    ul.list_questions {
+        counter-reset: li;
+        list-style: none;
+        font-family: 'Raleway', sans-serif;
+        padding: 0;
+        font-size: 18px;
+        margin: auto;
+    }
+
+        ul.list_questions > li > p:before {
+            content: counter(li);
+            counter-increment: li;
+            position: relative;
+            font-weight: 600;
+            left: -10px;
+        }
+
+        ul.list_questions > li {
+            position: relative;
+            display: block;
+            padding: 10px 15px 10px 15px;
+            margin: 10px auto;
+            color: #555;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            transition: all .2s ease-in-out;
+        }
+
+            ul.list_questions > li > p {
+                display: inline-block;
+                text-indent: 10px;
+            }
+
+            ul.list_questions > li > span {
+                float: right;
+            }
+
+                ul.list_questions > li > span > i {
+                    border-radius: 50%;
+                    height: 40px;
+                    width: 40px;
+                    line-height: 33px;
+                    background-color: #20487a;
+                    color: #fff;
+                    text-align: center;
+                    vertical-align: middle;
+                    border: 5px solid #fff;
+                    box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.1);
+                }
+
+                    ul.list_questions > li > span > i.fa + i.fa {
+                        margin-left: 10px;
+                    }
+
+
+
+    ul.list_options {
+        *list-style: inside;
+        *list-style-type: upper-alpha;
+        list-style: none;
+        counter-reset: li;
+        font-family: 'Raleway', sans-serif;
+        padding: 0;
+        font-size: 16px;
+        margin-top: 15px;
+    }
+
+        ul.list_options.list-flex {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        ul.list_options > li {
+            /*padding: 10px 0;*/
+            padding: 25px 0;
+        }
+
+            ul.list_options > li:last-child {
+                padding-bottom: 0;
+            }
+
+            ul.list_options > li > .check_opt {
+                display: flex;
+                width: 100%;
+                align-items: center;
+            }
+
+                ul.list_options > li > .check_opt > label.lbl_check > input[type=radio] {
+                    width: 100%;
+                    opacity: 0.00000001;
+                    position: absolute;
+                    left: 0;
+                    margin: auto;
+                    height: 100%;
+                }
+
+                ul.list_options > li > .check_opt > label.lbl_check {
+                    min-height: 20px;
+                    cursor: pointer;
+                    margin-bottom: 0;
+                    position: relative;
+                }
+
+                    ul.list_options > li > .check_opt > label.lbl_check > .helper {
+                        position: absolute;
+                        top: -4px;
+                        left: -4px;
+                        cursor: pointer;
+                        display: block;
+                        font-size: 16px;
+                        user-select: none;
+                        color: #e7e7e7;
+                    }
+
+                        ul.list_options > li > .check_opt > label.lbl_check > .helper:before {
+                            content: '';
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            margin: 5px 10px;
+                            width: 18px;
+                            height: 18px;
+                            transition: transform 0.28s ease;
+                            border-radius: 50%;
+                            border: 1px solid #717171;
+                            background-color: #f7f7f7;
+                        }
+
+                        ul.list_options > li > .check_opt > label.lbl_check > .helper:after {
+                            content: '';
+                            display: block;
+                            width: 12px;
+                            height: 12px;
+                            -webkit-transform: rotate(-45deg) scale(0);
+                            -moz-transform: rotate(-45deg) scale(0);
+                            -ms-transform: rotate(-45deg) scale(0);
+                            transform: rotate(-45deg) scale(0);
+                            position: absolute;
+                            top: 7.5px;
+                            left: 13px;
+                            background-color: #20487a;
+                            border-radius: 50%;
+                        }
+
+                    ul.list_options > li > .check_opt > label.lbl_check > input[type="radio"]:checked ~ .helper::before {
+                        color: #183e6d;
+                    }
+
+                    ul.list_options > li > .check_opt > label.lbl_check > input[type="radio"]:checked ~ .helper::after {
+                        -webkit-transform: rotate(-45deg) scale(1);
+                        -moz-transform: rotate(-45deg) scale(1);
+                        -ms-transform: rotate(-45deg) scale(1);
+                        transform: rotate(-45deg) scale(1);
+                    }
+
+                ul.list_options > li > .check_opt > span {
+                    display: block;
+                    width: 50%;
+                    padding-left: 30px;
+                }
+
+    .box-circle > span {
+        box-shadow: none;
+        background-color: #fff;
+        color: #212121;
+        font-weight: normal;
+        font-size: 16px;
+        border: 1px solid #20487b;
+        border-radius: 40px;
+        display: table;
+        margin: -30px auto auto;
+        padding: 5px 15px;
+    }
+
+    ul.list_options > li p {
+        margin-bottom: auto;
+        text-align: justify;
+    }
+
+    ul.list_options > li textarea.form-control[disabled],
+    .box-circle > textarea.form-control[disabled] {
+        background-color: #fff;
+        color: #212121;
+        font-size: 15px;
+        border: 0;
+        box-shadow: none;
+        cursor: default;
+        padding: 4px 0;
+        resize: none;
+        overflow: hidden;
+    }
+
+    .box-footer > ul.pager {
+        margin: auto;
+    }
+
+        .box-footer > ul.pager > li > a,
+        .box-footer > ul.pager > li > a:hover,
+        .box-footer > ul.pager > li > a:focus,
+        .box-footer > ul.pager > li > a:active {
+            border: 0;
+            cursor: pointer;
+            background-color: #ffffff;
+            color: #6b6b6b;
+            border-radius: 20px;
+            font-size: 15px;
+        }
+
+        .box-footer > ul.pager i.fa {
+            border-radius: 4px;
+            color: #969696;
+            width: auto;
+            font-size: 15px;
+        }
+
+        .box-footer > ul.pager > li.previous i.fa {
+            padding: 4px 0px 4px 4px;
+            margin-right: 10px;
+        }
+
+        .box-footer > ul.pager > li.next i.fa {
+            padding: 4px 4px 4px 8px;
+            margin-left: 10px;
+        }
+
+        .box-footer > ul.pager i.fa-caret-right {
+            color: #fff;
+            background: linear-gradient(to right, #26487f,#042354);
+            padding: 4px 10px 4px 8px;
+            margin-right: 10px;
+        }
+
+        .box-footer > ul.pager i.fa-caret-left {
+            color: #fff;
+            background: linear-gradient(to left, #26487f,#042354);
+            padding: 4px 8px 4px 10px;
+            margin-left: 10px;
+        }
+
+    .btn-outline {
+        display: inline-block;
+        padding: 6px 12px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-image: none;
+        background-color: transparent;
+        color: #20487a;
+        border: 0;
+    }
+
+        .btn-outline > i {
+            border-radius: 50%;
+            height: 30px;
+            width: 30px;
+            line-height: 30px;
+            background-color: #20487a;
+            color: #fff;
+            text-align: center;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+    [class^="button-radius"],
+    [class^="button-radius"]:hover,
+    [class^="button-radius"]:active,
+    [class^="button-radius"]:focus {
+        display: inline-block;
+        padding: 2px 20px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-image: none;
+        background-color: white;
+        border: 1px solid #cecece;
+        /*border-radius: 30px;*/
+        margin: 0 -3px;
+        outline: none;
+        text-decoration: none;
+        box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.15);
+    }
+
+    .button-radius-green,
+    .button-radius-green:hover,
+    .button-radius-green:focus,
+    .button-radius-green:active {
+        color: #71c64f;
+        /*border-color: #71c64f;*/
+    }
+
+    .button-radius-red,
+    .button-radius-red:hover,
+    .button-radius-red:focus,
+    .button-radius-red:active {
+        color: #da6b6b;
+        /*border-color: #da6b6b;*/
+    }
+
+
+    .box-circle {
+        border: 2px solid #1a4377;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    @@media(min-width: 992px) {
+        .Stepup-options {
+            min-height: .01%;
+            max-height: 30em;
+            overflow: auto;
+        }
+
+        ul.list_options > li > .check_opt > span {
+            width: 25%;
+        }
+    }
+
+    .note-editor ~ ul.list_options:not(.list-flex) > li {
+        float: left;
+    }
+
+    .note-editor ~ ul.list_options > li[id] {
+        width: 50%;
+    }
+
+    .note-editor ~ ul.list_options > li:not([id]),
+    .note-editor ~ ul.list_options > li > .check_opt > span {
+        width: 100%;
+    }
+</style>
+
+<style type="text/css">
+    button.btn-outline {
+        /*float: right;*/
+        outline: 0;
+        border: 1px solid #20487b;
+        border-radius: 30px;
+        color: #20487b;
+        margin-right: 20px;
+    }
+</style>
+<style>
+    .cke_inner {
+        display: none;
+    }
+
+    .box-circle.ckedit.cke_show_borders.cke_focus,
+    .box-circle.ckedit.cke_show_borders.cke_focus:focus {
+        box-shadow: none !important;
+        border: 0 !important;
+    }
+
+    .box-circle > span > i {
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        top: 0;
+        cursor: pointer;
+        font-size: 20px;
+        color: #383838;
+        margin: -18px -15px;
+        border: 2px solid;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        line-height: 27px;
+        text-align: center;
+        background-color: white;
+    }
+
+    ul.list_options > li > .check_opt {
+        position: relative;
+    }
+
+        ul.list_options > li > .check_opt > input[type=radio] {
+            width: 100%;
+            opacity: 0.00000001;
+            position: absolute;
+            left: 0;
+            margin: auto;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        ul.list_options > li > .check_opt > input[type="radio"] ~ label[for] {
+            box-shadow: 1px 3px 4px 1px #dddddd;
+            width: 100%;
+            max-width: calc(100% - 4em);
+            margin: auto;
+            border-radius: 15px;
+            padding: 10px 45px;
+            line-height: 1.5;
+        }
+
+            ul.list_options > li > .check_opt > input[type="radio"] ~ label[for]:before {
+                content: counter(li);
+                content: counter(li, upper-alpha);
+                counter-increment: li;
+                position: absolute;
+                left: 0;
+                margin-left: 2.3em;
+                top: 50%;
+                margin-top: -1em;
+                background: #ffe2d5;
+                height: 2em;
+                width: 2em;
+                line-height: 1.5em;
+                border: .3em solid #ffd0bb;
+                text-align: center;
+                font-weight: bold;
+                -moz-border-radius: 2em;
+                -webkit-border-radius: 2em;
+                border-radius: 2em;
+            }
+
+            ul.list_options > li > .check_opt > input[type="radio"] ~ label[for]:after {
+                content: "";
+                font-family: FontAwesome;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                margin-right: 2.5em;
+                margin-top: -1.1em;
+                height: 2em;
+                width: 2em;
+                line-height: 2em;
+                text-align: center;
+                font-weight: bold;
+                -moz-border-radius: 2em;
+                -webkit-border-radius: 2em;
+                border-radius: 2em;
+            }
+
+        ul.list_options > li > .check_opt > input[type="radio"]:checked ~ label[for] {
+            box-shadow: 1px 3px 4px 1px #6f6f6f;
+            background-color: #dedede;
+        }
+
+            ul.list_options > li > .check_opt > input[type="radio"]:checked ~ label[for]:after {
+                content: "\f00c";
+                background: #fafafa;
+                color: #689F38;
+                border: 1px solid #696969;
+            }
+
+        ul.list_options > li > .check_opt > input[type="radio"][disabled].red ~ label[for] {
+            box-shadow: 1px 3px 4px 1px #ff7777;
+        }
+
+        ul.list_options > li > .check_opt > input[type="radio"][disabled].green ~ label[for] {
+            box-shadow: 1px 3px 4px 1px #66BB6A;
+        }
+
+    ol.questions-list {
+        /*position: static;*/
+        position: relative;
+        left: 0;
+        top: 0;
+        padding-left: 0;
+        margin: auto;
+        text-align: center;
+        list-style: none;
+    }
+
+        ol.questions-list > li {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 25px;
+            border-radius: 50%;
+            margin: 1px;
+            text-indent: 0px;
+            cursor: pointer;
+            background-color: #000\9;
+            background-color: rgba(0,0,0,0);
+            border: 1px solid #fff;
+        }
+
+            ol.questions-list > li.active {
+                width: 30px;
+                height: 30px;
+                /*background-color: #20487b;
+                border-color: #133663;
+                color: #fff;*/
+                background: rgba(255, 255, 255, 0.75) !important;
+                border-color: rgba(0, 0, 0, 0.75) !important;
+                color: rgba(0, 0, 0, 0.75) !important;
+            }
+
+            ol.questions-list > li:not(.active) {
+                background-color: #20487b;
+                border-color: #133663;
+                color: #fff;
+            }
+
+            ol.questions-list > li.red {
+                background: rgba(255, 0, 0, 0.25);
+                border-color: rgba(255, 0, 0, 0.75);
+                color: rgba(255, 0, 0, 0.75);
+            }
+
+            ol.questions-list > li.green {
+                background: rgba(0, 158, 6, 0.25);
+                border-color: rgba(0, 158, 6, 0.75);
+                color: rgba(0, 158, 6, 0.75);
+            }
+
+            ol.questions-list > li:not([class]) {
+                background-color: #20487b;
+                border-color: #133663;
+                color: #fff;
+            }
+
+    ul.list_options > li:first-child {
+        font-weight: bold;
+    }
+
+    ul.list_options > li > .check_opt > label.lbl_check > input[type=radio]:checked {
+        border: 3px solid #fff;
+        background-color: #20487b;
+        box-shadow: 0px 0px 0px 1px #999;
+    }
+
+    ul.list_options > li > .check_opt > span {
+        width: auto;
+        padding: 0;
+        padding-left: 30px;
+    }
+
+    #myCarousel.box-circle.carousel {
+        padding-right: 0px;
+    }
+
+    .box-circle.carousel {
+        /*height: 100%;
+            border-radius: 0;*/
+        margin-top: 0px;
+        margin-bottom: 0px;
+        height: 90%;
+        border-color: #ddd;
+        border-radius: 15px 15px 0 0;
+        background-color: #f5f5f5;
+    }
+
+        .box-circle.carousel > ul.carousel-inner {
+            padding: 0;
+            margin: auto;
+            /*height: 100%;*/
+            min-height:55vh;
+        }
+
+            .box-circle.carousel > ul.carousel-inner > li.item {
+                height: 100%;
+                overflow: auto;
+            }
+
+                .box-circle.carousel > ul.carousel-inner > li.item > .box-circle {
+                    padding: 0;
+                    margin: 0px;
+                    /*margin: 15px 10px auto;*/
+                    line-height: 1;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    border: 0;
+                    /*position: absolute;*/
+                }
+
+                .box-circle.carousel > ul.carousel-inner > li.item .questionArea {
+                    padding: 15px;
+                    background: linear-gradient(45deg, #c1c1c1, #d6d6d6);
+                    color: #272727;
+                    padding-left: 50px;
+                    text-indent: -40px;
+                    /*background: linear-gradient(45deg, #9C27B0 15%, #E91E63 40%, #FFC107 100%);
+                        color: #fff;*/
+                    border-radius: 15px 15px 0px 0px;
+                    font-size: 25px;
+                }
+                    .box-circle.carousel > ul.carousel-inner > li.item  .form-group.form-group-lg > .questionArea{
+                        background:none;
+                        color: #555;
+                        padding:5px;
+                        border-radius:0px;
+                        text-indent:0px;
+                    }
+                    @@media (max-width: 768px) {
+                        .box-circle.carousel {
+            margin-top: 0px;
+            padding: 0 0 80px;
+        }
+    }
+
+    .box-circle > span {
+        margin-top: -40px;
+        background-color: transparent;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        /*margin-top: -22px;*/
+    }
+
+    .box-circle > time,
+    .box-circle > h4[id] {
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        top: 0;
+        /*margin: 15px 35px 0px 0px;*/
+        margin: -35px 35px 0px 0px;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: 400;
+        color: #20487b;
+        line-height: 1;
+        vertical-align: 0;
+        display: inline-block;
+    }
+
+    .box-circle > p {
+        display: inline-block
+    }
+
+    .box-circle > span > i {
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        top: 0;
+        cursor: pointer;
+        font-size: 20px;
+        color: #383838;
+        margin: -18px -15px;
+        border: 2px solid;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        line-height: 27px;
+        text-align: center;
+        background-color: white;
+    }
+</style>
+<style>
+    /*body.skin-blue header.main-header > nav.navbar.navbar-static-top {
+        background-color: #e0e0e0;
+    }
+
+    body.sidebar-mini .main-header > nav.navbar.navbar-static-top a {
+        color: #212121 !important;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+        body.sidebar-mini .main-header > nav.navbar.navbar-static-top a:hover {
+            cursor: auto;
+            background: transparent;
+        }
+
+    body.sidebar-mini .main-header > nav.navbar.navbar-static-top > a.counterCarousel {
+        position: absolute;
+        left: calc(50% - 5em);
+        top: 0;
+        padding: 10px;
+    }
+
+    .skin-blue header.main-header > a.logo {
+        background-color: #e0e0e0;
+    }
+
+    header.main-header > a.logo > [class^="logo-"] > img {
+        height: 30px;
+        max-width: 100%;
+        display: inline-block;
+    }
+
+    header.main-header > a.logo > .logo-lg > img {
+        height: 45px;
+    }
+
+    .main-footer {
+        color: #c3c3c3;
+    }
+
+        .main-footer a[target] {
+            color: #fff;
+        }
+
+            .main-footer a[target]:hover,
+            .main-footer a[target]:focus,
+            .main-footer a[target]:active {
+                color: #f5f5f5;
+            }
+
+    .skin-blue .wrapper {
+        background-color: #ffe2d5;
+    }
+
+    .navbar-nav > .user-menu > .dropdown-menu > li.user-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px;
+    }
+
+        .navbar-nav > .user-menu > .dropdown-menu > li.user-header > img.img-circle {
+            max-width: 100%;
+            display: inline-block;
+            height: 50px;
+        }
+
+        .navbar-nav > .user-menu > .dropdown-menu > li.user-header > p {
+            margin-bottom: 0px;
+        }*/
+
+    .box-circle.carousel > .box-footer {
+        margin-bottom: -60px;
+        background-color: transparent;
+        border: 0;
+    }
+
+    .box-circle.describe-option {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: start;
+        align-content: flex-start;
+    }
+
+    .form-group.form-group-lg > .form-control.form-control-lg {
+        width: 100%;
+    }
+
+    .box-circle.carousel > ul.carousel-inner > li.item .questionArea > p {
+        display: inline;
+        margin: 0;
+    }
+
+    @@media(min-width: 768px) {
+        /*.wrapper > header.main-header {
+            position: fixed;
+            left: 0;
+            right: 0;
+        }
+
+        .sidebar-mini .content-wrapper {
+            margin: 0px !important;
+            height: 100%;
+        }
+
+        .content-wrapper > section.content-header {
+            background: transparent;
+            display: none;
+        }
+
+        .content-wrapper > section.content {
+            height: 100%;
+            padding: 70px 15px 60px;
+        }*/
+        .box-circle.carousel > ul.carousel-inner > li.item > .box-circle.describe-option > .questionArea {
+            width: 100%;
+            flex: 0 0 100%;
+        }
+
+        .box-circle.carousel > ul.carousel-inner > li.item > .box-circle.describe-option > ul.list_options {
+            max-width: 75%;
+            flex: 0 0 75%;
+        }
+
+        .box-circle.carousel > ul.carousel-inner > li.item > .box-circle.describe-option > .form-group.form-group-lg {
+            max-width: 25%;
+            flex: 0 0 25%;
+            margin-top: 20px;
+            padding-right: 15px;
+        }
+
+        .box-circle.carousel > .box-footer {
+            position: absolute;
+            bottom: 0px;
+            right: 0;
+            left: 0;
+        }
+
+        .box-circle.carousel {
+            padding: 0 0 55px;
+        }
+    }
+</style>
+<!-- Site wrapper -->
+<div class="block-content">
+
+    <!-- Content Wrapper. Contains page content -->
+    <div>
+
+        <div id="myCarousel" class="carousel slide box-circle" data-ride="carousel" data-wrap="false" data-interval="false">
+            <ul class="carousel-inner">
+
+
+                @foreach (var grd in ques)
+                {
+
+                    <li class="item" value="@grd.index">
+
+                        <div class="box-circle describe-option">
+
+                            <div class='questionArea'>
+                                <textarea class="form-control" id="txtQuestion" name="Question" placeholder="Question" disabled="disabled">@grd.Number. @grd.Question</textarea>
+                            </div>
+                            <ul class="list_options">
+                                <li>
+                                    <div class="check_opt">
+
+                                        @*<input type="radio" name="radiobtn_@grd.QBID" class="selectedAns" id="radioopt_@grd.QBID-1" value="1" />*@
+
+                                        @if (grd.Answer == 1 && grd.selectedanswer == 1)
+                                        {
+                                            <input type="radio" name="radiobtn_@grd.QBID" class="selectedAns green" id="radioopt_@grd.QBID-1" value="1" disabled="disabled" />
+
+                                        }
+                                        else if (grd.selectedanswer == 1)
+                                        {
+                                            if (grd.selectedanswer == 1)
+                                            {
+                                                <input type="radio" name="radiobtn_@grd.QBID" class="selectedAns red" id="radioopt_@grd.QBID-1" value="1" disabled="disabled" />
+                                            }
+
+                                        }
+                                        else if (grd.Answer == 1)
+                                        {
+                                            <input type="radio" name="radiobtn_@grd.QBID" class="selectedAns green" id="radioopt_@grd.QBID-1" value="1" disabled="disabled" />
+                                        }
+                                        else
+                                        {
+                                            <input type="radio" name="radiobtn_@grd.QBID" class="selectedAns" id="radioopt_@grd.QBID-1" value="2" disabled="disabled" />
+                                        }
+
+
+
+                                        <label for="radioopt_@grd.QBID-1">
+                                            <textarea class="form-control" id="opt1" name="QuizOpt1" placeholder="Option 1" rows="1" disabled="disabled">@grd.Option1</textarea>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="check_opt">
+
+                                        @*<input type="radio" name="radiobtn_@grd.QBID" class="selectedAns" id="radioopt_@grd.QBID-2" value="2" />*@
+                                        @if (grd.Answer == 2 && grd.selectedanswer == 2)
+                                        {
+                                            <input type="radio" name="radiobtn_@grd.QBID" class="selectedAns green" id="radioopt_@grd.QBID-2" value="2" disabled="disabled" />
+                                        }
+                                        else if (grd.selectedanswer == 2)
+                                        {
+                                            if (grd.selectedanswer == 2)
+                                            {
+                                                <input type="radio" name="radiobtn_@grd.QBID" class="selectedAns red" id="radioopt_@grd.QBID-2" value="2" disabled="disabled" />
+                                            }
+
+
+                                        }
+                                        else if (grd.Answer == 2)
+                                        {
+                                            <input type="radio" name="radiobtn_@grd.QBID" class="selectedAns green" id="radioopt_@grd.QBID-2" value="2" disabled="disabled" />
+                                        }
+                                        else
+                                        {
+                                            <input type="radio" name="radiobtn_@grd.QBID" class="selectedAns" id="radioopt_@grd.QBID-2" value="2" disabled="disabled" />
+                                        }
+
+                                        <label for="radioopt_@grd.QBID-2">
+                                            <textarea class="form-control" id="opt2" name="QuizOpt2" placeholder="Option 2" rows="1" disabled="disabled">@grd.Option2</textarea>
+                                        </label>
+
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="check_opt">
+                                        @*<input type="radio" name="radiobtn_@grd.QBID" class="selectedAns" id="radioopt_@grd.QBID-3" value="3" />*@
+                                        @if (grd.Answer == 3 && grd.selectedanswer == 3)
+                                        {
+                                            <input type="radio" name="radiobtn_@grd.QBID" class="selectedAns green" id="radioopt_@grd.QBID-3" value="3" disabled="disabled" />
+
+                                        }
+                                        else if (grd.selectedanswer == 3)
+                                        {
+                                            if (grd.selectedanswer == 3)
+                                            {
+                                                <input type="radio" name="radiobtn_@grd.QBID" class="selectedAns red" id="radioopt_@grd.QBID-3" value="3" disabled="disabled" />
+                                            }
+
+
+                                        }
+                                        else if (grd.Answer == 3)
+                                        {
+                                            <input type="radio" name="radiobtn_@grd.QBID" class="selectedAns green" id="radioopt_@grd.QBID-3" value="3" disabled="disabled" />
+                                        }
+                                        else
+                                        {
+                                            <input type="radio" name="radiobtn_@grd.QBID" class="selectedAns" id="radioopt_@grd.QBID-3" value="3" disabled="disabled" />
+                                        }
+
+                                        <label for="radioopt_@grd.QBID-3">
+                                            <textarea class="form-control" id="opt3" name="QuizOpt3" placeholder="Option 3" rows="1" disabled="disabled">@grd.Option3</textarea>
+                                        </label>
+
+                                    </div>
+                                </li>
+
+
+                                <li>
+                                    <div class="check_opt">
+
+                                        @*<input type="radio" name="radiobtn_@grd.QBID" class="selectedAns" id="radioopt_@grd.QBID-4" value="4" />*@
+                                        @if (grd.Answer == 4 && grd.selectedanswer == 4)
+                                        {
+                                            <input type="radio" name="radiobtn_@grd.QBID" class="selectedAns green" id="radioopt_@grd.QBID-4" value="4" disabled="disabled" />
+                                        }
+                                        else if (grd.selectedanswer == 4)
+                                        {
+                                            if (grd.selectedanswer == 4)
+                                            {
+                                                <input type="radio" name="radiobtn_@grd.QBID" class="selectedAns red" id="radioopt_@grd.QBID-4" value="4" disabled="disabled" />
+                                            }
+                                            else
+                                            {
+                                                <input type="radio" name="radiobtn_@grd.QBID" class="selectedAns" id="radioopt_@grd.QBID-4" value="4" disabled="disabled" />
+                                            }
+                                        }
+                                        else if (grd.Answer == 4)
+                                        {
+                                            <input type="radio" name="radiobtn_@grd.QBID" class="selectedAns green" id="radioopt_@grd.QBID-4" value="4" disabled="disabled" />
+                                        }
+                                        else
+                                        {
+                                            <input type="radio" name="radiobtn_@grd.QBID" class="selectedAns" id="radioopt_@grd.QBID-4" value="4" disabled="disabled" />
+                                        }
+
+                                        <label for="radioopt_@grd.QBID-4">
+                                            <textarea class="form-control" id="opt4" name="QuizOpt4" placeholder="Option 4" rows="1" disabled="disabled">@grd.Option4</textarea>
+                                        </label>
+
+
+                                    </div>
+                                </li>
+
+                            </ul>
+
+                            <div class="form-group form-group-lg">
+                                <label>Describe why you have choosen this option</label>
+                                <div class='questionArea'>
+                                    <textarea class="form-control form-control-lg" rows="10" placeholder="Enter Description..." disabled="disabled">@grd.Descriptionforoptionchoosen</textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                }
+
+            </ul>
+
+            <ol class="questions-list carousel-indicators">
+                @foreach (var grd in ques)
+                {
+                    if (grd.isAttempted == true)
+                    {
+                        if (grd.isCorrectanswer == true)
+                        {
+                            <li data-target="#myCarousel" class="@grd.Answer @grd.selectedanswer green" data-slide-to="@grd.index">
+
+                                @grd.Number
+
+                            </li>
+                        }
+                        else
+                        {
+                            <li data-target="#myCarousel" class="red" data-slide-to="@grd.index">
+
+                                @grd.Number
+
+                            </li>
+                        }
+
+                    }
+                    else
+                    {
+                        <li data-target="#myCarousel" data-slide-to="@grd.index">
+
+                            @grd.Number
+
+                        </li>
+                    }
+                }
+            </ol>
+
+            <div class="box-footer">
+                <ul class="pager">
+                    <li class="previous">
+                        <a href="#myCarousel" data-slide="prev"><i class="fa fa-arrow-left"></i>Previous</a>
+
+                    </li>
+                    <li class="next">
+                        <a href="#myCarousel" data-slide="next">Next<i class="fa fa-arrow-right"></i></a>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+        <!-- / mycarousel -->
+
+    </div>
+    <!-- /.content-wrapper -->
+
+</div>
+<!-- ./wrapper -->
+@*<script type="text/javascript" src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>*@
+<script type="text/javascript">
+    var Countofquestions = 0;
+
+    var id = $("#myCarousel>.carousel-inner>.item:first-child").addClass("active");
+    $("#myCarousel>.questions-list>li[data-slide-to]:first-child").addClass("active");
+    console.log(id.val());
+
+    var script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+    document.head.appendChild(script);
+    $('.questionArea > textarea.form-control[disabled]').each(function () {
+        var k = $(this).val();
+        var html = $.parseHTML(k);
+        $(this).replaceWith(html);
+    });
+$('ul.list_options > li').each(function () {
+    var k = $(this).find('textarea.form-control[disabled]').val();
+    var html = $.parseHTML(k);
+    $(this).find('textarea.form-control[disabled]').replaceWith(html);
+});
+   
+
+
+    var count = 1;
+    var Obj = [];
+    var currentIndex = id;
+
+    setTimeout(function () {
+        $(document).ready(function () {
+            checkitem();
+            var clickEvent = false;
+        });
+
+        var totalItems = $('.box-circle.carousel > ul.carousel-inner > li.item').length;
+        var currentIndex = $('.box-circle.carousel > ul.carousel-inner > li.item.active').index() + 1;
+        $('span#counterCarousel').html('' + currentIndex + '/' + totalItems + '');
+
+        $('#myCarousel').on('slid.bs.carousel', function () {
+            
+            checkitem();
+            currentIndex = $('.box-circle.carousel > ul.carousel-inner > li.item.active').index() + 1;
+            $('span#counterCarousel').html('' + currentIndex + '/' + totalItems + '');
+        });
+
+        function checkitem() {
+            currentIndex = $('li.item.active').val();
+            var $this = $('#myCarousel');
+            if ($('.carousel-inner > .item:only-child').hasClass('active')) {
+                $this.children(".box-footer").find("li").children("a[data-slide]").hide();
+            }
+            else {
+                if ($('.carousel-inner .item:first').hasClass('active')) {
+                    $this.children(".box-footer").find("li.previous").children("a[data-slide]").hide();
+                    //$this.children(".box-footer").find("li.next").children("button").hide();
+                } else if ($('.carousel-inner .item:last').hasClass('active')) {
+                    $this.children(".box-footer").find("li.next").children("a[data-slide]").hide();
+                    //$this.children(".box-footer").find("li.next").children("button").show();
+                } else {
+                    $this.children(".box-footer").find("li").children("a[data-slide]").show();
+                    //$this.children(".box-footer").find("li.next").children("button").hide();
+                }
+            }
+        }
+    }, 300);
+</script>
+
+

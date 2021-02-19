@@ -1,0 +1,2572 @@
+﻿@model IEnumerable<Evolutyz.Entities.WeekDays>
+@{
+    ViewBag.Title = "USLeaveCalendar";
+
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+@*<script src="~/Scripts/bootstrap.min.js"></script>*@
+<script src="~/Scripts/date.format.js"></script>
+<script src="~/Scripts/bootstrap-datepicker.min.js"></script>
+<script src="~/plugins/daterangepicker/moment.min.js"></script>
+<script src="~/Scripts/moment.min.js"></script>
+<style>
+    span.badge.label:empty {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        padding: 0;
+        position: absolute;
+        /*right: 3px;
+        top: 3px;*/
+        left: 10px;
+        bottom: 10px;
+    }
+    a[data-opt] > span.badge.label:empty {
+        left: 3px;
+        right: inherit;
+    }
+    span.badge.label.bg-text{
+    position: absolute;
+    margin-left: -25px;
+    top: 50%;
+    left: 50%;
+    margin-top: 10px;
+    }
+    span.badge.label.bg-green:empty {
+        background-color: #00b100 !important;
+    }
+    #calendarContainer tbody > tr > td > a[data-opt] > span.opt {
+        display: inline-block;
+        line-height: 20px;
+        font-size: 20px;
+        border-style: solid;
+        border-width: 2px 4px 4px 4px;
+        /*padding: 2px 6px;
+        line-height: 35px;
+        font-size: 30px;
+        top: 0;
+        right: 0;*/
+        border-radius: 50%;
+        position: absolute;
+        bottom: 5px;
+        left: 5px;
+    }
+        #calendarContainer tbody > tr > td > a[data-opt] > span.opt + font {
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            margin-left: -24px;
+            margin-bottom: -26px;
+        }
+        #calendarContainer tbody > tr > td > a[data-leave] > span.badge.label + font {
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            margin-left: -17px;
+            margin-bottom: -24px;
+            color: #ff9900;
+        }
+    #calendarContainer tbody > tr > td > a[data-wfh] > span.badge.label + font {
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        margin-left: -47px;
+        margin-bottom: -24px;
+        color: #ff9900;
+    }
+    #calendarContainer tbody > tr > td > a[data-opt=false] > span.opt {
+        background-color: #d0d0d0;
+        border-color: #d0d0d0;
+        color: #616161;
+    }
+        #calendarContainer tbody > tr > td > a[data-opt=false] > span.opt.fa-green {
+            background-color: #8cff8c;
+            border-color: #8cff8c;
+            color: #00b100;
+        }
+
+    #calendarContainer tbody > tr > td > a[data-opt=true] > span.opt {
+        border-color: #ffdca8;
+        background-color: #ffdca8;
+        color: #ff9900;
+    }
+        #calendarContainer tbody > tr > td > a[data-opt=true] > span.opt.fa-red {
+            background-color: #ffaca2;
+            border-color: #ffaca2;
+            color: #dd4b39;
+        }
+    strong.hover-notification {
+        position: relative;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        border: 1px solid #ddd;
+        background-color: gray;
+    }
+
+    label.error {
+        /*position: absolute;*/
+        bottom: -20px;
+        left: 15px;
+        font-size: 10px;
+        color: red;
+    }
+
+    strong.hover-notification[title*="Casual"] {
+        background-color: red
+    }
+
+    strong.hover-notification[title*="Comp-Off"] {
+        background-color: green;
+    }
+
+    strong.hover-notification:before {
+    }
+
+    strong .hover-notification + strong.hover-notification {
+        margin-top: 5px;
+    }
+
+    .grp-leaves {
+        margin-bottom: 15px;
+    }
+
+    @@media (min-width:992px) {
+        .grp-leaves {
+            display: flex;
+            flex-flow: wrap;
+        }
+
+            .grp-leaves > .form-group {
+                float: left;
+                width: 33.33%;
+                padding: 0 15px;
+            }
+
+        .legend {
+        }
+    }
+
+
+    /*.grp-leaves > fieldset {
+                padding: 10px 20px;
+                margin: 0 2px;
+                border: 1px solid #e5e5e5;
+            }
+        .grp-leaves > fieldset > legend {
+            width: auto;
+            margin-bottom: auto;
+            border: 1px solid #e5e5e5;
+            padding: 0 10px !important;
+        }*/
+    #calendarContainer td, #calendarContainer th {
+        text-align: center;
+        height: 5em;
+        border: 1px solid #ddd;
+    }
+    /*@@-moz-document url-prefix() {
+            #calendarContainer td, #calendarContainer th {
+                height:5em;
+            }
+        }*/
+    #calendarContainer tbody {
+        background-color: white;
+    }
+
+
+
+    #calendarContainer thead > tr > th {
+        background-color: #ffe7dc;
+    }
+
+    #calendarContainer tbody > tr > td {
+        padding: 0;
+    }
+
+        #calendarContainer tbody > tr > td > a {
+            display: flex;
+            width: 100%;
+            position: relative;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+    #calendarContainer {
+        /*height: 500px;
+            float: left;
+            max-width: 1000px;
+        margin: 40px auto;
+        padding: 0 50px;*/
+    }
+
+    /*#BtnPreviewLeaves {
+        margin-left: 900px;
+    }*/
+    /*#BtnPreviewWFH {
+        margin-left: 600px;
+    }*/
+    .modal {
+        padding-top: 90px;
+    }
+
+    .tooltip {
+        width: 400px;
+        height: 300px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+        -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        position: absolute;
+        top: 5px;
+        left: 50px;
+        display: none;
+    }
+
+    .tooltip {
+        z-index: 100;
+    }
+
+    .leavedataonhover {
+        display: block;
+        width: 9%;
+    }
+
+        .leavedataonhover:hover + .tooltip {
+            display: block;
+        }
+
+    .tooltip:hover {
+        display: block;
+    }
+
+    .btn-clr,
+    .btn-clr:hover,
+    .btn-clr:active,
+    .btn-clr:focus {
+        color: #ff7200;
+        background: linear-gradient(160deg,#ffe2d5 20%,#ffefe8 80%);
+        border-color: #e64e00;
+        border-radius: 25px;
+        outline: none
+    }
+
+    .btn-clr1,
+    .btn-clr1:hover,
+    .btn-clr1:active,
+    .btn-clr1:focus {
+        color: #656565;
+        background: linear-gradient(160deg,#efefef 20%,#e2e2e2 80%);
+        border-color: #969696;
+        border-radius: 25px;
+        outline: none
+    }
+
+    .btn-clr2,
+    .btn-clr2:hover,
+    .btn-clr2:active,
+    .btn-clr2:focus {
+        color: #fb9f13;
+        background: linear-gradient(160deg,#fff6e9 20%,#ffeaca 80%);
+        border-color: #fb9f13;
+        border-radius: 25px;
+        outline: none;
+    }
+
+    .btn[class*="btn-clr"]:active,
+    .btn[class*="btn-clr"]:focus {
+        -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+        -moz-box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+        box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+    }
+
+    fieldset.note-status {
+        margin-top: 20px;
+    }
+
+        fieldset.note-status > legend {
+            margin-bottom: auto;
+            background-color: #ffeee7;
+            border-color: #f37c42;
+            color: #ff953e;
+            padding: 0 5px;
+        }
+        fieldset.note-status > .note-body {
+            padding: 10px 5px;
+            background-color: white;
+            border-width: 0px 1px 1px 1px;
+            border-style: dashed;
+            border-color: #adadad;
+        }
+        fieldset.note-status > .note-body  > p {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+            fieldset.note-status > .note-body > p:last-child {
+                margin-bottom: auto;
+            }
+
+            fieldset.note-status > .note-body > p > span > i.fa {
+                border-radius: 50%;
+                padding: 3px;
+                font-size: 18px;
+            }
+                fieldset.note-status > .note-body > p > span > i.fa.fa-check-circle-o {
+                    color: #ff9900;
+                    background-color: #ffdca8;
+                }
+                fieldset.note-status > .note-body > p > span > i.fa.fa-circle {
+                    padding: 0;
+                    background-color: transparent;
+                    color: #777777;
+                    /*background-color: #cacaca;*/                    
+                }
+            fieldset.note-status > .note-body > p > span:nth-child(2) > i.fa.fa-circle {
+                color: #02b101;
+                /*background-color: #A5D6A7;*/
+            }
+            fieldset.note-status > .note-body > p > span:last-child > i.fa.fa-circle {
+                color: #dd4b39;
+                /*background-color: #FFCCBC;*/
+            }
+</style>
+<style>
+    #loading-image {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 1035;
+        background-color: rgba(243, 243, 243, 0.75);
+        /*opacity: .8;*/
+    }
+
+        #loading-image > img {
+            /*width: 56px;
+            height: 56px;
+            border: 8px solid rgba(255, 87, 34, 0.25);
+            border-top-color: #f37a41;
+            border-radius: 50%;*/
+            position: absolute;
+            /* animation: loader-rotate 1s linear infinite; */
+            top: 50%;
+            left: 50%;
+            margin: -60px auto 0;
+            max-width: 100%;
+            display: block;
+            height: 100px;
+        }
+
+        #loading-image > span {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            animation: loader-circles 1s linear infinite;
+            top: 50%;
+            left: 50%;
+            margin: -20px auto 0;
+        }
+
+        #loading-image > strong {
+            position: absolute;
+            top: 50%;
+            left: 48%;
+            margin: 0px auto 0;
+            font-size: 10px;
+        }
+
+    @@keyframes loader-circles {
+        0% {
+            box-shadow: 0 -85px 0 0 rgba(255, 87, 34, 0.05), 61px -61px 0 0 rgba(255, 87, 34, 0.1), 85px 0 0 0 rgba(255, 87, 34, 0.2), 61px 61px 0 0 rgba(255, 87, 34, 0.3), 0 85px 0 0 rgba(255, 87, 34, 0.4), -61px 61px 0 0 rgba(255, 87, 34, 0.6), -85px 0 0 0 rgba(255, 87, 34, 0.8), -61px -61px 0 0 #f37a41;
+        }
+
+        12.5% {
+            box-shadow: 0 -85px 0 0 #f37a41, 61px -61px 0 0 rgba(255, 87, 34, 0.05), 85px 0 0 0 rgba(255, 87, 34, 0.1), 61px 61px 0 0 rgba(255, 87, 34, 0.2), 0 85px 0 0 rgba(255, 87, 34, 0.3), -61px 61px 0 0 rgba(255, 87, 34, 0.4), -85px 0 0 0 rgba(255, 87, 34, 0.6), -61px -61px 0 0 rgba(255, 87, 34, 0.8);
+        }
+
+        25% {
+            box-shadow: 0 -85px 0 0 rgba(255, 87, 34, 0.8), 61px -61px 0 0 #f37a41, 85px 0 0 0 rgba(255, 87, 34, 0.05), 61px 61px 0 0 rgba(255, 87, 34, 0.1), 0 85px 0 0 rgba(255, 87, 34, 0.2), -61px 61px 0 0 rgba(255, 87, 34, 0.3), -85px 0 0 0 rgba(255, 87, 34, 0.4), -61px -61px 0 0 rgba(255, 87, 34, 0.6);
+        }
+
+        37.5% {
+            box-shadow: 0 -85px 0 0 rgba(255, 87, 34, 0.6), 61px -61px 0 0 rgba(255, 87, 34, 0.8), 85px 0 0 0 #f37a41, 61px 61px 0 0 rgba(255, 87, 34, 0.05), 0 85px 0 0 rgba(255, 87, 34, 0.1), -61px 61px 0 0 rgba(255, 87, 34, 0.2), -85px 0 0 0 rgba(255, 87, 34, 0.3), -61px -61px 0 0 rgba(255, 87, 34, 0.4);
+        }
+
+        50% {
+            box-shadow: 0 -85px 0 0 rgba(255, 87, 34, 0.4), 61px -61px 0 0 rgba(255, 87, 34, 0.6), 85px 0 0 0 rgba(255, 87, 34, 0.8), 61px 61px 0 0 #f37a41, 0 85px 0 0 rgba(255, 87, 34, 0.05), -61px 61px 0 0 rgba(255, 87, 34, 0.1), -85px 0 0 0 rgba(255, 87, 34, 0.2), -61px -61px 0 0 rgba(255, 87, 34, 0.3);
+        }
+
+        62.5% {
+            box-shadow: 0 -85px 0 0 rgba(255, 87, 34, 0.3), 61px -61px 0 0 rgba(255, 87, 34, 0.4), 85px 0 0 0 rgba(255, 87, 34, 0.6), 61px 61px 0 0 rgba(255, 87, 34, 0.8), 0 85px 0 0 #f37a41, -61px 61px 0 0 rgba(255, 87, 34, 0.05), -85px 0 0 0 rgba(255, 87, 34, 0.1), -61px -61px 0 0 rgba(255, 87, 34, 0.2);
+        }
+
+        75% {
+            box-shadow: 0 -85px 0 0 rgba(255, 87, 34, 0.2), 61px -61px 0 0 rgba(255, 87, 34, 0.3), 85px 0 0 0 rgba(255, 87, 34, 0.4), 61px 61px 0 0 rgba(255, 87, 34, 0.6), 0 85px 0 0 rgba(255, 87, 34, 0.8), -61px 61px 0 0 #f37a41, -85px 0 0 0 rgba(255, 87, 34, 0.05), -61px -61px 0 0 rgba(255, 87, 34, 0.1);
+        }
+
+        87.5% {
+            box-shadow: 0 -85px 0 0 rgba(255, 87, 34, 0.1), 61px -61px 0 0 rgba(255, 87, 34, 0.2), 85px 0 0 0 rgba(255, 87, 34, 0.3), 61px 61px 0 0 rgba(255, 87, 34, 0.4), 0 85px 0 0 rgba(255, 87, 34, 0.6), -61px 61px 0 0 rgba(255, 87, 34, 0.8), -85px 0 0 0 #f37a41, -61px -61px 0 0 rgba(255, 87, 34, 0.05);
+        }
+
+        100% {
+            box-shadow: 0 -85px 0 0 rgba(255, 87, 34, 0.05), 61px -61px 0 0 rgba(255, 87, 34, 0.1), 85px 0 0 0 rgba(255, 87, 34, 0.2), 61px 61px 0 0 rgba(255, 87, 34, 0.3), 0 85px 0 0 rgba(255, 87, 34, 0.4), -61px 61px 0 0 rgba(255, 87, 34, 0.6), -85px 0 0 0 rgba(255, 87, 34, 0.8), -61px -61px 0 0 #f37a41;
+        }
+    }
+</style>
+
+
+<div id="loading-image" style="display:none">
+    <span></span>
+    <strong>Loading Please Wait....</strong>
+</div>
+<input type="hidden" class="form-control" id="userprofileid" value=@TempData["User_id"] />
+<input type="hidden" class="form-control" id="usrwfhid" value=@TempData["UsrWrkFrmId"] />
+<input type="hidden" class="form-control" id="AccountId" value=@TempData["AccountId"] />
+<input type="hidden" class="form-control" id="getleavetypes" />
+
+@*popup to applyleave and workfrom home*@
+<div id="AppLeave_Popup" class="modal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content" id="leave_popup">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" id="closeAppLeave">&times;</button>
+                <h4 class="modal-title">Choose Option</h4>
+            </div>
+            <div class="modal-body" id="questions">
+
+                <form id="SelectOption">
+                    <div class="form-group row">
+                        <div class="col-md-4" id="ApplyLeave">
+                            <label class="radio-inline">
+                                <input type="radio" class="check" name="optradio" id="radio1" value="rad1">Apply Leave
+                            </label>
+
+                        </div>
+                        <div class="col-md-8">
+                            <label class="radio-inline">
+                                <input type="radio" class="check" name="optradio" id="radio2" value="rad2">Work From Home
+                            </label>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="AlreadyAppliedLeaves" class="modal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content" id="usedleaves">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" data-backdrop="static" id="closeAppliedLeaves">&times;</button>
+                @*<h4 class="modal-title">Choose Option</h4>*@
+            </div>
+            <div class="modal-body" id="">
+                <label>Leave Already Applied On this Date </label>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div id="AlreadyAppliedWFH" class="modal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content" id="usedwfh">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" data-backdrop="static" id="closeAppliedWFH">&times;</button>
+                @*<h4 class="modal-title">Choose Option</h4>*@
+            </div>
+            <div class="modal-body" id="">
+                <label>WorkFromHome Already Applied On This Date </label>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div id="OptLeave_Popup" class="modal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Choose Optional Holiday</h4>
+            </div>
+            <div class="modal-body">
+                <form id="SelectOptional">
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label class="radio-inline">
+                                <input type="radio" class="check" name="optionalradio" id="optional1" value="">Yes
+                            </label>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="radio-inline">
+                                <input type="radio" class="check" name="optionalradio" id="optional2" value="0">No
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@*submitleaves*@
+<div id="Applyleave" class="modal" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Apply Leave</h4>
+            </div>
+            <div class="modal-body" id="questions">
+
+                <form id="AddModal">
+                    <div class="form-group row" style="display:none">
+                        <div class="col-md-4">
+                            <label>Employee Id</label>
+                        </div>
+                        <div class="col-md-8">
+
+                            <input type="text" class="form-control" id="getEmpIds" value=@TempData["UserId"] readonly />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label>Employee Name </label>
+
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="Emp_Names" value="@TempData["Name"]" readonly />
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-5">
+                            <label>From Date </label>
+
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="from_date" name="from_date" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" readonly />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-5">
+                            <label>To Date </label>
+
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="to_date" name="to_date" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" onchange="leavecount()" />
+                        </div>
+                    </div>
+                    <div class="row form-group" style="display:none">
+                        <div class="col-md-5">
+                            <label>From Address</label>
+                        </div>
+                        <div class="col-md-8 ">
+                            <input type="text" class="form-control" id="from_address" value=@TempData["FromAddress"] />
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer" id="questions">
+                <button type="button" class="btn btn-clr" id="Apply_Leave" onclick="userleaveconsumed()"> Apply Leave</button>
+                <button type="button" class="btn btn-clr1" data-dismiss="modal" id="Cancel"> Cancel</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@*comments to apply leave*@
+<div id="Apply_comments" class="modal" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Add Comments</h4>
+            </div>
+            <div class="modal-body" id="">
+
+                <form id="AddModal">
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label>Comments</label>
+                        </div>
+                        <div class="col-md-8">
+                            <textarea rows="4" class="form-control" id="comments">  </textarea>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer" id="questions">
+                <button type="button" class="btn btn-clr" onclick="Applycomments()">Ok</button>
+                <button type="button" class="btn btn-clr1" data-dismiss="modal" id="cancelLeavecmnts"> Cancel</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@*submitwfh*@
+<div id="Workfrmhome" class="modal" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Work From Home</h4>
+            </div>
+            <div class="modal-body" id="questions">
+
+
+
+                <form id="AddModal">
+                    <div class="form-group row" style="display:none">
+                        <div class="col-md-4">
+                            <label>Employee Id</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="getEmpIds" value=@TempData["UserId"] readonly />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label>Employee Name </label>
+
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="Emp_Names" value="@TempData["Name"]" readonly />
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label>From Date </label>
+
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="fromdate" name="fromdate" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" readonly />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label>To Date </label>
+
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="todate" name="todate" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" onchange="leavecountWFH()" />
+                        </div>
+                    </div>
+                    <div class="row form-group" style="display:none">
+                        <div class="col-md-5">
+                            <label>From Address</label>
+                        </div>
+                        <div class="col-md-8 ">
+                            <input type="text" class="form-control" id="from_address" value=@TempData["FromAddress"] />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer" id="questions">
+                <button type="button" class="btn btn-clr" id="Wrk_Frm_Hme" onclick="userwrkfrmhome()">Apply</button>
+                <button type="button" class="btn btn-clr1" data-dismiss="modal" id="cancel"> Cancel</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@*comments to apply wfh*@
+<div id="Apply_wfhcomments" class="modal" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Add Comments</h4>
+            </div>
+            <div class="modal-body" id="">
+
+                <form id="AddModal">
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label>Comments</label>
+                        </div>
+                        <div class="col-md-8">
+                            <textarea rows="4" class="form-control" id="wfhcomments">  </textarea>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer" id="questions">
+                <button type="button" class="btn btn-clr" onclick="Applywfhcomments()">Ok</button>
+                <button type="button" class="btn btn-clr1" data-dismiss="modal" id="cancelwfhcmnts"> Cancel</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+@*calendar table*@
+<div class="block-content">
+    <div class="">
+        <h4 class="heading-fancy">Apply Leaves </h4>
+    </div>
+
+
+    <div class="main-container">
+        <div style="display:table;width:100%;margin-bottom:10px;">
+            <div style="display:table-cell;vertical-align: middle;">
+                @*<label for="ProjectDetails">Project<font style="color:red;">*</font></label>*@
+                @Html.DropDownList("UserProjects", new SelectList(ViewBag.UserProjects, "CL_ProjId","ProjectTitle"), new { @class = "form-control", style = "width:100%;" })
+
+            </div>
+            <div style="display:table-cell;vertical-align: middle;padding-left:20px">
+                <select id="sel_month" class="form-control" style="width:100%;">
+                    @*<option value="0">Select Month</option>*@
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+            </div>
+            <div style="display:table-cell;vertical-align: middle;padding-left:20px">
+                <select id="sel_Year" class="form-control" style="width:100%;"></select>
+            </div>
+            <div style="display:table-cell;float:right;">
+                <button type="button" class="btn btn-clr" id="BtnPreviewLeaves">Preview Leaves</button>
+                <button type="button" class="btn btn-clr2" id="BtnPreviewWFH">Preview Work From Home</button>
+            </div>
+        </div>
+        <table id="calendarContainer">
+
+            <thead>
+                <tr>
+                    <th>Sunday</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                    <th>Saturday</th>
+
+                </tr>
+            </thead>
+            <tbody id="tbody_months">
+                @foreach (var index in Model)
+                {
+                    <tr>
+                        @if (index.Su != null)
+                        {
+                            <td>
+                                <a class="leavedataonhover" id="leavedataonhover" style="color:gray">@index.Su</a>
+
+                            </td>
+                        }
+                        else
+                        {
+                            <td><a class="" style="color:gray"></a></td>
+                        }
+                        @if (index.Mo != null)
+                        {
+                            <td>
+                                <a class="leavedataonhover" id="leavedataonhover" data-toggle="modal" style="" data-id="@index.Mo" onclick="Getdate(this)">@index.Mo</a>
+
+                            </td>
+
+                        }
+                        else
+                        {
+                            <td><a class="" style=""></a></td>
+
+                        }
+                        @if (index.Tu != null)
+                        {
+                            <td>
+                                <a class="leavedataonhover" id="leavedataonhover" data-toggle="modal" href="#" style="" data-id="@index.Tu" onclick="Getdate(this)">@index.Tu</a>
+
+                            </td>
+                        }
+                        else
+                        {
+                            <td><a class="" href="#" style=""></a></td>
+                        }
+                        @if (index.We != null)
+                        {
+                            <td>
+                                <a class="leavedataonhover" id="leavedataonhover" data-toggle="modal" href="#" style="" data-id="@index.We" onclick="Getdate(this)">@index.We</a>
+
+                            </td>
+                        }
+                        else
+                        {
+                            <td><a class="" href="#" style=""></a></td>
+                        }
+                        @if (index.Th != null)
+                        {
+                            <td>
+                                <a class="leavedataonhover" id="leavedataonhover" data-toggle="modal" href="#" style="" data-id="@index.Th" onclick="Getdate(this)">@index.Th</a>
+
+                            </td>
+                        }
+                        else
+                        {
+                            <td><a class="" href="#" style=""></a></td>
+                        }
+                        @if (index.Fr != null)
+                        {
+                            <td>
+                                <a class="leavedataonhover" id="leavedataonhover" data-toggle="modal" href="#" style="" data-id="@index.Fr" onclick="Getdate(this)">@index.Fr</a>
+
+                            </td>
+                        }
+                        else
+                        {
+                            <td><a class="" href="#" style=""></a></td>
+                        }
+                        @if (index.Sa != null)
+                        {
+                            <td>
+                                <a class="leavedataonhover" id="leavedataonhover" style="color:gray">@index.Sa</a>
+
+                            </td>
+                        }
+                        else
+                        {
+                            <td><a class="" href="#" style=""></a></td>
+                        }
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class='clearfix'>
+    <fieldset class="note-status">
+        <legend>Note :</legend>
+        <div class="note-body">
+            <p><span>Please Click on any date to apply leave</span><span>Please Click on <i class="fa fa-check-circle-o"></i> to apply optional leave</span></p>
+            <p><span><i class="fa fa-circle"></i> Pending</span><span><i class="fa fa-circle"></i> Approved</span><span><i class="fa fa-circle"></i> Rejected</span></p>
+        </div>
+    </fieldset>
+</div>
+
+
+<script>
+
+        var resultDataArray; var CheckLeaveSum; var newarr = []; var filtered;
+
+
+        var minOffset = 0, maxOffset = 10;
+        var thisYear = (new Date()).getFullYear();
+
+
+        var presentmonth = (new Date()).getMonth() + 1;
+
+        for (var i = minOffset; i <= maxOffset; i++) {
+            var year = thisYear + i; $('<option>', { value: year, text: year }).appendTo("#sel_Year");
+
+        }
+    $('#sel_month option[value=' + presentmonth + ']').prop('selected', true);
+
+        var dataobj;
+        var usempleavedata;
+        var presentdate = "";
+        var presentmonth = "";
+        var presentyear = "";
+        var newdate;
+        var sessionuserid = "";
+        var MonthYear = '';
+    var month = "";
+    var year = "";
+    var resultAllDatesArray = [] ;
+
+    function getAllDaysOfMonthandYear() {
+
+        var Month = $("#sel_month option:selected").val();
+        var year = $("#sel_Year option:selected").val();
+
+        var getDaysInMonth = function (Month, year) {
+
+            return new Date(year, Month, 0).getDate();
+
+        };
+
+
+
+        var cnt = 1;
+
+        var days = [];
+        while (cnt <= getDaysInMonth(Month, year)) {
+
+            days.push(new Date(Month + '/' + cnt + '/' + year));
+            cnt = cnt + 1;
+
+            //if (Month <= 9) {
+            //    Cmon = ('0' + Month);
+            //}
+            //else {
+            //    Cmon = Month;
+            //}
+
+            //if (cnt <= 9) {
+            //    dtcnt = ('0' + cnt);
+            //}
+            //else {
+            //    dtcnt = cnt;
+            //}
+
+            //days.push(Cmon + '/' + dtcnt + '/' + year);
+
+            //cnt = cnt + 1;
+
+
+        }
+
+        return days;
+        console.log(days);
+    }
+
+
+    var userid = "";
+    var AccountId = "";
+
+    $(document).ready(function () {
+
+        $("#OptLeave_Popup").on('show.bs.modal', function () {
+            $(this).find("input:radio[name=optionalradio]#optional1").val(SelectedFromDate);
+        });
+        $("#OptLeave_Popup").on('hide.bs.modal', function () {
+            $(this).find("input:radio[name=optionalradio]").prop("checked", false).val("");
+        });
+
+            $("#closeAppLeave").click(function () {
+                $("#AppLeave_Popup").hide();
+
+            });
+
+            $("#closeAppliedLeaves").click(function () {
+                $("#AlreadyAppliedLeaves").hide();
+            });
+
+            $("#closeAppliedWFH").click(function () {
+                $("#AlreadyAppliedWFH").hide();
+            });
+
+            getUSAccEmail();
+            $("#to_date").datepicker({
+                format: 'mm/dd/yyyy',
+                autoclose: true
+            });
+
+
+            $("#fromdate").datepicker({
+                format: 'mm/dd/yyyy',
+                autoclose: true
+            });
+            $("#todate").datepicker({
+                format: 'mm/dd/yyyy',
+                autoclose: true
+            });
+
+
+            $("#Cancel").click(function () {
+                window.location.reload();
+            });
+
+            $("#cancel").click(function () {
+                window.location.reload();
+            });
+
+            $('#cancelLeavecmnts').click(function () {
+                window.location.reload();
+            });
+
+            $('#cancelwfhcmnts').click(function () {
+                window.location.reload();
+            });
+
+
+            month = $("#sel_month").val();
+            year = $("#sel_Year").val();
+
+
+
+            if (month <= 9) {
+
+                MonthYear = year + '-' + "0" + month + '-' + '01';
+            }
+            else {
+
+                MonthYear = year + '-' + month + '-' + '01';
+            }
+
+
+
+            userid = $("#userprofileid").val();
+
+
+            sessionuserid = $('#userprofileid').val();
+
+
+        
+        var Pid = $("#UserProjects").find(":selected").val();
+        var S_mon = $("#sel_month").find(":selected").val();
+        var S_year = $("#sel_Year").find(":selected").val();
+        console.log(Pid);
+        GetOptionalHolidays(Pid);
+        GetMandatoryHolidays(Pid);
+        ClrsforApprovedLeavesofUS(Pid);
+        ClrsforApprovedWfhofUS(Pid);
+           // getAllDaysOfMonthandYear();
+
+            $('td').on({
+                'dblclick': function () {
+                    $(this).prop('contenteditable', true);
+
+                },
+
+            });
+
+        $('#UserProjects').change(function () {
+            var GetCL_pid = $(this).val();
+            var GetS_mon = $("#sel_month").find(":selected").val();
+            var GetS_year = $("#sel_Year").find(":selected").val();
+            GetOptionalHolidays(GetCL_pid);
+            GetMandatoryHolidays(GetCL_pid);
+            ClrsforApprovedLeavesofUS(GetCL_pid);
+            ClrsforApprovedWfhofUS(GetCL_pid);
+        });
+       
+
+        $('#sel_month').change(function () {
+            //alert();
+            
+            var Projid = $("#UserProjects option:selected").val();
+                var Month = $("#sel_month option:selected").val();
+                var year = $("#sel_Year option:selected").val();
+               
+                /*setTimeout(function () {
+                    GetOptionalHolidays();
+                }, 500);*/
+                //getAllDaysOfMonthandYear();
+
+                var inputdata = {
+                    "Selmonth": Month,
+                    "Selyear": year,
+                };
+                $.ajax({
+                    type: 'POST',
+                    url: "@Url.Action("SelectedMonth", "LeaveApplicationManagement")",
+                    data: {
+                        "Selmonth": Month,
+                        "Selyear": year,
+                    },
+                    success: function (data) {
+
+                        $('#calendarContainer tbody tr').remove();
+                        for (var index = 0; index < data.length; index++) {
+                            var tr = "<tr>";
+                            if (data[index].Su != null) {
+
+                                tr += "<td><a class='leavedataonhover' id='leavedataonhover'  style='color:gray' href='#'>" + data[index].Su + "</a>";
+
+                                tr += "</td>";
+                            }
+                            else {
+                                tr += "<td><a style='color:gray'></a></td>";
+                            }
+                            if (data[index].Mo != null) {
+                                tr += "<td><a class='leavedataonhover' id='leavedataonhover'  data-toggle='modal'   href='#' data-id="+ data[index].Mo+"  onclick='Getdate(this)'>" + data[index].Mo + "</a>";
+                                tr += "</td>";
+                            }
+                            else {
+                                tr += "<td><a style='color:gray'></a></td>";
+                            }
+                            if (data[index].Tu != null) {
+                                tr += "<td><a class='leavedataonhover' id='leavedataonhover'  data-toggle='modal'   href='#' data-id="+data[index].Tu+" onclick='Getdate(this)'>" + data[index].Tu + "</a>";
+                                tr += "</td>";
+                            }
+                            else {
+                                tr += "<td><a style='color:gray'></a></td>";
+                            }
+                            if (data[index].We != null) {
+                                tr += "<td><a class='leavedataonhover' id='leavedataonhover'  data-toggle='modal' href='#' data-id="+ data[index].We +" onclick='Getdate(this)'>" + data[index].We + "</a>";
+                                tr += "</td>";
+                            }
+                            else {
+                                tr += "<td><a style='color:gray'></a></td>";
+                            }
+                            if (data[index].Th != null) {
+                                tr += "<td><a class='leavedataonhover' id='leavedataonhover'  data-toggle='modal' href='#' data-id=" + data[index].Th +" onclick='Getdate(this)'>" + data[index].Th + "</a>";
+                            }
+                            else {
+                                tr += "<td><a style='color:gray'></a></td>";
+                            }
+                            if (data[index].Fr != null) {
+
+                                tr += "<td><a class='leavedataonhover' id='leavedataonhover'  data-toggle='modal'  href='#' data-id="+ data[index].Fr +" onclick='Getdate(this)'>" + data[index].Fr + "</a>";
+                            }
+                            else {
+                                tr += "<td><a style='color:gray'></a></td>";
+                            }
+                            if (data[index].Sa != null) {
+
+                                tr += "<td><a class='leavedataonhover' id='leavedataonhover' style='color:gray'>" + data[index].Sa + "</a>";
+                            }
+                            else {
+                                tr += "<td><a style='color:gray'></a></td>";
+                            }
+
+                            $("#tbody_months").append(tr);
+                        }
+                        GetOptionalHolidays(Projid);
+                        GetMandatoryHolidays(Projid);
+                        ClrsforApprovedLeavesofUS(Projid);
+                        ClrsforApprovedWfhofUS(Projid);
+
+                    },
+
+                    error: function (xhr, data, status) {
+                         console.log("Data Not Retrived");
+                    }
+
+                });
+            });
+
+            $('#sel_Year').change(function () {
+                 // Colors();
+               // alert();
+                
+                var Projid = $("#UserProjects option:selected").val();
+                var Month = $("#sel_month option:selected").val();
+                var year = $("#sel_Year option:selected").val();
+
+                
+                var inputdata = {
+                    "Selmonth": Month,
+                    "Selyear": year,
+                };
+                  $.ajax({
+                    type: 'POST',
+                    url: "@Url.Action("selectedYear", "LeaveApplicationManagement")",
+                      contentType: 'application/json',
+                      data: JSON.stringify(inputdata),
+                      success: function (data) {
+                          $('#calendarContainer tbody tr').remove();
+                          for (var index = 0; index < data.length; index++) {
+                              var tr = "<tr>";
+                              if (data[index].Su != null) {
+
+                                  tr += "<td><a class='leavedataonhover' id='leavedataonhover' style='color:gray'>" + data[index].Su + "</a>";
+
+                                  tr += "</td>";
+                              }
+                              else {
+                                  tr += "<td><a style='color:gray'></a></td>";
+                              }
+                              if (data[index].Mo != null) {
+                                  tr += "<td><a class='leavedataonhover' id='leavedataonhover'   data-toggle='modal' href='#' data-id=" + data[index].Mo +" onclick='Getdate(this)'>" + data[index].Mo + "</a>";
+
+                                  tr += "</td>";
+                              }
+                              else {
+                                  tr += "<td><a style='color:gray'></a></td>";
+                              }
+                              if (data[index].Tu != null) {
+                                  tr += "<td><a class='leavedataonhover' id='leavedataonhover'   data-toggle='modal' href='#' data-id=" + data[index].Tu +" onclick='Getdate(this)'>" + data[index].Tu + "</a>";
+
+                                  tr += "</td>";
+                              }
+                              else {
+                                  tr += "<td><a style='color:gray'></a></td>";
+                              }
+                              if (data[index].We != null) {
+                                  tr += "<td><a class='leavedataonhover' id='leavedataonhover'   data-toggle='modal' href='#' data-id=" + data[index].We +" onclick='Getdate(this)'>" + data[index].We + "</a>";
+
+                                  tr += "</td>";
+                              }
+                              else {
+                                  tr += "<td><a style='color:gray'></a></td>";
+                              }
+                              if (data[index].Th != null) {
+                                  tr += "<td><a class='leavedataonhover' id='leavedataonhover'   data-toggle='modal' href='#' data-id=" + data[index].Th +" onclick='Getdate(this)'>" + data[index].Th + "</a>";
+
+                              }
+                              else {
+                                  tr += "<td><a style='color:gray'></a></td>";
+                              }
+                              if (data[index].Fr != null) {
+
+                                  tr += "<td><a class='leavedataonhover' id='leavedataonhover'   data-toggle='modal' href='#' data-id=" + data[index].Fr +" onclick='Getdate(this)'>" + data[index].Fr + "</a>";
+
+                              }
+                              else {
+                                  tr += "<td><a style='color:gray'></a></td>";
+                              }
+                              if (data[index].Sa != null) {
+
+                                  tr += "<td><a class='leavedataonhover' id='leavedataonhover' style='color:gray'>" + data[index].Sa + "</a>";
+
+                              }
+                              else {
+                                  tr += "<td><a style='color:gray'></a></td>";
+                              }
+
+                              $("#tbody_months").append(tr);
+                          }
+                          GetOptionalHolidays(Projid);
+                          GetMandatoryHolidays(Projid);
+                          ClrsforApprovedLeavesofUS(Projid);
+                          ClrsforApprovedWfhofUS(Projid);
+                      },
+
+                          error: function (xhr, data, status) {
+
+                          }
+                      });
+
+            });
+        });
+
+        var SelectedFromDate = "";
+        var seldate = "";
+        var monthSelected = "";
+        var daysCount = "";
+        var days = "";
+        var currentleave = "";
+        var SumofLeaves = "";
+    var GetAlldays = [];
+
+
+    function Getdate(d) {
+        
+        var OptDate = $(d).attr("data-opt");
+        var LeaveDate = $(d).attr("data-leave");
+        var WfhDate = $(d).attr("data-wfh");
+
+        var SelectedDate = $(d).attr("data-id");
+        var HolidayDate = $(d).attr("title");
+        if (SelectedDate <= 9) {
+            seldate = ('0' + SelectedDate);
+        }
+        else {
+            seldate = SelectedDate;
+        }
+        var CurrentMonth = $("#sel_month").val();
+
+        if (CurrentMonth <= 9) {
+            monthSelected = ('0' + CurrentMonth);
+        }
+        else {
+            monthSelected = CurrentMonth;
+        }
+
+        
+        var CurrentYear = $("#sel_Year").val();
+
+        SelectedFromDate = monthSelected + '/' + seldate + '/' + CurrentYear;
+
+        var sfd = new Date(SelectedFromDate);
+
+
+
+        var d = new Date();
+        var Cmonth = sfd.getMonth() + 1;
+        var Cday = sfd.getDate();
+        var Cyear = sfd.getFullYear();
+
+        if (Cmonth <= 9) {
+            Cmon = ('0' + Cmonth);
+        }
+        else {
+            Cmon = Cmonth;
+        }
+
+        if (Cday <= 9) {
+            cDay = ('0' + Cday);
+        }
+        else {
+            cDay = Cday;
+        }
+
+        MonthYear = Cmon + '/' + cDay + '/' + Cyear;
+
+        var MonYr = new Date(MonthYear);
+
+        var convertdate = yyyymmdd(MonYr);
+
+        if (OptDate == 'true') {
+            //$("#OptLeave_Popup").show();
+            $("#OptLeave_Popup").modal("show");
+            /*$("#OptLeave_Popup").modal({ show: true }).on('shown.bs.modal', function () {
+                
+                $(this).find("input:radio[name=optionalradio]#optional1").val(SelectedFromDate);
+                //.attr("title", convertdate);
+            });*/
+        } else if (OptDate == 'false') {
+            alert("You're already apply optional leave on " + convertdate + " date");
+        } else {
+            if (HolidayDate != undefined) {
+                alert("" + convertdate + " is " + HolidayDate + " Holiday");
+            }
+            else {
+                getUSAppLeaves(sessionuserid, MonthYear);
+                getUSAppWFH(sessionuserid, MonthYear);
+
+                if (sfd < MonYr) {
+                    alert("You cannot apply leave before " + convertdate + " dates");
+                    $("#AppLeave_Popup").hide();
+                    $(".modal-backdrop").hide();
+                    $("#AlreadyAppliedLeaves").hide();
+                    $("#AlreadyAppliedWFH").hide();
+                    $(".modal-backdrop").hide();
+                }
+                else {
+                    $("#AppLeave_Popup").show();
+                    $(".modal-backdrop").hide();
+                    $("#from_date").val(SelectedFromDate);
+                    $("#fromdate").val(SelectedFromDate);
+                    $("#f_date").val(SelectedFromDate);
+                }
+            }
+        }
+        //console.log(d);
+
+
+    }
+
+
+
+
+        function USDaysCount() {
+            //   if ($("#FromDate").val() !== "" && $("#ToDate").val() !== "") {
+
+            var From_date = new Date($("#fromdate").val());
+            var To_date = new Date($("#todate").val());
+
+            if (To_date < From_date)
+                return 0;
+            var millisecondsPerDay = 86400 * 1000;
+            From_date.setHours(0, 0, 0, 1);
+            To_date.setHours(23, 59, 59, 999);
+            var diff = To_date - From_date;
+            days = Math.ceil(diff / millisecondsPerDay);
+
+            var weeks = Math.floor(days / 7);
+            days = days - (weeks * 2);
+
+            var startDay = From_date.getDay();
+            var endDay = To_date.getDay();
+
+            if (startDay - endDay > 1) {
+                days = days - 2;
+            }
+
+            if (startDay === 0 && endDay !== 6) {
+                days = days - 1;
+            }
+
+            if (endDay === 6 && startDay !== 0) {
+                days = days - 1;
+            }
+           // alert("No Of Days Applied : " + days);
+            // }
+        }
+
+        function DaysCount() {
+
+            //if ($("#FromDate").val() !== "" && $("#ToDate").val() !== "") {
+
+                var From_date = new Date($("#from_date").val());
+                var To_date = new Date($("#to_date").val());
+
+                if (To_date < From_date)
+                    return 0;
+                var millisecondsPerDay = 86400 * 1000;
+                From_date.setHours(0, 0, 0, 1);
+                To_date.setHours(23, 59, 59, 999);
+                var diff = To_date - From_date;
+                days = Math.ceil(diff / millisecondsPerDay);
+
+                var weeks = Math.floor(days / 7);
+                days = days - (weeks * 2);
+
+
+                var startDay = From_date.getDay();
+                var endDay = To_date.getDay();
+
+                if (startDay - endDay > 1) {
+                    days = days - 2;
+                }
+
+                if (startDay === 0 && endDay !== 6) {
+                    days = days - 1;
+                }
+
+                if (endDay === 6 && startDay !== 0) {
+                    days = days - 1;
+                }
+                //alert("No Of Days Applied : " + days);
+           // }
+        }
+
+        var addleaves;
+        var appleave = [];
+
+
+        var fromdate;
+        var todate;
+        var uid;
+        var uwfhid;
+        var frmaddrs;
+        var accemailid;
+        var WfhToDt;
+        var WfhFrmDt;
+
+
+        var isValid = false;
+        function userwrkfrmhome() {
+
+            fromdate = $("#fromdate").val();
+            todate = $("#todate").val();
+            uid = $("#userprofileid").val();
+            uwfhid = $("#usrwfhid").val();
+            frmaddrs = $("#from_address").val();
+            accemailid = emailid;
+            WfhToDt = new Date(todate);
+            WfhFrmDt = new Date(fromdate);
+            USDaysCount();
+
+
+            if (todate === "") {
+                $("input[name=todate]").next(".validation").remove();
+                $("input[name=todate]").after("<label class='validation' style='color:red;margin-bottom: 20px;float:10px right;'>Please Select  to Date</label>");
+                isValid = false;
+            }
+            else if (WfhToDt < WfhFrmDt) {
+                $("input[name=todate]").next(".validation").remove();
+                $("input[name=todate]").after("<label class='validation' style='color:red;margin-bottom: 20px;float:10px right;'>Please Select Valid Date</label>");
+                isValid = false;
+            }
+            //else {
+            //    $("input[name=todate]").parent().next(".validation").remove();
+            //    isValid = true;
+            //}
+            else if (wfharray.length !== 0) {
+                $("#todate").next("label.error").remove();
+                $("input[name=todate]").parent().next(".validation").remove();
+                $("#todate").after("<label class='error'>Already Leave applied in this dates" + wfharray + "</label>");
+                isValid = false;
+            }
+            else if (wfharray1.length !== 0) {
+                $("#todate").next("label.error").remove();
+                $("input[name=todate]").parent().next(".validation").remove();
+                $("#todate").after("<label class='error'>Already WFH applied in this dates" + wfharray1 + "</label>");
+                isValid = false;
+            }
+            else {
+                $("input[name=todate]").parent().next(".validation").remove();
+                $("#todate").next("label.error").remove();
+                isValid = true;
+            }
+            if (isValid == true) {
+                $("#Workfrmhome").hide();
+                $("#Apply_wfhcomments").show();
+                 fromdate = $("#fromdate").val();
+                 todate = $("#todate").val();
+                uid = $("#userprofileid").val();
+                uwfhid = $("#usrwfhid").val();
+                 frmaddrs = $("#from_address").val();
+                 accemailid = emailid;
+            }
+        }
+
+
+        function Applywfhcomments() {
+
+            var wfhcmnts = $("#wfhcomments").val();
+            var Projid = $("#UserProjects option:selected").val();
+            $('#loading-image').attr("style", "display: block;");
+            $("#Apply_wfhcomments").hide();
+
+            $.ajax({
+                contentType: "application/json",
+                type: "POST",
+                url: "/LeaveApplicationManagement/savewrkfrmhomeForUS",
+                data: JSON.stringify({
+                    "LeaveStartDate": fromdate,
+                    "LeaveEndDate": todate,
+                    "Usrl_UserId": userid,
+                    "Acc_EmailID": accemailid,
+                    "UserwfhID": userid,
+                    "comments": wfhcmnts,
+                    "Projid": Projid,
+                }),
+                success: function (data) {
+                   // $("#Apply_wfhcomments").hide();
+                   // alert(data);
+                    window.location = '/LeaveApplicationManagement/USLeaveCalendar';
+                },
+                complete: function () {
+                    $('#loading-image').attr("style", "display: none;");
+                },
+                error: function (data) {
+                    alert(data);
+                }
+
+            });
+        }
+
+    var isValid = false;
+    var LeavToDt;
+    var LeavFrmDt;
+    var isOptionalHoliday;
+
+
+    function userleaveconsumed() {
+        
+             fromdate = $("#from_date").val();
+             todate = $("#to_date").val();
+             uid = $("#userprofileid").val();
+             uwfhid = $("#usrwfhid").val();
+             frmaddrs = $("#from_address").val();
+            accemailid = emailid;
+
+            LeavToDt = new Date(todate);
+            LeavFrmDt = new Date(fromdate);
+
+            DaysCount();
+
+            if (todate === "") {
+                $("input[name=to_date]").next(".validation").remove();
+                $("input[name=to_date]").after("<label class='validation' style='color:red;margin-bottom: 20px;float:10px right;'>Please Select  to Date</label>");
+                isValid = false;
+            }
+            else if (LeavToDt < LeavFrmDt) {
+                $("input[name=to_date]").next(".validation").remove();
+                $("input[name=to_date]").after("<label class='validation' style='color:red;margin-bottom: 20px;float:10px right;'>Please Select Valid Date</label>");
+                isValid = false;
+            }
+            //else {
+            //    $("input[name=to_date]").parent().next(".validation").remove();
+            //    $("#to_date").next("label.error").remove();
+            //    isValid = true;
+            //}
+            else if (foo.length !== 0) {
+                $("#to_date").next("label.error").remove();
+                $("input[name=to_date]").parent().next(".validation").remove();
+                $("#to_date").after("<label class='error'>Already Leave applied in this dates" + foo + "</label>");
+                isValid = false;
+            }
+            else if (foo1.length !== 0) {
+                $("#to_date").next("label.error").remove();
+                $("input[name=to_date]").parent().next(".validation").remove();
+                $("#to_date").after("<label class='error'>Already WFH applied in this dates" + foo1 + "</label>");
+                isValid = false;
+            }
+            else
+            {
+                $("input[name=to_date]").parent().next(".validation").remove();
+                $("#to_date").next("label.error").remove();
+                isValid = true;
+            }
+            if (isValid == true) {
+                // $("#Applycomments").modal('show');
+                $("#Applyleave").hide();
+                $("#Apply_comments").show();
+                 fromdate = $("#from_date").val();
+                 todate   = $("#to_date").val();
+                 uid      = $("#userprofileid").val();
+                 uwfhid   = $("#usrwfhid").val();
+                 frmaddrs = $("#from_address").val();
+               // var cmnts = $("#comments").val();
+                 accemailid = emailid;
+                isOptionalHoliday = 0;
+
+            }
+        }
+
+    function Applycomments() {
+        
+            var cmnts = $("#comments").val();
+
+            $('#loading-image').attr("style", "display: block;");
+        $("#Apply_comments").hide();
+        var Projid = $("#UserProjects option:selected").val();
+             $.ajax({
+                    contentType: "application/json",
+                    type: "POST",
+                    url: "/LeaveApplicationManagement/saveleavecountForUS",
+                    data: JSON.stringify({
+                        "LeaveStartDate": fromdate,
+                        "LeaveEndDate": todate,
+                        "Usrl_UserId": userid,
+                        "Acc_EmailID": accemailid,
+                        "UserwfhID": userid,
+                        "comments": cmnts,
+                        "isOptionalHoliday": isOptionalHoliday,
+                        "CL_ProjectId": Projid,
+                    }),
+                 success: function (data) {
+                        alert(data);
+                        window.location = '/LeaveApplicationManagement/USLeaveCalendar';
+                 },
+                 complete: function () {
+                     $('#loading-image').attr("style", "display: none;");
+                 }
+                });
+        }
+
+
+
+
+
+        var emailid;
+        function getUSAccEmail() {
+            $.ajax({
+                url: "/LeaveApplicationManagement/GetUSaccmail",
+                type: "POST",
+                datatype: "JSON",
+                success: function (data) {
+                    emailid = data.Acc_EmailID;
+                    $("#getleavetypes").val(data.Acc_EmailID);
+                }
+            });
+        };
+
+
+
+
+        function CalculateTtlLeaves() {
+            var sum = 0;
+            $("input[name=appliedleaves]").each(function () {
+                if (!isNaN(this.value) && this.value.length != 0) {
+                    sum += parseFloat(this.value);
+                }
+            });
+            SumofLeaves = $("#TotalLeaveCount").val(sum);
+        }
+
+
+
+        var totalleaves = "";
+        var LeavesApplied = "";
+        var maxleaves = "";
+        var currentleave = "";
+        var AppliedId;
+
+        function ttlAppliedLeaves(id) {
+            AppliedId = id;
+            CalculateTtlLeaves();
+            totalleaves = $(id).attr("data-LeaveCount");
+            LeavesApplied = $(id).attr("data-id");
+            maxleaves = totalleaves - LeavesApplied;
+            currentleave = parseInt($(id).val());
+
+            if (maxleaves >= currentleave) {
+
+                $(AppliedId).parent().next(".validation").remove();
+                $(AppliedId).parent().after("<label class='validation' style='color:red;margin-bottom: 20px;float:left;'></label>");
+                isValid = true;
+            } else {
+                $(AppliedId).parent().next(".validation").remove();
+                $(AppliedId).parent().after("<label class='validation' style='color:red;margin-bottom: 20px;float:left;'>Please Enter min leaves</label>");
+                isValid = false;
+            }
+            if (!isValid) {
+                return false;
+            }
+        }
+
+        var LeaveAppliedDates = "";
+    var result = "";
+    var datesofleaveapplied = [];
+    function getUSAppLeaves(sessionuserid, MonthYear) {
+        
+        var Projid = $("#UserProjects option:selected").val();
+            $.ajax({
+                url: "/LeaveApplicationManagement/GetUSApprovedLeaves?Projid=" + Projid, 
+                type: "POST",
+                data: {
+                    Userid: sessionuserid,
+                    monthYear: MonthYear
+                },
+                success: function (response) {
+                    
+                    console.log(response);
+                    for (i = 0; i <= response.length - 1; i++) {
+                        LeaveAppliedDates = (response[i].leavedates);
+                        var LDate = new Date(parseInt(LeaveAppliedDates.substr(6)));
+                        result = LDate.format("mm/dd/yyyy");
+                        datesofleaveapplied.push(result);
+                        if (SelectedFromDate == result)
+                        {
+                           // $("tbody#tbody_months").find("a[data-id=" + Math.round(arrDate[1]) + "]").append('<span class="badge label bg-red"></span>');
+                            //$("tbody#tbody_months").find("a[data-id=" + Math.round(arrDate[1]) + "]").attr('data-leave', "true");
+
+                            $("#AlreadyAppliedLeaves").show();
+                            $(".modal-backdrop").hide();
+                            $("#AppLeave_Popup").hide();
+                            $("#AlreadyAppliedWFH").hide();
+                        }
+                        else {
+                            $("#from_date").val(SelectedFromDate);
+                            $("#fromdate").val(SelectedFromDate);
+                            $("#f_date").val(SelectedFromDate);
+                        }
+
+
+                    }
+
+                }
+            });
+    }
+
+    var WFHAppliedDates = "";
+    var output = "";
+    var datesofwfhapplied = [];
+    function getUSAppWFH(sessionuserid, MonthYear) {
+        
+        var Projid = $("#UserProjects option:selected").val();
+            $.ajax({
+                //url: "/LeaveApplicationManagement/GetUSApprovedWFH?Userid=" + sessionuserid,
+                url: "/LeaveApplicationManagement/GetUSApprovedWFH?Projid=" + Projid,
+                type: "POST",
+                data: {
+                    Userid: sessionuserid,
+                    monthYear: MonthYear
+                },
+                success: function (response) {
+                    for (i = 0; i <= response.length - 1; i++) {
+                        WFHAppliedDates = (response[i].WFHdates);
+                        var WDate = new Date(parseInt(WFHAppliedDates.substr(6)));
+                        output = WDate.format("mm/dd/yyyy");
+                        datesofwfhapplied.push(output);
+                        if (SelectedFromDate == output) {
+                            $("#AlreadyAppliedWFH").show();
+                            $(".modal-backdrop").hide();
+                            $("#AppLeave_Popup").hide();
+                            $("#AlreadyAppliedLeaves").hide();
+                        }
+                        else {
+                            $("#from_date").val(SelectedFromDate);
+                            $("#fromdate").val(SelectedFromDate);
+                            $("#f_date").val(SelectedFromDate);
+                        }
+                    }
+
+                }
+            });
+            }
+
+
+
+
+        function holidayslst() {
+            var date = presentyear + "-" + presentmonth + "-" + presentdate;
+
+            $.ajax({
+                url: "/LeaveApplicationManagement/GetHolidayDates",
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+
+                    gethldydetails = data;
+
+                    for (var i = 0; i < data.length; i++) {
+                        var StartDate = data[i].LeaveStartDate;
+                        var EndDate = data[i].LeaveEndDate;
+                        var SDate = new Date(parseInt(StartDate.substr(6)));
+                        var EDate = new Date(parseInt(EndDate.substr(6)));
+                        var Startresult = "";
+                        var Endresult = "";
+
+                        Startresult = SDate.format("dd/mm/yyyy");
+                        Endresult = EDate.format("dd/mm/yyyy");
+
+                        for (var u = 0; u < new Date(new Date(SDate).getFullYear(), (new Date(SDate).getMonth() + 1), 0).getDate(); u++) {
+                            j = u + 1;
+
+                        }
+                        var mm = ('Month ', (new Date(SDate).getMonth() + 1));
+
+                        var dd = ('Date ', (new Date(SDate).getDate()));
+
+                        var yy = ('Year ', (new Date(SDate).getFullYear()));
+
+                    }
+
+
+                },
+                error: function (xhr, data, status) {
+                    console.log("Data Not Retrived");
+                }
+
+            });
+        }
+
+
+
+
+    function Colors() {
+
+            var date = presentyear + "-" + presentmonth + "-" + presentdate;
+
+            $.ajax({
+                url: "/LeaveApplicationManagement/GetLeaveApprovalsDetails",
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                    // alert(response);
+                    //console.log(data);
+                    empleavedata = data;
+
+                    for (var i = 0; i < data.length; i++) {
+                        var StartDate = data[i].LeaveStartDate;
+                        var EndDate = data[i].LeaveEndDate;
+                        var SDate = new Date(parseInt(StartDate.substr(6)));
+                        var EDate = new Date(parseInt(EndDate.substr(6)));
+                        var Startresult = "";
+                        var Endresult = "";
+
+                        Startresult = SDate.format("dd/mm/yyyy");
+                        Endresult = EDate.format("dd/mm/yyyy");
+
+                        for (var u = 0; u < new Date(new Date(SDate).getFullYear(), (new Date(SDate).getMonth() + 1), 0).getDate(); u++) {
+                            j = u + 1;
+
+                        }
+                        var mm = ('Month ', (new Date(SDate).getMonth() + 1));
+
+                        var dd = ('Date ', (new Date(SDate).getDate()));
+
+                        var yy = ('Year ', (new Date(SDate).getFullYear()));
+
+                    }
+
+
+                },
+                error: function (xhr, data, status) {
+                    console.log("Data Not Retrived");
+                }
+
+            });
+        }
+
+    var common = "";
+
+    function yyyymmdd(dateIn) {
+
+        var yyyy = dateIn.getFullYear();
+        var mm = dateIn.getMonth() + 1;
+        var dd = dateIn.getDate();
+
+        if (mm <= 9) {
+            Cm = ('0' + mm);
+        }
+        else {
+            Cm = mm;
+        }
+
+        if (dd <= 9) {
+            cD = ('0' + dd);
+        }
+        else {
+            cD = dd;
+        }
+        return String(Cm + '/' + cD + '/' + yyyy);
+    }
+
+
+    function WFHDatesarray(datesIn) {
+        var yyyy = datesIn.getFullYear();
+        var mm = datesIn.getMonth() + 1; // getMonth() is zero-based
+        var dd = datesIn.getDate();
+        if (mm <= 9) {
+            Cm = ('0' + mm);
+        }
+        else {
+            Cm = mm;
+        }
+
+        if (dd <= 9) {
+            cD = ('0' + dd);
+        }
+        else {
+            cD = dd;
+        }
+        return String(Cm + '/' + cD + '/' + yyyy);
+    }
+
+
+
+
+    var foo = [];
+    var foo1 = [];
+
+    var wfharray = [];
+    var wfharray1 = [];
+
+    function leavecountWFH() {
+        DaysCount();
+
+        var wfhstart = $("#fromdate").val(),
+            wfhend = $("#todate").datepicker("getDate"),
+            wfhcurrentDate = new Date(wfhstart),
+            btwn = []
+            ;
+
+        while (wfhcurrentDate <= wfhend) {
+            //  yyyymmdd(currentDate);
+            btwn.push(WFHDatesarray(wfhcurrentDate));
+            wfhcurrentDate.setDate(wfhcurrentDate.getDate() + 1);
+
+        }
+
+
+        wfharray = [];
+        wfharray1 = [];
+
+        $.grep(btwn, function (e2) {
+
+            if ($.inArray(e2, datesofleaveapplied) != -1) {
+                wfharray.push(e2);
+            }
+
+            if ($.inArray(e2, datesofwfhapplied) != -1) {
+                wfharray1.push(e2);
+            }
+
+        });
+
+
+        var start = $('#from_date').val();
+        var end = $('#to_date').val();
+        var startDay = new Date(start);
+        var endDay = new Date(end);
+        var millisecondsPerDay = 1000 * 60 * 60 * 24;
+        var millisBetween = endDay.getTime() - startDay.getTime();
+        var days = millisBetween / millisecondsPerDay;
+
+        $.fn.noMask = function (regex) {
+            this.on("keypress", function (e) {
+                if (regex.test(String.fromCharCode(e.which))) {
+                    return false;
+                }
+            });
+        };
+
+
+
+
+        $("#todate").noMask(/^[\w.,:;"'/!|#%&$*()_-]+$/);
+        $("#todate").noMask(/[$-/:-?{-~!"^_`\[\]]/);
+
+
+    }
+
+    function leavecount() {
+            DaysCount();
+
+        var start = $("#from_date").val();
+
+          var  end = $("#to_date").datepicker("getDate"),
+            currentDate = new Date(start),
+            between = []
+            ;
+
+        while (currentDate <= end) {
+            //  yyyymmdd(currentDate);
+            between.push(yyyymmdd(currentDate));
+            currentDate.setDate(currentDate.getDate() + 1);
+
+        }
+
+        foo = [];
+        foo1 = [];
+
+
+        $.grep(between, function (el) {
+
+            if ($.inArray(el, datesofleaveapplied) != -1) {
+                foo.push(el);
+            }
+
+            if ($.inArray(el, datesofwfhapplied) != -1) {
+                foo1.push(el);
+            }
+
+        });
+
+
+
+
+            var start = $('#from_date').val();
+            var end = $('#to_date').val();
+            var startDay = new Date(start);
+            var endDay = new Date(end);
+            var millisecondsPerDay = 1000 * 60 * 60 * 24;
+            var millisBetween = endDay.getTime() - startDay.getTime();
+            var days = millisBetween / millisecondsPerDay;
+
+            $.fn.noMask = function (regex) {
+                this.on("keypress", function (e) {
+                    if (regex.test(String.fromCharCode(e.which))) {
+                        return false;
+                    }
+                });
+            };
+
+
+            $("#to_date").noMask(/^[\w.,:;"'/!|#%&$*()_-]+$/);
+            $("#to_date").noMask(/[$-/:-?{-~!"^_`\[\]]/);
+
+            $("#todate").noMask(/^[\w.,:;"'/!|#%&$*()_-]+$/);
+            $("#todate").noMask(/[$-/:-?{-~!"^_`\[\]]/);
+
+            $.ajax({
+                contentType: "application/json",
+                type: "POST",
+                url: "/LeaveApplicationManagement/CheckLeave",
+                data: JSON.stringify({
+                    'leaves': days,
+                }),
+
+                success: function (data, status) {
+
+                },
+                error: function (xhr, data, status) {
+
+                }
+            });
+    }
+
+
+
+    function btndates(dt) {
+
+        var yyyy = dt.getFullYear();
+        var mm = dt.getMonth() + 1;
+        var dd = dt.getDate();
+
+        if (mm <= 9) {
+            Cm = ('0' + mm);
+        }
+        else {
+            Cm = mm;
+        }
+
+        if (dd <= 9) {
+            cD = ('0' + dd);
+        }
+        else {
+            cD = dd;
+        }
+        return String(Cm + '/' + cD + '/' + yyyy);
+    }
+
+
+    var AllSEDates = [];
+
+    function ClrsforApprovedLeavesofUS(Cl_ProjId) {
+        
+        $("tbody#tbody_months a[data-leave]").find('span.badge.label').remove();
+        $("tbody#tbody_months a[data-leave]").find('font').remove();
+        $("tbody#tbody_months").find("a[data-leave]").removeAttr("data-leave");
+        resultAllDatesArray = getAllDaysOfMonthandYear();
+        $.ajax({
+
+            type: "GET",
+            url: "/LeaveApplicationManagement/GetLeaveApproveDetailsofUS?Cl_ProjId=" + Cl_ProjId,
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                
+                usempleavedata = data;
+                console.log(usempleavedata);
+                for (var i = 0; i < usempleavedata.length; i++) {
+                    
+                    var StartDate = usempleavedata[i].LeaveStartDate;
+                    var EndDate = usempleavedata[i].LeaveEndDate;
+                    var SDate = new Date(parseInt(StartDate.substr(6)));
+                    var EDate = new Date(parseInt(EndDate.substr(6)));
+                    var Startresult;
+                    var Endresult;
+
+
+                    Startresult = (SDate.getMonth() + 1 + "/" + SDate.getDate() + "/" + SDate.getFullYear());
+                    Endresult = (EDate.getMonth() + 1 + "/" + EDate.getDate() + "/" + EDate.getFullYear());
+
+                    console.log(Startresult);
+                    console.log(Endresult);
+
+
+                    var stres = new Date(Startresult);
+                    var endres = new Date(Endresult);
+
+
+
+
+                    var dates = [new Date(stres)];
+
+                    while (stres < endres) {
+                        stres.setDate(stres.getDate() + 1);
+                        dates.push(new Date(stres.getMonth() + 1 + "/" + stres.getDate() + "/" + stres.getFullYear()));
+
+                    }
+                    console.log(dates);
+
+                    $.each(resultAllDatesArray, function (key, value) {
+                      
+                        var InDate = (value.getMonth() + 1 + "/" + value.getDate() + "/" + value.getFullYear());
+                        $.each(dates, function (key, value1) {
+                            
+                            var LDate = (value1.getMonth() + 1 + "/" + value1.getDate() + "/" + value1.getFullYear());
+                            if (InDate == LDate) {
+
+                                var arrDate = LDate.split('/');
+                                var arrAllDates = InDate.split('/');
+
+                                var sel_month = $('select#sel_month option:selected').val();
+                                var sel_year = $('select#sel_Year option:selected').val();
+                                if (sel_month == Math.round(arrDate[0]) && sel_year == Math.round(arrDate[2]))
+                                {
+                                    
+                                    console.log("a[data-id=" + arrDate[1] + "]");
+                                    console.log(usempleavedata[i].L_StatusId);
+                                    if (usempleavedata[i].L_StatusId == 1 || usempleavedata[i].L_StatusId == 4)
+                                    {
+                                        
+                                        $("tbody#tbody_months").find("a[data-id=" + Math.round(arrDate[1]) + "]").append('<span class="badge label bg-green"></span><font>Leave</font>');
+                                        $("tbody#tbody_months").find("a[data-id=" + Math.round(arrDate[1]) + "]").attr('data-leave', "true");
+                                    }
+                                    else if (usempleavedata[i].L_StatusId == 2 || usempleavedata[i].L_StatusId == 5 ) {
+                                        
+                                        $("tbody#tbody_months").find("a[data-id=" + Math.round(arrDate[1]) + "]").append('<span class="badge label bg-red"></span><font>Leave</font>');
+                                        $("tbody#tbody_months").find("a[data-id=" + Math.round(arrDate[1]) + "]").attr('data-leave', "false");
+                                    }
+                                    else if (usempleavedata[i].ApprovedBy == null && usempleavedata[i].RejectedBy == null) {
+                                        
+                                        $("tbody#tbody_months").find("a[data-id=" + Math.round(arrDate[1]) + "]").append('<span class="badge label bg-grey"></span><font>Leave</font>');
+                                        $("tbody#tbody_months").find("a[data-id=" + Math.round(arrDate[1]) + "]").attr('data-leave', "true");
+                                    }
+                                }
+                               
+                            }
+                            
+
+                        });
+
+                    });
+
+
+                }
+            },
+            error: function (xhr, data, status) {
+                console.log(data);
+                console.log("Data Not Retrived");
+            }
+
+
+
+       });
+    }
+
+    function ClrsforApprovedWfhofUS(Cl_ProjId) {
+
+        $("tbody#tbody_months a[data-wfh]").find('span.badge.label').remove();
+        $("tbody#tbody_months a[data-wfh]").find('font').remove();
+        $("tbody#tbody_months").find("a[data-wfh]").removeAttr("data-wfh");
+        resultAllDatesArray = getAllDaysOfMonthandYear();
+        $.ajax({
+
+            type: "GET",
+            url: "/LeaveApplicationManagement/GetWfhApproveDetailsofUS?Cl_ProjId=" + Cl_ProjId,
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                usempleavedata = data;
+                console.log(usempleavedata);
+                for (var i = 0; i < usempleavedata.length; i++) {
+                    
+                    var StartDate = usempleavedata[i].LeaveStartDate;
+                    var EndDate = usempleavedata[i].LeaveEndDate;
+                    var SDate = new Date(parseInt(StartDate.substr(6)));
+                    var EDate = new Date(parseInt(EndDate.substr(6)));
+                    var Startresult;
+                    var Endresult;
+
+
+                    Startresult = (SDate.getMonth() + 1 + "/" + SDate.getDate() + "/" + SDate.getFullYear());
+                    Endresult = (EDate.getMonth() + 1 + "/" + EDate.getDate() + "/" + EDate.getFullYear());
+                    
+
+                    var stres = new Date(Startresult);
+                    var endres = new Date(Endresult);
+
+
+                    var dates = [new Date(stres)];
+
+                    while (stres < endres) {
+                        stres.setDate(stres.getDate() + 1);
+                        dates.push(new Date(stres.getMonth() + 1 + "/" + stres.getDate() + "/" + stres.getFullYear()));
+
+                    }
+                    console.log(dates);
+
+                    $.each(resultAllDatesArray, function (key, value) {
+                        var InDate = (value.getMonth() + 1 + "/" + value.getDate() + "/" + value.getFullYear());
+                        $.each(dates, function (key, value1) {
+                            
+                            var LDate = (value1.getMonth() + 1 + "/" + value1.getDate() + "/" + value1.getFullYear());
+                            if (InDate == LDate) {
+
+                                var arrDate = LDate.split('/');
+                                var arrAllDates = InDate.split('/');
+
+                                var sel_month = $('select#sel_month option:selected').val();
+                                var sel_year = $('select#sel_Year option:selected').val();
+                                if (sel_month == Math.round(arrDate[0]) && sel_year == Math.round(arrDate[2])) {
+                                    if (usempleavedata[i].L_StatusId == 1 || usempleavedata[i].L_StatusId == 4) {
+                                        $("tbody#tbody_months").find("a[data-id=" + Math.round(arrDate[1]) + "]").append('<span class="badge label bg-green"></span><font>Work from Home</font>');
+                                        $("tbody#tbody_months").find("a[data-id=" + Math.round(arrDate[1]) + "]").attr('data-wfh', "true");
+                                    }
+                                    else if (usempleavedata[i].L_StatusId == 2 || usempleavedata[i].L_StatusId == 5) {
+                                        $("tbody#tbody_months").find("a[data-id=" + Math.round(arrDate[1]) + "]").append('<span class="badge label bg-red"></span><font>Work from Home</font>');
+                                        $("tbody#tbody_months").find("a[data-id=" + Math.round(arrDate[1]) + "]").attr('data-wfh', "true");
+                                    }
+                                    else if (usempleavedata[i].ApprovedBy == null && usempleavedata[i].RejectedBy == null) {
+                                    $("tbody#tbody_months").find("a[data-id=" + Math.round(arrDate[1]) + "]").append('<span class="badge label bg-grey"></span><font>Work from Home</font>');
+                                    $("tbody#tbody_months").find("a[data-id=" + Math.round(arrDate[1]) + "]").attr('data-wfh', "true");
+                                    }
+                                }
+                            }
+
+                        });
+
+                    });
+
+
+                }
+            },
+            error: function (xhr, data, status) {
+                console.log(data);
+                console.log("Data Not Retrived");
+            }
+
+
+
+        });
+    }
+
+    var optionalHolidays;
+    function GetOptionalHolidays(Cl_ProjId) {
+       
+        //console.log(Cl_ProjId);
+        //$("tbody#tbody_months a[data-opt]").find('span.opt').remove();
+        $("tbody#tbody_months tr > td > a[data-opt]").find('span.opt').remove();
+        $("tbody#tbody_months tr > td > a[data-opt]").find('font').remove();
+        $("tbody#tbody_months").find("a[data-opt]").removeAttr("data-opt");
+        resultAllDatesArray = getAllDaysOfMonthandYear();
+        //console.log(resultAllDatesArray);
+        $.ajax({
+
+            type: "GET",
+            url: "/LeaveApplicationManagement/GetOptionalHolidays?Cl_ProjId=" + Cl_ProjId ,
+            dataType: "json",
+            async: false,
+            success: function (data) {
+              //  
+                //$("tbody#tbody_months").find("span.opt").remove();
+                console.log(data);
+                optionalHolidays = data;
+                var UsrHolidays = [];
+                UsrHolidays = GetUserOptionalHolidays();
+                console.log(UsrHolidays);
+                for (var i = 0; i < data.length; i++) {
+
+                    var HolydyDate = data[i].HolidayDate;
+                   
+                   // var optionalStatus = data[i].isOptionalHoliday;
+                    //var optionalStatus = data[i].userLeaf.isoptionalholiday;
+                    
+                   //var userOL = data[i].userLeaf.isoptionalholiday;
+
+
+                    var HDate = new Date(parseInt(HolydyDate.substr(6)));
+                   
+                    var Dateresult;
+                    
+                    Dateresult = (HDate.getMonth() + 1 + "/" + HDate.getDate() + "/" + HDate.getFullYear());                   
+
+                    $.each(resultAllDatesArray, function (key, value) {
+                        //
+
+                        var Dateresult1 = (value.getMonth() + 1 + "/" + value.getDate() + "/" + value.getFullYear());
+                        if (UsrHolidays != null) {
+                            var arrDate = Dateresult.split('/');
+                            if (Dateresult1 == Dateresult) {
+                                $("tbody#tbody_months").find("a[data-id=" + Math.round(arrDate[1]) + "]").attr('data-opt', 'true');
+                                $("tbody#tbody_months").find("a[data-id=" + Math.round(arrDate[1]) + "]").append('<span class="opt"><i class="fa fa-check-circle-o"></i></span><font class="label badge">' + data[i].HolidayName+'</font>');
+                                //$("tbody#tbody_months").find("a[data-id=" + Math.round(arrDate[1]) + "]").append('<span class="opt"><i class="fa fa-check-circle-o"></i></span>');
+                                $.each(UsrHolidays, function (Key, Value) {
+                                  
+                                    var optionalStatus = Value.isoptionalholiday;
+                                    
+                                    var ODate = new Date(parseInt(Value.LeaveStartDate.substr(6)));
+
+                                    var Dateoptional;
+
+                                    Dateoptional = (ODate.getMonth() + 1 + "/" + ODate.getDate() + "/" + ODate.getFullYear());
+                                    var ArrDate = Dateoptional.split('/');
+
+                                        if ((Dateresult == Dateoptional) && (Dateresult1 == Dateoptional)) {
+                                            if (optionalStatus != false) {
+                                                if (Value.L_StatusId == 1 || Value.L_StatusId == 4) {
+                                                    $("tbody#tbody_months").find("a[data-id=" + Math.round(ArrDate[1]) + "]").attr('data-opt', 'false');
+                                                    $("tbody#tbody_months").find("a[data-id=" + Math.round(ArrDate[1]) + "]").append('<span class="opt fa-green"><i class="fa fa-check-circle-o"></i></span><font class="label badge">' + data[i].HolidayName+'</font>');
+                                                }
+                                                else if (Value.L_StatusId == 2 || Value.L_StatusId == 5) {
+                                                    $("tbody#tbody_months").find("a[data-id=" + Math.round(ArrDate[1]) + "]").attr('data-opt', 'true');
+                                                    $("tbody#tbody_months").find("a[data-id=" + Math.round(ArrDate[1]) + "]").append('<span class="opt fa-red"><i class="fa fa-times-circle-o"></i></span><font class="label badge">' + data[i].HolidayName +'</font>');
+                                                }
+                                                else if (Value.ApprovedBy == null && Value.RejectedBy == null) {
+                                                //else if (Value.L_StatusId == null) {
+                                                    $("tbody#tbody_months").find("a[data-id=" + Math.round(ArrDate[1]) + "]").attr('data-opt', 'false');
+                                                    $("tbody#tbody_months").find("a[data-id=" + Math.round(ArrDate[1]) + "]").append('<span class="opt"><i class="fa fa-check-circle-o"></i></span><font class="label badge">' + data[i].HolidayName +'</font>');
+                                                }
+                                                /*Array.prototype.remove = function (el) {
+                                                    return this.splice(this.indexOf(el), 1);
+                                                }*/
+                                                //UsrHolidays.remove(Key);
+                                                //UsrHolidays.splice(Key,1);
+                                                Value.isoptionalholiday = false;
+                                                Value.LeaveStartDate = "";
+                                                //UsrHolidays[Key] = null;
+                                            }
+                                        }  
+                                    //$("tbody#tbody_months").find("a[data-id=" + Math.round(arrDate[1]) + "]").attr('data-opt', 'true');
+                                });
+                            }
+                        } else {
+                            if (Dateresult1 == Dateresult) {
+
+                                var arrDate = Dateresult.split('/');
+                                //if (optionalStatus != false) {
+                                   $("tbody#tbody_months").find("a[data-id=" + Math.round(arrDate[1]) + "]").attr('data-opt', 'true');
+                               // } else {
+                                   // $("tbody#tbody_months").find("a[data-id=" + Math.round(arrDate[1]) + "]").attr('data-opt', 'false');
+                               // }
+                                $("tbody#tbody_months").find("a[data-id=" + Math.round(arrDate[1]) + "]").append('<span class="opt"><i class="fa fa-check-circle-o"></i></span><font class="label badge">' + data[i].HolidayName +'</font>');
+                            }
+                        }
+
+                    });
+
+
+                }
+
+            },
+            error: function (Result) {
+
+
+            }
+
+        });
+
+    }
+
+    function GetUserOptionalHolidays() {
+        var j = [];
+        $.ajax({
+
+            type: "GET",
+            url: "/LeaveApplicationManagement/GetUserOptionalHolidays",
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                j = data;                
+            },
+            error: function (Result) {
+
+                // alert("Error");
+
+            }
+
+        });
+        return j;
+    }
+
+    var empleavedata;
+
+    function GetMandatoryHolidays(Cl_ProjId) {
+        $("tbody#tbody_months a[title]").find('span.badge.label').remove();
+        $("tbody#tbody_months").find("a[title]").removeAttr("title");
+        resultAllDatesArray = getAllDaysOfMonthandYear();
+        $.ajax({
+
+            type: "GET",
+            url: "/LeaveApplicationManagement/GetMandatoryHolidays?Cl_ProjId=" + Cl_ProjId,
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                usempleavedata = data;
+                console.log(usempleavedata);
+                for (var i = 0; i < usempleavedata.length; i++) {
+                    //
+                    var StartDate = usempleavedata[i].HolidayDate;
+                    var SDate = new Date(parseInt(StartDate.substr(6)));
+                    var Startresult;
+
+                    Startresult = (SDate.getMonth() + 1 + "/" + SDate.getDate() + "/" + SDate.getFullYear());
+
+                    console.log(Startresult);
+
+                    /*var dates = [new Date(stres)];
+
+                    while (stres < endres) {
+                        stres.setDate(stres.getDate() + 1);
+                        dates.push(new Date(stres.getMonth() + 1 + "/" + stres.getDate() + "/" + stres.getFullYear()));
+                    }
+                    console.log(dates);*/
+
+                    $.each(resultAllDatesArray, function (key, value) {
+                        //
+                        var HolDate = (value.getMonth() + 1 + "/" + value.getDate() + "/" + value.getFullYear());
+                        /*var HDate = new Date(parseInt(value.substr(6)));
+
+                        var HolDate;
+
+                        HolDate = (HDate.getMonth() + 1 + "/" + HDate.getDate() + "/" + HDate.getFullYear());*/
+                       // $.each(dates, function (key, value1) {
+
+                        if (HolDate == Startresult) {
+
+                            var arrDate = Startresult.split('/');
+
+                                var sel_month = $('select#sel_month option:selected').val();
+                                var sel_year = $('select#sel_Year option:selected').val();
+                                if (sel_month == Math.round(arrDate[0]) && sel_year == Math.round(arrDate[2])) {
+                                    $("tbody#tbody_months").find("a[data-id=" + Math.round(arrDate[1]) + "]").append('<span class="badge label bg-text">' + usempleavedata[i].HolidayName+'</span>');
+                                    $("tbody#tbody_months").find("a[data-id=" + Math.round(arrDate[1]) + "]").attr("title", usempleavedata[i].HolidayName);
+                                }
+                            }
+
+                       // });
+
+                    });
+
+
+                }
+            },
+            error: function (xhr, data, status) {
+                console.log(data);
+                console.log("Data Not Retrived");
+            }
+
+           
+
+        });
+    }
+
+
+</script>
+
+<script>
+
+    $("#SelectOption input[name='optradio']").click(function () {
+        var str = $("input:radio[name=optradio]:checked").val();
+        if (str == "rad1") {
+
+            $('#Applyleave').show();
+            $('#Workfrmhome').hide();
+            $('#AppLeave_Popup').hide();
+
+        }
+        else {
+            $('#Workfrmhome').show();
+            $('#Applyleave').hide();
+            $('#AppLeave_Popup').hide();
+        }
+
+    });
+
+
+    $("#SelectOptional input[name='optionalradio']").click(function () {
+        
+        var Projid = $("#UserProjects option:selected").val();
+        var str = $("input:radio[name=optionalradio]:checked").val();
+        if (str != "0" && str != "") {
+            var fdate = new Date(str);
+           // alert(fdate)
+            //("successfully you're applied optional leave.");
+
+            $.ajax({
+                contentType: "application/json",
+                type: "POST",
+                url: "/LeaveApplicationManagement/saveleavecountForUS",
+                data: JSON.stringify({
+                    "LeaveStartDate": str,
+                    "LeaveEndDate": str,
+                    "Usrl_UserId": userid,
+                    "Acc_EmailID": accemailid,
+                    "UserwfhID": userid,
+                    "comments": "null",
+                    "isOptionalHoliday": 1,
+                    "CL_ProjectId": Projid,
+                    
+                }),
+                success: function (data) {
+                    alert(data);
+                    window.location = '/LeaveApplicationManagement/USLeaveCalendar';
+                },
+                complete: function () {
+                    $('#loading-image').attr("style", "display: none;");
+                }
+            });
+
+        }
+        else {
+            $('#OptLeave_Popup').modal("hide");
+        }
+    });
+    $('#BtnPreviewLeaves').click(function () {
+        window.location = '/LeaveApplicationManagement/PreviewLeaves';
+    });
+    $('#BtnPreviewWFH').click(function () {
+        window.location = '/LeaveApplicationManagement/PreviewWorkFromHome';
+    })
+
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#LeaveApplicationManagement").addClass("active");
+        $("#LeaveApplicationManagement").siblings().removeClass("active");
+
+    });
+
+</script>
+
+
+
+
+

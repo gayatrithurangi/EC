@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewBag.Title = "GetllAssessment";
+}
+
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.10.0/jquery.validate.min.js"></script>
+<link href="~/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" />
+<script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="~/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="~/Scripts/date.format.js"></script>
+
+<script src="~/Scripts/bootstrap-datepicker.js"></script>
+<script src="~/Scripts/bootstrap-datepicker.min.js"></script>
+
+
+<div class="block-content">
+    <div class="">
+        <h4 class="heading-fancy">Interview Positions</h4>
+        <input type="button" id="btnAddModel" value="+" data-toggle="modal" data-target="#ContainerGridDetail" class="btn" />
+    </div>
+    <div class="table-responsive">
+        <div class="clearfix table-block">
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th> APID </th>
+                        <th>InterviewForPositionname</th>
+                        <th>Description</th>
+                        <th id="actions">Action</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+
+
+    $(document).ready(function () {
+        
+        loaddata();
+
+    });
+
+
+
+    function loaddata() {
+        $.ajax({
+            url: "/Ticket/GetAllPosition",
+            type: "Get",
+            dataType: "json",
+            success: function (res) {
+                
+                $('#table').DataTable({
+                    'data': res,
+                    'paginate': true,
+                    'sort': true,
+                    'Processing': true,
+                    'columns': [
+                        { 'data': 'APID', 'visible': false, },
+                        { 'data': 'InterviewForPositionname' },
+                        { 'data': 'Description' },
+                        {
+                            "render": function (type, full, meta, data) {
+
+                                return '<a class="btn btn-icn btn-icn-hide  edit" data-toggle="modal"  data-target="#ContainerGridDetail" title="Edit" onclick="EditAssessment(' + meta.APID + ')" ><i class="fa fa-edit"></i></a>';
+
+
+
+
+                            },
+
+                        },
+
+
+                    ]
+                });
+            },
+            error: function (msg) {
+            }
+        });
+    }
+
+
+    function EditAssessment(APID) {
+        
+        window.location.href = "/Ticket/GetllPositions?pid=" + APID;
+    }
+
+    $("#btnAddModel").click(function () {
+        window.location.href = "/Ticket/GetllPositions?pid=0";
+    });
+
+    
+
+</script>
+
+

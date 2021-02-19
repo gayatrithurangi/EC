@@ -1,0 +1,711 @@
+﻿@model evolCorner.Models.UserProjectdetailsEntity
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+@*<script src="~/Scripts/bootstrap.min.js"></script>*@
+<link href="~/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" />
+<script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="~/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="~/Scripts/date.format.js"></script>
+<script src="~/Scripts/bootstrap-datepicker.min.js"></script>
+<script src="~/EvolutyzCornerScripts/PreviewLeaves.js"></script>
+
+<style>
+    #ManagerGridData.actions > thead > tr > th:last-child,
+    #ManagerGridData.actions > tbody > tr > td:last-child {
+        display: none
+    }
+
+    @@import url(https://fonts.googleapis.com/css?family=Titillium+Web|Ubuntu:400,500);
+
+    #ProjectNameid > b {
+        color: #ff824b;
+        background: linear-gradient(102deg, #fd6d29 0%, #ff9905 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .box.box-solid.box-brown {
+        border: 1px solid #aaaaaa;
+    }
+
+    [class*="btn-custom"] {
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+        box-shadow: inset 0px -10px 15px rgba(0, 0, 0, 0.2), 1px 1px 5px rgba(0,0,0,0.2);
+        -webkit-box-shadow: inset 0px -10px 15px rgba(0, 0, 0, 0.2), 1px 1px 5px rgba(0,0,0,0.2);
+    }
+
+    .modal-footer > .btn-custom1 {
+        border-color: #06960c;
+        background: -webkit-linear-gradient(45deg,#4CAF50,#8BC34A);
+        background: linear-gradient(45deg,#4CAF50,#8BC34A);
+    }
+
+    .modal-footer > .btn-custom2 {
+        border-color: #ff5b28;
+        background: -webkit-linear-gradient(135deg,#ff9465,#ffc8ae);
+        background: linear-gradient(45deg,#fb6434,#fb948d);
+    }
+
+    #btnApprove.evInputBtn, #btnSend.evInputBtn {
+        background: #4CAF50;
+    }
+
+    #btnReject.evInputBtn {
+        background: #ff3f30;
+    }
+
+    #btnSave.evInputBtn {
+        background: #ff9800;
+    }
+
+    .panel-default > .panel-heading {
+        background-color: #ececec;
+    }
+
+    .box.box-solid.box-brown > .box-header {
+        border-color: #aaaaaa;
+        background: #cccccc url(../Content/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png) 50% 50% repeat-x;
+        color: #222222;
+    }
+
+    .block-content .btn-warning {
+        background-color: #f97045;
+        border-color: #fe450b;
+    }
+
+    .block-content .btn-success {
+        background-color: #fea728;
+        border-color: #FF9800;
+    }
+
+    #divhiduserid ~ label {
+        margin: 7px auto;
+    }
+</style>
+
+<style>
+    #UserGridData td > span.badge.badge-radius[title="On Hold"],
+    #ManagerGridData td > span.badge.badge-radius[title="On Hold"] {
+        background-color: yellow;
+    }
+
+    #UserGridData td > span.badge.badge-radius[title="Pending at Manager"],
+    #ManagerGridData td > span.badge.badge-radius[title="Applied for Leave"] {
+        background-color: deepskyblue;
+    }
+
+    #UserGridData td > span.badge.badge-radius[title="Approved"],
+    #ManagerGridData td > span.badge.badge-radius[title="Approved"] {
+        background-color: green;
+    }
+
+    #UserGridData td > span.badge.badge-radius[title="Rejected"],
+    #ManagerGridData td > span.badge.badge-radius[title="Rejected"] {
+        background-color: red;
+    }
+
+
+
+
+    .box.box-solid.box-brown > .box-header > .btn-app {
+        border-radius: 50%;
+        margin: auto;
+        height: auto;
+        line-height: 0;
+        min-width: inherit;
+        float: right;
+        padding: 0;
+        background-color: transparent;
+        border: 0;
+    }
+
+        .box.box-solid.box-brown > .box-header > .btn-app > .fa {
+            font-size: 24px;
+        }
+
+    span.badge.badge-radius {
+        float: none;
+        position: relative;
+        background-color: #555;
+        color: #fff;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    .evInputBtn {
+        display: inline-block;
+        padding: 5px 10px;
+        margin: 3px 5px;
+        background: #848484;
+        color: #FFF !important;
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+        border: none;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        box-shadow: inset 0px -10px 15px rgba(0, 0, 0, 0.2), 1px 1px 5px rgba(0,0,0,0.2);
+        -webkit-box-shadow: inset 0px -10px 15px rgba(0, 0, 0, 0.2), 1px 1px 5px rgba(0,0,0,0.2);
+        -moz-box-shadow: inset 0px -10px 15px rgba(0, 0, 0, 0.2), 1px 1px 5px rgba(0,0,0,0.2);
+        cursor: pointer;
+    }
+
+    /*.evInputBtn:hover {
+            background: #FF6600;
+        }*/
+
+    #Cmtsave {
+        padding: 0 10px;
+    }
+
+    .contentArea {
+        background: #FFF url(../images/shadow.png) repeat-x;
+        box-shadow: 0px 5px 8px rgba(183, 35, 35, 0.81);
+        padding: 30px;
+        min-height: 350px;
+    }
+
+    #MainTable {
+        border: 0px !important;
+    }
+
+    #SubTable {
+        border: 0px !important;
+    }
+
+    #SubTable2 {
+        border: 0px !important;
+    }
+
+    table#ClientDetails td {
+        border: 0;
+        width: auto;
+    }
+
+    tbody > tr:only-child:nth-child(odd) {
+        background: none;
+    }
+
+    .evAdminTable th {
+        border-bottom: 0px solid #EAEAEA;
+        padding: 5px;
+        background: #666;
+        color: #FFF;
+    }
+
+    table td, table th {
+        padding: 3px 6px;
+    }
+
+    table tr:nth-of-type(odd) {
+        background: #f9f9f9;
+    }
+
+    table #MainTable > td[id^="td"] {
+        border: 0;
+        width: 50%;
+        vertical-align: top;
+    }
+
+    table td > .form-control {
+        border-radius: 0px;
+        height: auto;
+        padding: 2px;
+    }
+
+    table #MainTable > td[id^="td"]:first-child {
+        padding-left: 0;
+    }
+
+    table#MainTable > td[id^="td"]:last-child {
+        padding-right: 0;
+    }
+
+    table [id^="SubTable"] tr > td:last-child {
+        display: none;
+    }
+
+    .box .panel-heading > h3.panel-title {
+        font-weight: 600;
+        font-family: 'Titillium Web', sans-serif;
+    }
+
+    .btn-clr,
+    .btn-clr:hover,
+    .btn-clr:active,
+    .btn-clr:focus {
+        color: #ff7200;
+        background: linear-gradient(160deg,#ffe2d5 20%,#ffefe8 80%);
+        border-color: #e64e00;
+        border-radius: 25px;
+        outline: none
+    }
+
+    .btn-clr1,
+    .btn-clr1:hover,
+    .btn-clr1:active,
+    .btn-clr1:focus {
+        color: #656565;
+        background: linear-gradient(160deg,#efefef 20%,#e2e2e2 80%);
+        border-color: #969696;
+        border-radius: 25px;
+        outline: none
+    }
+
+    .btn-clr2,
+    .btn-clr2:hover,
+    .btn-clr2:active,
+    .btn-clr2:focus {
+        color: #fb9f13;
+        background: linear-gradient(160deg,#fff6e9 20%,#ffeaca 80%);
+        border-color: #fb9f13;
+        border-radius: 25px;
+        outline: none;
+    }
+
+    .btn[class*="btn-clr"]:active,
+    .btn[class*="btn-clr"]:focus {
+        -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+        -moz-box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+        box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+    }
+    @@media(min-width:768px) {
+        #UserGridPanel > .panel-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+</style>
+
+<style>
+    #loading-image {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 1035;
+        background-color: rgba(243, 243, 243, 0.75);
+        /*opacity: .8;*/
+    }
+
+        #loading-image > img {
+            /*width: 56px;
+            height: 56px;
+            border: 8px solid rgba(255, 87, 34, 0.25);
+            border-top-color: #f37a41;
+            border-radius: 50%;*/
+            position: absolute;
+            /* animation: loader-rotate 1s linear infinite; */
+            top: 50%;
+            left: 50%;
+            margin: -60px auto 0;
+            max-width: 100%;
+            display: block;
+            height: 100px;
+        }
+
+        #loading-image > span {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            animation: loader-circles 1s linear infinite;
+            top: 50%;
+            left: 50%;
+            margin: -20px auto 0;
+        }
+
+        #loading-image > strong {
+            position: absolute;
+            top: 50%;
+            left: 48%;
+            margin: 0px auto 0;
+            font-size: 10px;
+        }
+
+    @@keyframes loader-circles {
+        0% {
+            box-shadow: 0 -85px 0 0 rgba(255, 87, 34, 0.05), 61px -61px 0 0 rgba(255, 87, 34, 0.1), 85px 0 0 0 rgba(255, 87, 34, 0.2), 61px 61px 0 0 rgba(255, 87, 34, 0.3), 0 85px 0 0 rgba(255, 87, 34, 0.4), -61px 61px 0 0 rgba(255, 87, 34, 0.6), -85px 0 0 0 rgba(255, 87, 34, 0.8), -61px -61px 0 0 #f37a41;
+        }
+
+        12.5% {
+            box-shadow: 0 -85px 0 0 #f37a41, 61px -61px 0 0 rgba(255, 87, 34, 0.05), 85px 0 0 0 rgba(255, 87, 34, 0.1), 61px 61px 0 0 rgba(255, 87, 34, 0.2), 0 85px 0 0 rgba(255, 87, 34, 0.3), -61px 61px 0 0 rgba(255, 87, 34, 0.4), -85px 0 0 0 rgba(255, 87, 34, 0.6), -61px -61px 0 0 rgba(255, 87, 34, 0.8);
+        }
+
+        25% {
+            box-shadow: 0 -85px 0 0 rgba(255, 87, 34, 0.8), 61px -61px 0 0 #f37a41, 85px 0 0 0 rgba(255, 87, 34, 0.05), 61px 61px 0 0 rgba(255, 87, 34, 0.1), 0 85px 0 0 rgba(255, 87, 34, 0.2), -61px 61px 0 0 rgba(255, 87, 34, 0.3), -85px 0 0 0 rgba(255, 87, 34, 0.4), -61px -61px 0 0 rgba(255, 87, 34, 0.6);
+        }
+
+        37.5% {
+            box-shadow: 0 -85px 0 0 rgba(255, 87, 34, 0.6), 61px -61px 0 0 rgba(255, 87, 34, 0.8), 85px 0 0 0 #f37a41, 61px 61px 0 0 rgba(255, 87, 34, 0.05), 0 85px 0 0 rgba(255, 87, 34, 0.1), -61px 61px 0 0 rgba(255, 87, 34, 0.2), -85px 0 0 0 rgba(255, 87, 34, 0.3), -61px -61px 0 0 rgba(255, 87, 34, 0.4);
+        }
+
+        50% {
+            box-shadow: 0 -85px 0 0 rgba(255, 87, 34, 0.4), 61px -61px 0 0 rgba(255, 87, 34, 0.6), 85px 0 0 0 rgba(255, 87, 34, 0.8), 61px 61px 0 0 #f37a41, 0 85px 0 0 rgba(255, 87, 34, 0.05), -61px 61px 0 0 rgba(255, 87, 34, 0.1), -85px 0 0 0 rgba(255, 87, 34, 0.2), -61px -61px 0 0 rgba(255, 87, 34, 0.3);
+        }
+
+        62.5% {
+            box-shadow: 0 -85px 0 0 rgba(255, 87, 34, 0.3), 61px -61px 0 0 rgba(255, 87, 34, 0.4), 85px 0 0 0 rgba(255, 87, 34, 0.6), 61px 61px 0 0 rgba(255, 87, 34, 0.8), 0 85px 0 0 #f37a41, -61px 61px 0 0 rgba(255, 87, 34, 0.05), -85px 0 0 0 rgba(255, 87, 34, 0.1), -61px -61px 0 0 rgba(255, 87, 34, 0.2);
+        }
+
+        75% {
+            box-shadow: 0 -85px 0 0 rgba(255, 87, 34, 0.2), 61px -61px 0 0 rgba(255, 87, 34, 0.3), 85px 0 0 0 rgba(255, 87, 34, 0.4), 61px 61px 0 0 rgba(255, 87, 34, 0.6), 0 85px 0 0 rgba(255, 87, 34, 0.8), -61px 61px 0 0 #f37a41, -85px 0 0 0 rgba(255, 87, 34, 0.05), -61px -61px 0 0 rgba(255, 87, 34, 0.1);
+        }
+
+        87.5% {
+            box-shadow: 0 -85px 0 0 rgba(255, 87, 34, 0.1), 61px -61px 0 0 rgba(255, 87, 34, 0.2), 85px 0 0 0 rgba(255, 87, 34, 0.3), 61px 61px 0 0 rgba(255, 87, 34, 0.4), 0 85px 0 0 rgba(255, 87, 34, 0.6), -61px 61px 0 0 rgba(255, 87, 34, 0.8), -85px 0 0 0 #f37a41, -61px -61px 0 0 rgba(255, 87, 34, 0.05);
+        }
+
+        100% {
+            box-shadow: 0 -85px 0 0 rgba(255, 87, 34, 0.05), 61px -61px 0 0 rgba(255, 87, 34, 0.1), 85px 0 0 0 rgba(255, 87, 34, 0.2), 61px 61px 0 0 rgba(255, 87, 34, 0.3), 0 85px 0 0 rgba(255, 87, 34, 0.4), -61px 61px 0 0 rgba(255, 87, 34, 0.6), -85px 0 0 0 rgba(255, 87, 34, 0.8), -61px -61px 0 0 #f37a41;
+        }
+    }
+</style>
+<style>
+    #body_ClientDetails {
+        margin: 10px auto;
+        width: 99%;
+        border: 1px solid #aaaaaa;
+    }
+
+        #body_ClientDetails td {
+            border: 0;
+            width: auto;
+            /*font-weight: 600;
+            font-size: 13px;*/
+        }
+    /*#body_ClientDetails td > b {
+            font-weight: bolder;
+            font-size: 14px;
+        }*/
+</style>
+<!-- Horizontal Form -->
+<div id="loading-image" style="display:none">
+    <span></span>
+    <strong>Loading Please Wait....</strong>
+</div>
+<div class="block-content" id="divPreviewTimesheet">
+    <div class="">
+        <h4 class="heading-fancy"> Preview Leaves </h4>
+    </div>
+    @*<button type="button" class="btn btn-clr" id="BtnPreviewLeaves">Preview Leaves</button>*@
+    <div class="box-body no-padding" id="body">
+
+        <div class="panel panel-default" id="UserGridPanel">
+            <div class="panel-heading">
+                <h3 class="panel-title">My Leaves</h3>
+                <div>
+                    <button type="button" class="btn btn-clr" id="BtnLeavecalendar">Leave</button>
+                    <button type="button" class="btn btn-clr2" id="BtnPreviewWFH">Preview Work From Home</button>
+                </div>
+            </div>
+
+            <div class="panel-body">
+                <table id="UserGridData">
+                    <thead id="tblheadid">
+                        <tr>
+                            <th>Userid</th>
+                            <th>Leaveid</th>
+                            <th>accntmail</th>
+                            <th>EmpMailId</th>
+                            <th>Project Name</th>
+                            <th>Emp Name</th>
+                            <th>Leave Start Date</th>
+                            <th>Leave End Date</th>
+                            <th>No. of days </th>
+                            <th>Status</th>
+                            <th id="actions">Actions</th>
+                        </tr>
+                    </thead>
+                </table>
+
+            </div>
+        </div>
+        <div class="panel panel-default" id="ManagerGridPanel">
+            <div class="panel-heading">
+                <h3 class="panel-title">Employee Leaves</h3>
+            </div>
+
+            <div class="panel-body">
+                <table id="ManagerGridData">
+                    <thead id="tblheadid">
+                        <tr>
+                            <th>Userid</th>
+                            <th>Leaveid</th>
+                            <th>accntmail</th>
+                            <th>Project Name</th>
+                            <th>Emp Name</th>
+                            <th>Leave Start Date</th>
+                            <th>Leave End Date</th>
+                            <th>No. of days </th>
+                            <th>ManagerId</th>
+                            <th>Manager Name</th>
+                            <th>Manager Email</th>
+                            <th>UserMail</th>
+                            <th>Status</th>
+                            <th id="actions">Actions</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+
+
+        @*</form>*@
+    </div>
+
+    <div class="control-sidebar-bg"></div>
+</div>
+
+
+<div id="ReApplyleave" class="modal" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Re-Apply Leave</h4>
+            </div>
+            <div class="modal-body" id="questions">
+
+                <form id="AddModal">
+                    <div class="form-group row" style="display:none">
+                        <div class="col-md-4">
+                            <label>Employee Id</label>
+                        </div>
+                        <div class="col-md-8">
+
+                            <input type="text" class="form-control" id="getEmpIds" readonly />
+                            <input type="text" class="form-control" id="accntmailid" readonly />
+                            <input type="text" class="form-control" id="empleaveid" readonly />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label>Employee Name </label>
+
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="Emp_Names" readonly />
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-5">
+                            <label>From Date </label>
+
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="from_date" name="from_date" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-5">
+                            <label>To Date </label>
+
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="to_date" name="to_date" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" />
+                        </div>
+                    </div>
+                    <div class="row form-group" style="display:none">
+                        <div class="col-md-5">
+                            <label>From Address</label>
+                        </div>
+                        <div class="col-md-8 ">
+                            <input type="text" class="form-control" id="from_address" />
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer" id="questions">
+                <button type="button" class="btn btn-clr" id="Apply_Leave" onclick="Leavesconsumed()"> Apply Leave</button>
+                <button type="button" class="btn btn-clr1" data-dismiss="modal" id="Cancel"> Cancel</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="ReApply_comments" class="modal" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Add Comments</h4>
+            </div>
+            <div class="modal-body" id="">
+
+                <form id="AddModal">
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label>Comments</label>
+                        </div>
+                        <div class="col-md-8">
+                            <textarea rows="4" class="form-control" id="comments">  </textarea>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer" id="questions">
+                <button type="button" class="btn btn-clr" onclick="REApplycomments()">Ok</button>
+                <button type="button" class="btn btn-clr1" data-dismiss="modal" id="cancelLeavecmnts"> Cancel</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+
+    $('#BtnLeavecalendar').click(function () {
+        window.location = '/LeaveApplicationManagement/USLeaveCalendar';
+    });
+    $('#BtnPreviewWFH').click(function () {
+        window.location = '/LeaveApplicationManagement/PreviewWorkFromHome';
+    });
+
+    //$(document).ready(function () {
+
+    //    $("#from_date").datepicker({
+    //        format: 'mm/dd/yyyy',
+    //        autoclose: true
+    //    });
+
+    //    $("#to_date").datepicker({
+    //        format: 'mm/dd/yyyy',
+    //        autoclose: true
+    //    });
+
+
+    //});
+
+    function NOofDaysCount() {
+
+        //if ($("#FromDate").val() !== "" && $("#ToDate").val() !== "") {
+
+        var From_date = new Date($("#from_date").val());
+        var To_date = new Date($("#to_date").val());
+
+        if (To_date < From_date)
+            return 0;
+        var millisecondsPerDay = 86400 * 1000;
+        From_date.setHours(0, 0, 0, 1);
+        To_date.setHours(23, 59, 59, 999);
+        var diff = To_date - From_date;
+        days = Math.ceil(diff / millisecondsPerDay);
+
+        var weeks = Math.floor(days / 7);
+        days = days - (weeks * 2);
+
+
+        var startDay = From_date.getDay();
+        var endDay = To_date.getDay();
+
+        if (startDay - endDay > 1) {
+            days = days - 2;
+        }
+
+        if (startDay === 0 && endDay !== 6) {
+            days = days - 1;
+        }
+
+        if (endDay === 6 && startDay !== 0) {
+            days = days - 1;
+        }
+        //alert("No Of Days Applied : " + days);
+        // }
+    }
+
+
+    var isValid = false;
+    function Leavesconsumed() {
+
+        fromdate = $("#from_date").val();
+        todate = $("#to_date").val();
+        uid = $("#userprofileid").val();
+        uwfhid = $("#usrwfhid").val();
+        frmaddrs = $("#from_address").val();
+
+
+
+        NOofDaysCount();
+
+        if (todate === "") {
+            $("input[name=to_date]").parent().next(".validation").remove();
+            $("input[name=to_date]").parent().after("<label class='validation' style='color:red;margin-bottom: 20px;float:10px right;'>Please Select  to Date</label>");
+            isValid = false;
+        }
+        else if (todate < fromdate) {
+            $("input[name=to_date]").parent().next(".validation").remove();
+            $("input[name=to_date]").parent().after("<label class='validation' style='color:red;margin-bottom: 20px;float:10px right;'>Please Select Valid Date</label>");
+            isValid = false;
+        }
+        else {
+            $("input[name=to_date]").parent().next(".validation").remove();
+            isValid = true;
+        }
+        if (isValid == true) {
+            // $("#Applycomments").modal('show');
+            $("#ReApplyleave").hide();
+            $("#ReApply_comments").show();
+            fromdate = $("#from_date").val();
+            todate = $("#to_date").val();
+            uid = $("#userprofileid").val();
+            uwfhid = $("#usrwfhid").val();
+            frmaddrs = $("#from_address").val();
+            // var cmnts = $("#comments").val();
+            // accemailid = emailid;
+
+
+        }
+    }
+
+    function REApplycomments() {
+        var cmnts = $("#comments").val();
+
+        $('#loading-image').attr("style", "display: block;");
+        $("#Apply_comments").hide();
+        $.ajax({
+            contentType: "application/json",
+            type: "POST",
+            url: "/LeaveApplicationManagement/saveleavecountForUS",
+            data: JSON.stringify({
+                "LeaveStartDate": fromdate,
+                "LeaveEndDate": todate,
+                "Usrl_UserId": $("#getEmpIds").val(),
+                "Acc_EmailID": $("#accntmailid").val(),
+                "UserwfhID": $("#empleaveid").val(),
+                "comments": cmnts
+            }),
+            success: function (data) {
+                alert(data);
+                window.location = '/LeaveApplicationManagement/PreviewLeaves';
+            },
+            complete: function () {
+                $('#loading-image').attr("style", "display: none;");
+            }
+        });
+    }
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

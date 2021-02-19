@@ -1,0 +1,245 @@
+﻿
+@model evolCorner.Models.AssessmentForPositions
+@{
+
+    ViewBag.Title = "GetllPositions";
+}
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.10.0/jquery.validate.min.js"></script>
+<link href="~/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" />
+<script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="~/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="~/Scripts/date.format.js"></script>
+<script src="~/Scripts/bootstrap-datepicker.js"></script>
+<script src="~/Scripts/bootstrap-datepicker.min.js"></script>
+<style type="text/css">
+    .checkbox.iCheck > label[for] {
+        /*display: inline-flex;*/
+        align-items: center;
+        justify-content: space-between;
+        display: flex;
+        max-width: 50%;
+    }
+
+        .checkbox.iCheck > label[for] > strong {
+            width: 200px;
+            word-break: break-word;
+        }
+
+        .checkbox.iCheck > label[for] > span.input-group {
+            /* display: inline-table; */
+            width: 50%;
+        }
+
+            .checkbox.iCheck > label[for] > span.input-group > .form-control {
+                /*width: auto;*/
+                max-width: 50%;
+            }
+
+            .checkbox.iCheck > label[for] > span.input-group > small.form-control {
+                border: 0;
+                cursor: none;
+            }
+</style>
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Assessment For Position</h3>
+                </div>
+
+                <form role="form" id="addform">
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="DepartmentId">Position Title</label>
+                                    @Html.HiddenFor(m => m.InterviewForPositionId, new { id = "InterviewForPositionId" })
+                                    @Html.TextBoxFor(m => m.InterviewForPositionname, new { @class = "form-control form-control-lg" })
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Description">Position Description</label>
+                                    @Html.TextAreaFor(m => m.Description, new { @class = "form-control form-control-lg" })
+                                    @Html.ValidationMessageFor(m => m.Description)
+                                </div>
+                            </div>
+
+                            <div class="col-md-12" id="appendCheck">
+                                <div class="checkbox iCheck">
+                                    <label for="topics-header">
+                                        <strong>Title</strong>
+                                        <span class="input-group">
+                                            <small class="form-control">No of Questions</small>
+                                            <small class="form-control">Time in seconds</small>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="box-footer">
+                        <input type="submit" id="btnAddPositions" value="Create" class="btn btn-primary" />
+                        <input type="submit" id="btnUpdatePositions" value="Update" class="btn btn-success" style="display:none" />
+
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+
+    </div>
+</section>
+
+
+
+
+<div class="modal fade-in" id="Okaypopup" role="dialog" style="display:none">
+
+    <div class="modal-dialog modal-custom">
+        @*<label id="succ"></label>*@
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <h4 class="modal-title" id="PopupticketId"></h4>
+            </div>
+
+            <div class="modal-body">
+                <p id="Msgforalltickets" style="margin-bottom:auto;"></p>
+            </div>
+            <div class="modal-footer" style="text-align:left;">
+
+
+                <button type="button" id="btnOkay" class="btn btn-clr1" >Okay</button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    
+    var data = @TempData["pid"];
+    if (@TempData["pid"] > 0) {
+        $("#btnAddPositions").hide();
+        $("#btnUpdatePositions").show();
+    }
+    $.ajax({
+
+        url: "/Ticket/GEtInsertUpdatePositions?IPID=@TempData["pid"]",
+        type: "Get",
+        dataType: "json",
+        success: function (res) {
+            
+            console.log(res);
+            var dataAppend = $("#appendCheck");
+            $("#InterviewForPositionname").val(res.InterviewForPositionname);
+            $("#Description").val(res.Description);
+            var checkList = res.Position_TechnologyStack_List;
+            $.each(checkList, function (i, order) {
+                if (checkList[i].Ischecked == true) {
+                    dataAppend.append('<div class="checkbox iCheck"> <label for="topics-' + checkList[i].Title + '-' + checkList[i].Technologyid + '"> <input type="checkbox" id="topics-' + checkList[i].Title + '-' + checkList[i].Technologyid + '" checked /> <strong>' + checkList[i].Title + '</strong> <span class="input-group"><input type="text" name="txtNoofquestions" class="form-control" value="' + checkList[i].NoofQuestions + '" /><input type="text" class="form-control" name="txttimeinseconds" value="' + checkList[i].Timeinseconds + '" /></span></label> </div>');
+                } else {
+                    dataAppend.append('<div class="checkbox iCheck"> <label for="topics-' + checkList[i].Title + '-' + checkList[i].Technologyid + '"> <input type="checkbox" id="topics-' + checkList[i].Title + '-' + checkList[i].Technologyid + '" /> <strong>' + checkList[i].Title + '</strong> <span class="input-group"><input type="text" name="txtNoofquestions" class="form-control" value="' + checkList[i].NoofQuestions + '" /><input type="text" class="form-control" name="txttimeinseconds" value="' + checkList[i].Timeinseconds + '" /></span> </label> </div>`');
+                }
+            });
+        },
+        error: function (msg) {
+        }
+    });
+
+       $.validator.addMethod("valueNotEquals", function (value, element, arg) {
+        return arg !== value;
+    }, "Value must not equal arg.");
+
+    $("#addform").validate({
+
+        rules: {
+            InterviewForPositionname: {
+                required: true,
+            },
+            Description: { required: true, },
+
+
+        },
+        messages: {
+            InterviewForPositionname: "Enter Position Name",
+            TicketDescription: "Enter Ticket Description",
+        },
+        submitHandler: function (form) {
+            
+         var InterviewForPositionId = @TempData["pid"];
+         var InterviewForPositionname = $("#InterviewForPositionname").val();
+            var Description = $("textarea#Description").val();
+            var Position_TechnologyStack_List = [];
+            var trueFalse = true;
+            $("#appendCheck > .checkbox.iCheck > label[for] > input[type='checkbox']").each(function () {
+                
+                var k = $(this).attr('id').split("-");
+                if ($(this).is(":checked")) {
+                    trueFalse = true;
+                } else {
+                    trueFalse = false;
+                }
+                Position_TechnologyStack_List.push({
+                    "Technologyid": $(this).attr('id').split("-").pop(),
+                    "Title": k[1],
+                    "Ischecked": trueFalse,
+                    "NoofQuestions": $(this).nextAll('span.input-group').find("input[name='txtNoofquestions'].form-control").val(),
+                    "Timeinseconds": $(this).nextAll('span.input-group').find("input[name='txttimeinseconds'].form-control").val(),
+                });
+            })
+
+         var formdata = new FormData();
+         formdata.append("InterviewForPositionId", parseInt(InterviewForPositionId));
+         formdata.append("InterviewForPositionname", InterviewForPositionname);
+            formdata.append("Description", Description);
+            formdata.append("Position_TechnologyStack_List", JSON.stringify(Position_TechnologyStack_List));
+
+
+            console.log(formdata);
+            $.ajax({
+                url: "/Ticket/AssessmentForPositions",
+                type: "POST",
+                contentType: false,
+                processData: false,
+                data: formdata,
+                success: function (data) {
+                    
+                    if (data == 1) {
+                        $("#Okaypopup").modal('show');
+                        $("#Msgforalltickets").html("Position added Successfully");
+                        $("#PopupticketId").html("Add Position");
+                    }
+                    if (data == 2) {
+                        $("#Okaypopup").modal('show');
+                        $("#Msgforalltickets").html("Position updated Successfully");
+                        $("#PopupticketId").html("Update Position");
+                    }
+
+
+                }
+
+            })
+        }
+    })
+
+    $("#btnOkay").click(function () {
+        
+        window.location.href = "/Ticket/GetllAssessment?pid=0";
+
+    })
+
+
+
+</script>

@@ -1,0 +1,705 @@
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\ApplicationInsights.config
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\Evolutyz.Test.dll.config
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\Evolutyz.Test.dll
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\Evolutyz.Test.pdb
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\Evolutyz.Business.dll
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\Evolutyz.Entities.dll
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.dll
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\Newtonsoft.Json.dll
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\RestSharp.dll
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\SendGrid.dll
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\System.Net.Http.dll
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Algorithms.dll
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Encoding.dll
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Primitives.dll
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\Evolutyz.Data.dll
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\Microsoft.Owin.dll
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\System.Web.Optimization.dll
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\System.Web.Mvc.dll
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\Microsoft.AspNet.SignalR.Core.dll
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\Owin.dll
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\itextsharp.dll
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\EntityFramework.dll
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\EntityFramework.SqlServer.dll
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\System.Web.Razor.dll
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\System.Web.WebPages.Razor.dll
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\System.Web.WebPages.dll
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\Microsoft.Owin.Security.dll
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\BouncyCastle.Crypto.dll
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\Evolutyz.Business.pdb
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\Evolutyz.Business.dll.config
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\Evolutyz.Entities.pdb
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\Evolutyz.Entities.dll.config
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.pdb
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.dll.config
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\Newtonsoft.Json.xml
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\RestSharp.xml
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\SendGrid.pdb
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\SendGrid.xml
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\Evolutyz.Data.pdb
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\Evolutyz.Data.dll.config
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\Microsoft.Owin.xml
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\System.Web.Optimization.xml
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\System.Web.Mvc.xml
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\Microsoft.AspNet.SignalR.Core.pdb
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\Microsoft.AspNet.SignalR.Core.xml
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\EntityFramework.xml
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\EntityFramework.SqlServer.xml
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\System.Web.Razor.xml
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\System.Web.WebPages.Razor.xml
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\System.Web.WebPages.xml
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\Microsoft.Owin.Security.xml
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\BouncyCastle.Crypto.pdb
+D:\TFS_kalyani\Evolutyz.Test\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\TFS_kalyani\Evolutyz.Test\obj\Debug\Evolutyz.Test.csprojAssemblyReference.cache
+D:\TFS_kalyani\Evolutyz.Test\obj\Debug\Evolutyz.Test.csproj.CoreCompileInputs.cache
+D:\TFS_kalyani\Evolutyz.Test\obj\Debug\Evolutyz.Test.csproj.CopyComplete
+D:\TFS_kalyani\Evolutyz.Test\obj\Debug\Evolutyz.Test.dll
+D:\TFS_kalyani\Evolutyz.Test\obj\Debug\Evolutyz.Test.pdb
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\ApplicationInsights.config
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\Evolutyz.Test.dll.config
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\Evolutyz.Test.dll
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\Evolutyz.Test.pdb
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\Evolutyz.Business.dll
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\Evolutyz.Entities.dll
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.dll
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\Newtonsoft.Json.dll
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\RestSharp.dll
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\SendGrid.dll
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\System.Net.Http.dll
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Algorithms.dll
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Encoding.dll
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Primitives.dll
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\Evolutyz.Data.dll
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\Microsoft.Owin.dll
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\System.Web.Optimization.dll
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\System.Web.Mvc.dll
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\Microsoft.AspNet.SignalR.Core.dll
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\Owin.dll
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\itextsharp.dll
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\EntityFramework.dll
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\EntityFramework.SqlServer.dll
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\Microsoft.Web.Infrastructure.dll
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\System.Web.Razor.dll
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\System.Web.WebPages.Razor.dll
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\System.Web.WebPages.dll
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\Microsoft.Owin.Security.dll
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\BouncyCastle.Crypto.dll
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\System.Web.WebPages.Deployment.dll
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\Evolutyz.Business.pdb
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\Evolutyz.Business.dll.config
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\Evolutyz.Entities.pdb
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\Evolutyz.Entities.dll.config
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.pdb
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.dll.config
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\Newtonsoft.Json.xml
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\RestSharp.xml
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\SendGrid.pdb
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\SendGrid.xml
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\Evolutyz.Data.pdb
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\Evolutyz.Data.dll.config
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\Microsoft.Owin.xml
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\System.Web.Optimization.xml
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\System.Web.Mvc.xml
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\Microsoft.AspNet.SignalR.Core.pdb
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\Microsoft.AspNet.SignalR.Core.xml
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\EntityFramework.xml
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\EntityFramework.SqlServer.xml
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\System.Web.Razor.xml
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\System.Web.WebPages.Razor.xml
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\System.Web.WebPages.xml
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\Microsoft.Owin.Security.xml
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\BouncyCastle.Crypto.pdb
+F:\TFS_EZCornerDev\Evolutyz.Test\bin\Debug\System.Web.WebPages.Deployment.xml
+F:\TFS_EZCornerDev\Evolutyz.Test\obj\Debug\Evolutyz.Test.csprojAssemblyReference.cache
+F:\TFS_EZCornerDev\Evolutyz.Test\obj\Debug\Evolutyz.Test.csproj.CoreCompileInputs.cache
+F:\TFS_EZCornerDev\Evolutyz.Test\obj\Debug\Evolutyz.Test.csproj.CopyComplete
+F:\TFS_EZCornerDev\Evolutyz.Test\obj\Debug\Evolutyz.Test.dll
+F:\TFS_EZCornerDev\Evolutyz.Test\obj\Debug\Evolutyz.Test.pdb
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\ApplicationInsights.config
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\Evolutyz.Test.dll.config
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\Evolutyz.Test.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\Evolutyz.Test.pdb
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\Evolutyz.Business.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\Evolutyz.Entities.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\Newtonsoft.Json.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\RestSharp.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\SendGrid.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\System.Net.Http.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Algorithms.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Encoding.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Primitives.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\Evolutyz.Data.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\Microsoft.Owin.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\System.Web.Optimization.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\System.Web.Mvc.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\Microsoft.AspNet.SignalR.Core.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\Owin.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\itextsharp.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\EntityFramework.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\EntityFramework.SqlServer.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\Microsoft.Web.Infrastructure.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\System.Web.Razor.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\System.Web.WebPages.Razor.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\System.Web.WebPages.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\Microsoft.Owin.Security.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\BouncyCastle.Crypto.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\System.Web.WebPages.Deployment.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\Evolutyz.Business.pdb
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\Evolutyz.Business.dll.config
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\Evolutyz.Entities.pdb
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\Evolutyz.Entities.dll.config
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.pdb
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.dll.config
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\Newtonsoft.Json.xml
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\RestSharp.xml
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\SendGrid.pdb
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\SendGrid.xml
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\Evolutyz.Data.pdb
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\Evolutyz.Data.dll.config
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\Microsoft.Owin.xml
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\System.Web.Optimization.xml
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\System.Web.Mvc.xml
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\Microsoft.AspNet.SignalR.Core.pdb
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\Microsoft.AspNet.SignalR.Core.xml
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\EntityFramework.xml
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\EntityFramework.SqlServer.xml
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\System.Web.Razor.xml
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\System.Web.WebPages.Razor.xml
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\System.Web.WebPages.xml
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\Microsoft.Owin.Security.xml
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\BouncyCastle.Crypto.pdb
+F:\TFS_EvzCornerTesting\Evolutyz.Test\bin\Debug\System.Web.WebPages.Deployment.xml
+F:\TFS_EvzCornerTesting\Evolutyz.Test\obj\Debug\Evolutyz.Test.csprojAssemblyReference.cache
+F:\TFS_EvzCornerTesting\Evolutyz.Test\obj\Debug\Evolutyz.Test.csproj.CoreCompileInputs.cache
+F:\TFS_EvzCornerTesting\Evolutyz.Test\obj\Debug\Evolutyz.Test.csproj.CopyComplete
+F:\TFS_EvzCornerTesting\Evolutyz.Test\obj\Debug\Evolutyz.Test.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Test\obj\Debug\Evolutyz.Test.pdb
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\ApplicationInsights.config
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\Evolutyz.Test.dll.config
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\Evolutyz.Test.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\Evolutyz.Test.pdb
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\Evolutyz.Business.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\Evolutyz.Entities.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\Newtonsoft.Json.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\RestSharp.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\SendGrid.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\System.Net.Http.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Algorithms.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Encoding.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Primitives.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\Evolutyz.Data.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\Microsoft.Owin.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\System.Web.Optimization.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\System.Web.Mvc.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\Microsoft.AspNet.SignalR.Core.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\Owin.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\itextsharp.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\EntityFramework.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\EntityFramework.SqlServer.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\Microsoft.Web.Infrastructure.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\System.Web.Razor.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\System.Web.WebPages.Razor.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\System.Web.WebPages.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\Microsoft.Owin.Security.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\BouncyCastle.Crypto.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\System.Web.WebPages.Deployment.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\Evolutyz.Business.pdb
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\Evolutyz.Business.dll.config
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\Evolutyz.Entities.pdb
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\Evolutyz.Entities.dll.config
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.pdb
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.dll.config
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\Newtonsoft.Json.xml
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\RestSharp.xml
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\SendGrid.pdb
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\SendGrid.xml
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\Evolutyz.Data.pdb
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\Evolutyz.Data.dll.config
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\Microsoft.Owin.xml
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\System.Web.Optimization.xml
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\System.Web.Mvc.xml
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\Microsoft.AspNet.SignalR.Core.pdb
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\Microsoft.AspNet.SignalR.Core.xml
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\EntityFramework.xml
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\EntityFramework.SqlServer.xml
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\System.Web.Razor.xml
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\System.Web.WebPages.Razor.xml
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\System.Web.WebPages.xml
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\Microsoft.Owin.Security.xml
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\BouncyCastle.Crypto.pdb
+F:\TFS_EzCornerWebDev\Evolutyz.Test\bin\Debug\System.Web.WebPages.Deployment.xml
+F:\TFS_EzCornerWebDev\Evolutyz.Test\obj\Debug\Evolutyz.Test.csprojAssemblyReference.cache
+F:\TFS_EzCornerWebDev\Evolutyz.Test\obj\Debug\Evolutyz.Test.csproj.CoreCompileInputs.cache
+F:\TFS_EzCornerWebDev\Evolutyz.Test\obj\Debug\Evolutyz.Test.csproj.CopyComplete
+F:\TFS_EzCornerWebDev\Evolutyz.Test\obj\Debug\Evolutyz.Test.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Test\obj\Debug\Evolutyz.Test.pdb
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\ApplicationInsights.config
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\Evolutyz.Test.dll.config
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\Evolutyz.Test.dll
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\Evolutyz.Test.pdb
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\Evolutyz.Business.dll
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\Evolutyz.Entities.dll
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.dll
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\Newtonsoft.Json.dll
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\RestSharp.dll
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\SendGrid.dll
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\System.Net.Http.dll
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Algorithms.dll
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Encoding.dll
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Primitives.dll
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\Evolutyz.Data.dll
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\Microsoft.Owin.dll
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\System.Web.Optimization.dll
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\System.Web.Mvc.dll
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\Microsoft.AspNet.SignalR.Core.dll
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\Owin.dll
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\itextsharp.dll
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\EntityFramework.dll
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\EntityFramework.SqlServer.dll
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\Microsoft.Web.Infrastructure.dll
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\System.Web.Razor.dll
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\System.Web.WebPages.Razor.dll
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\System.Web.WebPages.dll
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\Microsoft.Owin.Security.dll
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\BouncyCastle.Crypto.dll
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\System.Web.WebPages.Deployment.dll
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\Evolutyz.Business.pdb
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\Evolutyz.Business.dll.config
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\Evolutyz.Entities.pdb
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\Evolutyz.Entities.dll.config
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.pdb
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.dll.config
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\Newtonsoft.Json.xml
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\RestSharp.xml
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\SendGrid.pdb
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\SendGrid.xml
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\Evolutyz.Data.pdb
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\Evolutyz.Data.dll.config
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\Microsoft.Owin.xml
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\System.Web.Optimization.xml
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\System.Web.Mvc.xml
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\Microsoft.AspNet.SignalR.Core.pdb
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\Microsoft.AspNet.SignalR.Core.xml
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\EntityFramework.xml
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\EntityFramework.SqlServer.xml
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\System.Web.Razor.xml
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\System.Web.WebPages.Razor.xml
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\System.Web.WebPages.xml
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\Microsoft.Owin.Security.xml
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\BouncyCastle.Crypto.pdb
+F:\July 01 TFS\Evolutyz.Test\bin\Debug\System.Web.WebPages.Deployment.xml
+F:\July 01 TFS\Evolutyz.Test\obj\Debug\Evolutyz.Test.csprojAssemblyReference.cache
+F:\July 01 TFS\Evolutyz.Test\obj\Debug\Evolutyz.Test.csproj.CoreCompileInputs.cache
+F:\July 01 TFS\Evolutyz.Test\obj\Debug\Evolutyz.Test.csproj.CopyComplete
+F:\July 01 TFS\Evolutyz.Test\obj\Debug\Evolutyz.Test.dll
+F:\July 01 TFS\Evolutyz.Test\obj\Debug\Evolutyz.Test.pdb
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\ApplicationInsights.config
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\Evolutyz.Test.dll.config
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\Evolutyz.Test.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\Evolutyz.Test.pdb
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\Evolutyz.Business.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\Evolutyz.Entities.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\Newtonsoft.Json.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\RestSharp.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\SendGrid.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\System.Net.Http.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Algorithms.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Encoding.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Primitives.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\Evolutyz.Data.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\Microsoft.Owin.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\System.Web.Optimization.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\System.Web.Mvc.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\Microsoft.AspNet.SignalR.Core.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\Owin.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\itextsharp.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\EntityFramework.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\EntityFramework.SqlServer.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\Microsoft.Web.Infrastructure.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\System.Web.Razor.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\System.Web.WebPages.Razor.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\System.Web.WebPages.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\Microsoft.Owin.Security.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\BouncyCastle.Crypto.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\System.Web.WebPages.Deployment.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\Evolutyz.Business.pdb
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\Evolutyz.Business.dll.config
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\Evolutyz.Entities.pdb
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\Evolutyz.Entities.dll.config
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.pdb
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.dll.config
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\Newtonsoft.Json.xml
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\RestSharp.xml
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\SendGrid.pdb
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\SendGrid.xml
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\Evolutyz.Data.pdb
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\Evolutyz.Data.dll.config
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\Microsoft.Owin.xml
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\System.Web.Optimization.xml
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\System.Web.Mvc.xml
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\Microsoft.AspNet.SignalR.Core.pdb
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\Microsoft.AspNet.SignalR.Core.xml
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\EntityFramework.xml
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\EntityFramework.SqlServer.xml
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\System.Web.Razor.xml
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\System.Web.WebPages.Razor.xml
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\System.Web.WebPages.xml
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\Microsoft.Owin.Security.xml
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\BouncyCastle.Crypto.pdb
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\bin\Debug\System.Web.WebPages.Deployment.xml
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\obj\Debug\Evolutyz.Test.csprojAssemblyReference.cache
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\obj\Debug\Evolutyz.Test.csproj.CoreCompileInputs.cache
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\obj\Debug\Evolutyz.Test.csproj.CopyComplete
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\obj\Debug\Evolutyz.Test.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Test\obj\Debug\Evolutyz.Test.pdb
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\ApplicationInsights.config
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\Evolutyz.Test.dll.config
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\Evolutyz.Test.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\Evolutyz.Test.pdb
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\Evolutyz.Business.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\Evolutyz.Entities.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\Newtonsoft.Json.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\RestSharp.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\SendGrid.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\System.Net.Http.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Algorithms.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Encoding.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Primitives.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\Evolutyz.Data.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\Microsoft.Owin.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\System.Web.Optimization.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\System.Web.Mvc.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\Microsoft.AspNet.SignalR.Core.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\Owin.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\itextsharp.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\EntityFramework.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\EntityFramework.SqlServer.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\Microsoft.Web.Infrastructure.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\System.Web.Razor.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\System.Web.WebPages.Razor.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\System.Web.WebPages.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\Microsoft.Owin.Security.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\BouncyCastle.Crypto.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\System.Web.WebPages.Deployment.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\Evolutyz.Business.pdb
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\Evolutyz.Business.dll.config
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\Evolutyz.Entities.pdb
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\Evolutyz.Entities.dll.config
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.pdb
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.dll.config
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\Newtonsoft.Json.xml
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\RestSharp.xml
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\SendGrid.pdb
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\SendGrid.xml
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\Evolutyz.Data.pdb
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\Evolutyz.Data.dll.config
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\Microsoft.Owin.xml
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\System.Web.Optimization.xml
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\System.Web.Mvc.xml
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\Microsoft.AspNet.SignalR.Core.pdb
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\Microsoft.AspNet.SignalR.Core.xml
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\EntityFramework.xml
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\EntityFramework.SqlServer.xml
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\System.Web.Razor.xml
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\System.Web.WebPages.Razor.xml
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\System.Web.WebPages.xml
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\Microsoft.Owin.Security.xml
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\BouncyCastle.Crypto.pdb
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\bin\Debug\System.Web.WebPages.Deployment.xml
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\obj\Debug\Evolutyz.Test.csprojAssemblyReference.cache
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\obj\Debug\Evolutyz.Test.csproj.CoreCompileInputs.cache
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\obj\Debug\Evolutyz.Test.csproj.CopyComplete
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\obj\Debug\Evolutyz.Test.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Test\obj\Debug\Evolutyz.Test.pdb
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\ApplicationInsights.config
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\Evolutyz.Test.dll.config
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\Evolutyz.Test.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\Evolutyz.Test.pdb
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\Evolutyz.Business.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\Evolutyz.Entities.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\Newtonsoft.Json.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\RestSharp.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\SendGrid.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\System.Net.Http.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Algorithms.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Encoding.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Primitives.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\Evolutyz.Data.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\Microsoft.Owin.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\System.Web.Optimization.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\System.Web.Mvc.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\Microsoft.AspNet.SignalR.Core.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\Owin.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\itextsharp.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\EntityFramework.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\EntityFramework.SqlServer.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\Microsoft.Web.Infrastructure.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\System.Web.Razor.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\System.Web.WebPages.Razor.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\System.Web.WebPages.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\Microsoft.Owin.Security.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\System.Web.WebPages.Deployment.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\Evolutyz.Business.pdb
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\Evolutyz.Business.dll.config
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\Evolutyz.Entities.pdb
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\Evolutyz.Entities.dll.config
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.pdb
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.dll.config
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\Newtonsoft.Json.xml
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\RestSharp.xml
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\SendGrid.pdb
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\SendGrid.xml
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\Evolutyz.Data.pdb
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\Evolutyz.Data.dll.config
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\Microsoft.Owin.xml
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\System.Web.Optimization.xml
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\System.Web.Mvc.xml
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\Microsoft.AspNet.SignalR.Core.pdb
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\Microsoft.AspNet.SignalR.Core.xml
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\itextsharp.xml
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\EntityFramework.xml
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\EntityFramework.SqlServer.xml
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\System.Web.Razor.xml
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\System.Web.WebPages.Razor.xml
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\System.Web.WebPages.xml
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\Microsoft.Owin.Security.xml
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\bin\Debug\System.Web.WebPages.Deployment.xml
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\obj\Debug\Evolutyz.Test.csprojAssemblyReference.cache
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\obj\Debug\Evolutyz.Test.csproj.CoreCompileInputs.cache
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\obj\Debug\Evolutyz.Test.csproj.CopyComplete
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\obj\Debug\Evolutyz.Test.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Test\obj\Debug\Evolutyz.Test.pdb
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\ApplicationInsights.config
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\Evolutyz.Test.dll.config
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\Evolutyz.Test.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\Evolutyz.Test.pdb
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\Evolutyz.Business.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\Evolutyz.Entities.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\Newtonsoft.Json.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\RestSharp.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\SendGrid.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\System.Net.Http.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Algorithms.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Encoding.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Primitives.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\Evolutyz.Data.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\Microsoft.Owin.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\System.Web.Optimization.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\System.Web.Mvc.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\Microsoft.AspNet.SignalR.Core.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\Owin.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\itextsharp.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\EntityFramework.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\EntityFramework.SqlServer.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\Microsoft.Web.Infrastructure.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\System.Web.Razor.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\System.Web.WebPages.Razor.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\System.Web.WebPages.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\Microsoft.Owin.Security.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\System.Web.WebPages.Deployment.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\Evolutyz.Business.pdb
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\Evolutyz.Business.dll.config
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\Evolutyz.Entities.pdb
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\Evolutyz.Entities.dll.config
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.pdb
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.dll.config
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\Newtonsoft.Json.xml
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\RestSharp.xml
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\SendGrid.pdb
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\SendGrid.xml
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\Evolutyz.Data.pdb
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\bin\Debug\Evolutyz.Data.dll.config
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\obj\Debug\Evolutyz.Test.csprojAssemblyReference.cache
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\obj\Debug\Evolutyz.Test.csproj.CoreCompileInputs.cache
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\obj\Debug\Evolutyz.Test.csproj.CopyComplete
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\obj\Debug\Evolutyz.Test.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Test\obj\Debug\Evolutyz.Test.pdb
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\ApplicationInsights.config
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\Evolutyz.Test.dll.config
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\Evolutyz.Test.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\Evolutyz.Test.pdb
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\Evolutyz.Business.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\Evolutyz.Entities.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\Microsoft.Azure.KeyVault.Core.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\Microsoft.WindowsAzure.Storage.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\Newtonsoft.Json.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\RestSharp.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\SendGrid.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\System.Net.Http.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Algorithms.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Encoding.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Primitives.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\Evolutyz.Data.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\Microsoft.Owin.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\System.Web.Optimization.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\System.Web.Mvc.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\Microsoft.AspNet.SignalR.Core.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\Owin.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\Excel.Helper.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\itextsharp.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\EntityFramework.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\EntityFramework.SqlServer.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\Microsoft.WindowsAzure.Configuration.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\Microsoft.Web.Infrastructure.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\System.Web.Razor.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\System.Web.WebPages.Razor.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\System.Web.WebPages.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\Microsoft.Owin.Security.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\Excel.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\System.Web.WebPages.Deployment.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\ICSharpCode.SharpZipLib.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\Evolutyz.Business.pdb
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\Evolutyz.Business.dll.config
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\Evolutyz.Entities.pdb
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\Evolutyz.Entities.dll.config
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.pdb
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.dll.config
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\Microsoft.Azure.KeyVault.Core.xml
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\Microsoft.WindowsAzure.Storage.pdb
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\Microsoft.WindowsAzure.Storage.xml
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\Newtonsoft.Json.xml
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\RestSharp.xml
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\SendGrid.pdb
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\SendGrid.xml
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\Evolutyz.Data.pdb
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\Evolutyz.Data.dll.config
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\bin\Debug\Microsoft.WindowsAzure.Configuration.xml
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\obj\Debug\Evolutyz.Test.csprojAssemblyReference.cache
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\obj\Debug\Evolutyz.Test.csproj.CoreCompileInputs.cache
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\obj\Debug\Evolutyz.Test.csproj.CopyComplete
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\obj\Debug\Evolutyz.Test.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Test\obj\Debug\Evolutyz.Test.pdb
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\ApplicationInsights.config
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\Evolutyz.Test.dll.config
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\Evolutyz.Test.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\Evolutyz.Test.pdb
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\Evolutyz.Business.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\Evolutyz.Entities.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\Microsoft.Azure.KeyVault.Core.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\Microsoft.WindowsAzure.Storage.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\Newtonsoft.Json.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\RestSharp.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\SendGrid.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\System.Net.Http.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Algorithms.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Encoding.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Primitives.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\Evolutyz.Data.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\Microsoft.Owin.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\System.Web.Optimization.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\System.Web.Mvc.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\Microsoft.AspNet.SignalR.Core.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\Owin.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\Excel.Helper.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\itextsharp.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\EntityFramework.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\EntityFramework.SqlServer.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\Microsoft.WindowsAzure.Configuration.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\System.Web.Razor.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\System.Web.WebPages.Razor.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\System.Web.WebPages.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\Microsoft.Owin.Security.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\Excel.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\Evolutyz.Business.pdb
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\Evolutyz.Business.dll.config
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\Evolutyz.Entities.pdb
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\Evolutyz.Entities.dll.config
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.pdb
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.dll.config
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\Microsoft.Azure.KeyVault.Core.xml
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\Microsoft.WindowsAzure.Storage.pdb
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\Microsoft.WindowsAzure.Storage.xml
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\Newtonsoft.Json.xml
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\RestSharp.xml
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\SendGrid.pdb
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\SendGrid.xml
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\Evolutyz.Data.pdb
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\Evolutyz.Data.dll.config
+E:\TFS\EvolutyzCorner\Evolutyz.Test\bin\Debug\Microsoft.WindowsAzure.Configuration.xml
+E:\TFS\EvolutyzCorner\Evolutyz.Test\obj\Debug\Evolutyz.Test.csprojAssemblyReference.cache
+E:\TFS\EvolutyzCorner\Evolutyz.Test\obj\Debug\Evolutyz.Test.csproj.CoreCompileInputs.cache
+E:\TFS\EvolutyzCorner\Evolutyz.Test\obj\Debug\Evolutyz.Test.csproj.CopyComplete
+E:\TFS\EvolutyzCorner\Evolutyz.Test\obj\Debug\Evolutyz.Test.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Test\obj\Debug\Evolutyz.Test.pdb
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\ApplicationInsights.config
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\Evolutyz.Test.dll.config
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\Evolutyz.Test.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\Evolutyz.Test.pdb
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\Evolutyz.Business.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\Evolutyz.Entities.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\Microsoft.Azure.KeyVault.Core.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\Microsoft.WindowsAzure.Storage.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\Newtonsoft.Json.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\RestSharp.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\SendGrid.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\System.Net.Http.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Algorithms.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Encoding.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\System.Security.Cryptography.Primitives.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\Evolutyz.Data.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\Microsoft.Owin.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\System.Web.Optimization.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\System.Web.Mvc.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\Microsoft.AspNet.SignalR.Core.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\Owin.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\EntityFramework.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\Excel.Helper.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\itextsharp.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\EntityFramework.SqlServer.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\Microsoft.WindowsAzure.Configuration.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\Microsoft.Web.Infrastructure.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\System.Web.Razor.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\System.Web.WebPages.Razor.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\System.Web.WebPages.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\Microsoft.Owin.Security.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\Excel.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\System.Web.WebPages.Deployment.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\ICSharpCode.SharpZipLib.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\Evolutyz.Business.pdb
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\Evolutyz.Business.dll.config
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\Evolutyz.Entities.pdb
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\Evolutyz.Entities.dll.config
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.pdb
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\EvolutyzCorner.UI.Web.dll.config
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\Microsoft.Azure.KeyVault.Core.xml
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\Microsoft.WindowsAzure.Storage.pdb
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\Microsoft.WindowsAzure.Storage.xml
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\Newtonsoft.Json.xml
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\RestSharp.xml
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\SendGrid.pdb
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\SendGrid.xml
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\Evolutyz.Data.pdb
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\Evolutyz.Data.dll.config
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\bin\Debug\Microsoft.WindowsAzure.Configuration.xml
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\obj\Debug\Evolutyz.Test.csprojAssemblyReference.cache
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\obj\Debug\Evolutyz.Test.csproj.CoreCompileInputs.cache
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\obj\Debug\Evolutyz.Test.csproj.CopyComplete
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\obj\Debug\Evolutyz.Test.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Test\obj\Debug\Evolutyz.Test.pdb

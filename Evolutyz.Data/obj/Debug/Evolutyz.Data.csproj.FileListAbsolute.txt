@@ -1,0 +1,606 @@
+D:\TFS_kalyani\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll.config
+D:\TFS_kalyani\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll
+D:\TFS_kalyani\Evolutyz.Data\bin\Debug\Evolutyz.Data.pdb
+D:\TFS_kalyani\Evolutyz.Data\bin\Debug\EntityFramework.dll
+D:\TFS_kalyani\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\TFS_kalyani\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll
+D:\TFS_kalyani\Evolutyz.Data\bin\Debug\Newtonsoft.Json.dll
+D:\TFS_kalyani\Evolutyz.Data\bin\Debug\RestSharp.dll
+D:\TFS_kalyani\Evolutyz.Data\bin\Debug\SendGrid.dll
+D:\TFS_kalyani\Evolutyz.Data\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\TFS_kalyani\Evolutyz.Data\bin\Debug\System.Net.Http.dll
+D:\TFS_kalyani\Evolutyz.Data\bin\Debug\System.Security.AccessControl.dll
+D:\TFS_kalyani\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Algorithms.dll
+D:\TFS_kalyani\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Encoding.dll
+D:\TFS_kalyani\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Primitives.dll
+D:\TFS_kalyani\Evolutyz.Data\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+D:\TFS_kalyani\Evolutyz.Data\bin\Debug\System.Security.Permissions.dll
+D:\TFS_kalyani\Evolutyz.Data\bin\Debug\System.Security.Principal.Windows.dll
+D:\TFS_kalyani\Evolutyz.Data\bin\Debug\Evolutyz.Entities.pdb
+D:\TFS_kalyani\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll.config
+D:\TFS_kalyani\Evolutyz.Data\bin\Debug\EntityFramework.xml
+D:\TFS_kalyani\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\TFS_kalyani\Evolutyz.Data\bin\Debug\Newtonsoft.Json.xml
+D:\TFS_kalyani\Evolutyz.Data\bin\Debug\RestSharp.xml
+D:\TFS_kalyani\Evolutyz.Data\bin\Debug\SendGrid.pdb
+D:\TFS_kalyani\Evolutyz.Data\bin\Debug\SendGrid.xml
+D:\TFS_kalyani\Evolutyz.Data\obj\Debug\Evolutyz.Data.csprojAssemblyReference.cache
+D:\TFS_kalyani\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CoreCompileInputs.cache
+D:\TFS_kalyani\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CopyComplete
+D:\TFS_kalyani\Evolutyz.Data\obj\Debug\Evolutyz.Data.dll
+D:\TFS_kalyani\Evolutyz.Data\obj\Debug\Evolutyz.Data.pdb
+F:\TFS_kalyani\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll.config
+F:\TFS_kalyani\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll
+F:\TFS_kalyani\Evolutyz.Data\bin\Debug\Evolutyz.Data.pdb
+F:\TFS_kalyani\Evolutyz.Data\bin\Debug\EntityFramework.dll
+F:\TFS_kalyani\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.dll
+F:\TFS_kalyani\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll
+F:\TFS_kalyani\Evolutyz.Data\bin\Debug\Newtonsoft.Json.dll
+F:\TFS_kalyani\Evolutyz.Data\bin\Debug\RestSharp.dll
+F:\TFS_kalyani\Evolutyz.Data\bin\Debug\SendGrid.dll
+F:\TFS_kalyani\Evolutyz.Data\bin\Debug\System.Configuration.ConfigurationManager.dll
+F:\TFS_kalyani\Evolutyz.Data\bin\Debug\System.Net.Http.dll
+F:\TFS_kalyani\Evolutyz.Data\bin\Debug\System.Security.AccessControl.dll
+F:\TFS_kalyani\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Algorithms.dll
+F:\TFS_kalyani\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Encoding.dll
+F:\TFS_kalyani\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Primitives.dll
+F:\TFS_kalyani\Evolutyz.Data\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+F:\TFS_kalyani\Evolutyz.Data\bin\Debug\System.Security.Permissions.dll
+F:\TFS_kalyani\Evolutyz.Data\bin\Debug\System.Security.Principal.Windows.dll
+F:\TFS_kalyani\Evolutyz.Data\bin\Debug\Evolutyz.Entities.pdb
+F:\TFS_kalyani\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll.config
+F:\TFS_kalyani\Evolutyz.Data\bin\Debug\EntityFramework.xml
+F:\TFS_kalyani\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.xml
+F:\TFS_kalyani\Evolutyz.Data\bin\Debug\Newtonsoft.Json.xml
+F:\TFS_kalyani\Evolutyz.Data\bin\Debug\RestSharp.xml
+F:\TFS_kalyani\Evolutyz.Data\bin\Debug\SendGrid.pdb
+F:\TFS_kalyani\Evolutyz.Data\bin\Debug\SendGrid.xml
+F:\TFS_kalyani\Evolutyz.Data\obj\Debug\Evolutyz.Data.csprojAssemblyReference.cache
+F:\TFS_kalyani\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CoreCompileInputs.cache
+F:\TFS_kalyani\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CopyComplete
+F:\TFS_kalyani\Evolutyz.Data\obj\Debug\Evolutyz.Data.dll
+F:\TFS_kalyani\Evolutyz.Data\obj\Debug\Evolutyz.Data.pdb
+F:\TFS_EZCornerDev\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll.config
+F:\TFS_EZCornerDev\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll
+F:\TFS_EZCornerDev\Evolutyz.Data\bin\Debug\Evolutyz.Data.pdb
+F:\TFS_EZCornerDev\Evolutyz.Data\bin\Debug\EntityFramework.dll
+F:\TFS_EZCornerDev\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.dll
+F:\TFS_EZCornerDev\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll
+F:\TFS_EZCornerDev\Evolutyz.Data\bin\Debug\Newtonsoft.Json.dll
+F:\TFS_EZCornerDev\Evolutyz.Data\bin\Debug\RestSharp.dll
+F:\TFS_EZCornerDev\Evolutyz.Data\bin\Debug\SendGrid.dll
+F:\TFS_EZCornerDev\Evolutyz.Data\bin\Debug\System.Configuration.ConfigurationManager.dll
+F:\TFS_EZCornerDev\Evolutyz.Data\bin\Debug\System.Net.Http.dll
+F:\TFS_EZCornerDev\Evolutyz.Data\bin\Debug\System.Security.AccessControl.dll
+F:\TFS_EZCornerDev\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Algorithms.dll
+F:\TFS_EZCornerDev\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Encoding.dll
+F:\TFS_EZCornerDev\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Primitives.dll
+F:\TFS_EZCornerDev\Evolutyz.Data\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+F:\TFS_EZCornerDev\Evolutyz.Data\bin\Debug\System.Security.Permissions.dll
+F:\TFS_EZCornerDev\Evolutyz.Data\bin\Debug\System.Security.Principal.Windows.dll
+F:\TFS_EZCornerDev\Evolutyz.Data\bin\Debug\Evolutyz.Entities.pdb
+F:\TFS_EZCornerDev\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll.config
+F:\TFS_EZCornerDev\Evolutyz.Data\bin\Debug\EntityFramework.xml
+F:\TFS_EZCornerDev\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.xml
+F:\TFS_EZCornerDev\Evolutyz.Data\bin\Debug\Newtonsoft.Json.xml
+F:\TFS_EZCornerDev\Evolutyz.Data\bin\Debug\RestSharp.xml
+F:\TFS_EZCornerDev\Evolutyz.Data\bin\Debug\SendGrid.pdb
+F:\TFS_EZCornerDev\Evolutyz.Data\bin\Debug\SendGrid.xml
+F:\TFS_EZCornerDev\Evolutyz.Data\obj\Debug\Evolutyz.Data.csprojAssemblyReference.cache
+F:\TFS_EZCornerDev\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CoreCompileInputs.cache
+F:\TFS_EZCornerDev\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CopyComplete
+F:\TFS_EZCornerDev\Evolutyz.Data\obj\Debug\Evolutyz.Data.dll
+F:\TFS_EZCornerDev\Evolutyz.Data\obj\Debug\Evolutyz.Data.pdb
+F:\TFS_EvzCornerTesting\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll.config
+F:\TFS_EvzCornerTesting\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Data\bin\Debug\Evolutyz.Data.pdb
+F:\TFS_EvzCornerTesting\Evolutyz.Data\bin\Debug\EntityFramework.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Data\bin\Debug\Newtonsoft.Json.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Data\bin\Debug\RestSharp.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Data\bin\Debug\SendGrid.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Data\bin\Debug\System.Configuration.ConfigurationManager.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Data\bin\Debug\System.Net.Http.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Data\bin\Debug\System.Security.AccessControl.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Algorithms.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Encoding.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Primitives.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Data\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Data\bin\Debug\System.Security.Permissions.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Data\bin\Debug\System.Security.Principal.Windows.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Data\bin\Debug\Evolutyz.Entities.pdb
+F:\TFS_EvzCornerTesting\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll.config
+F:\TFS_EvzCornerTesting\Evolutyz.Data\bin\Debug\EntityFramework.xml
+F:\TFS_EvzCornerTesting\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.xml
+F:\TFS_EvzCornerTesting\Evolutyz.Data\bin\Debug\Newtonsoft.Json.xml
+F:\TFS_EvzCornerTesting\Evolutyz.Data\bin\Debug\RestSharp.xml
+F:\TFS_EvzCornerTesting\Evolutyz.Data\bin\Debug\SendGrid.pdb
+F:\TFS_EvzCornerTesting\Evolutyz.Data\bin\Debug\SendGrid.xml
+F:\TFS_EvzCornerTesting\Evolutyz.Data\obj\Debug\Evolutyz.Data.csprojAssemblyReference.cache
+F:\TFS_EvzCornerTesting\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CoreCompileInputs.cache
+F:\TFS_EvzCornerTesting\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CopyComplete
+F:\TFS_EvzCornerTesting\Evolutyz.Data\obj\Debug\Evolutyz.Data.dll
+F:\TFS_EvzCornerTesting\Evolutyz.Data\obj\Debug\Evolutyz.Data.pdb
+F:\TFS_EzCornerWebDev\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll.config
+F:\TFS_EzCornerWebDev\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Data\bin\Debug\Evolutyz.Data.pdb
+F:\TFS_EzCornerWebDev\Evolutyz.Data\bin\Debug\EntityFramework.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Data\bin\Debug\Newtonsoft.Json.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Data\bin\Debug\RestSharp.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Data\bin\Debug\SendGrid.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Data\bin\Debug\System.Configuration.ConfigurationManager.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Data\bin\Debug\System.Net.Http.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Data\bin\Debug\System.Security.AccessControl.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Algorithms.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Encoding.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Primitives.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Data\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Data\bin\Debug\System.Security.Permissions.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Data\bin\Debug\System.Security.Principal.Windows.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Data\bin\Debug\Evolutyz.Entities.pdb
+F:\TFS_EzCornerWebDev\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll.config
+F:\TFS_EzCornerWebDev\Evolutyz.Data\bin\Debug\EntityFramework.xml
+F:\TFS_EzCornerWebDev\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.xml
+F:\TFS_EzCornerWebDev\Evolutyz.Data\bin\Debug\Newtonsoft.Json.xml
+F:\TFS_EzCornerWebDev\Evolutyz.Data\bin\Debug\RestSharp.xml
+F:\TFS_EzCornerWebDev\Evolutyz.Data\bin\Debug\SendGrid.pdb
+F:\TFS_EzCornerWebDev\Evolutyz.Data\bin\Debug\SendGrid.xml
+F:\TFS_EzCornerWebDev\Evolutyz.Data\obj\Debug\Evolutyz.Data.csprojAssemblyReference.cache
+F:\TFS_EzCornerWebDev\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CoreCompileInputs.cache
+F:\TFS_EzCornerWebDev\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CopyComplete
+F:\TFS_EzCornerWebDev\Evolutyz.Data\obj\Debug\Evolutyz.Data.dll
+F:\TFS_EzCornerWebDev\Evolutyz.Data\obj\Debug\Evolutyz.Data.pdb
+F:\July 01 TFS\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll.config
+F:\July 01 TFS\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll
+F:\July 01 TFS\Evolutyz.Data\bin\Debug\Evolutyz.Data.pdb
+F:\July 01 TFS\Evolutyz.Data\bin\Debug\EntityFramework.dll
+F:\July 01 TFS\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.dll
+F:\July 01 TFS\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll
+F:\July 01 TFS\Evolutyz.Data\bin\Debug\Newtonsoft.Json.dll
+F:\July 01 TFS\Evolutyz.Data\bin\Debug\RestSharp.dll
+F:\July 01 TFS\Evolutyz.Data\bin\Debug\SendGrid.dll
+F:\July 01 TFS\Evolutyz.Data\bin\Debug\System.Configuration.ConfigurationManager.dll
+F:\July 01 TFS\Evolutyz.Data\bin\Debug\System.Net.Http.dll
+F:\July 01 TFS\Evolutyz.Data\bin\Debug\System.Security.AccessControl.dll
+F:\July 01 TFS\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Algorithms.dll
+F:\July 01 TFS\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Encoding.dll
+F:\July 01 TFS\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Primitives.dll
+F:\July 01 TFS\Evolutyz.Data\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+F:\July 01 TFS\Evolutyz.Data\bin\Debug\System.Security.Permissions.dll
+F:\July 01 TFS\Evolutyz.Data\bin\Debug\System.Security.Principal.Windows.dll
+F:\July 01 TFS\Evolutyz.Data\bin\Debug\Evolutyz.Entities.pdb
+F:\July 01 TFS\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll.config
+F:\July 01 TFS\Evolutyz.Data\bin\Debug\EntityFramework.xml
+F:\July 01 TFS\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.xml
+F:\July 01 TFS\Evolutyz.Data\bin\Debug\Newtonsoft.Json.xml
+F:\July 01 TFS\Evolutyz.Data\bin\Debug\RestSharp.xml
+F:\July 01 TFS\Evolutyz.Data\bin\Debug\SendGrid.pdb
+F:\July 01 TFS\Evolutyz.Data\bin\Debug\SendGrid.xml
+F:\July 01 TFS\Evolutyz.Data\obj\Debug\Evolutyz.Data.csprojAssemblyReference.cache
+F:\July 01 TFS\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CoreCompileInputs.cache
+F:\July 01 TFS\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CopyComplete
+F:\July 01 TFS\Evolutyz.Data\obj\Debug\Evolutyz.Data.dll
+F:\July 01 TFS\Evolutyz.Data\obj\Debug\Evolutyz.Data.pdb
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll.config
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Data\bin\Debug\Evolutyz.Data.pdb
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Data\bin\Debug\EntityFramework.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Data\bin\Debug\Newtonsoft.Json.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Data\bin\Debug\RestSharp.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Data\bin\Debug\SendGrid.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Data\bin\Debug\System.Configuration.ConfigurationManager.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Data\bin\Debug\System.Net.Http.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Data\bin\Debug\System.Security.AccessControl.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Algorithms.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Encoding.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Primitives.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Data\bin\Debug\System.Security.Permissions.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Data\bin\Debug\System.Security.Principal.Windows.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Data\bin\Debug\Evolutyz.Entities.pdb
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll.config
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Data\bin\Debug\EntityFramework.xml
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.xml
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Data\bin\Debug\Newtonsoft.Json.xml
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Data\bin\Debug\RestSharp.xml
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Data\bin\Debug\SendGrid.pdb
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Data\bin\Debug\SendGrid.xml
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Data\obj\Debug\Evolutyz.Data.csprojAssemblyReference.cache
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CoreCompileInputs.cache
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CopyComplete
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Data\obj\Debug\Evolutyz.Data.dll
+F:\Ez-EvolutyzCorner(jul 15)\Evolutyz.Data\obj\Debug\Evolutyz.Data.pdb
+F:\TFS_EvolutyzCorner(jul 16)\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll.config
+F:\TFS_EvolutyzCorner(jul 16)\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll
+F:\TFS_EvolutyzCorner(jul 16)\Evolutyz.Data\bin\Debug\Evolutyz.Data.pdb
+F:\TFS_EvolutyzCorner(jul 16)\Evolutyz.Data\bin\Debug\EntityFramework.dll
+F:\TFS_EvolutyzCorner(jul 16)\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.dll
+F:\TFS_EvolutyzCorner(jul 16)\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll
+F:\TFS_EvolutyzCorner(jul 16)\Evolutyz.Data\bin\Debug\Newtonsoft.Json.dll
+F:\TFS_EvolutyzCorner(jul 16)\Evolutyz.Data\bin\Debug\RestSharp.dll
+F:\TFS_EvolutyzCorner(jul 16)\Evolutyz.Data\bin\Debug\SendGrid.dll
+F:\TFS_EvolutyzCorner(jul 16)\Evolutyz.Data\bin\Debug\System.Configuration.ConfigurationManager.dll
+F:\TFS_EvolutyzCorner(jul 16)\Evolutyz.Data\bin\Debug\System.Net.Http.dll
+F:\TFS_EvolutyzCorner(jul 16)\Evolutyz.Data\bin\Debug\System.Security.AccessControl.dll
+F:\TFS_EvolutyzCorner(jul 16)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Algorithms.dll
+F:\TFS_EvolutyzCorner(jul 16)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Encoding.dll
+F:\TFS_EvolutyzCorner(jul 16)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Primitives.dll
+F:\TFS_EvolutyzCorner(jul 16)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+F:\TFS_EvolutyzCorner(jul 16)\Evolutyz.Data\bin\Debug\System.Security.Permissions.dll
+F:\TFS_EvolutyzCorner(jul 16)\Evolutyz.Data\bin\Debug\System.Security.Principal.Windows.dll
+F:\TFS_EvolutyzCorner(jul 16)\Evolutyz.Data\bin\Debug\Evolutyz.Entities.pdb
+F:\TFS_EvolutyzCorner(jul 16)\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll.config
+F:\TFS_EvolutyzCorner(jul 16)\Evolutyz.Data\bin\Debug\EntityFramework.xml
+F:\TFS_EvolutyzCorner(jul 16)\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.xml
+F:\TFS_EvolutyzCorner(jul 16)\Evolutyz.Data\bin\Debug\Newtonsoft.Json.xml
+F:\TFS_EvolutyzCorner(jul 16)\Evolutyz.Data\bin\Debug\RestSharp.xml
+F:\TFS_EvolutyzCorner(jul 16)\Evolutyz.Data\bin\Debug\SendGrid.pdb
+F:\TFS_EvolutyzCorner(jul 16)\Evolutyz.Data\bin\Debug\SendGrid.xml
+F:\TFS_EvolutyzCorner(jul 16)\Evolutyz.Data\obj\Debug\Evolutyz.Data.csprojAssemblyReference.cache
+F:\TFS_EvolutyzCorner(jul 16)\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CoreCompileInputs.cache
+F:\TFS_EvolutyzCorner(jul 16)\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CopyComplete
+F:\TFS_EvolutyzCorner(jul 16)\Evolutyz.Data\obj\Debug\Evolutyz.Data.dll
+F:\TFS_EvolutyzCorner(jul 16)\Evolutyz.Data\obj\Debug\Evolutyz.Data.pdb
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll.config
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Data\bin\Debug\Evolutyz.Data.pdb
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Data\bin\Debug\EntityFramework.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Data\bin\Debug\Newtonsoft.Json.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Data\bin\Debug\RestSharp.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Data\bin\Debug\SendGrid.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Data\bin\Debug\System.Configuration.ConfigurationManager.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Data\bin\Debug\System.Net.Http.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Data\bin\Debug\System.Security.AccessControl.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Algorithms.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Encoding.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Primitives.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Data\bin\Debug\System.Security.Permissions.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Data\bin\Debug\System.Security.Principal.Windows.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Data\bin\Debug\Evolutyz.Entities.pdb
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll.config
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Data\bin\Debug\EntityFramework.xml
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.xml
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Data\bin\Debug\Newtonsoft.Json.xml
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Data\bin\Debug\RestSharp.xml
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Data\bin\Debug\SendGrid.pdb
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Data\bin\Debug\SendGrid.xml
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Data\obj\Debug\Evolutyz.Data.csprojAssemblyReference.cache
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CoreCompileInputs.cache
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CopyComplete
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Data\obj\Debug\Evolutyz.Data.dll
+F:\Ez-EvolutyzCorner(jul23)\Evolutyz.Data\obj\Debug\Evolutyz.Data.pdb
+F:\Ez-EvolutyzCorner(jul25)\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll.config
+F:\Ez-EvolutyzCorner(jul25)\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll
+F:\Ez-EvolutyzCorner(jul25)\Evolutyz.Data\bin\Debug\Evolutyz.Data.pdb
+F:\Ez-EvolutyzCorner(jul25)\Evolutyz.Data\bin\Debug\EntityFramework.dll
+F:\Ez-EvolutyzCorner(jul25)\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.dll
+F:\Ez-EvolutyzCorner(jul25)\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll
+F:\Ez-EvolutyzCorner(jul25)\Evolutyz.Data\bin\Debug\Newtonsoft.Json.dll
+F:\Ez-EvolutyzCorner(jul25)\Evolutyz.Data\bin\Debug\RestSharp.dll
+F:\Ez-EvolutyzCorner(jul25)\Evolutyz.Data\bin\Debug\SendGrid.dll
+F:\Ez-EvolutyzCorner(jul25)\Evolutyz.Data\bin\Debug\System.Configuration.ConfigurationManager.dll
+F:\Ez-EvolutyzCorner(jul25)\Evolutyz.Data\bin\Debug\System.Net.Http.dll
+F:\Ez-EvolutyzCorner(jul25)\Evolutyz.Data\bin\Debug\System.Security.AccessControl.dll
+F:\Ez-EvolutyzCorner(jul25)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Algorithms.dll
+F:\Ez-EvolutyzCorner(jul25)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Encoding.dll
+F:\Ez-EvolutyzCorner(jul25)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Primitives.dll
+F:\Ez-EvolutyzCorner(jul25)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+F:\Ez-EvolutyzCorner(jul25)\Evolutyz.Data\bin\Debug\System.Security.Permissions.dll
+F:\Ez-EvolutyzCorner(jul25)\Evolutyz.Data\bin\Debug\System.Security.Principal.Windows.dll
+F:\Ez-EvolutyzCorner(jul25)\Evolutyz.Data\bin\Debug\Evolutyz.Entities.pdb
+F:\Ez-EvolutyzCorner(jul25)\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll.config
+F:\Ez-EvolutyzCorner(jul25)\Evolutyz.Data\bin\Debug\EntityFramework.xml
+F:\Ez-EvolutyzCorner(jul25)\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.xml
+F:\Ez-EvolutyzCorner(jul25)\Evolutyz.Data\bin\Debug\Newtonsoft.Json.xml
+F:\Ez-EvolutyzCorner(jul25)\Evolutyz.Data\bin\Debug\RestSharp.xml
+F:\Ez-EvolutyzCorner(jul25)\Evolutyz.Data\bin\Debug\SendGrid.pdb
+F:\Ez-EvolutyzCorner(jul25)\Evolutyz.Data\bin\Debug\SendGrid.xml
+F:\Ez-EvolutyzCorner(jul25)\Evolutyz.Data\obj\Debug\Evolutyz.Data.csprojAssemblyReference.cache
+F:\Ez-EvolutyzCorner(jul25)\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CoreCompileInputs.cache
+F:\Ez-EvolutyzCorner(jul25)\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CopyComplete
+F:\Ez-EvolutyzCorner(jul25)\Evolutyz.Data\obj\Debug\Evolutyz.Data.dll
+F:\Ez-EvolutyzCorner(jul25)\Evolutyz.Data\obj\Debug\Evolutyz.Data.pdb
+D:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll.config
+D:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll
+D:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\Evolutyz.Data.pdb
+D:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\EntityFramework.dll
+D:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll
+D:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\Newtonsoft.Json.dll
+D:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\RestSharp.dll
+D:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\SendGrid.dll
+D:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\System.Net.Http.dll
+D:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\System.Security.AccessControl.dll
+D:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Algorithms.dll
+D:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Encoding.dll
+D:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Primitives.dll
+D:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+D:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\System.Security.Permissions.dll
+D:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\System.Security.Principal.Windows.dll
+D:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\Evolutyz.Entities.pdb
+D:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll.config
+D:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\EntityFramework.xml
+D:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\Newtonsoft.Json.xml
+D:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\RestSharp.xml
+D:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\SendGrid.pdb
+D:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\SendGrid.xml
+D:\TFS\EvolutyzCorner\Evolutyz.Data\obj\Debug\Evolutyz.Data.csprojAssemblyReference.cache
+D:\TFS\EvolutyzCorner\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CoreCompileInputs.cache
+D:\TFS\EvolutyzCorner\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CopyComplete
+D:\TFS\EvolutyzCorner\Evolutyz.Data\obj\Debug\Evolutyz.Data.dll
+D:\TFS\EvolutyzCorner\Evolutyz.Data\obj\Debug\Evolutyz.Data.pdb
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll.config
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Data\bin\Debug\Evolutyz.Data.pdb
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Data\bin\Debug\EntityFramework.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Data\bin\Debug\Newtonsoft.Json.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Data\bin\Debug\RestSharp.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Data\bin\Debug\SendGrid.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Data\bin\Debug\System.Configuration.ConfigurationManager.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Data\bin\Debug\System.Net.Http.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Data\bin\Debug\System.Security.AccessControl.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Algorithms.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Encoding.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Primitives.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Data\bin\Debug\System.Security.Permissions.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Data\bin\Debug\System.Security.Principal.Windows.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Data\bin\Debug\Evolutyz.Entities.pdb
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll.config
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Data\bin\Debug\EntityFramework.xml
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.xml
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Data\bin\Debug\Newtonsoft.Json.xml
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Data\bin\Debug\RestSharp.xml
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Data\bin\Debug\SendGrid.pdb
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Data\bin\Debug\SendGrid.xml
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Data\obj\Debug\Evolutyz.Data.csprojAssemblyReference.cache
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CoreCompileInputs.cache
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CopyComplete
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Data\obj\Debug\Evolutyz.Data.dll
+F:\Ez-EvolutyzCorner(Aug8)\Evolutyz.Data\obj\Debug\Evolutyz.Data.pdb
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll.config
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Data\bin\Debug\Evolutyz.Data.pdb
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Data\bin\Debug\EntityFramework.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Data\bin\Debug\Newtonsoft.Json.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Data\bin\Debug\RestSharp.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Data\bin\Debug\SendGrid.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Data\bin\Debug\System.Configuration.ConfigurationManager.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Data\bin\Debug\System.Net.Http.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Data\bin\Debug\System.Security.AccessControl.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Algorithms.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Encoding.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Primitives.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Data\bin\Debug\System.Security.Permissions.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Data\bin\Debug\System.Security.Principal.Windows.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Data\bin\Debug\Evolutyz.Entities.pdb
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll.config
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Data\bin\Debug\EntityFramework.xml
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.xml
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Data\bin\Debug\Newtonsoft.Json.xml
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Data\bin\Debug\RestSharp.xml
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Data\bin\Debug\SendGrid.pdb
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Data\bin\Debug\SendGrid.xml
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Data\obj\Debug\Evolutyz.Data.csprojAssemblyReference.cache
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CoreCompileInputs.cache
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CopyComplete
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Data\obj\Debug\Evolutyz.Data.dll
+F:\Ez-EvolutyzCorner(Aug 12)\Evolutyz.Data\obj\Debug\Evolutyz.Data.pdb
+F:\Ez-EvolutyzCorner(Aug 19)\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll.config
+F:\Ez-EvolutyzCorner(Aug 19)\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll
+F:\Ez-EvolutyzCorner(Aug 19)\Evolutyz.Data\bin\Debug\Evolutyz.Data.pdb
+F:\Ez-EvolutyzCorner(Aug 19)\Evolutyz.Data\bin\Debug\EntityFramework.dll
+F:\Ez-EvolutyzCorner(Aug 19)\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.dll
+F:\Ez-EvolutyzCorner(Aug 19)\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll
+F:\Ez-EvolutyzCorner(Aug 19)\Evolutyz.Data\bin\Debug\Newtonsoft.Json.dll
+F:\Ez-EvolutyzCorner(Aug 19)\Evolutyz.Data\bin\Debug\RestSharp.dll
+F:\Ez-EvolutyzCorner(Aug 19)\Evolutyz.Data\bin\Debug\SendGrid.dll
+F:\Ez-EvolutyzCorner(Aug 19)\Evolutyz.Data\bin\Debug\System.Configuration.ConfigurationManager.dll
+F:\Ez-EvolutyzCorner(Aug 19)\Evolutyz.Data\bin\Debug\System.Net.Http.dll
+F:\Ez-EvolutyzCorner(Aug 19)\Evolutyz.Data\bin\Debug\System.Security.AccessControl.dll
+F:\Ez-EvolutyzCorner(Aug 19)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Algorithms.dll
+F:\Ez-EvolutyzCorner(Aug 19)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Encoding.dll
+F:\Ez-EvolutyzCorner(Aug 19)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Primitives.dll
+F:\Ez-EvolutyzCorner(Aug 19)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+F:\Ez-EvolutyzCorner(Aug 19)\Evolutyz.Data\bin\Debug\System.Security.Permissions.dll
+F:\Ez-EvolutyzCorner(Aug 19)\Evolutyz.Data\bin\Debug\System.Security.Principal.Windows.dll
+F:\Ez-EvolutyzCorner(Aug 19)\Evolutyz.Data\bin\Debug\Evolutyz.Entities.pdb
+F:\Ez-EvolutyzCorner(Aug 19)\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll.config
+F:\Ez-EvolutyzCorner(Aug 19)\Evolutyz.Data\bin\Debug\EntityFramework.xml
+F:\Ez-EvolutyzCorner(Aug 19)\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.xml
+F:\Ez-EvolutyzCorner(Aug 19)\Evolutyz.Data\bin\Debug\Newtonsoft.Json.xml
+F:\Ez-EvolutyzCorner(Aug 19)\Evolutyz.Data\bin\Debug\RestSharp.xml
+F:\Ez-EvolutyzCorner(Aug 19)\Evolutyz.Data\bin\Debug\SendGrid.pdb
+F:\Ez-EvolutyzCorner(Aug 19)\Evolutyz.Data\bin\Debug\SendGrid.xml
+F:\Ez-EvolutyzCorner(Aug 19)\Evolutyz.Data\obj\Debug\Evolutyz.Data.csprojAssemblyReference.cache
+F:\Ez-EvolutyzCorner(Aug 19)\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CoreCompileInputs.cache
+F:\Ez-EvolutyzCorner(Aug 19)\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CopyComplete
+F:\Ez-EvolutyzCorner(Aug 19)\Evolutyz.Data\obj\Debug\Evolutyz.Data.dll
+F:\Ez-EvolutyzCorner(Aug 19)\Evolutyz.Data\obj\Debug\Evolutyz.Data.pdb
+F:\Ez-EvolutyzCorner(Aug 27)\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll.config
+F:\Ez-EvolutyzCorner(Aug 27)\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll
+F:\Ez-EvolutyzCorner(Aug 27)\Evolutyz.Data\bin\Debug\Evolutyz.Data.pdb
+F:\Ez-EvolutyzCorner(Aug 27)\Evolutyz.Data\bin\Debug\EntityFramework.dll
+F:\Ez-EvolutyzCorner(Aug 27)\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.dll
+F:\Ez-EvolutyzCorner(Aug 27)\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll
+F:\Ez-EvolutyzCorner(Aug 27)\Evolutyz.Data\bin\Debug\Newtonsoft.Json.dll
+F:\Ez-EvolutyzCorner(Aug 27)\Evolutyz.Data\bin\Debug\RestSharp.dll
+F:\Ez-EvolutyzCorner(Aug 27)\Evolutyz.Data\bin\Debug\SendGrid.dll
+F:\Ez-EvolutyzCorner(Aug 27)\Evolutyz.Data\bin\Debug\System.Configuration.ConfigurationManager.dll
+F:\Ez-EvolutyzCorner(Aug 27)\Evolutyz.Data\bin\Debug\System.Net.Http.dll
+F:\Ez-EvolutyzCorner(Aug 27)\Evolutyz.Data\bin\Debug\System.Security.AccessControl.dll
+F:\Ez-EvolutyzCorner(Aug 27)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Algorithms.dll
+F:\Ez-EvolutyzCorner(Aug 27)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Encoding.dll
+F:\Ez-EvolutyzCorner(Aug 27)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Primitives.dll
+F:\Ez-EvolutyzCorner(Aug 27)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+F:\Ez-EvolutyzCorner(Aug 27)\Evolutyz.Data\bin\Debug\System.Security.Permissions.dll
+F:\Ez-EvolutyzCorner(Aug 27)\Evolutyz.Data\bin\Debug\System.Security.Principal.Windows.dll
+F:\Ez-EvolutyzCorner(Aug 27)\Evolutyz.Data\bin\Debug\Evolutyz.Entities.pdb
+F:\Ez-EvolutyzCorner(Aug 27)\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll.config
+F:\Ez-EvolutyzCorner(Aug 27)\Evolutyz.Data\bin\Debug\EntityFramework.xml
+F:\Ez-EvolutyzCorner(Aug 27)\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.xml
+F:\Ez-EvolutyzCorner(Aug 27)\Evolutyz.Data\bin\Debug\Newtonsoft.Json.xml
+F:\Ez-EvolutyzCorner(Aug 27)\Evolutyz.Data\bin\Debug\RestSharp.xml
+F:\Ez-EvolutyzCorner(Aug 27)\Evolutyz.Data\bin\Debug\SendGrid.pdb
+F:\Ez-EvolutyzCorner(Aug 27)\Evolutyz.Data\bin\Debug\SendGrid.xml
+F:\Ez-EvolutyzCorner(Aug 27)\Evolutyz.Data\obj\Debug\Evolutyz.Data.csprojAssemblyReference.cache
+F:\Ez-EvolutyzCorner(Aug 27)\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CoreCompileInputs.cache
+F:\Ez-EvolutyzCorner(Aug 27)\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CopyComplete
+F:\Ez-EvolutyzCorner(Aug 27)\Evolutyz.Data\obj\Debug\Evolutyz.Data.dll
+F:\Ez-EvolutyzCorner(Aug 27)\Evolutyz.Data\obj\Debug\Evolutyz.Data.pdb
+F:\Ez-EvolutyzCorner(Aug 29)\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll.config
+F:\Ez-EvolutyzCorner(Aug 29)\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll
+F:\Ez-EvolutyzCorner(Aug 29)\Evolutyz.Data\bin\Debug\Evolutyz.Data.pdb
+F:\Ez-EvolutyzCorner(Aug 29)\Evolutyz.Data\bin\Debug\EntityFramework.dll
+F:\Ez-EvolutyzCorner(Aug 29)\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.dll
+F:\Ez-EvolutyzCorner(Aug 29)\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll
+F:\Ez-EvolutyzCorner(Aug 29)\Evolutyz.Data\bin\Debug\Newtonsoft.Json.dll
+F:\Ez-EvolutyzCorner(Aug 29)\Evolutyz.Data\bin\Debug\RestSharp.dll
+F:\Ez-EvolutyzCorner(Aug 29)\Evolutyz.Data\bin\Debug\SendGrid.dll
+F:\Ez-EvolutyzCorner(Aug 29)\Evolutyz.Data\bin\Debug\System.Configuration.ConfigurationManager.dll
+F:\Ez-EvolutyzCorner(Aug 29)\Evolutyz.Data\bin\Debug\System.Net.Http.dll
+F:\Ez-EvolutyzCorner(Aug 29)\Evolutyz.Data\bin\Debug\System.Security.AccessControl.dll
+F:\Ez-EvolutyzCorner(Aug 29)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Algorithms.dll
+F:\Ez-EvolutyzCorner(Aug 29)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Encoding.dll
+F:\Ez-EvolutyzCorner(Aug 29)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Primitives.dll
+F:\Ez-EvolutyzCorner(Aug 29)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+F:\Ez-EvolutyzCorner(Aug 29)\Evolutyz.Data\bin\Debug\System.Security.Permissions.dll
+F:\Ez-EvolutyzCorner(Aug 29)\Evolutyz.Data\bin\Debug\System.Security.Principal.Windows.dll
+F:\Ez-EvolutyzCorner(Aug 29)\Evolutyz.Data\bin\Debug\Evolutyz.Entities.pdb
+F:\Ez-EvolutyzCorner(Aug 29)\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll.config
+F:\Ez-EvolutyzCorner(Aug 29)\Evolutyz.Data\bin\Debug\EntityFramework.xml
+F:\Ez-EvolutyzCorner(Aug 29)\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.xml
+F:\Ez-EvolutyzCorner(Aug 29)\Evolutyz.Data\bin\Debug\Newtonsoft.Json.xml
+F:\Ez-EvolutyzCorner(Aug 29)\Evolutyz.Data\bin\Debug\RestSharp.xml
+F:\Ez-EvolutyzCorner(Aug 29)\Evolutyz.Data\bin\Debug\SendGrid.pdb
+F:\Ez-EvolutyzCorner(Aug 29)\Evolutyz.Data\bin\Debug\SendGrid.xml
+F:\Ez-EvolutyzCorner(Aug 29)\Evolutyz.Data\obj\Debug\Evolutyz.Data.csprojAssemblyReference.cache
+F:\Ez-EvolutyzCorner(Aug 29)\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CoreCompileInputs.cache
+F:\Ez-EvolutyzCorner(Aug 29)\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CopyComplete
+F:\Ez-EvolutyzCorner(Aug 29)\Evolutyz.Data\obj\Debug\Evolutyz.Data.dll
+F:\Ez-EvolutyzCorner(Aug 29)\Evolutyz.Data\obj\Debug\Evolutyz.Data.pdb
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll.config
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\bin\Debug\Evolutyz.Data.pdb
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\bin\Debug\EntityFramework.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\bin\Debug\Newtonsoft.Json.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\bin\Debug\RestSharp.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\bin\Debug\SendGrid.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\bin\Debug\System.Configuration.ConfigurationManager.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\bin\Debug\System.Net.Http.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\bin\Debug\System.Security.AccessControl.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Algorithms.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Encoding.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Primitives.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\bin\Debug\System.Security.Permissions.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\bin\Debug\System.Security.Principal.Windows.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\bin\Debug\Evolutyz.Entities.pdb
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll.config
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\bin\Debug\EntityFramework.xml
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.xml
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\bin\Debug\Newtonsoft.Json.xml
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\bin\Debug\RestSharp.xml
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\bin\Debug\SendGrid.pdb
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\bin\Debug\SendGrid.xml
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\obj\Debug\Evolutyz.Data.csprojAssemblyReference.cache
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CoreCompileInputs.cache
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CopyComplete
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\obj\Debug\Evolutyz.Data.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\obj\Debug\Evolutyz.Data.pdb
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\bin\Debug\Microsoft.Azure.KeyVault.Core.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\bin\Debug\Microsoft.WindowsAzure.Storage.dll
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\bin\Debug\Microsoft.Azure.KeyVault.Core.xml
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\bin\Debug\Microsoft.WindowsAzure.Storage.pdb
+F:\Ez-EvolutyzCorner(sep 25)\Evolutyz.Data\bin\Debug\Microsoft.WindowsAzure.Storage.xml
+E:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll.config
+E:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\Evolutyz.Data.pdb
+E:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\EntityFramework.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\Microsoft.Azure.KeyVault.Core.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\Microsoft.WindowsAzure.Storage.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\Newtonsoft.Json.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\RestSharp.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\SendGrid.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\System.Configuration.ConfigurationManager.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\System.Net.Http.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\System.Security.AccessControl.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Algorithms.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Encoding.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Primitives.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\System.Security.Permissions.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\System.Security.Principal.Windows.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\Evolutyz.Entities.pdb
+E:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll.config
+E:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\EntityFramework.xml
+E:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.xml
+E:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\Microsoft.Azure.KeyVault.Core.xml
+E:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\Microsoft.WindowsAzure.Storage.pdb
+E:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\Microsoft.WindowsAzure.Storage.xml
+E:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\Newtonsoft.Json.xml
+E:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\RestSharp.xml
+E:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\SendGrid.pdb
+E:\TFS\EvolutyzCorner\Evolutyz.Data\bin\Debug\SendGrid.xml
+E:\TFS\EvolutyzCorner\Evolutyz.Data\obj\Debug\Evolutyz.Data.csprojAssemblyReference.cache
+E:\TFS\EvolutyzCorner\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CoreCompileInputs.cache
+E:\TFS\EvolutyzCorner\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CopyComplete
+E:\TFS\EvolutyzCorner\Evolutyz.Data\obj\Debug\Evolutyz.Data.dll
+E:\TFS\EvolutyzCorner\Evolutyz.Data\obj\Debug\Evolutyz.Data.pdb
+G:\EvolutyzCornerLatest\Evolutyz.Data\obj\Debug\Evolutyz.Data.csprojAssemblyReference.cache
+G:\EvolutyzCornerLatest\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CoreCompileInputs.cache
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\obj\Debug\Evolutyz.Data.csprojAssemblyReference.cache
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CoreCompileInputs.cache
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\obj\Debug\Evolutyz.Data.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\obj\Debug\Evolutyz.Data.pdb
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll.config
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\bin\Debug\Evolutyz.Data.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\bin\Debug\Evolutyz.Data.pdb
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\bin\Debug\EntityFramework.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\bin\Debug\Microsoft.Azure.KeyVault.Core.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\bin\Debug\Microsoft.WindowsAzure.Storage.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\bin\Debug\Newtonsoft.Json.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\bin\Debug\RestSharp.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\bin\Debug\SendGrid.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\bin\Debug\System.Configuration.ConfigurationManager.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\bin\Debug\System.Net.Http.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\bin\Debug\System.Security.AccessControl.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Algorithms.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Encoding.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\bin\Debug\System.Security.Cryptography.Primitives.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\bin\Debug\System.Security.Permissions.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\bin\Debug\System.Security.Principal.Windows.dll
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\bin\Debug\Evolutyz.Entities.pdb
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\bin\Debug\Evolutyz.Entities.dll.config
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\bin\Debug\EntityFramework.xml
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\bin\Debug\EntityFramework.SqlServer.xml
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\bin\Debug\Microsoft.Azure.KeyVault.Core.xml
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\bin\Debug\Microsoft.WindowsAzure.Storage.pdb
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\bin\Debug\Microsoft.WindowsAzure.Storage.xml
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\bin\Debug\Newtonsoft.Json.xml
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\bin\Debug\RestSharp.xml
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\bin\Debug\SendGrid.pdb
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\bin\Debug\SendGrid.xml
+G:\EvolutyzProjects\BACKUP_CODE_EC\NEW_CLONE_EC_23122020\Evolutyz.Data\obj\Debug\Evolutyz.Data.csproj.CopyComplete

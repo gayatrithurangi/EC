@@ -1,0 +1,2426 @@
+﻿
+@model Evolutyz.Entities.ProjectAllocationEntities
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+
+<link href="~/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" />
+<script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="~/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="~/Scripts/date.format.js"></script>
+<script src="~/EvolutyzCornerScripts/NewClientScript.js"></script>
+
+<script src="~/Scripts/bootstrap-datepicker.js"></script>
+<script src="~/Scripts/bootstrap-datepicker.min.js"></script>
+<link href="~/plugins/Jcrop/jquery.Jcrop.min.css" rel="stylesheet" />
+
+<link href="~/Styles/ClientLayoutStyles.css" rel="stylesheet" />
+
+
+
+<style type="text/css">
+
+
+    .file-upload-input {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        outline: none;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .image-upload-wrap {
+        border: 1px solid #dcdcdc;
+        position: relative;
+        margin-top: auto;
+        text-align: center;
+        padding: 30px 20px 20px;
+    }
+
+        .image-upload-wrap > input[type=file].file-upload-input {
+            /*opacity: 1;
+        position: static;*/
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            /*height: auto;
+            left: 25%;
+            width: auto;*/
+        }
+
+            .image-upload-wrap > input[type=file].file-upload-input ~ label:not(.error) {
+                color: #20487b;
+                border: 1px solid #dcdcdc;
+                max-width: 80%;
+                font-size: 15px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                cursor: pointer;
+                display: inline-block;
+                margin: 10px auto;
+                font-weight: 300;
+                padding: 2px 8px;
+            }
+</style>
+<style>
+
+    .jcrop-holder > img.file-upload-image {
+        /*width: 100% !important;
+        height: 100% !important;*/
+        max-height: inherit;
+        max-width: inherit;
+        padding: 0;
+    }
+
+    #image_input > .jcrop-holder {
+        margin: auto;
+        /*max-height: 200px;
+        max-width: 200px;
+        margin: 20px auto;*/
+    }
+</style>
+
+
+<style type="text/css">
+    .row.boot4 {
+        display: flex;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: -moz-box;
+        display: -o-flex;
+        flex-wrap: wrap;
+    }
+
+        .row.boot4 > .col-md-4 {
+            width: 100%;
+        }
+
+    @@media (min-width: 992px) {
+        .row.boot4 > .col-md-4 {
+            width: 33.33333333%;
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%;
+        }
+    }
+
+    #usertable.actions1 > thead > tr > th:last-child,
+    #usertable.actions1 > tbody > tr > td:last-child {
+        display: none
+    }
+
+    #holidaytable.holidayaction > thead > tr > th:last-child,
+    #holidaytable.holidayaction > tbody > tr > td:last-child {
+        display: none
+    }
+
+    #Projecttable.projaction > thead > tr > th:last-child,
+    #Projecttable.projaction > tbody > tr > td:last-child {
+        display: none
+    }
+
+    input.form-control.validate_msg ~ span.field-validation-valid:before {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 15px;
+        font-size: 10px;
+        color: red;
+    }
+
+    label.error {
+        position: absolute;
+        bottom: -20px;
+        left: 25px;
+        font-size: 10px;
+        color: red;
+    }
+
+    .modal .form-control + label.error {
+        position: static;
+    }
+
+    .form-group {
+        position: relative;
+    }
+
+    #Usr_Username.validate_msg ~ span:before {
+        content: "UserName already Exists";
+    }
+
+    #Email.validate_msg ~ span:before {
+        content: "Loginid already Exists";
+    }
+
+    #HolidayName.validate_msg ~ span:before {
+        content: "HolidayName Already Exist In this Client";
+    }
+
+    #HolidayDate.validate_msg ~ span:before {
+        content: "HolidayDate Already Exist In this Client";
+    }
+
+
+    #HolidayDate.validatemsg ~ span:before {
+        content: "Please Select Correct financialyear";
+    }
+
+    #clientprojecttitle.validate_msg ~ span:before {
+        content: "Project Name Already Existed";
+    }
+
+    #Proj_ProjectName.validate_msg ~ span:before {
+        content: "Client Name Already Existed";
+    }
+
+    #AssociateEmpGrid.modal {
+        z-index: 1045;
+    }
+
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+    .profile-image {
+        /*-webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 350%, 0% 0%);*/
+        width: 50px;
+        height: 50px;
+        margin-left: 25px;
+        /*background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url(/upload/Images/default.PNG);*/
+    }
+
+    a.btn-icn {
+        display: none
+    }
+
+    a.btn-icn-hide {
+        display: inline-block
+    }
+
+    /*.form-control {
+        width: 100%;
+    }*/
+
+    .modal-footer.padding-015 {
+        padding: 5px;
+    }
+
+        .modal-footer.padding-015 > .btn {
+            padding: 2px 8px;
+        }
+
+    .panel-brown {
+        border-color: #e4a385;
+    }
+
+        .panel-brown > .panel-heading {
+            background-image: -webkit-linear-gradient(top, #f9d9cb 0%, #e4b49e 100%);
+            background-image: -o-linear-gradient(top, #f9d9cb 0%, #e4b49e 100%);
+            background-image: -webkit-gradient(linear, left top, left bottom, from(#e4b49e), to(#faf2cc));
+            background-image: linear-gradient(to bottom, #f9d9cb 0%, #e4b49e 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff9d9cb', endColorstr='#ffe4b49e', GradientType=0);
+            background-repeat: repeat-x;
+            color: #976048 !important;
+            border-color: #e4a385;
+        }
+</style>
+<style>
+    table.tbl-appendGrid {
+        border-radius: 10px;
+        border-collapse: separate;
+        border-spacing: 2px;
+    }
+
+    #appendRow.btn-clr {
+        border-radius: 50%;
+        font-size: 25px;
+        padding: 0;
+        min-height: inherit;
+        height: 40px;
+        line-height: 40px;
+        width: 40px;
+        margin: 10px;
+        text-align: center;
+        background: -webkit-linear-gradient(135deg,#f37a41,#f8c26c);
+        background: linear-gradient(135deg,#f37a41,#f8c26c);
+        color: #fff;
+        border-color: #fdae81;
+    }
+
+    table.tbl-appendGrid > tbody > tr > td,
+    table.tbl-appendGrid > tbody > tr > th {
+        border: none;
+    }
+
+    table.tbl-appendGrid > tbody > tr:nth-child(odd) {
+        background-color: #f5f5f5;
+    }
+
+    table.tbl-appendGrid > tbody > tr > th[align] {
+        text-align: center;
+    }
+
+    table.tbl-appendGrid > tbody > tr:first-child > th[align]:first-child {
+        border-top-left-radius: 10px;
+    }
+
+    table.tbl-appendGrid > tbody > tr:first-child > th[align]:first-child {
+        border-top-right-radius: 10px;
+    }
+
+    table.tbl-appendGrid > tbody > tr:last-child > td[align]:first-child {
+        border-bottom-left-radius: 10px;
+    }
+
+    table.tbl-appendGrid > tbody > tr:last-child > td[align]:last-child {
+        border-bottom-right-radius: 10px;
+    }
+
+    table.tbl-appendGrid > tbody > tr > td {
+    }
+</style>
+<style type="text/css">
+    strong.label-control {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .line-align {
+        display: flex;
+        align-items: center;
+        margin: 0 0 15px;
+    }
+
+        .line-align.hidden-xs {
+            flex-flow: column;
+        }
+
+        .line-align > div[class^='m'][class$='-5'] {
+            border-bottom: 1px solid #d0d0d0;
+            width: 100%;
+        }
+
+        .line-align > div.mr-5 {
+            margin-right: 30px
+        }
+
+        .line-align > div.ml-5 {
+            margin-left: 30px
+        }
+
+        .line-align > span.text-muted {
+            text-transform: uppercase;
+            font-weight: 700;
+            padding: 0 10px
+        }
+
+        .line-align.hidden-xs > div[class^='m'][class$='-5'] {
+            border-bottom: none;
+            border-right: 1px solid #d0d0d0;
+            height: 100px;
+            width: auto;
+        }
+
+        .line-align.hidden-xs > div.mr-5 {
+            margin-right: 0;
+            margin-top: 20px;
+        }
+
+        .line-align.hidden-xs > div.ml-5 {
+            margin-left: 0;
+            margin-bottom: 20px;
+        }
+
+        .line-align.hidden-xs > span.text-muted {
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            line-height: 40px;
+            box-shadow: 1px 1px 1px 1px rgb(0 0 0 / 25%);
+            box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.25);
+            text-shadow: 0px 1px 1px rgb(0 0 0 / 50%);
+            text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+        }
+
+    .form-group-lg.text-center {
+        margin-bottom: 15px;
+    }
+
+        .form-group-lg.text-center > label {
+            display: block
+        }
+
+        .form-group-lg.text-center > .btn-clr {
+            border-color: #e49470;
+            background: linear-gradient(45deg, #e79f7f, #f5ac8b);
+            color: #842800;
+        }
+</style>
+
+
+
+
+<div>
+    <input type="text" value="@ViewBag.id" style="display:none" id="editpid" />
+</div>
+
+<input type="hidden" id="proid" value="@TempData["proid"]" />
+@{
+    TempData.Keep("proid");
+}
+<input type="hidden" id="Prj_AccountId" value="@ViewBag.AccountId" />
+@{
+    TempData.Keep("AccountId");
+}
+
+<div class="panel panel-brown">
+    <div class="panel-heading">Client Info.</div>
+    <form id="clientform">
+        <div class="panel-body no-padding">
+            <div class="clearfix" style="display:none;">
+                <div class="form-group col-md-6">
+                    <label for="Proj_AccountID">Proj_ProjectID</label>
+                    @Html.TextBoxFor(m => m.Proj_ProjectID, new { @class = "form-control" })
+                    @Html.TextBoxFor(m => m.Proj_ProjectID, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="clearfix">
+                <div class="col-md-2" style="display:none;">
+                    <div class="form-group">
+                        <label for="ProjectID">AccountID</label>
+                        @Html.TextBoxFor(m => m.Proj_AccountID, new { @class = "form-control", @disabled = "disabled" })
+                        @Html.ValidationMessageFor(m => m.Proj_AccountID)
+                    </div>
+                </div>
+                <div class="col-md-2" style="display:none">
+                    <div class="form-group">
+                        <label for="Proj_ProjectCode">Client Code</label>
+                        @Html.TextBoxFor(m => m.Proj_ProjectCode, new { Value = ViewBag.procode, @class = "form-control", @disabled = "disabled" })
+                        @Html.ValidationMessageFor(m => m.Proj_ProjectCode)
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="RoleCode">Client Name<font style="color:red;">*</font></label>
+                        @Html.TextBoxFor(m => m.Proj_ProjectName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Proj_ProjectName)
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="StartDate">Country<font style="color:red;">*</font></label>
+                        @Html.DropDownListFor(model => model.CountryId, new SelectList(ViewBag.countries, "value", "text"), "Select Country", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.CountryId)
+
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="StartDate">State<font style="color:red;">*</font></label>
+                        @Html.DropDownListFor(m => m.StateId, new SelectList("", ""), "Select State", new { @class = "form-control", style = "width:100%" })
+                        @Html.ValidationMessageFor(m => m.StateId)
+
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="StartDate">Web Address<font style="color:red;">*</font></label>
+
+                        @Html.TextBoxFor(m => m.WebUrl, new { @class = "form-control" })
+
+                        @Html.ValidationMessageFor(m => m.WebUrl)
+
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="Proj_isDeleted">Status<font style="color:red;">*</font></label>
+
+                        @Html.DropDownListFor(m => m.Proj_isDeleted, new SelectList(new List<Object>{
+
+                           new { value = 0 , text = "Active"},
+                           new { value = 1 , text = "InActive"}  }, "value", "text", 2), "Select Status", new { @class = "form-control" })
+
+                        @Html.ValidationMessageFor(m => m.Proj_isDeleted)
+
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="ProjectDescription">Client Description</label>
+                        @Html.TextAreaFor(m => m.Proj_ProjectDescription, new { @class = "form-control", style = "width:100%" })
+                        @Html.ValidationMessageFor(m => m.Proj_ProjectDescription)
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <div>&nbsp;</div>
+                        <label for="Is_Timesheet_ProjectSpecific">
+                            @*  <div>@Html.CheckBoxFor(m => m.Is_Timesheet_ProjectSpecific, new { style = "display: inline-block;" }) Is Timesheet Project Specific</div>*@
+                            @*@Html.CheckBoxFor(m => m.Is_Timesheet_ProjectSpecific.Value, new { @id = "Is_Timesheet_ProjectSpecific", style = "display:inline-block" })Is Timesheet ProjectSpecific*@
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer padding-015">
+            <button type="submit" id="btnSingleUpdate" class="btn btn-clr" style="display:none">Update</button>
+            <button type="button" style="display:none" id="btnEdit" class="btn btn-clr">Edit</button>
+            <button type="submit" id="btnAdd" class="btn btn-clr">Add</button>
+            <button type="button" class="btn btn-clr1" data-target="#warningmsg" data-toggle="modal">Close</button>
+        </div>
+    </form>
+</div>
+<div id="warningmsg" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div id="divAdv" class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+
+            </div>
+            <div class="modal-body">
+                <h3>Do you really want to close the window.</h3>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-clr" data-dismiss="modal" value="1" id="Back">Yes</button>
+                <button type="button" class="btn btn-clr1" value="2" data-dismiss="modal" id="cancel">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+@*-----------------------------------------------------------------------*@
+
+<div class="modal fade" role="dialog" id="ContainerGridProjectDetail">
+    <div class="modal-dialog modal-md">
+        @*<label id="succ"></label>*@
+        <div class="modal-content">
+            <div class="modal-header">
+                @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
+                <h4 class="modal-title" id="addproj" style="display:none">Add Project</h4>
+                <h4 class="modal-title" id="editproj" style="display:none">Edit Project</h4>
+            </div>
+            <form id="proForm">
+                <div class="modal-body">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="clientprojecttitle">Project Name<font style="color:red;">*</font></label>
+                                @Html.TextBoxFor(m => m.clientprojecttitle, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.clientprojecttitle)
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="ProjectDescription">Project Description</label>
+                                @Html.TextAreaFor(m => m.clientprojectdescription, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Proj_ProjectDescription)
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <input type="hidden" id="Clientproid" />
+
+                    <input type="hidden" id="accid" />
+
+                    <input type="hidden" id="projid" />
+
+
+
+                </div>
+                <div class="modal-footer ">
+                    @*<button type="button" id="btnSingleUpdate" class="btn btn-clr" style="display:none">Update</button>*@
+
+                    <button type="submit" id="btnAddProj" class="btn btn-clr" style="display:none">Add</button>
+                    <button type="submit" id="btnupdateProj" class="btn btn-clr" style="display:none">Update</button>
+                    <button type="button" class="btn btn-clr1" id="btnwarningmsg">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="prowarningmsg" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div id="divAdv" class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+
+            </div>
+            <div class="modal-body">
+                <h3>Do you really want to close the window.</h3>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-clr" data-dismiss="modal" value="1" id="Procancel">Yes</button>
+                <button type="button" class="btn btn-clr1" value="2" data-dismiss="modal" id="cancel">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+@*--------------------------------------------*@
+
+<div class="modal-footer padding-015">
+    <button type="submit" id="btnProject" class="btn btn-clr">Add Project</button>
+    <button type="submit" id="btnNewManModel" class="btn btn-clr">Add Manager</button>
+    <button type="submit" id="btnNewEmpModel" class="btn btn-clr">Add Resource</button>
+    @*<button type="submit" id="btnManModel" class="btn btn-clr">Add Manager</button>*@
+    @*<button type="submit" id="btnEmpModel" class="btn btn-clr">Add Employee</button>*@
+    <button type="submit" id="btnHoliday" class="btn btn-clr">Holiday Calender</button>
+    @*<button type="button"  id="btnassociateemp" class="btn btn-clr" data-target="#AssociateEmpGrid" data-toggle="modal">Associate Employee</button>*@
+    @*<button type="submit" id="btntasks" class="btn btn-clr" data-target="#Projectspecifictaskgrid" data-toggle="modal">ProjectSpecific Tasks</button>*@
+</div>
+
+
+<div class="modal fade" id="AddNewManager" role="dialog">
+
+    <div class="modal-dialog modal-md">
+
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <h4 class="modal-title" id="addtxt"></h4>
+
+            </div>
+            <form id="AddManagerForm">
+                <div class="modal-body">
+                    <div class="row" style="display:none;">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="Proj_AccountID">Proj_AccountID</label>
+                                @Html.TextBoxFor(m => m.UProj_UserProjectID, new { @class = "form-control" })
+                                @Html.TextBoxFor(m => m.UProj_ProjectID, new { @class = "form-control" })
+                                @Html.TextBoxFor(m => m.UProj_UserID, new { @class = "form-control" })
+                                @*@Html.TextBoxFor(m => m.Usr_UserID, new { @class = "form-control" })*@
+                                @Html.TextBoxFor(m => m.Proj_AccountID, new { @class = "form-control" })
+                                @*@Html.TextBoxFor(m => m.TimesheetMode_id, new { @class = "form-control" })*@
+                                @Html.TextBoxFor(m => m.client, new { @class = "form-control" })
+                                @Html.TextBoxFor(m => m.roleid, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row boot4" style="align-items:center">
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label for="AllProjects">Select Project<font style="color:red;">*</font></label>
+
+                                @Html.DropDownList("dllprojects", new SelectList(ViewBag.ProjectNames, "clientprojId", "Proj_ProjectName"), "Select Project", new { @class = "form-control" })
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label for="ManagerName">Select Manager<font style="color:red;">*</font></label>
+                                <select id="SelectedManagerName" name="SelectedManagerName" class="form-control"><option value="0">Select Manager</option></select>
+
+                            </div>
+                            <div class="form-group" style="display:none">
+                                <label for="AssignManager">Assign Manager<font style="color:red;">*</font></label>
+                                <select id="AssignManager" name="AssignManager" class="form-control"><option value="0">Assign Manager</option></select>
+
+                            </div>
+                            <div class="form-group">
+                                <label for="TimesheetMode_id1">Timesheet Mode<font style="color:red;">*</font></label>
+                                @Html.DropDownListFor(m => m.TimesheetMode_id, new SelectList(ViewBag.Timesheetmodes, "value", "text"), "Select TimeSheet Mode", new { @class = "form-control", @id = "TimesheetMode_id1" })
+                                @Html.ValidationMessageFor(m => m.TimesheetMode_id)
+                            </div>
+                            <div class="form-group">
+                                <div class="checkbox-inline">
+                                    <label for="isclientholidays">
+                                        <input type="checkbox" class="radio" value="1" id="isclientholidays" />Follow Client Holiday Calendar
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group" id="formanager1">
+                                <div class="checkbox-inline">
+                                    <label for="NewIsDirectManager">
+                                        <input type="checkbox" class="radio" value="1" id="NewIsDirectManager" name="NewIsDirectManager[2][]" checked />Internal Manager
+                                    </label>
+                                </div>
+                                <div class="checkbox-inline">
+                                    <label for="NewIsDirectManager2">
+                                        <input type="checkbox" class="radio" value="1" id="NewIsDirectManager2" name="NewIsDirectManager[2][]" />External Manager
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" id="AddSelectedManager" class="btn btn-clr" style="display:none">Add</button>
+                                <button type="button" class="btn btn-clr1" id="empclsemdl">Close</button>
+                            </div>
+                        </div>
+                        <div class="col-md-2 line-align hidden-xs">
+                            <div class="ml-5"></div>
+                            <span class="text-muted">or</span>
+                            <div class="mr-5"></div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group-lg text-center">
+                                @*<label for="NewManager">Create New Manager</label>*@
+                                <button type="button" id="btnManModel" class="btn btn-clr">Add New Manager</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="containerDelete" class="modal" role="dialog">
+    <div class="modal-dialog">
+        <div id="divAdv" class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+
+                <h4 class="modal-title">Delete Project</h4>
+            </div>
+            <div class="modal-body">
+                <h3>Do you really want to Delete the Record</h3>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-clr" value="1" id="btnYes" onclick="DeleteRow()">Yes</button>
+                <button type="button" class="btn btn-clr1" value="2" data-dismiss="modal" id="cancel">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="alertmodal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Delete Project</h4>
+            </div>
+
+
+            <div class="modal-body" >
+                Data Deleted successfully!!!
+            </div>
+
+
+            <div class="modal-footer">
+                <button type="button" id="btnok" class="btn btn-success">Ok</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="AddNewEmployee" role="dialog">
+
+    <div class="modal-dialog modal-md">
+
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <h4 class="modal-title" id="addtxt1"></h4>
+
+            </div>
+            <form id="AddEmployeeForm">
+                <div class="modal-body">
+                    <div class="row" style="display:none;">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="Proj_AccountID">Proj_AccountID</label>
+                                @Html.TextBoxFor(m => m.UProj_UserProjectID, new { @class = "form-control" })
+                                @Html.TextBoxFor(m => m.UProj_ProjectID, new { @class = "form-control" })
+                                @Html.TextBoxFor(m => m.UProj_UserID, new { @class = "form-control" })
+                                @Html.TextBoxFor(m => m.Usr_UserID, new { @class = "form-control" })
+                                @Html.TextBoxFor(m => m.Proj_AccountID, new { @class = "form-control" })
+                                @Html.TextBoxFor(m => m.client, new { @class = "form-control" })
+                                @Html.TextBoxFor(m => m.roleid, new { @class = "form-control" })
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row boot4" style="align-items:center">
+                        <div class="col-md-8">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="AllProjects">Select Project<font style="color:red;">*</font></label>
+                                        @Html.DropDownListFor(m => m.Cl_projid, new SelectList(ViewBag.ProjectNames1, "value", "text"), "Select Project", new { @class = "form-control", @id = "Userprojects" })
+                                        @Html.ValidationMessageFor(m => m.Cl_projid)
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="EmployeeName">Select Resource<font style="color:red;">*</font></label>
+
+                                        <select id="SelectedEmployeeName" name="SelectedEmployeeName" class="form-control"><option value="0">Select Resource</option></select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="TimesheetMode_id2">Timesheet Mode<font style="color:red;">*</font></label>
+                                        @Html.DropDownList("TimesheetModeId", new SelectList(ViewBag.Timesheetmodes, "value", "text"), "Select TimeSheet Mode", new { @class = "form-control" })
+
+                                    </div>
+
+
+
+                                </div>
+
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group" id="manager4">
+                                        <label for="manager4">Manager 1<font style="color:red;">*</font></label>
+                                        <select id="projmanager1" name="projmanager1" class="form-control"><option value="0">Select Manager</option></select>
+
+                                    </div>
+                                    <div class="form-group" id="manager5">
+                                        <label for="Manager5">Manager 2</label>
+                                        <select id="projmanager2" name="projmanager2" class="form-control"><option value="0">Select Manager</option></select>
+
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <strong class="label-control">&nbsp;</strong>
+                                        <div class="checkbox-inline">
+                                            <label for="isclientholidays">
+                                                <input type="checkbox" class="radio" value="1" id="isNewEmpclientholidays" />Follow Client Holiday Calendar
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" id="AddSelectedEmployee" class="btn btn-clr" style="display:none">Add</button>
+                                <button type="button" class="btn btn-clr1" id="empclsemdl1">Close</button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-1 line-align hidden-xs">
+                            <div class="ml-5"></div>
+                            <span class="text-muted">or</span>
+                            <div class="mr-5"></div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group-lg text-center">
+                                @*<label for="NewEmployee">Create New Employee</label>*@
+                                <button type="button" id="btnEmpModel" class="btn btn-clr">Add New Resource</button>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="ContainerGridDetail" role="dialog">
+
+    <div class="modal-dialog modal-md">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
+
+                <h4 class="modal-title" id="add"></h4>
+
+            </div>
+            <form id="EmpForm">
+                <div class="modal-body">
+                    <div class="row" style="display:none;">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="Proj_AccountID">Proj_AccountID</label>
+                                @Html.TextBoxFor(m => m.UProj_UserProjectID, new { @class = "form-control" })
+                                @Html.TextBoxFor(m => m.UProj_ProjectID, new { @class = "form-control" })
+                                @Html.TextBoxFor(m => m.UProj_UserID, new { @class = "form-control" })
+                                @Html.TextBoxFor(m => m.Usr_UserID, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row boot4">
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="Email">Login/EmailId:<font style="color:red;">*</font></label>
+
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+
+                                @Html.ValidationMessageFor(m => m.Email)
+                            </div>
+                        </div>
+
+                        <div class="col-md-4" id="pwd">
+                            <div class="form-group">
+                                <label for="Password">Password<font style="color:red;">*</font></label>
+                                @Html.PasswordFor(m => m.Usr_Password, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Usr_Password)
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4" id="cpwd">
+                            <div class="form-group">
+                                <label for="ConfirmPassword">Confirm Password<font style="color:red;">*</font></label>
+                                @Html.PasswordFor(m => m.Usr_ConfirmPassword, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Usr_ConfirmPassword)
+                                <label id="message"></label>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="Usr_Titleid">Title<font style="color:red;">*</font></label>
+                                @Html.DropDownListFor(model => model.Usr_Titleid, new SelectList(ViewBag.usertitle, "value", "text"), "Select Title", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Usr_Titleid)
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="Usr_Username">User Name<font style="color:red;">*</font></label>
+                                @Html.TextBoxFor(m => m.Usr_Username, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Usr_Username)
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="User Name">First Name<font style="color:red;">*</font></label>
+                                @Html.TextBoxFor(m => m.UsrP_FirstName, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.UsrP_FirstName)
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="LoginId">Last Name<font style="color:red;">*</font></label>
+                                @Html.TextBoxFor(m => m.UsrP_LastName, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.UsrP_LastName)
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="Usrp_CountryCode">Country Code<font style="color:red;">*</font></label>
+                                @Html.DropDownListFor(model => model.Usrp_CountryCode, new SelectList(ViewBag.countrycode, "value", "text"), "Select CountryCode", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Usrp_CountryCode)
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="Usrp_MobileNumber">Phone Number<font style="color:red;">*</font></label>
+
+                                @Html.TextBoxFor(m => m.Usrp_MobileNumber, new { @class = "form-control" })
+
+                                @Html.ValidationMessageFor(m => m.Usrp_MobileNumber)
+
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="Usr_GenderId">Gender<font style="color:red;">*</font></label>
+                                @Html.DropDownListFor(model => model.Usr_GenderId, new SelectList(ViewBag.Gender, "value", "text"), "Select Gender", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Usr_GenderId)
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="col-md-4">
+
+                            <div class="form-group" id="image_prev_container">
+                                <label>Profile Image</label>
+                                <span class="required" style="font-size:small;color:red;display:none"></span>
+                                <div class="image-upload-wrap">
+                                    <input type="file" value="upload" class="file-upload-input" id="fileUpload" name="fileUpload" accept="image/*" />
+                                    <div class="img-container" id="image_input" style="margin:auto">
+                                        <img id="profile-image" class="file-upload-image showimage" src="~/Content/images/local-disk.png" alt="Picture">
+                                    </div>
+                                    <label for="fileUpload"> <span>Choose file from local disk</span></label>
+                                </div>
+
+                            </div>
+                            <div class="previews clearfix" style="display:none">
+                                <img id="image_output" class="img-responsive showimage" alt="" style="margin:auto auto 15px" />
+                                <input type="hidden" name="imgCropped" id="imgCropped" />
+                                <input type="hidden" name="fullimagevalue" id="fullimagevalue" />
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="UserType">Employee Type<font style="color:red;">*</font></label>
+                                @Html.DropDownListFor(m => m.Usr_UserTypeID, new SelectList("", ""), new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Usr_UserTypeID)
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="RoleName">Role<font style="color:red;">*</font></label>
+                                @Html.DropDownListFor(m => m.RoleName, new SelectList("", ""), "Select Role", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.RoleName)
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="UsrP_EmployeeID">Project<font style="color:red;">*</font></label>
+                                @Html.DropDownListFor(m => m.project, new SelectList("", ""), "Select Project", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.project)
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="Taskname">Task Name<font style="color:red;">*</font></label>
+                                @Html.DropDownListFor(m => m.Usr_TaskID, new SelectList("", ""), new { @class = "form-control" })
+
+                                @Html.ValidationMessageFor(m => m.Usr_TaskID)
+                            </div>
+                        </div>
+
+                        <div class="col-md-4" id="manager1">
+
+                            <div class="form-group">
+                                <label for="Manager1">Manager1<font style="color:red;">*</font></label>
+                                @Html.DropDownListFor(m => m.ManagerName, new SelectList("", ""), "Select manager", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.ManagerName)
+                            </div>
+                        </div>
+                        <div class="col-md-4" id="manager2">
+                            <div class="form-group">
+                                <label for="Manager2">Manager 2</label>
+                                @Html.DropDownListFor(m => m.Managername2, new SelectList("", ""), "Select Manager", new
+                                {
+                                    @class = "form-control"@*, @id = "Manager2"*@})
+                                @Html.ValidationMessageFor(m => m.Managername2)
+                            </div>
+
+
+
+                        </div>
+
+
+
+                        <div class="col-md-4" id="manager3" style="display:none">
+                            <div class="form-group">
+                                <label for="Manager3">Manager</label>
+                                @Html.DropDownList("LeadforManager", new SelectList(string.Empty, "Value", "Text"), "Select Manager", new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="Participation Percentage">Project load (Participation Percentage)</label>
+                                @Html.TextBoxFor(m => m.UProj_ParticipationPercentage, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.UProj_ParticipationPercentage)
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="TimesheetMode_id">Timesheet Mode<font style="color:red;">*</font></label>
+                                @Html.DropDownListFor(model => model.TimesheetMode_id, new SelectList(ViewBag.Timesheetmodes, "value", "text"), "Select TimeSheet Mode", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.TimesheetMode_id)
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4" style="display:none">
+                            <div class="form-group">
+                                <label for="StartDate">StartDate</label>
+                                @Html.TextBoxFor(m => m.UProj_StartDate, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.UProj_StartDate)
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4" style="display:none">
+                            <div class="form-group">
+                                <label for="EndDate">End Date</label>
+
+                                @Html.TextBoxFor(m => m.UProj_EndDate, new { @class = "form-control" })
+
+                                @Html.ValidationMessageFor(m => m.UProj_EndDate)
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="Usr_isDeleted">Status<font style="color:red;">*</font></label>
+
+                                @Html.DropDownListFor(m => m.Usr_isDeleted, new SelectList(new List<Object>{
+
+                           new { value = 0 , text = "Active"},
+                           new { value = 1 , text = "InActive"}  }, "value", "text", 2), "Select Status", new { @class = "form-control" })
+
+
+                                @Html.ValidationMessageFor(m => m.Usr_isDeleted)
+                            </div>
+                            <div class="form-group" id="holidaycalendar">
+                                <div class="checkbox-inline">
+                                    <label for="ISCilentHolidays">
+                                        <input type="checkbox" class="radio" value="1" id="ISCilentHolidays" />Follow Client Holiday Calendar
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group" id="formanager" style="display:none">
+                                @*<strong class="label-control">&nbsp;</strong>*@
+                                <div class="checkbox-inline">
+                                    <label for="IsDirectManager">
+                                        <input type="checkbox" id="IsDirectManager" name="IsDirectManager[2][]" checked />Internal Manager
+                                    </label>
+                                </div>
+                                <div class="checkbox-inline">
+                                    <label for="IsDirectManager2">
+                                        <input type="checkbox" id="IsDirectManager2" name="IsDirectManager[2][]" />External Manager
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" id="manbtnassociate" class="btn btn-clr" style="display:none">Associate Manager</button>
+                    <button type="submit" id="empbtnassociate" class="btn btn-clr" style="display:none">Associate Employee</button>
+                    <button type="submit" id="btnUpdateModel" class="btn btn-clr" style="display:none">Update</button>
+                    <button type="submit" id="btnManAddModel" class="btn btn-clr" style="display:none">Add</button>
+                    <button type="submit" id="btnEmpAddModel" class="btn btn-clr" style="display:none">Add</button>
+                    <button type="button" class="btn btn-clr1" id="empclse">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="empwarningmsg" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div id="divAdv" class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+
+            </div>
+            <div class="modal-body">
+                <h3>Do you really want to close the window.</h3>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-clr" data-dismiss="modal" id="empcancel">Yes</button>
+                <button type="button" class="btn btn-clr1" value="2" data-dismiss="modal" id="cancel">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="AssociateEmpGrid" role="dialog">
+
+    <div class="modal-dialog modal-md">
+        @*<label id="succ"></label>*@
+        <div class="modal-content" style="margin-left: 304px;width: 50%;align-items: center;/* padding: 50px; */">
+            <div class="modal-header">
+                @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
+
+                <h4 class="modal-title" id="">Associate Resource</h4>
+
+
+            </div>
+
+            <div class="modal-body">
+                <div class="form-group row">
+                    <div class="col-md-6" id="">
+                        <label class="radio-inline">
+                            <input type="radio" class="check" name="optradio" id="radio1" value="rad1">Associate Manager
+                        </label>
+
+                    </div>
+                    <div class="col-md-6">
+                        <label class="radio-inline">
+                            <input type="radio" class="check" name="optradio" id="radio2" value="rad2">Associate Resource
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group row" style="display:none" id="managertype">
+                    <div class="col-md-3" id="L1manager">
+                        <label class="radio-inline">
+                            <input type="radio" name="optradio1" id="radio3" value="rad3">L1 Manager
+                        </label>
+
+                    </div>
+                    <div class="col-md-3" id="L2manager">
+                        <label class="radio-inline">
+                            <input type="radio" name="optradio1" id="radio3" value="rad4">L2 Manager
+                        </label>
+                    </div>
+
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-12" id="managers" style="display:none">
+                        <label>Managers:</label>
+
+                        @Html.DropDownListFor(m => m.managerslist, new SelectList("", ""), "Select Manager", new { @class = "form-control", onchange = "Selectmanager(this.value)" })
+
+                    </div>
+                    <div class="col-md-12" id="employees" style="display:none">
+                        <label>Employees:</label>
+
+                        @Html.DropDownListFor(m => m.employeeslist, new SelectList("", ""), "Select Employee", new { @class = "form-control", onchange = "SelectEmployee(this.value)" })
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" id="Closegrid" class="btn btn-clr">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="Projectspecifictaskgrid" role="dialog">
+
+    <div class="modal-dialog modal-md">
+        @*<label id="succ"></label>*@
+        <div class="modal-content">
+            <div class="modal-header">
+                @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
+
+                <h4 class="modal-title" id="add">Add Project Tasks</h4>
+                <h4 class="modal-title" id="edit" style="display:none">Edit Project tasks</h4>
+
+            </div>
+
+            <div class="modal-body">
+
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="Acc_SpecificTaskName">Account Specific Task:<font style="color:red;">*</font></label>
+
+                            @Html.DropDownListFor(model => model.Acc_SpecificTaskName, new SelectList(ViewBag.accspecifictasks, "value", "text"), "Select AccountSpecific task", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Acc_SpecificTaskName)
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="Proj_SpecificTaskName">Project Specific Task:<font style="color:red;">*</font></label>
+                            @Html.TextBoxFor(m => m.Proj_SpecificTaskName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Proj_SpecificTaskName)
+
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="rtmid">RTM ID<font style="color:red;">*</font></label>
+                            @Html.TextBoxFor(m => m.RTMId, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.RTMId)
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="Actual_StartDate">Actual StartDate:</label>
+                            @Html.TextBoxFor(m => m.Actual_StartDate, new { @class = "form-control", autocomplete = "off" })
+                            @Html.ValidationMessageFor(m => m.Actual_StartDate)
+                            <label id="message"></label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="Actual_EndDate">Actual EndDate:</label>
+                            @Html.TextBoxFor(m => m.Actual_EndDate, new { @class = "form-control", autocomplete = "off" })
+                            @Html.ValidationMessageFor(m => m.Actual_EndDate)
+                        </div>
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="Plan_StartDate">Plan StartDate</label>
+                            @Html.TextBoxFor(m => m.Plan_StartDate, new { @class = "form-control", autocomplete = "off" })
+                            @Html.ValidationMessageFor(m => m.Plan_StartDate)
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="Plan_EndDate">Plan Enddate</label>
+                            @Html.TextBoxFor(m => m.Plan_EndDate, new { @class = "form-control", autocomplete = "off" })
+                            @Html.ValidationMessageFor(m => m.Plan_EndDate)
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="ActiveStatus">ActiveStatus</label>
+
+                            @Html.DropDownListFor(m => m.StatusId, new SelectList(new List<Object>{
+
+                       new { value = 1 , text = "Active"},
+                       new { value = 0 , text = "InActive"}  }, "value", "text", 2), "Select Status", new { @class = "form-control" })
+
+
+                            @Html.ValidationMessageFor(m => m.StatusId)
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="Addprojecttask" class="btn btn-clr">Add Task</button>
+                <button type="button" id="Updatetask" class="btn btn-clr">Update Task</button>
+                <button type="button" id="closetask" class="btn btn-clr">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-brown">
+    <div class="panel-heading">Project Info.</div>
+    <div class="panel-body">
+
+        <div class="table-responsive">
+            <table id="Projecttable">
+                <thead>
+                    <tr>
+
+                        <th>Projectid</th>
+                        <th>accountid</th>
+                        <th>Project Name</th>
+                        <th>Project Description</th>
+                        <th id="projaction">Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody></tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+@*Employee table *@
+<div class="panel panel-brown">
+    <div class="panel-heading">Resource Info.</div>
+    <div class="panel-body">
+
+        <div class="table-responsive">
+            <table id="usertable">
+                <thead>
+                    <tr>
+                        <th>Userid</th>
+                        <th>Roleid</th>
+                        <th>EmployeeID</th>
+                        <th>Resource</th>
+                        <th>Project</th>
+                        <th>CL_ProjectID</th>
+                        <th>Role Name</th>
+                        <th>Participation Percentage(%)</th>
+                        <th>LoginID/Email</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Status</th>
+                        <th id="actions1">Actions</th>
+                    </tr>
+                </thead>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div class="panel panel-brown">
+    <div class="panel-heading" id="clientholidays" style="display:none">Client Holiday Calendar</div>
+    <div class="panel-heading" id="accountholidays" style="display:none">Account Holiday Calendar</div>
+    <div class="panel-body">
+
+        <div class="table-responsive">
+            <table id="holidaytable">
+                <thead>
+                    <tr>
+
+                        <th>Holiday Calendar ID</th>
+
+                        <th>Account ID</th>
+                        <th>Holiday Name</th>
+
+                        <th>Holiday Date</th>
+                        <th>Year</th>
+                        <th>Project Name</th>
+
+                        <th>Optional Holiday</th>
+                        <th id="holidaystatus">Status</th>
+                        <th id="holidayaction">Action</th>
+
+                    </tr>
+                </thead>
+            </table>
+
+        </div>
+    </div>
+</div>
+<div id="taskstable">
+    <div class="panel panel-brown">
+        <div class="panel-heading">Project Specific Task</div>
+    </div>
+    <div class="panel-body">
+
+        <div class="table-responsive">
+            <table id="tasktable">
+                <thead>
+                    <tr>
+                        <th>Project SpecificTaskId</th>
+                        <th>Account SpecificTaskName</th>
+                        <th>Project SpecificTaskName</th>
+                        <th>RTMId</th>
+                        <th>Actual_StartDate</th>
+
+                        <th>Actual_EndDate</th>
+                        <th>Plan_StartDate</th>
+                        <th>Plan_EndDate</th>
+                        <th>isActive</th>
+                        <th id="taskaction">Action</th>
+
+                    </tr>
+                </thead>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="Holidaycalendergrid" role="dialog">
+
+    <div class="modal-dialog modal-md">
+        @*<label id="succ"></label>*@
+        <div class="modal-content">
+            <div class="modal-header">
+                @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
+                <h4 class="modal-title">Add Holiday</h4>
+            </div>
+            <form id="holidayform">
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        @Html.TextBoxFor(m => m.HolidayCalendarID, new { @class = "form-control", style = "display:none" })
+                        <table id="appendTable" class="tbl-appendGrid">
+                            <tr>
+                                <th align="center">Holiday Name <font style="color:red;">*</font></th>
+                                <th align="center">Holiday Date <font style="color:red;">*</font></th>
+                                <th align="center">Financial Year <font style="color:red;">*</font></th>
+                                <th align="center">Project Name<font style="color:red;">*</font></th>
+                                <th align="center">Optional Holiday <font style="color:red;">*</font></th>
+                                <th align="center">Status <font style="color:red;">*</font></th>
+
+                            </tr>
+                            <tr id="prependRows">
+                                <td>
+                                    @*@Html.TextBoxFor(m => m.HolidayName, new { @class = "form-control HolidayName", name = "HolidayName[0]", id ="", autocomplete = "off", placeholder = "Enter Holiday Name.." })
+                                        @Html.ValidationMessageFor(model => model.HolidayName)*@
+                                    <input type="text" class="form-control HolidayName" id="HolidayName" name="HolidayName_" autocomplete="off" placeholder="Enter Holiday Name.." />
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control HolidayDate" id="HolidayDate" name="HolidayDate_" placeholder="Enter Holiday Date.." autocomplete="off" />
+                                    @*@Html.TextBoxFor(m => m.HolidayDate, new { @type = "text", id = "", name = "HolidayDate[0]", @class = "form-control HolidayDate", autocomplete = "off", placeholder = "Enter Holiday Date.." })
+                                        @Html.ValidationMessageFor(model => model.HolidayDate)*@
+                                </td>
+
+                                <td>
+                                    <select class="form-control FinancialYearId" name="FinancialYearId_" id="FinancialYearId">
+                                        <option value="">Select Financial Year</option>
+                                        @*<option value="4">2021</option>
+                                            <option value="3">2020</option>
+                                            <option value="2">2019</option>
+                                            <option value="1">2018</option>*@
+                                    </select>
+                                    @*@Html.DropDownListFor(model => model.FinancialYearId, new SelectList(ViewBag.FinancialYears, "value", "text"), new { @class = "form-control FinancialYearId", id = "", name = "FinancialYearId[0]" })
+                                        @Html.ValidationMessageFor(model => model.FinancialYearId)*@
+                                </td>
+                                <td>
+                                    <select class="form-control ProjectId" name="HolidayCalendarProjectId_" id="HolidayCalendarProjectId">
+                                        <option value="">Select Project</option>
+                                    </select>
+
+                                </td>
+                                <td>
+                                    @*<input type="text" class="form-control" name="OptionalHoliday" placeholder="Enter Optional Holiday.." />*@
+                                    <select class="form-control isOptionalHoliday" name="isOptionalHoliday_" id="isOptionalHoliday">
+                                        <option value="">Select Optional Holiday</option>
+                                        <option value="True">Yes</option>
+                                        <option value="False">No</option>
+                                    </select>
+                                    @*@Html.DropDownListFor(m => m.isOptionalHoliday, new SelectList(new List<Object>{
+
+                                        new { value = true, text = "Yes"},
+                                        new { value = false, text = "No"}  }, "value", "text", 2), "Select Optional Holiday", new { @class = "form-control isOptionalHoliday", id = "", name = "isOptionalHoliday[0]" })
+                                             @Html.ValidationMessageFor(m => m.isOptionalHoliday)*@
+                                </td>
+                                <td>
+                                    <select class="form-control isDeleted" name="isDeleted_" id="isDeleted">
+                                        <option value="">Select Status</option>
+                                        <option value="False">Active</option>
+                                        <option value="True">InActive</option>
+                                    </select>
+                                    @*@Html.DropDownListFor(m => m.isDeleted, new SelectList(new List<Object>{
+
+                                        new { value = false, text = "Active"},
+                                        new { value = true, text = "InActive"}  }, "value", "text", 2), "Select Status", new { @class = "form-control isDeleted", id = "", name= "isDeleted[0]" })
+                                            @Html.ValidationMessageFor(m => m.isDeleted)*@
+                                </td>
+
+                            </tr>
+                        </table>
+                        <div class="text-right">
+                            <button type="button" class="btn btn-clr" id="appendRow">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    @*<div class="row">
+                            <div class="form-group col-md-6" style="display:none;">
+                                <label for="HolidayCalendarID">HolidayCalendarID</label>
+                                @Html.TextBoxFor(m => m.HolidayCalendarID, new { @class = "form-control" })
+
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="HolidayName">Holiday Name<font style="color:red;">*</font></label>
+                                @Html.TextBoxFor(m => m.HolidayName, new { @class = "form-control" })
+
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="HolidayDate">Holiday Date<font style="color:red;">*</font></label>
+                                @Html.TextBoxFor(m => m.HolidayDate, new { @type = "text", @class = "form-control", autocomplete = "off" })
+
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="Financialyear">Financial year<font style="color:red;">*</font></label>
+                                @Html.DropDownListFor(model => model.FinancialYearId, new SelectList(ViewBag.FinancialYears, "value", "text"), new { @class = "form-control", id = "FinancialYearId" })
+                                @Html.ValidationMessageFor(model => model.FinancialYearId)
+
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="isActive">Optional Holiday<font style="color:red;">*</font></label>
+
+                                @Html.DropDownListFor(m => m.isOptionalHoliday, new SelectList(new List<Object>{
+
+                                 new { value = true, text = "Yes"},
+                                 new { value = false, text = "No"}  }, "value", "text", 2), "Select Optional Holiday", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.isOptionalHoliday)
+                            </div>
+
+
+                        </div>
+                        <div class="row">
+
+                            <div class="form-group col-md-6">
+                                <label for="isDeleted">Status<font style="color:red;">*</font></label>
+
+                                @Html.DropDownListFor(m => m.isDeleted, new SelectList(new List<Object>{
+
+                                 new { value = false, text = "Active"},
+                                 new { value = true, text = "InActive"}  }, "value", "text", 2), "Select Status", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.isDeleted)
+                            </div>
+
+                        </div>*@
+
+
+
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" id="HolidaybtnUpdate" class="btn btn-clr" style="display:none">Update</button>
+                    <button type="submit" id="HolidaybtnAdd" class="btn btn-clr">Add</button>
+                    <button type="submit" class="btn btn-clr1" data-dismiss="modal" id="hlbtnclose">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="holiwarningmsg" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div id="divAdv" class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+
+            </div>
+            <div class="modal-body">
+                <h3>Do you really want to close the window.</h3>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-clr" data-dismiss="modal" id="holicancel">Yes</button>
+                <button type="button" class="btn btn-clr1" value="2" data-dismiss="modal" id="cancel">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="usercontainerDelete" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div id="divAdv" class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+
+                <h4 class="modal-title">Delete User</h4>
+            </div>
+            <div class="modal-body">
+                <h3>Do you really want to Delete the row</h3>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-clr" value="1" id="btnYes" onclick="Deleteuser(deluserid)">Yes</button>
+                <button type="button" class="btn btn-clr1" value="2" data-dismiss="modal" id="cancel">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="holidaycontainerDelete" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div id="divAdv" class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+
+                <h4 class="modal-title">Delete User</h4>
+            </div>
+            <div class="modal-body">
+                <h3>Do you really want to Delete the row</h3>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-clr" value="1" id="btnYes" onclick="Deletehc(delHoliday)">Yes</button>
+                <button type="button" class="btn btn-clr1" value="2" data-dismiss="modal" id="cancel">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="taskcontainerDelete" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div id="divAdv" class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+
+                <h4 class="modal-title">Delete User</h4>
+            </div>
+            <div class="modal-body">
+                <h3>Do you really want to Delete the row</h3>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-clr" value="1" id="btnYes" onclick="DeleteTask(delprotaskid)">Yes</button>
+                <button type="button" class="btn btn-clr1" value="2" data-dismiss="modal" id="cancel">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/plugins/Jcrop/jquery.Jcrop.min.js"></script>
+<script type="text/javascript">
+    var fileSelectEle = document.getElementById('fileUpload');
+
+    fileSelectEle.onclick = charge;
+
+    function charge() {
+        document.body.onfocus = function () { setTimeout(checkOnCancel, 100); };
+    }
+
+    function checkOnCancel() {
+        if (fileSelectEle.value.length == 0) {
+            $("#fileUpload-error").show();
+            $("#profile-image").attr("src", "/Content/images/local-disk.png");
+            $("#profile-image").removeClass("img-responsive");
+            $("label[for='fileUpload']").next("span").text("Choose file from local disk");
+            $("#profile-image").next("div.cropper-container").remove();
+            $("#lblchvideoexits").hide();
+            $('#image_input > img.file-upload-image').attr('src', '/Content/images/local-disk.png');
+            $('#image_input > img.file-upload-image').removeAttr('style');
+            $("#image_input > .jcrop-holder").remove();
+            $('#image_input > img.file-upload-image').show();
+            $('#image_input > img.file-upload-image').css("visibility", "visible");
+        } else {
+            $("#fileUpload-error").hide();
+            //alert('You selected a file - ' + "FileName:" + fileSelectEle.value + "; Length: " + fileSelectEle.value.length);
+        }
+        document.body.onfocus = null;
+    }
+    var inputs = document.querySelectorAll('.file-upload-input');
+    Array.prototype.forEach.call(inputs, function (input) {
+
+        var label = input.nextSibling.nextSibling.nextElementSibling,
+            labelVal = label.innerHTML;
+
+        input.addEventListener('change', function (e) {
+            var fileName = '';
+            if (this.files && this.files.length > 1)
+                fileName = (this.getAttribute('data-multiple-caption') || '').replace('{count}', this.files.length);
+            else
+                fileName = e.target.value.split('\\').pop();
+
+            if (fileName)
+                label.querySelector('span').innerHTML = fileName;
+            else
+                label.innerHTML = labelVal;
+        });
+
+        // Firefox bug fix
+        input.addEventListener('focus', function () { input.classList.add('has-focus'); });
+        input.addEventListener('blur', function () { input.classList.remove('has-focus'); });
+    });
+</script>
+<script>
+
+    var imageLoader = document.getElementById('fileUpload');
+    imageLoader.addEventListener('change', handleImage, false);
+
+
+    function handleImage(e) {
+        ;
+        var validExtensions = ['jpg', 'png', 'jpeg', 'PNG'];
+        var fileName = e.target.files[0].name;
+        var fileNameExt = fileName.substr(fileName.lastIndexOf('.') + 1);
+        if ($.inArray(fileNameExt, validExtensions) == -1) {
+            e.target.type = ''
+            e.target.type = 'file'
+            $("#" + e.target.id + "").next('.img-container').find("img.file-upload-image").attr('src', "");
+            $("#lblchvideoexits").show();
+        }
+        else {
+            $("#lblchvideoexits").hide();
+            $("#" + e.target.id + "").next('.img-container').find("img.file-upload-image").attr('src', '');
+            $("#" + e.target.id + "").next('.img-container').find(".jcrop-holder").remove();
+            $("#" + e.target.id + "").next('.img-container').find("img.file-upload-image").show();
+            $("#" + e.target.id + "").next('.img-container').find("img.file-upload-image").css("visibility", "visible");
+
+            var reader = new FileReader();
+
+            reader.onload = function (event) {
+
+                var image = new Image();
+                var imageW = 400;
+
+                image.onload = function () {
+
+                    var canvas = document.createElement('canvas');
+
+                    canvas.width = image.width;
+                    canvas.height = image.height;
+
+                    var ctx = canvas.getContext('2d');
+                    ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+
+                    $("#" + e.target.id + "").next('.img-container').html(['<img src="', canvas.toDataURL(), '" class="file-upload-image" name="profile-image" id="profile-image" />'].join(''));
+
+                    var img = $("#" + e.target.id + "").next('.img-container').find("img.file-upload-image")[0];
+
+                    var myVar = document.querySelectorAll('#image_input img')[0].src
+
+                    console.log(myVar);
+
+                    $("#fullimagevalue").val(myVar);
+                    $("#fullimagevalue1").val(myVar);
+
+                    var canvas = document.createElement('canvas');
+
+                    var is_msie = /msie/.test(navigator.userAgent.toLowerCase());
+                    var jcrop_obj;
+
+                    if (is_msie) {
+
+
+                        $("#" + e.target.id + "").next('.img-container').find("img.file-upload-image").Jcrop({
+                            boxWidth: 220,
+                            bgColor: 'black',
+                            bgOpacity: .6,
+                            //aspectRatio: 1,
+                            aspectRatio: 16 / 9,
+                            //aspectRatio: (900 / 300),
+                            //minSize: [900, 300],
+                            //maxSize: [900, 300],
+                            onChange: imgSelect,
+                            keySupport: false,
+                        });
+                    }
+                    else {
+
+
+                        $("#" + e.target.id + "").next('.img-container').find("img.file-upload-image").Jcrop({
+                            boxWidth: 220,
+                            bgColor: 'black',
+                            bgOpacity: .6,
+                            //aspectRatio: 1,
+                            aspectRatio: 16 / 9,
+                            //aspectRatio: (900 / 300),
+                            //minSize: [300, 150],
+                            //maxSize: [300, 150],
+                            onChange: imgSelect,
+                            keySupport: false,
+                        }, function () { jcrop_obj = this; });
+
+                    }
+
+                    function imgSelect(selection) {
+                        canvas.width = 220;
+                        canvas.height = 110;
+                        //canvas.x = 200;
+                        //canvas.y = 200;
+                        /*var rx = 100 / coords.w;
+                        var ry = 100 / coords.h;
+
+                        $('#image_output').css({
+                            width: Math.round(rx * 500) + 'px',
+                            height: Math.round(ry * 370) + 'px',
+                            marginLeft: '-' + Math.round(rx * coords.x) + 'px',
+                            marginTop: '-' + Math.round(ry * coords.y) + 'px'
+                        });*/
+                        var ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, selection.x, selection.y, selection.w, selection.h, 0, 0, canvas.width, canvas.height);
+                        //ctx.drawImage(img, selection.x, selection.y, selection.w, selection.h);
+                        $('#image_output').attr('src', canvas.toDataURL());
+                        $('#imgCropped').val(canvas.toDataURL());
+                        $('#profile-image').val(canvas.toDataURL());
+                    }
+                }
+                image.src = event.target.result;
+            }
+            reader.readAsDataURL(e.target.files[0]);
+        }
+    }
+</script>
+
+<script>
+    $("#AddNewEmployee").on("hidden.bs.modal", function () {
+        $("#AddEmployeeForm").trigger("reset");
+
+    });
+    $("#ContainerGridDetail").on('hide.bs.modal', function () {
+        //$(".jcrop-holder").not(":last").remove();
+    //$("#profile-image").attr("src", "/Content/images/local-disk.png");
+    $("#profile-image").removeClass("img-responsive");
+    $("label[for='fileUpload']").next("span").text("Choose file from local disk");
+    $("#profile-image").next("div.cropper-container").remove();
+    $("#lblchvideoexits").hide();
+    $('#image_input > img.file-upload-image').attr('src', '/Content/images/local-disk.png');
+    $('#image_input > img.file-upload-image').removeAttr('style');
+    $("#image_input > .jcrop-holder").remove();
+    $('#image_input > img.file-upload-image').show();
+    $('#image_input > img.file-upload-image').css("visibility", "visible");
+    });
+    $("#isOptionalHoliday").val("False");
+    $("#Proj_isDeleted").val(0);
+    $("#isDeleted").val("False");
+    $("#isActive").val("True");
+    $("#StatusId").val(1);
+    $("#Usr_isDeleted").val(0);
+    var editprojectid = $("#editpid").val();
+      var assempper = '@ViewBag.e';
+    if (assempper === "Read/Write") {
+        $("#btnassociateemp").show();
+    } else {
+        $("#btnassociateemp").hide();
+        $("#actions1").text('View');
+        $("#taskaction").text('View');
+
+    }
+    var usrpermission = '@ViewBag.b';
+    if (usrpermission === "Read") {
+       ;
+        $("#btnManModel").hide();
+        $("#btnProject").hide();
+        $("#btnEdit").hide();
+        $("#Projecttable").addClass("projaction");
+        $("#btnSingleUpdate").hide();
+        $("#btnEmpModel").hide();
+        $("#usertable").addClass("actions1");
+        $("#taskaction").text('View');
+        $("holidayaction").text('View');
+    } else if (usrpermission === "Read/Write")  {
+        $("#btnManModel").show();
+        $("#btnProject").show();
+        $("#btnSingleUpdate").show();
+        $("#usertable").removeClass("actions1");
+        $("#Projecttable").removeClass("projaction");
+        $("#btnEmpModel").show();
+
+    }else {
+        $("#btnManModel").hide();
+        $("#usertable").addClass("actions1");
+        $("#btnProject").hide();
+        $("#Projecttable").addClass("projaction");
+        $("#btnSingleUpdate").hide();
+        $("#btnEmpModel").hide();
+    }
+     var hlpermission = '@ViewBag.c';
+    if (hlpermission === "Read") {
+        $("#btnHoliday").hide();
+        $("#btnSingleUpdate").hide();
+        $('#holidaytable').addClass("holidayaction");
+        $("#actions1").text('View');
+        $("#taskaction").text('View');
+        //$("#holidayaction").text('View');
+    } else if (hlpermission === "Read/Write") {
+        $("#btnHoliday").show();
+        $('#holidaytable').removeClass("holidayaction");
+        $("#btnSingleUpdate").show();
+
+    } else {
+        $("#btnHoliday").hide();
+        $('#holidaytable').addClass("holidayaction");
+        $("#btnSingleUpdate").hide();
+    }
+    var perms = '@ViewBag.a';
+    var taskpermission = '@ViewBag.d';
+    if (taskpermission === "Read") {
+        $("#btntasks").hide();
+       // $("#taskaction").hide();
+      //  $("#actions1").text('View');
+        $("#taskaction").text('View');
+        $("holidayaction").text('View');
+    } else if (taskpermission === "Read/Write") {
+        $("#taskaction").show();
+        $("#btntasks").show();
+    } else {
+        $("#btntasks").hide();
+        $("#taskaction").hide();
+
+    }
+    var UsAccount = '@ViewBag.usaccount';
+
+    if (UsAccount === "True") {
+       // $("#Projectspecifictaskgrid").hide();
+        $("#taskstable").hide();
+        $("#btntasks").hide();
+    } else {
+      //  $("#Projectspecifictaskgrid").show();
+        $("#taskstable").hide();
+        $("#btntasks").show();
+    }
+    $.fn.noMask = function (regex) {
+        this.on("keypress", function (e) {
+            if (regex.test(String.fromCharCode(e.which))) {
+                return false;
+            }
+        });
+        };
+
+
+    $("input[name^='HolidayDate']").noMask(/^[\w.,:;"'/!|#%&$*()_-]+$/);
+    $("input[name^='HolidayDate']").noMask(/[$-/:-?{-~!"^_`\[\]]/);
+
+</script>
+
+<script>
+
+    var pro;
+
+         var AccountId = '@ViewBag.AccountId';
+         var ProjectId = $("#proid").val();
+    $("#dllprojects").on("change", function () {
+        
+        $("#SelectedManagerName").empty();
+        $("#SelectedManagerName").append('<option value="0">Select Manager</option>');
+          
+
+        var model =@Html.Raw(Json.Encode(ViewBag.ProjectNames));
+        model.forEach(function (i, key) {
+           ;
+            console.log(i);
+            if ($("#dllprojects option:selected").val() == i.clientprojId) {
+                pro = i.Proj_ProjectID;
+                gotogetdata(pro);
+            }
+        });
+
+
+           function gotogetdata(pro) {
+               
+               var Pid = $("#dllprojects option:selected").val();
+
+               $("#SelectedManagerName").chosen();
+               $('#SelectedManagerName').chosen('destroy');
+               //$("#SelectedManagerName").empty();
+             
+             //  $('#SelectedManagerName')
+                //   .find('option:first-child').prop('selected', true)
+                //   .end().trigger('chosen:updated');
+              
+             
+               
+               $.ajax({
+                   url: '/Client/getManagersBySelectProject',
+                   type: 'GET',
+                   datatype: 'JSON',
+                   data: { ProjectId: ProjectId, CL_ProjId: Pid, AccountId: AccountId },
+                  
+                   success: function (result) {
+                       
+                    
+                       //$('#ManagerName').html('');
+            
+                       $.each(result, function (i, item) {
+                           $("#SelectedManagerName").append('<option value="' + item.Usr_UserID + '">' + item.UsrP_FirstName + '</option> ');
+
+
+                       });
+          
+
+                          $("#SelectedManagerName").chosen();
+                   }
+               });
+
+           }
+
+
+       });
+    $("#AddManagerForm").validate({
+        rules: {
+            Cl_projid: {
+                required: true
+            },
+            SelectedManagerName: {
+
+                required: true
+            },
+            TimesheetMode_id: {
+
+                required: true
+            }
+
+        },
+
+        submitHandler: function (form) {
+            var id = "";
+            id = $(this.submitButton).attr("id");
+            if (id === "AddSelectedManager") {
+               ;
+                AddSelectedManager();
+            }
+
+            return false;
+        }
+    });
+
+    function AddSelectedManager() {
+       ;
+
+
+        //  $("#AddSelectedManager").click(function () {
+
+        var isNewdirectmanager = "";
+        if ($("#NewIsDirectManager").is(":checked")) {
+            isNewdirectmanager = true;
+        }
+        else if ($("#NewIsDirectManager2").is(":checked")) {
+            isNewdirectmanager = false;
+        }
+        var Manclientcal = "";
+        if ($("#isclientholidays").is(":checked")) {
+            Manclientcal = true;
+        }
+        else {
+            Manclientcal = false;
+        }
+
+        var formdata = new FormData();
+        formdata.append("Proj_ProjectID", pro);
+        formdata.append("Usr_UserID", $("#SelectedManagerName option:selected").val());
+        formdata.append("ClientprojID", $("#dllprojects option:selected").val());
+        formdata.append("TimesheetMode_id", $("#TimesheetMode_id1 option:selected").val());
+        formdata.append("isclientholidays", Manclientcal);
+        formdata.append("IsDirectManager", isNewdirectmanager);
+        $.ajax({
+            url: "/Client/AddSelectedManager",
+            type: 'POST',
+            contentType: false,
+            data: formdata,
+            async: true,
+            processData: false,
+            cache: false,
+            success: function (data) {
+                var projid = pro;
+                if (data == "1") {
+                    alert("Manager Added Successfully")
+                    window.location.href = "/Client/Index?proid=" + $("#proid").val();
+                    usergriddata(projid);
+                }
+                else {
+                    alert("Error");
+                }
+            },
+            error: function (Result) {
+
+            }
+
+
+
+        });
+
+        //  });
+
+    }
+
+</script>
+
+<script>
+    $("#Userprojects").on("change", function () {
+        
+        $("#SelectedEmployeeName").empty();
+        $("#SelectedEmployeeName").append('<option value="0">Select Resource</option> ');
+
+        var Pid = $("#Userprojects option:selected").val();
+
+        getManagersoneByClientid(AccountId, ProjectId, Pid);
+        $("#SelectedEmployeeName").chosen();
+        $('#SelectedEmployeeName').chosen('destroy');
+        $.ajax({
+            url: '/Client/getEmployeesBySelectProject',
+            type: 'GET',
+            datatype: 'JSON',
+            data: { CL_ProjId: Pid, AccountId: AccountId, ProjectId: ProjectId },
+            success: function (result) {
+               // $('#SelectedEmployeeName').chosen('destroy');
+                //$('#ManagerName').html('');
+                //$('#SelectedEmployeeName')
+                //    .find('option:first-child').prop('selected', true)
+                //    .end().trigger('chosen:updated');
+
+                $.each(result, function (i, item) {
+                    $("#SelectedEmployeeName").append('<option value="' + item.Usr_UserID + '">' + item.UsrP_FirstName + '</option> ');
+
+                });
+                    $("#SelectedEmployeeName").chosen();
+
+
+            }
+        });
+
+    });
+
+    //$("#dllprojects").on("change", function () {
+    //    $('#AssignManager').empty();
+    //    var CL_ProjectId = $("#dllprojects option:selected").val();
+    //    //var accid = $("#proid").val();
+    //    $.ajax({
+
+    //        type: "GET",
+    //        contentType: "application/json; charset=utf-8",
+    //        url: "/Client/GetallNewManagersList?accid=" + AccountId + "&clientprjid=" + CL_ProjectId,
+    //        //data: "{}",
+    //        dataType: "json",
+    //        success: function (data) {
+    //            $(data).each(function () {
+
+
+    //                $("#AssignManager").append($("<option></option>").val(this.Usr_UserID).html(this.UsrP_FirstName));
+
+
+    //            });
+
+
+    //        },
+
+    //        error: function (Result) {
+
+    //        }
+
+    //    });
+    //});
+
+    $("#Cl_projid").change(function () {
+        getManagersoneByClientid(ManagerID);
+    });
+
+
+    function getManagersoneByClientid(AccountId, ProjectId, Pid) {
+        $("#projmanager1").empty();
+        $("#projmanager1").append('<option value="0">Select Manager</option>');
+        $("#projmanager1").chosen();
+        $('#projmanager1').chosen('destroy');
+        $.ajax({
+
+            type: "GET",
+            contentType: "application/json; charset=utf-8",
+            url: "/Client/bindManagersForNewEmp?accid=" + AccountId + "&prjid=" + ProjectId + "&c_prjid=" + Pid,
+            //data: "{}",
+            dataType: "json",
+            success: function (data) {
+               // $('#projmanager1').chosen('destroy');
+
+                $('#projmanager1')
+                    .find('option:first-child').prop('selected', true)
+                    .end().trigger('chosen:updated');
+                $.each(data, function (i, value) {
+
+                    $("#projmanager1").append('<option value="' + value.Usr_UserID + '">' + value.UsrP_FirstName + '</option>');
+                });
+
+                
+                    $("#projmanager1").chosen();
+              
+            },
+
+            error: function (Result) {
+
+
+            }
+
+        });
+    }
+
+
+    $("#projmanager1").change(function () {
+
+        var ManagerID = $("#projmanager1 option:selected").val();
+        var Cl_projid = $("#Userprojects").val();
+        GetManager2OnChange(ManagerID, Cl_projid);
+        //alert(Cl_projid);
+    });
+
+    function GetManager2OnChange(ManagerID, Cl_projid) {
+        ;
+
+        $("#projmanager2").empty();
+        $("#projmanager2").chosen();
+        $('#projmanager2').chosen('destroy');
+
+        $.ajax({
+
+            type: "GET",
+            contentType: "application/json; charset=utf-8",
+            url: "/Client/GetManagerOnChange?projid=" + projid + "&ManagerID=" + ManagerID + "&Client_ProjId=" + Cl_projid,
+            //data: "{}",
+            dataType: "json",
+            success: function (Result) {
+                
+                //$('#projmanager2')
+                //    .find('option:first-child').prop('selected', true)
+                //    .end().trigger('chosen:updated');
+                //$('#projmanager2').chosen('destroy');
+                $(Result).each(function () {
+
+
+                    $("#projmanager2").append($("<option></option>").val(this.Usr_UserID).html(this.UsrP_FirstName));
+
+
+                });
+
+               
+                    $("#projmanager2").chosen();
+               
+            },
+
+            error: function (Result) {
+
+                // alert("Error");
+
+            }
+
+        });
+
+
+
+    }
+
+    $("#AddSelectedEmployee").on("click", function () {
+        $("#AddEmployeeForm").validate({
+            rules: {
+                Cl_projid: {
+                    required: true
+                },
+                SelectedEmployeeName: {
+                    required: true
+                },
+                TimesheetModeId: {
+                    required: true
+                },
+                EmpRoleName: {
+                    required: true
+                },
+                UserNames: {
+                    required: true
+                },
+                RoleName: {
+
+                    required: true
+                },
+                TimesheetMode_id: {
+                    required: true
+                },
+                projmanager1: {
+                    required: true
+                },
+                TimesheetMode_id2: {
+                    required: true
+                },
+                //projmanager2: {
+                //    required: true
+                //},
+                TaskName: {
+
+                    required: true
+                },
+                ManagerName: {
+
+                    required: true
+                },
+                ManagerNames1: {
+
+                    required: true
+                },
+                //isclientholidays: {
+
+                //    required: true
+                //},
+
+
+
+
+            },
+
+            submitHandler: function (form) {
+
+                var id = "";
+                id = $(this.submitButton).attr("id");
+                if (id === "AddSelectedEmployee") {
+                    ;
+                    AddSelectedEmployee();
+                }
+
+                return false;
+            }
+        });
+    });
+
+    function AddSelectedEmployee() {
+        ;
+        var Empclientcal = "";
+        if ($("#isNewEmpclientholidays").is(":checked")) {
+            Empclientcal = true;
+        }
+        else {
+            Empclientcal = false;
+        }
+
+        var formdata = new FormData();
+        formdata.append("Proj_ProjectID", $("#proid").val());
+        formdata.append("Usr_UserID", $("#SelectedEmployeeName option:selected").val());
+        formdata.append("ClientprojID", $("#Userprojects option:selected").val());
+        formdata.append("ManagerName", $("#projmanager1 option:selected").val());
+        formdata.append("Managername2", $("#projmanager2 option:selected").val());
+        formdata.append("TimesheetMode_id", $("#TimesheetModeId option:selected").val());
+        formdata.append("RoleName", $("#EmpRoleName option:selected").val());
+        formdata.append("TaskName", $("#EmpTaskName option:selected").val());
+        formdata.append("isclientholidays", Empclientcal);
+
+        $.ajax({
+            url: "/Client/AddSelectedEmployee",
+            type: 'POST',
+            contentType: false,
+            data: formdata,
+            async: true,
+            processData: false,
+            cache: false,
+            success: function (data) {
+                var projid = $("#proid").val();
+                if (data == "1") {
+                    alert("Resource Added Successfully")
+                    window.location.href = "/Client/Index?proid=" + $("#proid").val();
+                    usergriddata(projid);
+                }
+                else {
+                    alert("Error");
+                }
+            },
+            error: function (Result) {
+
+            }
+
+        });
+
+    }
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+

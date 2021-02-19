@@ -1,0 +1,33 @@
+﻿
+@model IEnumerable<Evolutyz.Entities.imagesviewmodel>
+@{
+    ViewBag.Title = "uploadPartial";
+    Layout = null;
+}
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+@foreach (var image in Model)
+{
+    <a href="#" class="returnImage" data-url="@Request.Url.GetLeftPart(UriPartial.Authority)@image.Url">
+        <img src="@image.Url" alt="Image" id="#image" data-source="@image.Url" style="width:100px" />
+    </a>
+}
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $(".returnImage").click("click", function (e) {
+            
+            var urlImage = $(this).attr("data-url");
+            var urlLength = urlImage.length;
+
+            urlImage = urlImage.substring(urlImage.indexOf("https://evolutyz"), urlLength);
+
+
+            window.opener.updateValue("cke_dialog_ui_input_text", urlImage);
+            window.close();
+        });
+
+    });
+</script>
+

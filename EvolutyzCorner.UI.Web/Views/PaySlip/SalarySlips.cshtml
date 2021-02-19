@@ -1,0 +1,287 @@
+﻿
+@{
+    ViewBag.Title = "SalarySlips";
+    //Layout = null;
+}
+
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.10.0/jquery.validate.min.js"></script>
+<link href="~/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" />
+<script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="~/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="~/Scripts/date.format.js"></script>
+<script src="~/Scripts/bootstrap-datepicker.js"></script>
+<script src="~/Scripts/bootstrap-datepicker.min.js"></script>
+
+<style type="text/css">
+    .parallel-form {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+    }
+    .parallel-form > .form-group {
+        position:relative;
+    }
+    label.error {
+        position: absolute;
+        bottom: -20px;
+        left: 15px;
+        font-size: 10px;
+        color: red;
+    }
+    .panel-default > .panel-heading {
+        background-color: #ececec;
+        background: linear-gradient(135deg,rgba(0, 0, 0, 0.075),rgba(2, 2, 2, 0.050));
+        background: -webkit-linear-gradient(135deg,rgba(0, 0, 0, 0.075),rgba(2, 2, 2, 0.050));
+    }
+
+    .panel-default > .panel-body button.btn {
+        border-radius: 25px;
+        background: -webkit-linear-gradient(135deg,#f37a41,#f8c26c);
+        background: linear-gradient(135deg,#f37a41,#f8c26c);
+        color: #fff;
+        border-color: #ff8d46;
+        outline: none;
+        padding: 4px 10px;
+        font-size: 13px;
+    }
+
+    .panel-default > .panel-footer > button.btn {
+        border-radius: 25px;
+        background: -webkit-linear-gradient(135deg,#bdbdbd,#9c9c9c);
+        background: linear-gradient(135deg,#bdbdbd,#9c9c9c);
+        color: #fff;
+        border-color: #888;
+        outline: none;
+        padding: 2px 10px;
+        font-size: 12px;
+    }
+
+        .panel-default > .panel-footer > button.btn + button.btn {
+            background: -webkit-linear-gradient(135deg,#fde0cf,#fff1df);
+            background: linear-gradient(135deg,#fde0cf,#fff1df);
+            color: #f48548;
+            border-color: #f7b363;
+        }
+</style>
+
+<div class="container" style="text-align: center; margin-top: 50px">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        @*<form id="Myform">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">Upload Excel</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="parallel-form">
+                            <div class="form-group">
+                                <select id="Month" name="Month" class="form-control">
+                                    <option selected value=''>--Select Month--</option>
+                                    <option value='Janaury'>Janaury</option>
+                                    <option value='February'>February</option>
+                                    <option value='March'>March</option>
+                                    <option value='April'>April</option>
+                                    <option value='May'>May</option>
+                                    <option value='June'>June</option>
+                                    <option value='July'>July</option>
+                                    <option value='August'>August</option>
+                                    <option value='September'>September</option>
+                                    <option value='October'>October</option>
+                                    <option value='November'>November</option>
+                                    <option value='December'>December</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select id="Year" name="Year" class="form-control">
+                                    <option selected value=''>--Select Year--</option>
+
+                                </select>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <input ID="FileUpload1" type="file" class="payslip" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" />
+                            </div>
+                            <div class="col-md-3">
+                                <button type="submit" class="btn" onclick="btnUpload_Click()">Upload</button>
+                            </div>
+                        </div>
+                </div>
+                <div class="panel-footer text-right" id="foot" style="display:none">
+                    <button class="btn" style="display:none" OnClick="btnShowPDf_Click()">View Pdfs</button>
+                    <button class="btn" OnClick="btnSendmail_Click()">Send Mails</button>
+                </div>
+
+            </div>
+        </form>*@
+        <button type="submit" class="btn btn-clr" style="background:-webkit-linear-gradient(135deg,#ff9465,#ffc8ae)" id="ssobtn">Get Pay History</button>
+    </div>
+
+
+
+
+    @*@ViewBag.a
+
+    @ViewBag.b
+    <br />
+
+    @ViewBag.c*@
+
+</div>
+
+<script>
+
+    //var dt = new Date();
+    //var presentyear = dt.getFullYear();
+    //var years = [presentyear - 1, presentyear, presentyear + 1,];
+    //var option = '';
+    //for (i = 0; i < years.length; i++) {
+    //    option += '<option value="' + years[i] + '">' + years[i] + '</option>';
+    //}
+    //$('#Year').append(option);
+    //$(document).ready(function () {
+
+        //$('input[type="file"]#FileUpload1').change(function (e) {
+        //    var ext = this.value.match(/\.([^\.]+)$/)[1];
+        //    switch (ext) {
+        //        case 'xlsx':
+        //            $(this).nextAll("span.html").remove();
+        //            break;
+        //        default:
+        //            $('<span class="html text-left">Upload Only Excelsheets</span>').insertAfter(this);
+        //            this.value = '';
+        //    }
+        //});
+
+    //});
+
+
+    //function btnUpload_Click() {
+    //    
+    //    $('#Myform').validate({
+    //        rules: {
+    //            Month: {
+    //                required: true,
+
+    //            },
+    //            Year: {
+    //                required: true,
+
+    //            },
+
+
+    //        },
+    //        submitHandler: function (form) {
+    //            var month = $("#Month").val();
+    //            var year = $("#Year").val();
+    //            var file = document.getElementById("FileUpload1").files[0];
+    //            var formData = new FormData();
+    //            formData.append("PayslipFile", file);
+    //            formData.append("Month", month);
+    //            formData.append("Year", year);
+    //            if (!$("#FileUpload1").next("span").hasClass("html")) {
+
+
+    //                $.ajax({
+    //                    type: "POST",
+    //                    url: "/PaySlip/btnUpload_Click",
+    //                    data: formData,
+    //                    cache: false,
+    //                    contentType: false,
+    //                    processData: false,
+    //                    success: function (data) {
+
+    //                        alert(data);
+    //                        //window.location.reload();
+
+    //                        $("#foot").show();
+
+    //                    },
+    //                    error: function () {
+
+
+    //                    }
+    //                });
+    //            }
+
+    //        }
+    //    });
+    //}
+
+    //function btnShowPDf_Click() {
+    //    $.ajax({
+    //        url: "/PaySlip/btnShowPDf_Click",
+    //        cache: false,
+    //        type: "Get",
+    //        contentType: false,
+    //        processData: false,
+
+    //        //dataType: "json",
+    //        success: function (data) {
+
+    //            //alert(data);
+    //            ////window.location.reload();
+
+    //            //$("#foot").show();
+
+    //        },
+    //        error: function () {
+
+    //        }
+    //    });
+    //}
+
+    //function btnSendmail_Click() {
+    //    $.ajax({
+    //        url: "/PaySlip/btnSendmail_Click",
+    //        cache: false,
+    //        type: "Get",
+    //        contentType: false,
+    //        processData: false,
+
+    //        dataType: "json",
+    //        success: function (data) {
+
+    //            alert(data);
+    //            window.location.reload();
+
+    //            //$("#foot").show();
+
+    //        },
+    //        error: function () {
+
+    //        }
+    //    });
+    //}
+</script>
+<script>
+    $(document).ready(function () {
+
+        $("#ssobtn").click(function () {
+            
+            var settings = {
+                "url": "https://dev.sumopayroll.com/api/oauth/externallogin",
+                "method": "POST",
+                "timeout": 0,
+                "headers": {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                "data": {
+                    //"email": "jmeter@gmail.com",
+                    //"password": "123456"
+                    "email": '@Session["LoginId"]',
+                    "password": '@Session["Password"]'
+                }
+            };
+
+            $.ajax(settings).done(function (response) {
+                if (response.isSuccessful) {
+                    window.location = response.data.url;
+                }
+            });
+        });
+
+    });
+</script>

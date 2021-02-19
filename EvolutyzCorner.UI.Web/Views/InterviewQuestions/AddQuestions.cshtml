@@ -1,0 +1,381 @@
+﻿@model Evolutyz.Entities.QuestionsEntity
+@*@using StepUp.Controllers.Admin*@
+@{
+    ViewBag.Title = "AddQuestions";
+
+}
+<style>
+    .cke_dialog_ui_input_file {
+        width: 100%;
+        height: 250px !important;
+    }
+
+    .cke_dialog_ui_vbox_child {
+        padding: 15px 0;
+    }
+</style>
+<h3 id="Questionheading"></h3>
+<script src="~/Content/ckeditor/ckeditor.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+    CKEDITOR.replace('editor', {
+       filebrowserImageBrowseUrl: '/InterviewQuestions/uploadPartial',
+        filebrowserImageUploadUrl: '/InterviewQuestions/uploadnow'
+    });
+    function updateValue(id, value) {
+
+
+
+        var elemntFound = document.getElementsByClassName(id);
+
+        document.getElementsByClassName(id)[1].value = value;
+        document.getElementsByClassName(id)[1].innerText = value;
+        document.getElementsByClassName(id)[1].innerHTML = value;
+
+        if (document.getElementsByClassName(id)[17] != null) {
+            document.getElementsByClassName(id)[17].value = value;
+            document.getElementsByClassName(id)[17].innerText = value;
+            document.getElementsByClassName(id)[17].innerHTML = value;
+        }
+
+        if (document.getElementsByClassName(id)[33] != null) {
+            document.getElementsByClassName(id)[33].value = value;
+            document.getElementsByClassName(id)[33].innerText = value;
+            document.getElementsByClassName(id)[33].innerHTML = value;
+        }
+
+        if (document.getElementsByClassName(id)[49] != null) {
+            document.getElementsByClassName(id)[49].value = value;
+            document.getElementsByClassName(id)[49].innerText = value;
+            document.getElementsByClassName(id)[49].innerHTML = value;
+        }
+
+        if (document.getElementsByClassName(id)[65] != null) {
+            document.getElementsByClassName(id)[65].value = value;
+            document.getElementsByClassName(id)[65].innerText = value;
+            document.getElementsByClassName(id)[65].innerHTML = value;
+        }
+        if (document.getElementsByClassName(id)[81] != null) {
+            document.getElementsByClassName(id)[81].value = value;
+            document.getElementsByClassName(id)[81].innerText = value;
+            document.getElementsByClassName(id)[81].innerHTML = value;
+        }
+
+
+
+    }
+</script>
+
+
+<input type="hidden" value="@TempData["QuestionID"]" id="questionid" />
+
+@{ 
+
+
+    TempData.Keep("QuestionID");
+}
+<body id="body">
+    <div id="questions">
+        <div class="row">
+            <div class="form-group col-lg-12" style="width:100%">
+
+                @Html.Label("TechnolngyStack")
+                @Html.DropDownListFor(m => m.TechnologyStackId, new SelectList(ViewBag.TID, "value", "text"), "Select TechnologyStack", new
+               {
+                   @class = "form-control",
+                   @style = "width:250px"
+               })
+                @Html.ValidationMessageFor(m => m.TechnologyStackId)
+            </div>
+            <div class="form-group col-lg-12" style="width:100%">
+                @Html.Label("Question1")
+                @Html.TextAreaFor(model => model.Question1, new { @id = "Question", @rows = "5" })
+                @Html.ValidationMessageFor(model => model.Question1, "", new { @class = "text-danger" })
+                <script>
+                    CKEDITOR.replace("Question");
+                </script>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-lg-6" style="width:25%">
+                @Html.Label("Option1")
+                @Html.RadioButtonFor(m => m.Answer, "1")
+                @Html.TextAreaFor(model => model.Option1, new { @id = "Option1", @rows = "5" })
+                <script>
+                    CKEDITOR.replace("Option1");
+                </script>
+            </div>
+            <div class="form-group col-lg-6" style="width:25%">
+                @Html.Label("Option2")
+                @Html.RadioButtonFor(m => m.Answer, "2")
+                @Html.TextAreaFor(model => model.Option2, new { @id = "Option2", @rows = "5" })
+                <script>
+                    CKEDITOR.replace("Option2");
+                </script>
+            </div>
+            <div class="form-group col-lg-6" style="width:25%">
+                @Html.Label("Option3")
+                @Html.RadioButtonFor(m => m.Answer, "3")
+                @Html.TextAreaFor(model => model.Option3, new { @id = "Option3", @rows = "5" })
+                <script>
+                    CKEDITOR.replace("Option3");
+                </script>
+            </div>
+            <div class="form-group col-lg-6" style="width:25%">
+                @Html.Label("Option4")
+                @Html.RadioButtonFor(m => m.Answer, "4")
+                @Html.TextAreaFor(model => model.Option4, new { @id = "Option4", @rows = "5" })
+                <script>
+                    CKEDITOR.replace("Option4");
+                </script>
+                <br />
+            </div>
+        </div>
+    </div>
+</body>
+<div class="row">
+    @*<div class="form-group col-lg-12" style="width:100%">
+            @Html.Label("Answer")
+            @Html.TextBoxFor(model => model.Solution, new { @id = "Solution", @class = "editor", @rows = "200" })
+            <script>
+                CKEDITOR.replace("Solution");
+            </script>
+        </div>*@
+</div>
+<div>
+    <input type="button" class="btn-primary" id="SaveQuestion" value="SaveQuestion" onclick="save();" />
+    <input type="button" id="update" value="Update" />
+</div>
+
+<script type="text/javascript">
+    var id = $("#questionid").val();
+    if (id !== "") {
+
+        $("#Questionheading").html("Edit Question");
+        $("#editshow").show();
+        $("#addshow").hide();
+
+    } else {
+        $("#Questionheading").html("Add Question");
+        $("#addshow").show();
+        $("#editshow").hide();
+    }
+
+    var Code = getUrlVars();
+    function getUrlVars() {
+        var vars = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('&&') + 8).split('=');
+        for (var i = 0; i < hashes.length; i++) {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
+    }
+    $("#Code").val(Code);
+
+
+</script>
+<script type="text/javascript">
+    function save() {
+        
+       // alert();
+        var messageLength = CKEDITOR.instances['Question'].getData().replace(/<[^>]*>/gi, '').length;
+        if (!messageLength) {
+            alert('Please enter Question');
+            return false;
+        }
+        var Option1 = CKEDITOR.instances['Option1'].getData().replace(/<[^>]*>/gi, '').length;
+        if (!Option1) {
+            alert('Please enter Option1');
+            return false;
+        }
+        var Option2 = CKEDITOR.instances['Option2'].getData().replace(/<[^>]*>/gi, '').length;
+        if (!Option2) {
+            alert('Please enterOption2');
+            return false;
+        }
+        var Option3 = CKEDITOR.instances['Option3'].getData().replace(/<[^>]*>/gi, '').length;
+        if (!Option3) {
+            alert('Please enter Option3');
+            return false;
+        }
+        var Option4 = CKEDITOR.instances['Option4'].getData().replace(/<[^>]*>/gi, '').length;
+        if (!Option4) {
+            alert('Please enter Option4');
+            return false;
+        }
+
+        if($("#TechnologyStackId option:selected").val() == "")
+        {
+            
+            alert('Please select TechnologyStack');
+            return false;
+        }
+        //var Solution = CKEDITOR.instances['Solution'].getData().replace(/<[^>]*>/gi, '').length;
+        //if (!Solution) {
+        //    alert('Please enter Solution');
+        //    return false;
+        //}
+        var radio = $('input:radio[name="Answer"]:checked');
+        if (radio.length === 0)//no buttons selected
+        {
+            alert("select Answer");
+            return;
+        }
+
+        CKEDITOR.instances["Question"].updateElement();
+        CKEDITOR.instances["Option1"].updateElement();
+        CKEDITOR.instances["Option2"].updateElement();
+        CKEDITOR.instances["Option3"].updateElement();
+        CKEDITOR.instances["Option4"].updateElement();
+      //  CKEDITOR.instances["Solution"].updateElement();
+
+        qobj = {
+           // QuestionID: $("#qdi").val(),
+            //TechnologyStackId: $("#TechnologyStackId").val(),
+            TechnologyStackId: $("#TechnologyStackId option:selected").val(),
+            Question1: $("#Question").val(),
+            Option1: $("#Option1").val(),
+            Option2: $("#Option2").val(),
+            Option3: $("#Option3").val(),
+            Option4: $("#Option4").val(),
+            Answer: $("#body input:radio:checked").val(),
+           // Solution: $("#Solution").val(),
+           // QuestionTypeID: $("#QuestionTypeID option:selected").val(),
+           // ComplexityId: $("#ComplexityId option:selected").val(),
+
+        }
+        
+      //  var test = $("#unid").val();
+        $.ajax({
+            type: 'POST',
+            url: '/InterviewQuestions/Questions',
+            dataType: 'json',
+            data: JSON.stringify(qobj),
+            contentType: 'application/json; charset=utf-8',
+            async: false,
+            success: function (data) {
+
+                // window.location.href = "/Admin/DispalyTopicrelatedQuestions/" + qobj.UniversalTopicid.val;
+
+
+
+            },
+
+        });
+
+        alert("Add Question Sucessfully");
+        window.location.href = "/InterviewQuestions/AddQuestions";
+    }
+    $(document).ready(function () {
+
+        if ($("#questionid").val() == "") {
+            $("#SaveQuestion").show();
+            $("#update").hide();
+            $("#Cancel").show();
+        }
+        else {
+            $("#SaveQuestion").hide();
+            $("#update").show();
+            $("#Cancel").show();
+        }
+
+        $('#Cancel').click(function () {
+            CKEDITOR.instances.Question.setData('');
+            CKEDITOR.instances.Option1.setData('');
+            CKEDITOR.instances.Option2.setData('');
+            CKEDITOR.instances.Option3.setData('');
+            CKEDITOR.instances.Option4.setData('');
+            CKEDITOR.instances.Solution.setData('');
+            $('#QuestionTypeID option:eq(0)').attr('selected', 'selected');
+            $('#ComplexityId option:eq(0)').attr('selected', 'selected');
+            $("#body input:radio:checked").prop('checked', false);
+
+        });
+
+        $('#update').click(function () {
+
+            var messageLength = CKEDITOR.instances['Question'].getData().replace(/<[^>]*>/gi, '').length;
+            if (!messageLength) {
+                alert('Please enter Question');
+                return false;
+            }
+            var Option1 = CKEDITOR.instances['Option1'].getData().replace(/<[^>]*>/gi, '').length;
+            if (!Option1) {
+                alert('Please enter Option1');
+                return false;
+            }
+            var Option2 = CKEDITOR.instances['Option2'].getData().replace(/<[^>]*>/gi, '').length;
+            if (!Option2) {
+                alert('Please enterOption2');
+                return false;
+            }
+            var Option3 = CKEDITOR.instances['Option3'].getData().replace(/<[^>]*>/gi, '').length;
+            if (!Option3) {
+                alert('Please enter Option3');
+                return false;
+            }
+            var Option4 = CKEDITOR.instances['Option4'].getData().replace(/<[^>]*>/gi, '').length;
+            if (!Option4) {
+                alert('Please enter Option4');
+                return false;
+            }
+            //var Solution = CKEDITOR.instances['Solution'].getData().replace(/<[^>]*>/gi, '').length;
+            //if (!Solution) {
+            //    alert('Please enter Solution');
+            //    return false;
+            //}
+            var radio = $('input:radio[name="Answer"]:checked');
+            if (radio.length == 0)//no buttons selected
+            {
+                alert("select Answer");
+                return;
+            }
+            CKEDITOR.instances["Question"].updateElement();
+            CKEDITOR.instances["Option1"].updateElement();
+            CKEDITOR.instances["Option2"].updateElement();
+            CKEDITOR.instances["Option3"].updateElement();
+            CKEDITOR.instances["Option4"].updateElement();
+           
+
+            qobj = {
+
+                Qid: $("#questionid").val(),
+               
+                Question1: $("#Question").val(),
+                Option1: $("#Option1").val(),
+                Option2: $("#Option2").val(),
+                Option3: $("#Option3").val(),
+                Option4: $("#Option4").val(),
+                //Answer: $("#Answer").val(),
+                Answer: $("#body input:radio:checked").val(),
+               
+                //QuestionTypeID: $("#QuestionTypeID").val(),
+                //ComplexityId: $("#ComplexityId").val(),
+
+            }
+            $.ajax({
+                type: 'Post',
+                url: '/InterviewQuestions/EditQuestion',
+                dataType: 'json',
+                data: JSON.stringify(qobj),
+                contentType: 'application/json; charset=utf-8',
+                async: false,
+                success: function (data) {
+
+
+                },
+
+            });
+            alert("Update Question Sucessfully");
+            window.location.href = "/InterviewQuestions/DisplayQuestions";
+        });
+    });
+
+
+</script>
+
+

@@ -1,0 +1,981 @@
+﻿@model Evolutyz.Entities.OrganizationAccountEntity
+@{
+    ViewBag.Title = "Organization Account List";
+    // Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    var OrgAccDetails = ViewBag.OrgAccDetails;
+}
+
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+@*<script src="~/Scripts/jquery.validate.js"></script>*@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.10.0/jquery.validate.min.js"></script>
+<link href="~/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" />
+<script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="~/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="~/Scripts/date.format.js"></script>
+
+<script src="~/Scripts/bootstrap-datepicker.js"></script>
+<script src="~/Scripts/bootstrap-datepicker.min.js"></script>
+<link href="~/plugins/Jcrop/jquery.Jcrop.min.css" rel="stylesheet" />
+
+<link href="~/Styles/OrgAccCtrlStyles.css" rel="stylesheet" />
+
+
+
+<!-- Horizontal Form -->
+<div id="loading-image" style="display:none">
+    @*<img src="~/Content/images/demo_wait.gif"/>*@
+    <span></span>
+    <strong>Loading Please Wait....</strong>
+</div>
+
+<div class="modal fade-in" id="ContainerGridDetail" role="dialog">
+
+    <div class="modal-dialog modal-custom">
+        @*<label id="succ"></label>*@
+        <div class="modal-content">
+            <div class="modal-header">
+                @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
+                <h4 class="modal-title" id="headtext">Add Account</h4>
+            </div>
+            <div class="form-group col-md-6" style="display:none;">
+                <label for="Acc_AccountID">Accountid</label>
+                @Html.TextBoxFor(m => m.Acc_AccountID, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Acc_AccountID)
+            </div>
+            <form id="myform">
+                <div class="modal-body">
+
+                    <div class="row">
+
+                        <div class="form-group col-md-4">
+                            <label for="AccountCode">Account Code<font style="color:red;">*</font></label>
+                            @Html.TextBoxFor(m => m.Acc_AccountCode, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Acc_AccountCode)
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="AccountName">Account Name<font style="color:red;">*</font></label>
+                            @Html.TextBoxFor(m => m.Acc_AccountName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Acc_AccountName)
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="Acc_AccountDescription">Description</label>
+                            @Html.TextAreaFor(m => m.Acc_AccountDescription, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Acc_AccountDescription)
+                        </div>
+                    </div>
+                    <div class="row" style="display:none">
+
+
+                        <div class="form-group col-md-4">
+                            <label for="EmailID">EmailID</label>
+                            @Html.TextBoxFor(m => m.Acc_EmailID, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Acc_EmailID)
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="MobileNumber">Mobile Number</label>
+                            @Html.TextBoxFor(m => m.Acc_MobileNumber, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Acc_MobileNumber)
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="PhoneNumber">Land-Line Number</label>
+                            @Html.TextBoxFor(m => m.Acc_PhoneNumber, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Acc_PhoneNumber)
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        @*<div class="form-group col-md-4">
+                                <label for="Acc_CompanyLogo">Company Logo</label>
+                                <input type="file" id="fileUpload" name="fileUpload" accept="image/*" onchange="loadFile(event)" />
+                                @Html.TextBoxFor(m => m.Acc_CompanyLogo, new { @class = "form-control", style = "display: none;" })
+                                @Html.ValidationMessageFor(m => m.Acc_CompanyLogo)
+                                <img id="imgLogo" src='#' class="img-responsive" alt="Logo" width="150" height="55" style="margin-top:15px" />
+                            </div>*@
+                        <div class="form-group col-md-4">
+
+                            <div class="form-group" id="image_prev_container">
+                                <label for="Acc_CompanyLogo">Company Logo</label>
+                                <span class="required" style="font-size:small;color:red">*</span>
+                                <div class="image-upload-wrap">
+                                    <input type="file" value="upload" class="file-upload-input" id="fileUpload" name="fileUpload" accept="image/*" />
+
+                                    <div class="img-container" id="image_input" style="margin:auto">
+                                        <img id="imgLogo" class="file-upload-image showimage" src="~/Content/images/local-disk.png" alt="Picture">
+                                        @*<img id="imgLogo" src='#' class="img-responsive" alt="Logo" width="150" height="55" style="margin-top:15px" />*@
+
+                                    </div>
+                                    <label for="fileUpload"> <span>Choose file from local disk</span></label>
+                                </div>
+
+                            </div>
+                            <div class="previews clearfix" style="display:none">
+                                @*<img id="image_output" src="#" class="img-responsive" alt="" style="margin:auto auto 15px" />*@
+
+                                <img id="image_output" class="img-responsive showimage" alt="" style="margin:auto auto 15px" />
+                                <input type="hidden" name="imgCropped" id="imgCropped" />
+                                <input type="hidden" name="fullimagevalue" id="fullimagevalue" />
+                            </div>
+                        </div>
+
+
+                        <div class="form-group col-md-4">
+                            <label for="Acc_isDeleted">Active Status<font style="color:red;">*</font></label>
+                            @Html.DropDownListFor(m => m.Acc_isDeleted, new SelectList(new List<Object>{
+
+                           new { value = false, text = "Active"},
+                           new { value = true, text = "InActive"}  }, "value", "text", 2), "Select Status", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Acc_isDeleted)
+                        </div>
+                        <div class="form-group col-md-4">
+                            <div>@Html.CheckBoxFor(m => m.is_UsAccount, new { style = "display: inline-block;" }) Is UsAccount</div>
+                            <div>@Html.CheckBoxFor(m => m.is_pre_requisite, new { style = "display: inline-block;" }) Generate Prerequisite Data</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" id="btnadd" class="btn btn-clr" style="display:none;">Add</button>
+                    <button type="submit" id="btnupdate" class="btn btn-clr" style="display:none;">Update</button>
+                    <button type="button" class="btn btn-clr1" data-target="#warningmsg" data-toggle="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="block-content">
+    <div class="">
+        <h4 class="heading-fancy"> Accounts </h4>
+        <input type="button" id="btnAddModel" value="+" data-toggle="modal" data-target="#ContainerGridDetail" class="btn" />
+    </div>
+    <div class="table-responsive">
+        <div class="clearfix table-block">
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th>Account ID</th>
+                        <th>Account Code</th>
+                        <th>Account Name</th>
+                        <th>Description</th>
+                        <th>Email</th>
+                        <th>Mobile</th>
+                        <th>Phone</th>
+                        <th>Company Logo</th>
+                        <th>Status</th>
+
+                        <th id="actions">Action</th>
+
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<div id="warningmsg" class="modal" role="dialog">
+    <div class="modal-dialog">
+        <div id="divAdv" class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+
+            </div>
+            <div class="modal-body">
+                <h3>Do you really want to close the window.</h3>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-clr" data-dismiss="modal" value="1" id="btnclose">Yes</button>
+                <button type="button" class="btn btn-clr1" value="2" data-dismiss="modal" id="cancel">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<script src="~/plugins/Jcrop/jquery.Jcrop.min.js"></script>
+<script type="text/javascript">
+    var fileSelectEle = document.getElementById('fileUpload');
+
+    fileSelectEle.onclick = charge;
+
+    function charge() {
+        document.body.onfocus = function () { setTimeout(checkOnCancel, 100); };
+    }
+
+    function checkOnCancel() {
+        if (fileSelectEle.value.length == 0) {
+            $("#fileUpload-error").show();
+            $("#profile-image").attr("src", "/Content/images/local-disk.png");
+            $("#profile-image").removeClass("img-responsive");
+            $("label[for='fileUpload']").next("span").text("Choose file from local disk");
+            $("#profile-image").next("div.cropper-container").remove();
+            $("#lblchvideoexits").hide();
+            $('#image_input > img.file-upload-image').attr('src', '/Content/images/local-disk.png');
+            $('#image_input > img.file-upload-image').removeAttr('style');
+            $("#image_input > .jcrop-holder").remove();
+            $('#image_input > img.file-upload-image').show();
+            $('#image_input > img.file-upload-image').css("visibility", "visible");
+        } else {
+            $("#fileUpload-error").hide();
+            //alert('You selected a file - ' + "FileName:" + fileSelectEle.value + "; Length: " + fileSelectEle.value.length);
+        }
+        document.body.onfocus = null;
+    }
+    var inputs = document.querySelectorAll('.file-upload-input');
+    Array.prototype.forEach.call(inputs, function (input) {
+        
+        var label = input.nextSibling.nextSibling.nextElementSibling,
+            labelVal = label.innerHTML;
+
+        input.addEventListener('change', function (e) {
+            var fileName = '';
+            if (this.files && this.files.length > 1)
+                fileName = (this.getAttribute('data-multiple-caption') || '').replace('{count}', this.files.length);
+            else
+                fileName = e.target.value.split('\\').pop();
+
+            if (fileName)
+                label.querySelector('span').innerHTML = fileName;
+            else
+                label.innerHTML = labelVal;
+        });
+
+        // Firefox bug fix
+        input.addEventListener('focus', function () { input.classList.add('has-focus'); });
+        input.addEventListener('blur', function () { input.classList.remove('has-focus'); });
+    });
+</script>
+<script>
+
+    var imageLoader = document.getElementById('fileUpload');
+    imageLoader.addEventListener('change', handleImage, false);
+
+
+    function handleImage(e) {
+        
+        var validExtensions = ['jpg', 'png', 'jpeg', 'PNG'];
+        //var fileName = e.target.files[0].name;
+        var ki = e.target.files;
+        var fileName = ki[0].name;
+        console.log(fileName);
+        var fileNameExt = fileName.substr(fileName.lastIndexOf('.') + 1);
+        if ($.inArray(fileNameExt, validExtensions) == -1) {
+            e.target.type = ''
+            e.target.type = 'file'
+            $("#" + e.target.id + "").next('.img-container').find("img.file-upload-image").attr('src', "");
+            $("#lblchvideoexits").show();
+        }
+        else {
+            $("#lblchvideoexits").hide();
+            $("#" + e.target.id + "").next('.img-container').find("img.file-upload-image").attr('src', '');
+            $("#" + e.target.id + "").next('.img-container').find(".jcrop-holder").remove();
+            $("#" + e.target.id + "").next('.img-container').find("img.file-upload-image").show();
+            $("#" + e.target.id + "").next('.img-container').find("img.file-upload-image").css("visibility", "visible");
+
+            var reader = new FileReader();
+
+            reader.onload = function (event) {
+
+                var image = new Image();
+                var imageW = 400;
+
+                image.onload = function () {
+
+                    var canvas = document.createElement('canvas');
+
+                    canvas.width = image.width;
+                    canvas.height = image.height;
+
+                    var ctx = canvas.getContext('2d');
+                    ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+
+                    $("#" + e.target.id + "").next('.img-container').html(['<img src="', canvas.toDataURL(), '" class="file-upload-image" name="fullimage" id="fullimage" />'].join(''));
+
+                    var img = $("#" + e.target.id + "").next('.img-container').find("img.file-upload-image")[0];
+
+                    var myVar = document.querySelectorAll('#image_input img')[0].src
+
+                    console.log(myVar);
+
+                    $("#fullimagevalue").val(myVar);
+                    $("#fullimagevalue1").val(myVar);
+
+                    var canvas = document.createElement('canvas');
+
+                    var is_msie = /msie/.test(navigator.userAgent.toLowerCase());
+                    var jcrop_obj;
+
+                    if (is_msie) {
+
+
+                        $("#" + e.target.id + "").next('.img-container').find("img.file-upload-image").Jcrop({
+                            boxWidth: 220,
+                            bgColor: 'black',
+                            bgOpacity: .6,
+                            //aspectRatio: 1,
+                            aspectRatio: 16 / 9,
+                            //aspectRatio: (900 / 300),
+                            //minSize: [900, 300],
+                            //maxSize: [900, 300],
+                            onChange: imgSelect,
+                            keySupport: false,
+                        });
+                    }
+                    else {
+
+
+                        $("#" + e.target.id + "").next('.img-container').find("img.file-upload-image").Jcrop({
+                            boxWidth: 220,
+                            bgColor: 'black',
+                            bgOpacity: .6,
+                            //aspectRatio: 1,
+                            aspectRatio: 16 / 9,
+                            //aspectRatio: (900 / 300),
+                            //minSize: [300, 150],
+                            //maxSize: [300, 150],
+                            onChange: imgSelect,
+                            keySupport: false,
+                        }, function () { jcrop_obj = this; });
+
+                    }
+
+                    function imgSelect(selection) {
+                        canvas.width = 220;
+                        canvas.height = 110;
+                        //canvas.x = 200;
+                        //canvas.y = 200;
+                        /*var rx = 100 / coords.w;
+                        var ry = 100 / coords.h;
+
+                        $('#image_output').css({
+                            width: Math.round(rx * 500) + 'px',
+                            height: Math.round(ry * 370) + 'px',
+                            marginLeft: '-' + Math.round(rx * coords.x) + 'px',
+                            marginTop: '-' + Math.round(ry * coords.y) + 'px'
+                        });*/
+                        var ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, selection.x, selection.y, selection.w, selection.h, 0, 0, canvas.width, canvas.height);
+                        //ctx.drawImage(img, selection.x, selection.y, selection.w, selection.h);
+                        $('#image_output').attr('src', canvas.toDataURL());
+                        $('#imgCropped').attr('src', canvas.toDataURL());
+
+                        //$('#imgCropped').val(canvas.toDataURL());
+                        $('#fullimage').val(canvas.toDataURL());
+                    }
+                }
+                image.src = event.target.result;
+            }
+            reader.readAsDataURL(e.target.files[0]);
+        }
+    }
+</script>
+<script>
+
+
+    var permissions = '@ViewBag.a';
+    var rolename = '@ViewBag.Roleid';
+    $("#Acc_isDeleted").val("False");
+    $("#is_UsAccount").prop("checked", true);
+    $("#is_pre_requisite").prop("checked", true);
+    var delid;
+    if (permissions.toLowerCase() === "read/write") {
+        $("#btnAddModel").show();
+        $("#actions").show();
+
+    }
+    else {
+        $("#btnAddModel").hide();
+        $("#actions").hide();
+
+    }
+
+
+
+    function loaddata() {
+       
+        var changeTitle = function (cellVal, options, rowObject) {
+            
+            return "<img src='" + "/uploadimages/Images/thumb/" + cellVal + "' alt='No Image Uploaded'  class='img-responsive'  style='margin: 15px auto auto; height: 75px' />";
+
+          //return "<img src='" + "/uploadimages/Images/thumb/" + cellVal + "' alt='No Image Uploaded'    />";
+        };
+
+        $('#loading-image').attr("style", "display: block;");
+        $.ajax({
+            url: "/OrganizationAccount/GetOrganizationAccountCollection",
+            type: "Get",
+            dataType: "json",
+            success: function (res) {
+
+                $('#table').DataTable({
+
+                    'data': res,
+                    'paginate': true,
+                    'sort': true,
+                    'Processing': true,
+
+                    'columns': [
+                        { 'data': 'Acc_AccountID', "visible": false },
+                        { 'data': 'Acc_AccountCode' },
+                        { 'data': 'Acc_AccountName' },
+                        {
+                            'data': 'Acc_AccountDescription',
+
+
+
+
+                        },
+                        { 'data': 'Acc_EmailID', "visible": false  },
+                        { 'data': 'Acc_MobileNumber', "visible": false  },
+                        { 'data': 'Acc_PhoneNumber', "visible": false  },
+                        {
+                            'data': 'Acc_CompanyLogo',
+                            "render": changeTitle
+                        },
+
+                        {
+                            'data': 'Acc_isDeleted',
+                            "render": function (Acc_isDeleted, type, full, meta) {
+                                if (permissions === "Read/Write") {
+                                    if (Acc_isDeleted === true) {
+                                        return '<div class="statuscheck"> <input type="checkbox" id="check_02"   onclick="CheckStatus(' + full.Acc_AccountID + ')"> <label for="check_02"></label> </div>';
+                                    }
+                                    else {
+
+                                        return '<div class="statuscheck"> <input type="checkbox"  id="check_01" checked   onclick="UnCheckStatus(' + full.Acc_AccountID + ')"> <label for="check_01"></label> </div>';
+
+                                    }
+                                } else {
+                                    if (Acc_isDeleted === true) {
+                                        return '<div class="statuscheck"> <input type="checkbox" id="check_02"   onclick="CheckStatus(' + full.Acc_AccountID + ')" disabled> <label for="check_02"></label> </div>';
+                                    }
+                                    else {
+
+                                        return '<div class="statuscheck"> <input type="checkbox"  id="check_01" checked   onclick="UnCheckStatus(' + full.Acc_AccountID + ')" disabled> <label for="check_01"></label> </div>';
+
+                                    }
+                                }
+                            }
+                        },
+
+                        {
+                            "render": function (Acc_AccountID, type, full, meta) {
+                                 var permissions = '@ViewBag.a';
+                                if (permissions === "Read/Write") {
+                                    return '<a class="btn btn-icn btn-icn-hide  edit" data-toggle="modal" id="editbtn"  data-target="#ContainerGridDetail"  onclick="EditUser(' + full.Acc_AccountID + ')" ><i class="fa fa-edit" title="Edit"></i></a><a class="btn btn-icn btn-icn-hide" id="deletebtn"  style="display:none" data-target="#containerDelete" data-toggle="modal"  data-id="' + full.Acc_AccountID + '"  onclick="Getid(' + full.Acc_AccountID + ')" "><i class="fa fa-remove" title="Delete"></i></a>';
+
+                                      }
+                                else {
+                                    return '<a class="btn btn-icn" data-toggle="modal" id="editbtn"  data-target="#ContainerGridDetail"  onclick="EditUser(' + full.Acc_AccountID + ')" ><i class="fa fa-edit" title="Edit"></i></a><a class="btn btn-icn" id="deletebtn" data-target="#containerDelete" style="display:none"  data-toggle="modal"  data-id="' + full.Acc_AccountID + '"  onclick="Getid(' + full.Acc_AccountID + ')" "><i class="fa fa-remove" title="Delete"></i></a>';
+
+                                     }
+
+                                  }
+
+                        }
+
+
+                    ]
+                });
+            },
+            complete: function () {
+                $('#loading-image').attr("style", "display: none;");
+            },
+            error: function (msg) {
+                // alert(msg.responseText);
+            }
+        });
+    }
+
+    function UnCheckStatus(id) {
+        $.ajax({
+            url: "/OrganizationAccount/ChangeStatus",
+            type: "POST",
+            data: {
+                'id': id,
+                'status': true
+            },
+
+            //dataType: "json",
+            success: function (data) {
+
+                alert(data);
+                window.location.reload();
+            },
+            complete: function () {
+                $('#loading-image').attr("style", "display: none;");
+            },
+        });
+    }
+    function CheckStatus(id) {
+        $.ajax({
+            url: "/OrganizationAccount/ChangeStatus",
+            type: "POST",
+            data: {
+                'id': id,
+                'status': false
+            },
+
+            //dataType: "json",
+            success: function (data) {
+
+                alert(data);
+                window.location.reload();
+            },
+            complete: function () {
+                $('#loading-image').attr("style", "display: none;");
+            },
+        });
+    }
+
+
+    function EditUser(Acc_AccountID) {
+        
+        $("#btnadd").hide();
+        $("#btnupdate").show();
+        $("#headtext").text("Edit Account");
+        //$('input#is_pre_requisite').hide();
+       // $('input#is_pre_requisite').parent().hide();
+        $('#loading-image').attr("style", "display: block;");
+        $.ajax({
+
+            url: '/OrganizationAccount/GetOrganizationAccountByID?catID=' + Acc_AccountID,
+            type: 'Get',
+            //contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                
+                var Acc_AccountID = data.Acc_AccountID;
+                var Acc_AccountCode = data.Acc_AccountCode;
+                var Acc_AccountName = data.Acc_AccountName;
+                var Acc_AccountDescription = data.Acc_AccountDescription;
+               // var Acc_EmailID = data.Acc_EmailID;
+               // var Acc_MobileNumber = data.Acc_MobileNumber;
+              //  var Acc_PhoneNumber = data.Acc_PhoneNumber;
+                var Acc_Version = data.Acc_Version;
+                var Acc_CompanyLogo = data.Acc_CompanyLogo;
+                if (data.Acc_CompanyLogo == "") {
+                    Acc_CompanyLogo = "user.png";
+                }
+                else {
+                    Acc_CompanyLogo = data.Acc_CompanyLogo;
+                    $("label[for='fileUpload']").children("span").html(Acc_CompanyLogo);
+
+                }
+               
+                var Acc_isDeleted = data.Acc_isDeleted;
+                var is_UsAccount = data.is_UsAccount;
+                if (is_UsAccount === true) {
+                    $("#is_UsAccount").prop("checked", true);
+                } else {
+                    $("#is_UsAccount").prop("checked",false);
+                }
+
+                if (Acc_isDeleted === true) {
+                    $("#Acc_isDeleted").val("True");
+                } else {
+                    $("#Acc_isDeleted").val("False");
+                }
+                if (data.is_pre_requisite === true) {
+                    $("#is_pre_requisite").prop("checked", true);
+                    $("#is_pre_requisite").attr("disabled", "disabled");
+                } else {
+                    $("#is_pre_requisite").prop("checked", false);
+                    $("#is_pre_requisite").removeAttr("disabled", "disabled");
+                }
+                
+                $("#Acc_AccountID").val(Acc_AccountID);
+                $("#Acc_AccountCode").val(Acc_AccountCode);
+                $("#Acc_AccountName").val(Acc_AccountName);
+                $("#Acc_AccountDescription").val(Acc_AccountDescription);
+
+                //$("#Acc_EmailID").val(Acc_EmailID);
+                //$("#Acc_MobileNumber").val(Acc_MobileNumber);
+                //$("#Acc_PhoneNumber").val(Acc_PhoneNumber);
+                // $("#Acc_Version").val(Acc_Version);
+                //$("#Acc_CompanyLogo").val(Acc_CompanyLogo);
+                //$("#imgLogo").val(changeTitle);
+                $("#Acc_CompanyLogo").val(Acc_CompanyLogo);
+                var url = "/uploadimages/Images/thumb/" + Acc_CompanyLogo;
+
+
+                if (url !== null && url !== "") {
+                    $('#imgLogo').show();
+                    $('#imgLogo').prop('src', url);
+                    $('#imgLogo').attr('class', 'img-responsive');
+
+                }
+
+
+            },
+            complete: function () {
+                $('#loading-image').attr("style", "display: none;");
+            },
+            error: function () {
+                alert(Response.text);
+            }
+        });
+    }
+
+    function DeleteSkill(Acc_AccountID) {
+        $('#loading-image').attr("style", "display: block;");
+        $.ajax({
+
+            type: "POST",
+            url: '/OrganizationAccount/DeleteOrganizationAccount?accID=' + Acc_AccountID,
+
+            success: function (res) {
+
+                alert(res);
+                window.location.reload();
+                //loaddata();
+            },
+            complete: function () {
+                $('#loading-image').attr("style", "display: none;");
+            },
+            error: function (Result) {
+
+                //alert("Error");
+
+            }
+
+        });
+
+    }
+
+    function Getid(id) {
+        delid = id;
+    }
+
+
+    var loadFile = function (event) {
+        var output = document.getElementById('imgLogo');
+
+        output.src = URL.createObjectURL(event.target.files[0]);
+        $('#imgLogo').show();
+    };
+
+</script>
+
+<script type="text/javascript">
+
+
+    $(document).ready(function () {
+        loaddata();
+        $("#btnAddModel").click(function () {
+            $("#btnadd").show();
+            $("#btnupdate").hide();
+        });
+        $("#btnclose").click(function () {
+            window.location.reload();
+        });
+
+        $("#btnupdate").click(function () {
+
+
+            $('#myform').validate({
+                rules: {
+                    Acc_AccountCode: {
+                        required: true,
+                        regx: /^[a-zA-Z]*$/
+
+                    },
+                    Acc_AccountName: {
+                        required: true,
+
+                    },
+                    Acc_isDeleted: {
+                        required: true,
+
+                    }
+
+
+                },
+                submitHandler: function (form) {
+                    
+                    if ($('input[name="is_UsAccount"]').is(":checked")) {
+                        var is_UsAccount = true;
+                    }
+                    else if ($('input[name="is_UsAccount"]').is(":not(:checked)")) {
+                        is_UsAccount = false;
+                    }
+                    if ($('input[name="is_pre_requisite"]').is(":checked")) {
+                        var is_pre_requisite = true;
+                    }
+                    else if ($('input[name="is_pre_requisite"]').is(":not(:checked)")) {
+                        is_pre_requisite = false;
+                    }
+                    var formdata = new FormData();
+                    var Acc_AccountID = $("#Acc_AccountID").val();
+                    var Acc_AccountCode = $("#Acc_AccountCode").val();
+                    var Acc_AccountName = $("#Acc_AccountName").val();
+                    var Acc_AccountDescription = $("#Acc_AccountDescription").val();
+
+
+                    var imagename = $("label[for='fileUpload']").children("span").html();
+                   
+
+                    var Acc_isDeleted = $("#Acc_isDeleted").val();
+                    var file = document.getElementById("fileUpload").files[0];
+                    if (file == undefined) {
+                        formdata.append("Acc_CompanyLogo", file);
+                       
+                    }
+                    else {
+                        
+                        var filePath = file.name;
+                        var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+                        if (!allowedExtensions.exec(filePath)) {
+
+                            $("#lblchvideoexits").show();
+                            return false;
+                        }
+                        else {
+                            
+                            $("#lblchvideoexits").hide();
+                            var imgSrc = $("#image_output").attr("src");
+
+                            formdata.append("Acc_CompanyLogo", file);
+                            formdata.append("imgCropped", imgSrc);
+                        }
+
+                    }
+                   
+
+
+                    
+                    formdata.append("Acc_CompanyLogo", imagename);
+
+                    formdata.append("Acc_CompanyLogo", file);
+                    formdata.append("imgCropped", imgSrc);
+                    formdata.append("Acc_AccountID", Acc_AccountID);
+                    formdata.append("Acc_AccountCode", Acc_AccountCode);
+                    formdata.append("Acc_AccountName", Acc_AccountName);
+                    formdata.append("Acc_AccountDescription", Acc_AccountDescription);
+                    formdata.append("Acc_EmailID", Acc_EmailID);
+                    formdata.append("Acc_MobileNumber", Acc_MobileNumber);
+                    formdata.append("Acc_PhoneNumber", Acc_PhoneNumber);
+                    formdata.append("Acc_isDeleted", Acc_isDeleted);
+                    formdata.append("is_UsAccount", is_UsAccount);
+                    formdata.append("is_pre_requisite", is_pre_requisite);
+                    $('#loading-image').attr("style", "display: block;");
+                    $.ajax({
+
+
+                        url: "/OrganizationAccount/UpdateOrganizationAccount",
+                        cache: false,
+                        type: "POST",
+                        contentType: false,
+                        processData: false,
+                        data: formdata,
+                        success: function (res) {
+                            if (res === "Account Name already exists") {
+                                $("#Acc_AccountName").addClass("validate_msg");
+                                $("#Acc_AccountCode").removeClass("validate_msg");
+
+                            } else if (res === "Account Code already exists") {
+                                $("#Acc_AccountName").removeClass("validate_msg");
+                                $("#Acc_AccountCode").addClass("validate_msg");
+                            }
+                            else {
+                                $("#Acc_AccountName").removeClass("validate_msg");
+                                $("#Acc_AccountCode").removeClass("validate_msg");
+                                function explode() {
+                                    alert(res);
+                                }
+                                setTimeout(explode, 15);
+
+
+                                window.location.reload();
+                            }
+
+
+                            //loaddata();
+                        },
+                        complete: function () {
+                            $('#loading-image').attr("style", "display: none;");
+                        },
+                        error: function (Result) {
+
+                            //alert("Error");
+
+                        }
+
+                    });
+                    return false;
+
+
+
+                }
+            });
+
+            $.validator.addMethod("regx", function (value, element, regexpr) {
+                return regexpr.test(value);
+            }, "Please enter  Only Alphabets .");
+
+
+        });
+
+        $("#btnadd").on("click", function () {
+
+
+            $('#myform').validate({
+                rules: {
+                    Acc_AccountCode: {
+                        required: true,
+                        regx: /^[a-zA-Z]*$/
+                    },
+                    Acc_AccountName: {
+                        required: true,
+
+                    },
+                    Acc_isDeleted: {
+                        required: true,
+
+                    }
+
+
+                },
+                submitHandler: function (form) {
+                    
+                    var formdata = new FormData();
+                    if ($('input[name="is_UsAccount"]').is(":checked")) {
+                        var is_UsAccount = true;
+                    }
+                    else if ($('input[name="is_UsAccount"]').is(":not(:checked)")) {
+                        is_UsAccount = false;
+                    }
+
+                    if ($('input[name="is_pre_requisite"]').is(":checked")) {
+                        var is_pre_requisite = true;
+                    }
+                    else if ($('input[name="is_pre_requisite"]').is(":not(:checked)")) {
+                        is_pre_requisite = false;
+                    }
+                    var Acc_AccountCode = $("#Acc_AccountCode").val();
+                    var Acc_AccountName = $("#Acc_AccountName").val();
+                    var Acc_AccountDescription = $("#Acc_AccountDescription").val();
+
+
+                    var Acc_isDeleted = $("#Acc_isDeleted").val();
+                    var Acc_Version = $("#Acc_Version").val();
+
+                    
+                    var file = document.getElementById("fileUpload").files[0];
+
+
+                    if (file == undefined) {
+                        formdata.append("Acc_CompanyLogo", file);
+                        //formdata.append("imgCropped", '');
+                    }
+                    else {
+                        var filePath = file.name;
+                        var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+                        if (!allowedExtensions.exec(filePath)) {
+
+                            $("#lblchvideoexits").show();
+                            return false;
+                        }
+                        else {
+
+                            $("#lblchvideoexits").hide();
+                            var imgSrc = $("#image_output").attr("src");
+                            formdata.append("Acc_CompanyLogo", file);
+                            formdata.append("imgCropped", imgSrc);
+                        }
+
+                    }
+
+
+                    formdata.append("Acc_AccountCode", Acc_AccountCode);
+                    formdata.append("Acc_AccountName", Acc_AccountName);
+                    formdata.append("Acc_AccountDescription", Acc_AccountDescription);
+                    formdata.append("Acc_EmailID", Acc_EmailID);
+                    formdata.append("Acc_MobileNumber", Acc_MobileNumber);
+                    formdata.append("Acc_PhoneNumber", Acc_PhoneNumber);
+                    formdata.append("Acc_isDeleted", Acc_isDeleted);
+                    formdata.append("Acc_Version", Acc_Version);
+                    formdata.append("is_UsAccount", is_UsAccount);
+                    formdata.append("is_pre_requisite", is_pre_requisite);
+                    $('#loading-image').attr("style", "display: block;");
+                    $.ajax({
+                        url: "/OrganizationAccount/CreateOrganizationAccount",
+                        cache: false,
+                        type: "POST",
+                        contentType: false,
+                        processData: false,
+                        data: formdata,
+                        success: function (res) {
+                            //
+                            if (res === "AccountName already exists") {
+                                $("#Acc_AccountName").addClass("validate_msg");
+                                $("#Acc_AccountCode").removeClass("validate_msg");
+
+                            }
+                            else if (res === "AccountCode already exists") {
+                                $("#Acc_AccountName").removeClass("validate_msg");
+                                $("#Acc_AccountCode").addClass("validate_msg");
+                            }
+                            else if (res === "Please Fill Mandatory Fields") {
+                                $("#Acc_AccountName").removeClass("validate_msg");
+                                $("#Acc_AccountCode").removeClass("validate_msg");
+                                alert(res);
+                                //window.location.reload();
+                            }
+                            else {
+                                $("#Acc_AccountName").removeClass("validate_msg");
+                                $("#Acc_AccountCode").removeClass("validate_msg");
+                                function explode() {
+                                    alert(res);
+                                }
+                                setTimeout(explode, 15);
+                                window.location.reload();
+                            }
+
+                            //loaddata();
+                        },
+                        complete: function () {
+                            $('#loading-image').attr("style", "display: none;");
+                        },
+
+                        error: function (Result) {
+
+                            //alert("Error");
+
+                        }
+
+                    });
+                    return false;
+
+
+
+                }
+            });
+
+            $.validator.addMethod("regx", function (value, element, regexpr) {
+                return regexpr.test(value);
+            }, "Please enter  Only Alphabets .");
+
+        });
+
+    });
+
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#account_management").addClass("active");
+        $("#account_management").siblings().removeClass("active");
+
+        //$('img').on("error", function () {
+        //    $(this).attr('src', '/Content/images/newsDefault.jpg');
+
+        //});
+
+    });
+</script>

@@ -1,0 +1,2991 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="EvolutyzCornerDataEntities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="Model.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Acc_Spec_OptionalHolidays">
+      <EntityTypeMapping TypeName="Model.Acc_Spec_OptionalHolidays">
+        <MappingFragment StoreEntitySet="Acc_Spec_OptionalHolidays">
+          <ScalarProperty Name="Acc_Spec_OptionalHolidayId" ColumnName="Acc_Spec_OptionalHolidayId" />
+          <ScalarProperty Name="AccoutID" ColumnName="AccoutID" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="FinancialYearId" ColumnName="FinancialYearId" />
+          <ScalarProperty Name="NoofOptionalHolidays" ColumnName="NoofOptionalHolidays" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="Model.Account">
+        <MappingFragment StoreEntitySet="Account">
+          <ScalarProperty Name="Acc_AccountID" ColumnName="Acc_AccountID" />
+          <ScalarProperty Name="Acc_AccountCode" ColumnName="Acc_AccountCode" />
+          <ScalarProperty Name="Acc_AccountName" ColumnName="Acc_AccountName" />
+          <ScalarProperty Name="Acc_AccountDescription" ColumnName="Acc_AccountDescription" />
+          <ScalarProperty Name="Acc_EmailID" ColumnName="Acc_EmailID" />
+          <ScalarProperty Name="Acc_MobileNumber" ColumnName="Acc_MobileNumber" />
+          <ScalarProperty Name="Acc_PhoneNumber" ColumnName="Acc_PhoneNumber" />
+          <ScalarProperty Name="Acc_CompanyLogo" ColumnName="Acc_CompanyLogo" />
+          <ScalarProperty Name="Acc_ActiveStatus" ColumnName="Acc_ActiveStatus" />
+          <ScalarProperty Name="Acc_Version" ColumnName="Acc_Version" />
+          <ScalarProperty Name="Acc_CreatedDate" ColumnName="Acc_CreatedDate" />
+          <ScalarProperty Name="Acc_CreatedBy" ColumnName="Acc_CreatedBy" />
+          <ScalarProperty Name="Acc_ModifiedDate" ColumnName="Acc_ModifiedDate" />
+          <ScalarProperty Name="Acc_ModifiedBy" ColumnName="Acc_ModifiedBy" />
+          <ScalarProperty Name="Acc_isDeleted" ColumnName="Acc_isDeleted" />
+          <ScalarProperty Name="is_UsAccount" ColumnName="is_UsAccount" />
+          <ScalarProperty Name="is_pre_requisite" ColumnName="is_pre_requisite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountClients">
+      <EntityTypeMapping TypeName="Model.AccountClient">
+        <MappingFragment StoreEntitySet="AccountClients">
+          <ScalarProperty Name="Acc_ClientID" ColumnName="Acc_ClientID" />
+          <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="WebsiteUrl" ColumnName="WebsiteUrl" />
+          <ScalarProperty Name="IndustryID" ColumnName="IndustryID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="Acc_AccountID" ColumnName="Acc_AccountID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountDepartments">
+      <EntityTypeMapping TypeName="Model.AccountDepartment">
+        <MappingFragment StoreEntitySet="AccountDepartments">
+          <ScalarProperty Name="AccountDepartmentID" ColumnName="AccountDepartmentID" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="Dept_Description" ColumnName="Dept_Description" />
+          <ScalarProperty Name="Dept_CreatedDate" ColumnName="Dept_CreatedDate" />
+          <ScalarProperty Name="Dept_CreatedBy" ColumnName="Dept_CreatedBy" />
+          <ScalarProperty Name="Dept_ModifiedDate" ColumnName="Dept_ModifiedDate" />
+          <ScalarProperty Name="Dept_ModifiedBy" ColumnName="Dept_ModifiedBy" />
+          <ScalarProperty Name="Dept_isDeleted" ColumnName="Dept_isDeleted" />
+          <ScalarProperty Name="Dept_ActiveStatus" ColumnName="Dept_ActiveStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountSocialMediaProfiles">
+      <EntityTypeMapping TypeName="Model.AccountSocialMediaProfile">
+        <MappingFragment StoreEntitySet="AccountSocialMediaProfiles">
+          <ScalarProperty Name="Acc_SocialMediaProfileId" ColumnName="Acc_SocialMediaProfileId" />
+          <ScalarProperty Name="Asmp_AccountId" ColumnName="Asmp_AccountId" />
+          <ScalarProperty Name="Asmp_SocialMediaId" ColumnName="Asmp_SocialMediaId" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="Asmp_CreatedDate" ColumnName="Asmp_CreatedDate" />
+          <ScalarProperty Name="Asmp_ModifiedDate" ColumnName="Asmp_ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountSpecificTasks">
+      <EntityTypeMapping TypeName="Model.AccountSpecificTask">
+        <MappingFragment StoreEntitySet="AccountSpecificTasks">
+          <ScalarProperty Name="Acc_SpecificTaskId" ColumnName="Acc_SpecificTaskId" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="Acc_SpecificTaskName" ColumnName="Acc_SpecificTaskName" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="tsk_TaskID" ColumnName="tsk_TaskID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="Model.AspNetRole">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="Model.AspNetUserClaim">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="Model.AspNetUserLogin">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="Model.AspNetUser">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Assessment_For_Position">
+      <EntityTypeMapping TypeName="Model.Assessment_For_Position">
+        <MappingFragment StoreEntitySet="Assessment_For_Position">
+          <ScalarProperty Name="APID" ColumnName="APID" />
+          <ScalarProperty Name="InterviewForPositionname" ColumnName="InterviewForPositionname" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AttachmentsinTimesheets">
+      <EntityTypeMapping TypeName="Model.AttachmentsinTimesheet">
+        <MappingFragment StoreEntitySet="AttachmentsinTimesheets">
+          <ScalarProperty Name="AttachmentId" ColumnName="AttachmentId" />
+          <ScalarProperty Name="TimeSheetID" ColumnName="TimeSheetID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UploadedImages" ColumnName="UploadedImages" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CandidateInterviewResults">
+      <EntityTypeMapping TypeName="Model.CandidateInterviewResult">
+        <MappingFragment StoreEntitySet="CandidateInterviewResult">
+          <ScalarProperty Name="CIRID" ColumnName="CIRID" />
+          <ScalarProperty Name="Candidateid" ColumnName="Candidateid" />
+          <ScalarProperty Name="Questionid" ColumnName="Questionid" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="SelectedOption" ColumnName="SelectedOption" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Descriptionforoptionchoosen" ColumnName="Descriptionforoptionchoosen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientProjects">
+      <EntityTypeMapping TypeName="Model.ClientProject">
+        <MappingFragment StoreEntitySet="ClientProjects">
+          <ScalarProperty Name="CL_ProjectID" ColumnName="CL_ProjectID" />
+          <ScalarProperty Name="Proj_ProjectID" ColumnName="Proj_ProjectID" />
+          <ScalarProperty Name="Accountid" ColumnName="Accountid" />
+          <ScalarProperty Name="ClientProjTitle" ColumnName="ClientProjTitle" />
+          <ScalarProperty Name="ClientProjDesc" ColumnName="ClientProjDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientProjectsTasks">
+      <EntityTypeMapping TypeName="Model.ClientProjectsTask">
+        <MappingFragment StoreEntitySet="ClientProjectsTasks">
+          <ScalarProperty Name="CL_ProjectsTasksID" ColumnName="CL_ProjectsTasksID" />
+          <ScalarProperty Name="Accountid" ColumnName="Accountid" />
+          <ScalarProperty Name="rol_roleid" ColumnName="rol_roleid" />
+          <ScalarProperty Name="acc_specifictaskid" ColumnName="acc_specifictaskid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientsBusinesses">
+      <EntityTypeMapping TypeName="Model.ClientsBusiness">
+        <MappingFragment StoreEntitySet="ClientsBusiness">
+          <ScalarProperty Name="BusinessId" ColumnName="BusinessId" />
+          <ScalarProperty Name="BusinessTitle" ColumnName="BusinessTitle" />
+          <ScalarProperty Name="Acc_AccountID" ColumnName="Acc_AccountID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="comments">
+      <EntityTypeMapping TypeName="Model.comment">
+        <MappingFragment StoreEntitySet="comments">
+          <ScalarProperty Name="commentId" ColumnName="commentId" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TicketId" ColumnName="TicketId" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Timstamp" ColumnName="Timstamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ComponentTypes">
+      <EntityTypeMapping TypeName="Model.ComponentType">
+        <MappingFragment StoreEntitySet="ComponentType">
+          <ScalarProperty Name="ComponentTypeId" ColumnName="ComponentTypeId" />
+          <ScalarProperty Name="ComponentType1" ColumnName="ComponentType" />
+          <ScalarProperty Name="Com_CreatedDate" ColumnName="Com_CreatedDate" />
+          <ScalarProperty Name="Com_CreatedBy" ColumnName="Com_CreatedBy" />
+          <ScalarProperty Name="Com_ModifiedDate" ColumnName="Com_ModifiedDate" />
+          <ScalarProperty Name="Com_ModifiedBy" ColumnName="Com_ModifiedBy" />
+          <ScalarProperty Name="Com_isDeleted" ColumnName="Com_isDeleted" />
+          <ScalarProperty Name="Com_ActiveStatus" ColumnName="Com_ActiveStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContentTypes">
+      <EntityTypeMapping TypeName="Model.ContentType">
+        <MappingFragment StoreEntitySet="ContentType">
+          <ScalarProperty Name="ContentTypeId" ColumnName="ContentTypeId" />
+          <ScalarProperty Name="ContentTitle" ColumnName="ContentTitle" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Con_ActiveStatus" ColumnName="Con_ActiveStatus" />
+          <ScalarProperty Name="Con_CreatedDate" ColumnName="Con_CreatedDate" />
+          <ScalarProperty Name="Con_CreatedBy" ColumnName="Con_CreatedBy" />
+          <ScalarProperty Name="Con_ModifiedDate" ColumnName="Con_ModifiedDate" />
+          <ScalarProperty Name="Con_ModifiedBy" ColumnName="Con_ModifiedBy" />
+          <ScalarProperty Name="Con_isDeleted" ColumnName="Con_isDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="Model.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="PhoneCode" ColumnName="PhoneCode" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="Model.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="Did" ColumnName="Did" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="DepartmentDescription" ColumnName="DepartmentDescription" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Devices">
+      <EntityTypeMapping TypeName="Model.Device">
+        <MappingFragment StoreEntitySet="Devices">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentTypes">
+      <EntityTypeMapping TypeName="Model.DocumentType">
+        <MappingFragment StoreEntitySet="DocumentType">
+          <ScalarProperty Name="DocumentTypeId" ColumnName="DocumentTypeId" />
+          <ScalarProperty Name="DocumentTitle" ColumnName="DocumentTitle" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Doc_ActiveStatus" ColumnName="Doc_ActiveStatus" />
+          <ScalarProperty Name="Doc_CreatedDate" ColumnName="Doc_CreatedDate" />
+          <ScalarProperty Name="Doc_CreatedBy" ColumnName="Doc_CreatedBy" />
+          <ScalarProperty Name="Doc_ModifiedDate" ColumnName="Doc_ModifiedDate" />
+          <ScalarProperty Name="Doc_ModifiedBy" ColumnName="Doc_ModifiedBy" />
+          <ScalarProperty Name="Doc_isDeleted" ColumnName="Doc_isDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeBankDetails">
+      <EntityTypeMapping TypeName="Model.EmployeeBankDetail">
+        <MappingFragment StoreEntitySet="EmployeeBankDetails">
+          <ScalarProperty Name="EmpBankID" ColumnName="EmpBankID" />
+          <ScalarProperty Name="EmpB_UserID" ColumnName="EmpB_UserID" />
+          <ScalarProperty Name="BANK_No" ColumnName="BANK_No" />
+          <ScalarProperty Name="PAN_No" ColumnName="PAN_No" />
+          <ScalarProperty Name="UAN_No" ColumnName="UAN_No" />
+          <ScalarProperty Name="PF_No" ColumnName="PF_No" />
+          <ScalarProperty Name="ESI_No" ColumnName="ESI_No" />
+          <ScalarProperty Name="PayModeID" ColumnName="PayModeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeSalaryComponents">
+      <EntityTypeMapping TypeName="Model.EmployeeSalaryComponent">
+        <MappingFragment StoreEntitySet="EmployeeSalaryComponent">
+          <ScalarProperty Name="EmpSalCompId" ColumnName="EmpSalCompId" />
+          <ScalarProperty Name="EmpSC_AccountID" ColumnName="EmpSC_AccountID" />
+          <ScalarProperty Name="ComponentTitle" ColumnName="ComponentTitle" />
+          <ScalarProperty Name="ComponentDescription" ColumnName="ComponentDescription" />
+          <ScalarProperty Name="ComponentTypeId" ColumnName="ComponentTypeId" />
+          <ScalarProperty Name="EmpSC_ActiveStatus" ColumnName="EmpSC_ActiveStatus" />
+          <ScalarProperty Name="EmpSC_Version" ColumnName="EmpSC_Version" />
+          <ScalarProperty Name="EmpSC_CreatedDate" ColumnName="EmpSC_CreatedDate" />
+          <ScalarProperty Name="EmpSC_CreatedBy" ColumnName="EmpSC_CreatedBy" />
+          <ScalarProperty Name="EmpSC_ModifiedDate" ColumnName="EmpSC_ModifiedDate" />
+          <ScalarProperty Name="EmpSC_ModifiedBy" ColumnName="EmpSC_ModifiedBy" />
+          <ScalarProperty Name="EmpSC_isDeleted" ColumnName="EmpSC_isDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeSalarySlips">
+      <EntityTypeMapping TypeName="Model.EmployeeSalarySlip">
+        <MappingFragment StoreEntitySet="EmployeeSalarySlips">
+          <ScalarProperty Name="EmpSalarySlipID" ColumnName="EmpSalarySlipID" />
+          <ScalarProperty Name="Epmss_UserID" ColumnName="Epmss_UserID" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeSalaryStructures">
+      <EntityTypeMapping TypeName="Model.EmployeeSalaryStructure">
+        <MappingFragment StoreEntitySet="EmployeeSalaryStructure">
+          <ScalarProperty Name="Emps_StructureID" ColumnName="Emps_StructureID" />
+          <ScalarProperty Name="Emps_UserID" ColumnName="Emps_UserID" />
+          <ScalarProperty Name="WorkingDays" ColumnName="WorkingDays" />
+          <ScalarProperty Name="WorkedDays" ColumnName="WorkedDays" />
+          <ScalarProperty Name="Payable" ColumnName="Payable" />
+          <ScalarProperty Name="SalaryMonth" ColumnName="SalaryMonth" />
+          <ScalarProperty Name="FinancialYearId" ColumnName="FinancialYearId" />
+          <ScalarProperty Name="CTC" ColumnName="CTC" />
+          <ScalarProperty Name="Ess_ActiveStatus" ColumnName="Ess_ActiveStatus" />
+          <ScalarProperty Name="Ess_Version" ColumnName="Ess_Version" />
+          <ScalarProperty Name="Ess_CreatedDate" ColumnName="Ess_CreatedDate" />
+          <ScalarProperty Name="Ess_CreatedBy" ColumnName="Ess_CreatedBy" />
+          <ScalarProperty Name="Ess_ModifiedDate" ColumnName="Ess_ModifiedDate" />
+          <ScalarProperty Name="Ess_ModifiedBy" ColumnName="Ess_ModifiedBy" />
+          <ScalarProperty Name="Ess_isDeleted" ColumnName="Ess_isDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeSalaryStructureDetails">
+      <EntityTypeMapping TypeName="Model.EmployeeSalaryStructureDetail">
+        <MappingFragment StoreEntitySet="EmployeeSalaryStructureDetails">
+          <ScalarProperty Name="EmpssdetailId" ColumnName="EmpssdetailId" />
+          <ScalarProperty Name="EmpSalCompId" ColumnName="EmpSalCompId" />
+          <ScalarProperty Name="Emps_StructureId" ColumnName="Emps_StructureId" />
+          <ScalarProperty Name="EssD_ActiveStatus" ColumnName="EssD_ActiveStatus" />
+          <ScalarProperty Name="EssD_Version" ColumnName="EssD_Version" />
+          <ScalarProperty Name="EssD_CreatedDate" ColumnName="EssD_CreatedDate" />
+          <ScalarProperty Name="EssD_CreatedBy" ColumnName="EssD_CreatedBy" />
+          <ScalarProperty Name="EssD_ModifiedDate" ColumnName="EssD_ModifiedDate" />
+          <ScalarProperty Name="EssD_ModifiedBy" ColumnName="EssD_ModifiedBy" />
+          <ScalarProperty Name="EssD_isDeleted" ColumnName="EssD_isDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ErrorLogs">
+      <EntityTypeMapping TypeName="Model.ErrorLog">
+        <MappingFragment StoreEntitySet="ErrorLogs">
+          <ScalarProperty Name="ErrorlogId" ColumnName="ErrorlogId" />
+          <ScalarProperty Name="SourceName" ColumnName="SourceName" />
+          <ScalarProperty Name="MethodName" ColumnName="MethodName" />
+          <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FinancialYears">
+      <EntityTypeMapping TypeName="Model.FinancialYear">
+        <MappingFragment StoreEntitySet="FinancialYear">
+          <ScalarProperty Name="FinancialYearId" ColumnName="FinancialYearId" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GenericRoles">
+      <EntityTypeMapping TypeName="Model.GenericRole">
+        <MappingFragment StoreEntitySet="GenericRoles">
+          <ScalarProperty Name="GenericRoleID" ColumnName="GenericRoleID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GenericTasks">
+      <EntityTypeMapping TypeName="Model.GenericTask">
+        <MappingFragment StoreEntitySet="GenericTasks">
+          <ScalarProperty Name="tsk_TaskID" ColumnName="tsk_TaskID" />
+          <ScalarProperty Name="tsk_TaskName" ColumnName="tsk_TaskName" />
+          <ScalarProperty Name="tsk_TaskDescription" ColumnName="tsk_TaskDescription" />
+          <ScalarProperty Name="tsk_ActiveStatus" ColumnName="tsk_ActiveStatus" />
+          <ScalarProperty Name="tsk_Version" ColumnName="tsk_Version" />
+          <ScalarProperty Name="tsk_CreatedDate" ColumnName="tsk_CreatedDate" />
+          <ScalarProperty Name="tsk_CreatedBy" ColumnName="tsk_CreatedBy" />
+          <ScalarProperty Name="tsk_ModifiedDate" ColumnName="tsk_ModifiedDate" />
+          <ScalarProperty Name="tsk_ModifiedBy" ColumnName="tsk_ModifiedBy" />
+          <ScalarProperty Name="tsk_isDeleted" ColumnName="tsk_isDeleted" />
+          <ScalarProperty Name="Acc_AccountID" ColumnName="Acc_AccountID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HireTypes">
+      <EntityTypeMapping TypeName="Model.HireType">
+        <MappingFragment StoreEntitySet="HireType">
+          <ScalarProperty Name="HireTypeID" ColumnName="HireTypeID" />
+          <ScalarProperty Name="HireType1" ColumnName="HireType" />
+          <ScalarProperty Name="HireTypeShortForm" ColumnName="HireTypeShortForm" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="History_Account">
+      <EntityTypeMapping TypeName="Model.History_Account">
+        <MappingFragment StoreEntitySet="History_Account">
+          <ScalarProperty Name="History_Account_AccountID" ColumnName="History_Account_AccountID" />
+          <ScalarProperty Name="History_Acc_AccountID" ColumnName="History_Acc_AccountID" />
+          <ScalarProperty Name="History_Acc_AccountCode" ColumnName="History_Acc_AccountCode" />
+          <ScalarProperty Name="History_Acc_AccountName" ColumnName="History_Acc_AccountName" />
+          <ScalarProperty Name="History_Acc_AccountDescription" ColumnName="History_Acc_AccountDescription" />
+          <ScalarProperty Name="History_Acc_EmailID" ColumnName="History_Acc_EmailID" />
+          <ScalarProperty Name="History_Acc_MobileNumber" ColumnName="History_Acc_MobileNumber" />
+          <ScalarProperty Name="History_Acc_PhoneNumber" ColumnName="History_Acc_PhoneNumber" />
+          <ScalarProperty Name="History_Acc_CompanyLogo" ColumnName="History_Acc_CompanyLogo" />
+          <ScalarProperty Name="History_Acc_ActiveStatus" ColumnName="History_Acc_ActiveStatus" />
+          <ScalarProperty Name="History_Acc_Version" ColumnName="History_Acc_Version" />
+          <ScalarProperty Name="History_Acc_CreatedDate" ColumnName="History_Acc_CreatedDate" />
+          <ScalarProperty Name="History_Acc_CreatedBy" ColumnName="History_Acc_CreatedBy" />
+          <ScalarProperty Name="History_Acc_ModifiedDate" ColumnName="History_Acc_ModifiedDate" />
+          <ScalarProperty Name="History_Acc_ModifiedBy" ColumnName="History_Acc_ModifiedBy" />
+          <ScalarProperty Name="History_Acc_isDeleted" ColumnName="History_Acc_isDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="History_LeaveComments">
+      <EntityTypeMapping TypeName="Model.History_LeaveComments">
+        <MappingFragment StoreEntitySet="History_LeaveComments">
+          <ScalarProperty Name="History_CommentId" ColumnName="History_CommentId" />
+          <ScalarProperty Name="Usrl_LeaveId" ColumnName="Usrl_LeaveId" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="managerid" ColumnName="managerid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="History_LeaveScheme">
+      <EntityTypeMapping TypeName="Model.History_LeaveScheme">
+        <MappingFragment StoreEntitySet="History_LeaveScheme">
+          <ScalarProperty Name="History_LeaveScheme_ID" ColumnName="History_LeaveScheme_ID" />
+          <ScalarProperty Name="History_LSchm_LeaveSchemeID" ColumnName="History_LSchm_LeaveSchemeID" />
+          <ScalarProperty Name="History_LSchm_LeaveTypeID" ColumnName="History_LSchm_LeaveTypeID" />
+          <ScalarProperty Name="History_LSchm_UserTypeID" ColumnName="History_LSchm_UserTypeID" />
+          <ScalarProperty Name="History_LSchm_LeaveFrequency" ColumnName="History_LSchm_LeaveFrequency" />
+          <ScalarProperty Name="History_LSchm_AccountID" ColumnName="History_LSchm_AccountID" />
+          <ScalarProperty Name="History_LSchm_LeaveSchemeCode" ColumnName="History_LSchm_LeaveSchemeCode" />
+          <ScalarProperty Name="History_LSchm_LeaveScheme" ColumnName="History_LSchm_LeaveScheme" />
+          <ScalarProperty Name="History_LSchm_LeaveSchemeDescription" ColumnName="History_LSchm_LeaveSchemeDescription" />
+          <ScalarProperty Name="History_LSchm_LeaveCount" ColumnName="History_LSchm_LeaveCount" />
+          <ScalarProperty Name="History_LSchm_ActiveStatus" ColumnName="History_LSchm_ActiveStatus" />
+          <ScalarProperty Name="History_LSchm_Version" ColumnName="History_LSchm_Version" />
+          <ScalarProperty Name="History_LSchm_CreatedDate" ColumnName="History_LSchm_CreatedDate" />
+          <ScalarProperty Name="History_LSchm_CreatedBy" ColumnName="History_LSchm_CreatedBy" />
+          <ScalarProperty Name="History_LSchm_ModifiedDate" ColumnName="History_LSchm_ModifiedDate" />
+          <ScalarProperty Name="History_LSchm_ModifiedBy" ColumnName="History_LSchm_ModifiedBy" />
+          <ScalarProperty Name="History_LSchm_isDeleted" ColumnName="History_LSchm_isDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="History_LeaveType">
+      <EntityTypeMapping TypeName="Model.History_LeaveType">
+        <MappingFragment StoreEntitySet="History_LeaveType">
+          <ScalarProperty Name="History_LeaveType_ID" ColumnName="History_LeaveType_ID" />
+          <ScalarProperty Name="History_LTyp_LeaveTypeID" ColumnName="History_LTyp_LeaveTypeID" />
+          <ScalarProperty Name="History_LTyp_AccountID" ColumnName="History_LTyp_AccountID" />
+          <ScalarProperty Name="History_LTyp_LeaveType" ColumnName="History_LTyp_LeaveType" />
+          <ScalarProperty Name="History_LTyp_LeaveTypeDescription" ColumnName="History_LTyp_LeaveTypeDescription" />
+          <ScalarProperty Name="History_LTyp_ActiveStatus" ColumnName="History_LTyp_ActiveStatus" />
+          <ScalarProperty Name="History_LTyp_Version" ColumnName="History_LTyp_Version" />
+          <ScalarProperty Name="History_LTyp_CreatedDate" ColumnName="History_LTyp_CreatedDate" />
+          <ScalarProperty Name="History_LTyp_CreatedBy" ColumnName="History_LTyp_CreatedBy" />
+          <ScalarProperty Name="History_LTyp_ModifiedDate" ColumnName="History_LTyp_ModifiedDate" />
+          <ScalarProperty Name="History_LTyp_ModifiedBy" ColumnName="History_LTyp_ModifiedBy" />
+          <ScalarProperty Name="History_LTyp_isDeleted" ColumnName="History_LTyp_isDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="History_Projects">
+      <EntityTypeMapping TypeName="Model.History_Projects">
+        <MappingFragment StoreEntitySet="History_Projects">
+          <ScalarProperty Name="History_Project_ID" ColumnName="History_Project_ID" />
+          <ScalarProperty Name="History_Proj_ProjectID" ColumnName="History_Proj_ProjectID" />
+          <ScalarProperty Name="History_Proj_AccountID" ColumnName="History_Proj_AccountID" />
+          <ScalarProperty Name="History_Proj_ProjectCode" ColumnName="History_Proj_ProjectCode" />
+          <ScalarProperty Name="History_Proj_ProjectName" ColumnName="History_Proj_ProjectName" />
+          <ScalarProperty Name="History_Proj_ProjectDescription" ColumnName="History_Proj_ProjectDescription" />
+          <ScalarProperty Name="History_Proj_StartDate" ColumnName="History_Proj_StartDate" />
+          <ScalarProperty Name="History_Proj_EndDate" ColumnName="History_Proj_EndDate" />
+          <ScalarProperty Name="History_Proj_ActiveStatus" ColumnName="History_Proj_ActiveStatus" />
+          <ScalarProperty Name="History_Proj_Version" ColumnName="History_Proj_Version" />
+          <ScalarProperty Name="History_Proj_CreatedDate" ColumnName="History_Proj_CreatedDate" />
+          <ScalarProperty Name="History_Proj_CreatedBy" ColumnName="History_Proj_CreatedBy" />
+          <ScalarProperty Name="History_Proj_ModifiedDate" ColumnName="History_Proj_ModifiedDate" />
+          <ScalarProperty Name="History_Proj_ModifiedBy" ColumnName="History_Proj_ModifiedBy" />
+          <ScalarProperty Name="History_Proj_isDeleted" ColumnName="History_Proj_isDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="History_Role">
+      <EntityTypeMapping TypeName="Model.History_Role">
+        <MappingFragment StoreEntitySet="History_Role">
+          <ScalarProperty Name="History_Role_ID" ColumnName="History_Role_ID" />
+          <ScalarProperty Name="History_Rol_RoleID" ColumnName="History_Rol_RoleID" />
+          <ScalarProperty Name="History_Rol_AccountID" ColumnName="History_Rol_AccountID" />
+          <ScalarProperty Name="History_Rol_RoleCode" ColumnName="History_Rol_RoleCode" />
+          <ScalarProperty Name="History_Rol_RoleName" ColumnName="History_Rol_RoleName" />
+          <ScalarProperty Name="History_Rol_RoleDescription" ColumnName="History_Rol_RoleDescription" />
+          <ScalarProperty Name="History_Rol_ActiveStatus" ColumnName="History_Rol_ActiveStatus" />
+          <ScalarProperty Name="History_Rol_Version" ColumnName="History_Rol_Version" />
+          <ScalarProperty Name="History_Rol_CreatedDate" ColumnName="History_Rol_CreatedDate" />
+          <ScalarProperty Name="History_Rol_createdBy" ColumnName="History_Rol_createdBy" />
+          <ScalarProperty Name="History_Rol_ModifiedDate" ColumnName="History_Rol_ModifiedDate" />
+          <ScalarProperty Name="History_Rol_ModifiedBy" ColumnName="History_Rol_ModifiedBy" />
+          <ScalarProperty Name="History_Rol_isDeleted" ColumnName="History_Rol_isDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="History_UserProjects">
+      <EntityTypeMapping TypeName="Model.History_UserProjects">
+        <MappingFragment StoreEntitySet="History_UserProjects">
+          <ScalarProperty Name="HUProj_UserProjectID" ColumnName="HUProj_UserProjectID" />
+          <ScalarProperty Name="HUProj_ProjectID" ColumnName="HUProj_ProjectID" />
+          <ScalarProperty Name="HUProj_UserID" ColumnName="HUProj_UserID" />
+          <ScalarProperty Name="HUProj_StartDate" ColumnName="HUProj_StartDate" />
+          <ScalarProperty Name="HUProj_EndDate" ColumnName="HUProj_EndDate" />
+          <ScalarProperty Name="HUProj_ParticipationPercentage" ColumnName="HUProj_ParticipationPercentage" />
+          <ScalarProperty Name="HUProj_ActiveStatus" ColumnName="HUProj_ActiveStatus" />
+          <ScalarProperty Name="HUProj_Version" ColumnName="HUProj_Version" />
+          <ScalarProperty Name="HUProj_CreatedDate" ColumnName="HUProj_CreatedDate" />
+          <ScalarProperty Name="HUProj_CreatedBy" ColumnName="HUProj_CreatedBy" />
+          <ScalarProperty Name="HUProj_ModifiedDate" ColumnName="HUProj_ModifiedDate" />
+          <ScalarProperty Name="HUProj_ModifiedBy" ColumnName="HUProj_ModifiedBy" />
+          <ScalarProperty Name="HUProj_isDeleted" ColumnName="HUProj_isDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="History_Users">
+      <EntityTypeMapping TypeName="Model.History_Users">
+        <MappingFragment StoreEntitySet="History_Users">
+          <ScalarProperty Name="History_User_ID" ColumnName="History_User_ID" />
+          <ScalarProperty Name="History_Usr_UserID" ColumnName="History_Usr_UserID" />
+          <ScalarProperty Name="History_Usr_AccountID" ColumnName="History_Usr_AccountID" />
+          <ScalarProperty Name="History_Usr_UserTypeID" ColumnName="History_Usr_UserTypeID" />
+          <ScalarProperty Name="History_Usr_RoleID" ColumnName="History_Usr_RoleID" />
+          <ScalarProperty Name="History_Usr_Manager" ColumnName="History_Usr_Manager" />
+          <ScalarProperty Name="History_Usr_Manager2" ColumnName="History_Usr_Manager2" />
+          <ScalarProperty Name="History_Usr_Username" ColumnName="History_Usr_Username" />
+          <ScalarProperty Name="History_Usr_LoginId" ColumnName="History_Usr_LoginId" />
+          <ScalarProperty Name="History_Usr_Password" ColumnName="History_Usr_Password" />
+          <ScalarProperty Name="History_Usr_ActiveStatus" ColumnName="History_Usr_ActiveStatus" />
+          <ScalarProperty Name="History_Usr_TaskID" ColumnName="History_Usr_TaskID" />
+          <ScalarProperty Name="History_Usr_Version" ColumnName="History_Usr_Version" />
+          <ScalarProperty Name="History_Usr_CreatedDate" ColumnName="History_Usr_CreatedDate" />
+          <ScalarProperty Name="History_Usr_CreatedBy" ColumnName="History_Usr_CreatedBy" />
+          <ScalarProperty Name="History_Usr_ModifiedDate" ColumnName="History_Usr_ModifiedDate" />
+          <ScalarProperty Name="History_Usr_ModifiedBy" ColumnName="History_Usr_ModifiedBy" />
+          <ScalarProperty Name="History_Usr_isDeleted" ColumnName="History_Usr_isDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="History_UserType">
+      <EntityTypeMapping TypeName="Model.History_UserType">
+        <MappingFragment StoreEntitySet="History_UserType">
+          <ScalarProperty Name="History_UserType_ID" ColumnName="History_UserType_ID" />
+          <ScalarProperty Name="History_UsT_UserTypeID" ColumnName="History_UsT_UserTypeID" />
+          <ScalarProperty Name="History_AccountID" ColumnName="History_AccountID" />
+          <ScalarProperty Name="History_UsT_UserTypeCode" ColumnName="History_UsT_UserTypeCode" />
+          <ScalarProperty Name="History_UsT_UserType" ColumnName="History_UsT_UserType" />
+          <ScalarProperty Name="History_UsT_UserTypeDescription" ColumnName="History_UsT_UserTypeDescription" />
+          <ScalarProperty Name="History_UsT_ActiveStatus" ColumnName="History_UsT_ActiveStatus" />
+          <ScalarProperty Name="History_UsT_Version" ColumnName="History_UsT_Version" />
+          <ScalarProperty Name="History_UsT_CreatedDate" ColumnName="History_UsT_CreatedDate" />
+          <ScalarProperty Name="History_UsT_CreatedBy" ColumnName="History_UsT_CreatedBy" />
+          <ScalarProperty Name="History_UsT_ModifiedDate" ColumnName="History_UsT_ModifiedDate" />
+          <ScalarProperty Name="History_UsT_ModifiedBy" ColumnName="History_UsT_ModifiedBy" />
+          <ScalarProperty Name="History_UsT_isDeleted" ColumnName="History_UsT_isDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="History_WFHComments">
+      <EntityTypeMapping TypeName="Model.History_WFHComments">
+        <MappingFragment StoreEntitySet="History_WFHComments">
+          <ScalarProperty Name="History_WFHCommentId" ColumnName="History_WFHCommentId" />
+          <ScalarProperty Name="UserwfhID" ColumnName="UserwfhID" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="managerid" ColumnName="managerid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HolidayCalendars">
+      <EntityTypeMapping TypeName="Model.HolidayCalendar">
+        <MappingFragment StoreEntitySet="HolidayCalendar">
+          <ScalarProperty Name="HolidayCalendarID" ColumnName="HolidayCalendarID" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="HolidayName" ColumnName="HolidayName" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="HolidayDate" ColumnName="HolidayDate" />
+          <ScalarProperty Name="isOptionalHoliday" ColumnName="isOptionalHoliday" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="CL_ProjectID" ColumnName="CL_ProjectID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Interview_Position_TechnologyStack">
+      <EntityTypeMapping TypeName="Model.Interview_Position_TechnologyStack">
+        <MappingFragment StoreEntitySet="Interview_Position_TechnologyStack">
+          <ScalarProperty Name="IPID" ColumnName="IPID" />
+          <ScalarProperty Name="TechnologyStack_Id" ColumnName="TechnologyStack_Id" />
+          <ScalarProperty Name="Assessment_For_Position_Positionid" ColumnName="Assessment_For_Position_Positionid" />
+          <ScalarProperty Name="No_of_Questions" ColumnName="No_of_Questions" />
+          <ScalarProperty Name="Assessment_TimePeriod_in_sec" ColumnName="Assessment_TimePeriod_in_sec" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InterviewCandidates">
+      <EntityTypeMapping TypeName="Model.InterviewCandidate">
+        <MappingFragment StoreEntitySet="InterviewCandidate">
+          <ScalarProperty Name="ICID" ColumnName="ICID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Emailid" ColumnName="Emailid" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Assessment_For_Positionid" ColumnName="Assessment_For_Positionid" />
+          <ScalarProperty Name="RecrutementUserid" ColumnName="RecrutementUserid" />
+          <ScalarProperty Name="AssessmentDate" ColumnName="AssessmentDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="AssessmentTime" ColumnName="AssessmentTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Issuetypes">
+      <EntityTypeMapping TypeName="Model.Issuetype">
+        <MappingFragment StoreEntitySet="Issuetypes">
+          <ScalarProperty Name="ITID" ColumnName="ITID" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeaveSchemes">
+      <EntityTypeMapping TypeName="Model.LeaveScheme">
+        <MappingFragment StoreEntitySet="LeaveScheme">
+          <ScalarProperty Name="LSchm_LeaveSchemeID" ColumnName="LSchm_LeaveSchemeID" />
+          <ScalarProperty Name="LSchm_LeaveTypeID" ColumnName="LSchm_LeaveTypeID" />
+          <ScalarProperty Name="LSchm_UserTypeID" ColumnName="LSchm_UserTypeID" />
+          <ScalarProperty Name="LSchm_LeaveFrequency" ColumnName="LSchm_LeaveFrequency" />
+          <ScalarProperty Name="LSchm_AccountID" ColumnName="LSchm_AccountID" />
+          <ScalarProperty Name="LSchm_LeaveSchemeCode" ColumnName="LSchm_LeaveSchemeCode" />
+          <ScalarProperty Name="LSchm_LeaveScheme" ColumnName="LSchm_LeaveScheme" />
+          <ScalarProperty Name="LSchm_LeaveSchemeDescription" ColumnName="LSchm_LeaveSchemeDescription" />
+          <ScalarProperty Name="LSchm_LeaveCount" ColumnName="LSchm_LeaveCount" />
+          <ScalarProperty Name="LSchm_ActiveStatus" ColumnName="LSchm_ActiveStatus" />
+          <ScalarProperty Name="LSchm_Version" ColumnName="LSchm_Version" />
+          <ScalarProperty Name="LSchm_CreatedDate" ColumnName="LSchm_CreatedDate" />
+          <ScalarProperty Name="LSchm_CreatedBy" ColumnName="LSchm_CreatedBy" />
+          <ScalarProperty Name="LSchm_ModifiedDate" ColumnName="LSchm_ModifiedDate" />
+          <ScalarProperty Name="LSchm_ModifiedBy" ColumnName="LSchm_ModifiedBy" />
+          <ScalarProperty Name="LSchm_isDeleted" ColumnName="LSchm_isDeleted" />
+          <ScalarProperty Name="FinancialYearId" ColumnName="FinancialYearId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeaveStatus">
+      <EntityTypeMapping TypeName="Model.LeaveStatu">
+        <MappingFragment StoreEntitySet="LeaveStatus">
+          <ScalarProperty Name="L_StatusId" ColumnName="L_StatusId" />
+          <ScalarProperty Name="L_Status" ColumnName="L_Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeaveTypes">
+      <EntityTypeMapping TypeName="Model.LeaveType">
+        <MappingFragment StoreEntitySet="LeaveType">
+          <ScalarProperty Name="LTyp_LeaveTypeID" ColumnName="LTyp_LeaveTypeID" />
+          <ScalarProperty Name="LTyp_AccountID" ColumnName="LTyp_AccountID" />
+          <ScalarProperty Name="LTyp_LeaveType" ColumnName="LTyp_LeaveType" />
+          <ScalarProperty Name="LTyp_LeaveTypeDescription" ColumnName="LTyp_LeaveTypeDescription" />
+          <ScalarProperty Name="LTyp_ActiveStatus" ColumnName="LTyp_ActiveStatus" />
+          <ScalarProperty Name="LTyp_Version" ColumnName="LTyp_Version" />
+          <ScalarProperty Name="LTyp_CreatedDate" ColumnName="LTyp_CreatedDate" />
+          <ScalarProperty Name="LTyp_CreatedBy" ColumnName="LTyp_CreatedBy" />
+          <ScalarProperty Name="LTyp_ModifiedDate" ColumnName="LTyp_ModifiedDate" />
+          <ScalarProperty Name="LTyp_ModifiedBy" ColumnName="LTyp_ModifiedBy" />
+          <ScalarProperty Name="LTyp_isDeleted" ColumnName="LTyp_isDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Master_Module">
+      <EntityTypeMapping TypeName="Model.Master_Module">
+        <MappingFragment StoreEntitySet="Master_Module">
+          <ScalarProperty Name="Mod_ModuleID" ColumnName="Mod_ModuleID" />
+          <ScalarProperty Name="Mod_ModuleCode" ColumnName="Mod_ModuleCode" />
+          <ScalarProperty Name="Mod_ModuleName" ColumnName="Mod_ModuleName" />
+          <ScalarProperty Name="Mod_Description" ColumnName="Mod_Description" />
+          <ScalarProperty Name="Mod_ActiveStatus" ColumnName="Mod_ActiveStatus" />
+          <ScalarProperty Name="Mod_Version" ColumnName="Mod_Version" />
+          <ScalarProperty Name="Mod_CreatedDate" ColumnName="Mod_CreatedDate" />
+          <ScalarProperty Name="Mod_CreatedBy" ColumnName="Mod_CreatedBy" />
+          <ScalarProperty Name="Mod_ModifiedDate" ColumnName="Mod_ModifiedDate" />
+          <ScalarProperty Name="Mod_ModifiedBy" ColumnName="Mod_ModifiedBy" />
+          <ScalarProperty Name="Mod_isDeleted" ColumnName="Mod_isDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Master_Sub_Module">
+      <EntityTypeMapping TypeName="Model.Master_Sub_Module">
+        <MappingFragment StoreEntitySet="Master_Sub_Module">
+          <ScalarProperty Name="Sub_ModuleID" ColumnName="Sub_ModuleID" />
+          <ScalarProperty Name="Mod_ModuleID" ColumnName="Mod_ModuleID" />
+          <ScalarProperty Name="Sub_ModuleCode" ColumnName="Sub_ModuleCode" />
+          <ScalarProperty Name="Sub_ModuleName" ColumnName="Sub_ModuleName" />
+          <ScalarProperty Name="Sub_Description" ColumnName="Sub_Description" />
+          <ScalarProperty Name="Sub_ActiveStatus" ColumnName="Sub_ActiveStatus" />
+          <ScalarProperty Name="Sub_Version" ColumnName="Sub_Version" />
+          <ScalarProperty Name="Sub_CreatedDate" ColumnName="Sub_CreatedDate" />
+          <ScalarProperty Name="Sub_CreatedBy" ColumnName="Sub_CreatedBy" />
+          <ScalarProperty Name="Sub_ModifiedDate" ColumnName="Sub_ModifiedDate" />
+          <ScalarProperty Name="Sub_ModifiedBy" ColumnName="Sub_ModifiedBy" />
+          <ScalarProperty Name="Sub_isDeleted" ColumnName="Sub_isDeleted" />
+          <ScalarProperty Name="Orderby" ColumnName="Orderby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Master_TimesheetMode">
+      <EntityTypeMapping TypeName="Model.Master_TimesheetMode">
+        <MappingFragment StoreEntitySet="Master_TimesheetMode">
+          <ScalarProperty Name="TimesheetMode_id" ColumnName="TimesheetMode_id" />
+          <ScalarProperty Name="TimeModeName" ColumnName="TimeModeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MobileNotificationTemplates">
+      <EntityTypeMapping TypeName="Model.MobileNotificationTemplate">
+        <MappingFragment StoreEntitySet="MobileNotificationTemplate">
+          <ScalarProperty Name="MobileNotificationId" ColumnName="MobileNotificationId" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Acc_AccountID" ColumnName="Acc_AccountID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModuleAccessTypes">
+      <EntityTypeMapping TypeName="Model.ModuleAccessType">
+        <MappingFragment StoreEntitySet="ModuleAccessType">
+          <ScalarProperty Name="ModuleAccessTypeID" ColumnName="ModuleAccessTypeID" />
+          <ScalarProperty Name="ModuleAccessType1" ColumnName="ModuleAccessType" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NewsBoards">
+      <EntityTypeMapping TypeName="Model.NewsBoard">
+        <MappingFragment StoreEntitySet="NewsBoard">
+          <ScalarProperty Name="NewsBoardId" ColumnName="NewsBoardId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="News_Status" ColumnName="News_Status" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayModes">
+      <EntityTypeMapping TypeName="Model.PayMode">
+        <MappingFragment StoreEntitySet="PayMode">
+          <ScalarProperty Name="PayModeID" ColumnName="PayModeID" />
+          <ScalarProperty Name="PayMode1" ColumnName="PayMode" />
+          <ScalarProperty Name="PayModeDescription" ColumnName="PayModeDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Phases">
+      <EntityTypeMapping TypeName="Model.Phase">
+        <MappingFragment StoreEntitySet="Phases">
+          <ScalarProperty Name="PhaseId" ColumnName="PhaseId" />
+          <ScalarProperty Name="PhaseTitle" ColumnName="PhaseTitle" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Policies">
+      <EntityTypeMapping TypeName="Model.Policy">
+        <MappingFragment StoreEntitySet="Policies">
+          <ScalarProperty Name="PolicyId" ColumnName="PolicyId" />
+          <ScalarProperty Name="PolicyTitle" ColumnName="PolicyTitle" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="Is_Css" ColumnName="Is_Css" />
+          <ScalarProperty Name="PolicyDescription" ColumnName="PolicyDescription" />
+          <ScalarProperty Name="Pol_ActiveStatus" ColumnName="Pol_ActiveStatus" />
+          <ScalarProperty Name="Pol_CreatedDate" ColumnName="Pol_CreatedDate" />
+          <ScalarProperty Name="Pol_CreatedBy" ColumnName="Pol_CreatedBy" />
+          <ScalarProperty Name="Pol_ModifiedDate" ColumnName="Pol_ModifiedDate" />
+          <ScalarProperty Name="Pol_ModifiedBy" ColumnName="Pol_ModifiedBy" />
+          <ScalarProperty Name="Pol_isDeleted" ColumnName="Pol_isDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Project_workstatus">
+      <EntityTypeMapping TypeName="Model.Project_workstatus">
+        <MappingFragment StoreEntitySet="Project_workstatus">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="FromDT" ColumnName="FromDT" />
+          <ScalarProperty Name="ToDT" ColumnName="ToDT" />
+          <ScalarProperty Name="PercentageCompleted" ColumnName="PercentageCompleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectPhases">
+      <EntityTypeMapping TypeName="Model.ProjectPhas">
+        <MappingFragment StoreEntitySet="ProjectPhases">
+          <ScalarProperty Name="Proj_PhaseId" ColumnName="Proj_PhaseId" />
+          <ScalarProperty Name="PhaseId" ColumnName="PhaseId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Actual_StartDate" ColumnName="Actual_StartDate" />
+          <ScalarProperty Name="Actual_EndDate" ColumnName="Actual_EndDate" />
+          <ScalarProperty Name="Plan_StartDate" ColumnName="Plan_StartDate" />
+          <ScalarProperty Name="Plan_EndDate" ColumnName="Plan_EndDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projects">
+      <EntityTypeMapping TypeName="Model.Project">
+        <MappingFragment StoreEntitySet="Projects">
+          <ScalarProperty Name="Proj_ProjectID" ColumnName="Proj_ProjectID" />
+          <ScalarProperty Name="Proj_AccountID" ColumnName="Proj_AccountID" />
+          <ScalarProperty Name="Proj_ClientName" ColumnName="Proj_ClientName" />
+          <ScalarProperty Name="Proj_ProjectCode" ColumnName="Proj_ProjectCode" />
+          <ScalarProperty Name="Proj_ProjectName" ColumnName="Proj_ProjectName" />
+          <ScalarProperty Name="Proj_ProjectDescription" ColumnName="Proj_ProjectDescription" />
+          <ScalarProperty Name="Plan_StartDate" ColumnName="Plan_StartDate" />
+          <ScalarProperty Name="Plan_EndDate" ColumnName="Plan_EndDate" />
+          <ScalarProperty Name="Proj_ActiveStatus" ColumnName="Proj_ActiveStatus" />
+          <ScalarProperty Name="Proj_Version" ColumnName="Proj_Version" />
+          <ScalarProperty Name="Proj_CreatedDate" ColumnName="Proj_CreatedDate" />
+          <ScalarProperty Name="Proj_CreatedBy" ColumnName="Proj_CreatedBy" />
+          <ScalarProperty Name="Proj_ModifiedDate" ColumnName="Proj_ModifiedDate" />
+          <ScalarProperty Name="Proj_ModifiedBy" ColumnName="Proj_ModifiedBy" />
+          <ScalarProperty Name="Proj_isDeleted" ColumnName="Proj_isDeleted" />
+          <ScalarProperty Name="Actual_StartDate" ColumnName="Actual_StartDate" />
+          <ScalarProperty Name="Actual_EndDate" ColumnName="Actual_EndDate" />
+          <ScalarProperty Name="Is_Timesheet_ProjectSpecific" ColumnName="Is_Timesheet_ProjectSpecific" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="WebUrl" ColumnName="WebUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectSpecificTasks">
+      <EntityTypeMapping TypeName="Model.ProjectSpecificTask">
+        <MappingFragment StoreEntitySet="ProjectSpecificTasks">
+          <ScalarProperty Name="Proj_SpecificTaskId" ColumnName="Proj_SpecificTaskId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Proj_SpecificTaskName" ColumnName="Proj_SpecificTaskName" />
+          <ScalarProperty Name="RTMId" ColumnName="RTMId" />
+          <ScalarProperty Name="Actual_StartDate" ColumnName="Actual_StartDate" />
+          <ScalarProperty Name="Actual_EndDate" ColumnName="Actual_EndDate" />
+          <ScalarProperty Name="Plan_StartDate" ColumnName="Plan_StartDate" />
+          <ScalarProperty Name="Plan_EndDate" ColumnName="Plan_EndDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="tsk_TaskID" ColumnName="tsk_TaskID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuestionBanks">
+      <EntityTypeMapping TypeName="Model.QuestionBank">
+        <MappingFragment StoreEntitySet="QuestionBank">
+          <ScalarProperty Name="QBID" ColumnName="QBID" />
+          <ScalarProperty Name="TechnologyStackId" ColumnName="TechnologyStackId" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Option1" ColumnName="Option1" />
+          <ScalarProperty Name="Option2" ColumnName="Option2" />
+          <ScalarProperty Name="Option3" ColumnName="Option3" />
+          <ScalarProperty Name="Option4" ColumnName="Option4" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoleModules">
+      <EntityTypeMapping TypeName="Model.RoleModule">
+        <MappingFragment StoreEntitySet="RoleModules">
+          <ScalarProperty Name="RMod_RoleModuleID" ColumnName="RMod_RoleModuleID" />
+          <ScalarProperty Name="RMod_AccountID" ColumnName="RMod_AccountID" />
+          <ScalarProperty Name="RMod_RoleID" ColumnName="RMod_RoleID" />
+          <ScalarProperty Name="Sub_ModuleID" ColumnName="Sub_ModuleID" />
+          <ScalarProperty Name="ModuleAccessTypeID" ColumnName="ModuleAccessTypeID" />
+          <ScalarProperty Name="RMod_ActiveStatus" ColumnName="RMod_ActiveStatus" />
+          <ScalarProperty Name="RMod_Version" ColumnName="RMod_Version" />
+          <ScalarProperty Name="RMod_CreatedDate" ColumnName="RMod_CreatedDate" />
+          <ScalarProperty Name="RMod_CreatedBy" ColumnName="RMod_CreatedBy" />
+          <ScalarProperty Name="RMod_ModifiedDate" ColumnName="RMod_ModifiedDate" />
+          <ScalarProperty Name="RMod_ModifiedBy" ColumnName="RMod_ModifiedBy" />
+          <ScalarProperty Name="RMod_isDeleted" ColumnName="RMod_isDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="Model.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="Rol_RoleID" ColumnName="Rol_RoleID" />
+          <ScalarProperty Name="Rol_AccountID" ColumnName="Rol_AccountID" />
+          <ScalarProperty Name="Rol_RoleCode" ColumnName="Rol_RoleCode" />
+          <ScalarProperty Name="Rol_RoleName" ColumnName="Rol_RoleName" />
+          <ScalarProperty Name="Rol_RoleDescription" ColumnName="Rol_RoleDescription" />
+          <ScalarProperty Name="Rol_ActiveStatus" ColumnName="Rol_ActiveStatus" />
+          <ScalarProperty Name="Rol_Version" ColumnName="Rol_Version" />
+          <ScalarProperty Name="Rol_CreatedDate" ColumnName="Rol_CreatedDate" />
+          <ScalarProperty Name="Rol_createdBy" ColumnName="Rol_createdBy" />
+          <ScalarProperty Name="Rol_ModifiedDate" ColumnName="Rol_ModifiedDate" />
+          <ScalarProperty Name="Rol_ModifiedBy" ColumnName="Rol_ModifiedBy" />
+          <ScalarProperty Name="Rol_isDeleted" ColumnName="Rol_isDeleted" />
+          <ScalarProperty Name="IsManagerRole" ColumnName="IsManagerRole" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalarySlipDetails">
+      <EntityTypeMapping TypeName="Model.SalarySlipDetail">
+        <MappingFragment StoreEntitySet="SalarySlipDetails">
+          <ScalarProperty Name="SalarySlipDetailID" ColumnName="SalarySlipDetailID" />
+          <ScalarProperty Name="EmpssdetailId" ColumnName="EmpssdetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Skills">
+      <EntityTypeMapping TypeName="Model.Skill">
+        <MappingFragment StoreEntitySet="Skills">
+          <ScalarProperty Name="SkillId" ColumnName="SkillId" />
+          <ScalarProperty Name="SkillTitle" ColumnName="SkillTitle" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+          <ScalarProperty Name="Sk_CreatedDate" ColumnName="Sk_CreatedDate" />
+          <ScalarProperty Name="Sk_CreatedBy" ColumnName="Sk_CreatedBy" />
+          <ScalarProperty Name="Sk_ModifiedDate" ColumnName="Sk_ModifiedDate" />
+          <ScalarProperty Name="Sk_ModifiedBy" ColumnName="Sk_ModifiedBy" />
+          <ScalarProperty Name="Sk_isDeleted" ColumnName="Sk_isDeleted" />
+          <ScalarProperty Name="Acc_AccountID" ColumnName="Acc_AccountID" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SocialMedias">
+      <EntityTypeMapping TypeName="Model.SocialMedia">
+        <MappingFragment StoreEntitySet="SocialMedia">
+          <ScalarProperty Name="SocialMediaId" ColumnName="SocialMediaId" />
+          <ScalarProperty Name="Sm_AccountID" ColumnName="Sm_AccountID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="Sm_CreatedDate" ColumnName="Sm_CreatedDate" />
+          <ScalarProperty Name="Sm_CreatedBy" ColumnName="Sm_CreatedBy" />
+          <ScalarProperty Name="Sm_ModifiedDate" ColumnName="Sm_ModifiedDate" />
+          <ScalarProperty Name="Sm_ModifiedBy" ColumnName="Sm_ModifiedBy" />
+          <ScalarProperty Name="Sm_isDeleted" ColumnName="Sm_isDeleted" />
+          <ScalarProperty Name="Sm_ActiveStatus" ColumnName="Sm_ActiveStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="States">
+      <EntityTypeMapping TypeName="Model.State">
+        <MappingFragment StoreEntitySet="States">
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="Countryid" ColumnName="Countryid" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubPolicies">
+      <EntityTypeMapping TypeName="Model.SubPolicy">
+        <MappingFragment StoreEntitySet="SubPolicy">
+          <ScalarProperty Name="SubPolicyId" ColumnName="SubPolicyId" />
+          <ScalarProperty Name="PolicyId" ColumnName="PolicyId" />
+          <ScalarProperty Name="SubPolicyTitle" ColumnName="SubPolicyTitle" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="Is_Css" ColumnName="Is_Css" />
+          <ScalarProperty Name="Purpose" ColumnName="Purpose" />
+          <ScalarProperty Name="SPol_ActiveStatus" ColumnName="SPol_ActiveStatus" />
+          <ScalarProperty Name="SPol_CreatedDate" ColumnName="SPol_CreatedDate" />
+          <ScalarProperty Name="SPol_CreatedBy" ColumnName="SPol_CreatedBy" />
+          <ScalarProperty Name="SPol_ModifiedDate" ColumnName="SPol_ModifiedDate" />
+          <ScalarProperty Name="SPol_ModifiedBy" ColumnName="SPol_ModifiedBy" />
+          <ScalarProperty Name="SPol_isDeleted" ColumnName="SPol_isDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubPolicyDocuments">
+      <EntityTypeMapping TypeName="Model.SubPolicyDocument">
+        <MappingFragment StoreEntitySet="SubPolicyDocument">
+          <ScalarProperty Name="SubPolicyDocumentId" ColumnName="SubPolicyDocumentId" />
+          <ScalarProperty Name="SubPolicyId" ColumnName="SubPolicyId" />
+          <ScalarProperty Name="SubPolicyDocumenTitle" ColumnName="SubPolicyDocumenTitle" />
+          <ScalarProperty Name="DocumentTypeId" ColumnName="DocumentTypeId" />
+          <ScalarProperty Name="ContentTypeId" ColumnName="ContentTypeId" />
+          <ScalarProperty Name="DocumentTitle" ColumnName="DocumentTitle" />
+          <ScalarProperty Name="DocumentFile" ColumnName="DocumentFile" />
+          <ScalarProperty Name="SubP_ActiveStatus" ColumnName="SubP_ActiveStatus" />
+          <ScalarProperty Name="SubP_CreatedDate" ColumnName="SubP_CreatedDate" />
+          <ScalarProperty Name="SubP_CreatedBy" ColumnName="SubP_CreatedBy" />
+          <ScalarProperty Name="SubP_ModifiedDate" ColumnName="SubP_ModifiedDate" />
+          <ScalarProperty Name="SubP_ModifiedBy" ColumnName="SubP_ModifiedBy" />
+          <ScalarProperty Name="SubP_isDeleted" ColumnName="SubP_isDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaskDetails">
+      <EntityTypeMapping TypeName="Model.TaskDetail">
+        <MappingFragment StoreEntitySet="TaskDetails">
+          <ScalarProperty Name="TaskDetailsID" ColumnName="TaskDetailsID" />
+          <ScalarProperty Name="TimesheetID" ColumnName="TimesheetID" />
+          <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+          <ScalarProperty Name="HoursWorked" ColumnName="HoursWorked" />
+          <ScalarProperty Name="TaskDate" ColumnName="TaskDate" />
+          <ScalarProperty Name="Proj_SpecificTaskId" ColumnName="Proj_SpecificTaskId" />
+          <ScalarProperty Name="projectid" ColumnName="projectid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TechnologyStacks">
+      <EntityTypeMapping TypeName="Model.TechnologyStack">
+        <MappingFragment StoreEntitySet="TechnologyStack">
+          <ScalarProperty Name="TID" ColumnName="TID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TicketImages">
+      <EntityTypeMapping TypeName="Model.TicketImage">
+        <MappingFragment StoreEntitySet="TicketImages">
+          <ScalarProperty Name="TIID" ColumnName="TIID" />
+          <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+          <ScalarProperty Name="TicketId" ColumnName="TicketId" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TicketPriorities">
+      <EntityTypeMapping TypeName="Model.TicketPriority">
+        <MappingFragment StoreEntitySet="TicketPriority">
+          <ScalarProperty Name="TPID" ColumnName="TPID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tickets">
+      <EntityTypeMapping TypeName="Model.Ticket">
+        <MappingFragment StoreEntitySet="Tickets">
+          <ScalarProperty Name="TID" ColumnName="TID" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TypeOfIssue" ColumnName="TypeOfIssue" />
+          <ScalarProperty Name="Ticket_raise_date" ColumnName="Ticket_raise_date" />
+          <ScalarProperty Name="Ticket_Forecast_date" ColumnName="Ticket_Forecast_date" />
+          <ScalarProperty Name="Ticket_Closed_date" ColumnName="Ticket_Closed_date" />
+          <ScalarProperty Name="ClosedBy" ColumnName="ClosedBy" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TicketsAuthorities">
+      <EntityTypeMapping TypeName="Model.TicketsAuthority">
+        <MappingFragment StoreEntitySet="TicketsAuthority">
+          <ScalarProperty Name="TAID" ColumnName="TAID" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIMESHEETs">
+      <EntityTypeMapping TypeName="Model.TIMESHEET">
+        <MappingFragment StoreEntitySet="TIMESHEET">
+          <ScalarProperty Name="TimesheetID" ColumnName="TimesheetID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="TaskDate" ColumnName="TaskDate" />
+          <ScalarProperty Name="TimesheetMonth" ColumnName="TimesheetMonth" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+          <ScalarProperty Name="SubmittedDate" ColumnName="SubmittedDate" />
+          <ScalarProperty Name="SubmittedType" ColumnName="SubmittedType" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="L1_Manager" ColumnName="L1_Manager" />
+          <ScalarProperty Name="L1_ApproverStatus" ColumnName="L1_ApproverStatus" />
+          <ScalarProperty Name="L1_ApproverDate" ColumnName="L1_ApproverDate" />
+          <ScalarProperty Name="L1_RejectedDate" ColumnName="L1_RejectedDate" />
+          <ScalarProperty Name="L2_Manager" ColumnName="L2_Manager" />
+          <ScalarProperty Name="L2_ApproverStatus" ColumnName="L2_ApproverStatus" />
+          <ScalarProperty Name="L2_ApproverDate" ColumnName="L2_ApproverDate" />
+          <ScalarProperty Name="L2_RejectedDate" ColumnName="L2_RejectedDate" />
+          <ScalarProperty Name="DeviceTypeId" ColumnName="DeviceTypeId" />
+          <ScalarProperty Name="ByWeeklyStartDate" ColumnName="ByWeeklyStartDate" />
+          <ScalarProperty Name="ByWeeklyEndDate" ColumnName="ByWeeklyEndDate" />
+          <ScalarProperty Name="ClientProjtId" ColumnName="ClientProjtId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Timesheet_Comments">
+      <EntityTypeMapping TypeName="Model.Timesheet_Comments">
+        <MappingFragment StoreEntitySet="Timesheet_Comments">
+          <ScalarProperty Name="Timesheet_CommentId" ColumnName="Timesheet_CommentId" />
+          <ScalarProperty Name="Timesheetid" ColumnName="Timesheetid" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="managerid_L1" ColumnName="managerid_L1" />
+          <ScalarProperty Name="managerid_L2" ColumnName="managerid_L2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserDevicesTokens">
+      <EntityTypeMapping TypeName="Model.UserDevicesToken">
+        <MappingFragment StoreEntitySet="UserDevicesToken">
+          <ScalarProperty Name="UdTokenID" ColumnName="UdTokenID" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="TokenID" ColumnName="TokenID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserGenders">
+      <EntityTypeMapping TypeName="Model.UserGender">
+        <MappingFragment StoreEntitySet="UserGender">
+          <ScalarProperty Name="Usr_GenderId" ColumnName="Usr_GenderId" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Acc_AccountID" ColumnName="Acc_AccountID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserLeaves">
+      <EntityTypeMapping TypeName="Model.UserLeaf">
+        <MappingFragment StoreEntitySet="UserLeaves">
+          <ScalarProperty Name="Usrl_LeaveId" ColumnName="Usrl_LeaveId" />
+          <ScalarProperty Name="Usrl_UserId" ColumnName="Usrl_UserId" />
+          <ScalarProperty Name="LeaveStartDate" ColumnName="LeaveStartDate" />
+          <ScalarProperty Name="LeaveEndDate" ColumnName="LeaveEndDate" />
+          <ScalarProperty Name="Tot_No_Days" ColumnName="Tot_No_Days" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="L_StatusId" ColumnName="L_StatusId" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="RejectedDate" ColumnName="RejectedDate" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="RejectedBy" ColumnName="RejectedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="OnHoldDate" ColumnName="OnHoldDate" />
+          <ScalarProperty Name="OnHoldBy" ColumnName="OnHoldBy" />
+          <ScalarProperty Name="isoptionalholiday" ColumnName="isoptionalholiday" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="CL_Projectid" ColumnName="CL_Projectid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserLeaveTypeConsumeds">
+      <EntityTypeMapping TypeName="Model.UserLeaveTypeConsumed">
+        <MappingFragment StoreEntitySet="UserLeaveTypeConsumed">
+          <ScalarProperty Name="Usrlt_TypeConsumeId" ColumnName="Usrlt_TypeConsumeId" />
+          <ScalarProperty Name="Usrl_LeaveId" ColumnName="Usrl_LeaveId" />
+          <ScalarProperty Name="LSchm_LeaveSchemeID" ColumnName="LSchm_LeaveSchemeID" />
+          <ScalarProperty Name="No_Of_Days" ColumnName="No_Of_Days" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserProjectEngagements">
+      <EntityTypeMapping TypeName="Model.UserProjectEngagement">
+        <MappingFragment StoreEntitySet="UserProjectEngagement">
+          <ScalarProperty Name="UserProj_EngId" ColumnName="UserProj_EngId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="tsk_TaskID" ColumnName="tsk_TaskID" />
+          <ScalarProperty Name="Proj_SpecificTaskId" ColumnName="Proj_SpecificTaskId" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserProjects">
+      <EntityTypeMapping TypeName="Model.UserProject">
+        <MappingFragment StoreEntitySet="UserProjects">
+          <ScalarProperty Name="UProj_UserProjectID" ColumnName="UProj_UserProjectID" />
+          <ScalarProperty Name="UProj_ProjectID" ColumnName="UProj_ProjectID" />
+          <ScalarProperty Name="UProj_UserID" ColumnName="UProj_UserID" />
+          <ScalarProperty Name="UProj_StartDate" ColumnName="UProj_StartDate" />
+          <ScalarProperty Name="UProj_EndDate" ColumnName="UProj_EndDate" />
+          <ScalarProperty Name="UProj_ParticipationPercentage" ColumnName="UProj_ParticipationPercentage" />
+          <ScalarProperty Name="UProj_ActiveStatus" ColumnName="UProj_ActiveStatus" />
+          <ScalarProperty Name="UProj_Version" ColumnName="UProj_Version" />
+          <ScalarProperty Name="UProj_CreatedDate" ColumnName="UProj_CreatedDate" />
+          <ScalarProperty Name="UProj_CreatedBy" ColumnName="UProj_CreatedBy" />
+          <ScalarProperty Name="UProj_ModifiedDate" ColumnName="UProj_ModifiedDate" />
+          <ScalarProperty Name="UProj_ModifiedBy" ColumnName="UProj_ModifiedBy" />
+          <ScalarProperty Name="UProj_isDeleted" ColumnName="UProj_isDeleted" />
+          <ScalarProperty Name="UProj_L1_ManagerId" ColumnName="UProj_L1_ManagerId" />
+          <ScalarProperty Name="UProj_L2_ManagerId" ColumnName="UProj_L2_ManagerId" />
+          <ScalarProperty Name="Is_L1_Manager" ColumnName="Is_L1_Manager" />
+          <ScalarProperty Name="Is_L2_Manager" ColumnName="Is_L2_Manager" />
+          <ScalarProperty Name="ClientprojID" ColumnName="ClientprojID" />
+          <ScalarProperty Name="TimesheetMode" ColumnName="TimesheetMode" />
+          <ScalarProperty Name="IsDirectManager" ColumnName="IsDirectManager" />
+          <ScalarProperty Name="isclientcalendar" ColumnName="isclientcalendar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="Model.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Usr_UserID" ColumnName="Usr_UserID" />
+          <ScalarProperty Name="Usr_AccountID" ColumnName="Usr_AccountID" />
+          <ScalarProperty Name="Usr_UserTypeID" ColumnName="Usr_UserTypeID" />
+          <ScalarProperty Name="Usr_RoleID" ColumnName="Usr_RoleID" />
+          <ScalarProperty Name="Usr_Username" ColumnName="Usr_Username" />
+          <ScalarProperty Name="Usr_LoginId" ColumnName="Usr_LoginId" />
+          <ScalarProperty Name="Usr_Password" ColumnName="Usr_Password" />
+          <ScalarProperty Name="Usr_ActiveStatus" ColumnName="Usr_ActiveStatus" />
+          <ScalarProperty Name="Usr_TaskID" ColumnName="Usr_TaskID" />
+          <ScalarProperty Name="Usr_Version" ColumnName="Usr_Version" />
+          <ScalarProperty Name="Usr_salt" ColumnName="Usr_salt" />
+          <ScalarProperty Name="Usr_Manager" ColumnName="Usr_Manager" />
+          <ScalarProperty Name="Usr_Manager2" ColumnName="Usr_Manager2" />
+          <ScalarProperty Name="Usr_CreatedDate" ColumnName="Usr_CreatedDate" />
+          <ScalarProperty Name="Usr_CreatedBy" ColumnName="Usr_CreatedBy" />
+          <ScalarProperty Name="Usr_ModifiedDate" ColumnName="Usr_ModifiedDate" />
+          <ScalarProperty Name="Usr_ModifiedBy" ColumnName="Usr_ModifiedBy" />
+          <ScalarProperty Name="Usr_isDeleted" ColumnName="Usr_isDeleted" />
+          <ScalarProperty Name="Url_token" ColumnName="Url_token" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserSalaryCalculations">
+      <EntityTypeMapping TypeName="Model.UserSalaryCalculation">
+        <MappingFragment StoreEntitySet="UserSalaryCalculations">
+          <ScalarProperty Name="UserSalaryCalculationsId" ColumnName="UserSalaryCalculationsId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="HireType" ColumnName="HireType" />
+          <ScalarProperty Name="VisaType" ColumnName="VisaType" />
+          <ScalarProperty Name="AnnualSalary" ColumnName="AnnualSalary" />
+          <ScalarProperty Name="AnnualSalaryPerhour" ColumnName="AnnualSalaryPerhour" />
+          <ScalarProperty Name="PayrollTaxes" ColumnName="PayrollTaxes" />
+          <ScalarProperty Name="PayrollTaxesPerHour" ColumnName="PayrollTaxesPerHour" />
+          <ScalarProperty Name="H1BFee" ColumnName="H1BFee" />
+          <ScalarProperty Name="H1BFeePerHour" ColumnName="H1BFeePerHour" />
+          <ScalarProperty Name="GCFee" ColumnName="GCFee" />
+          <ScalarProperty Name="GCFeePerHour" ColumnName="GCFeePerHour" />
+          <ScalarProperty Name="Insurance" ColumnName="Insurance" />
+          <ScalarProperty Name="InsurancePerHour" ColumnName="InsurancePerHour" />
+          <ScalarProperty Name="C2WeeksPaidVocation" ColumnName="2WeeksPaidVocation" />
+          <ScalarProperty Name="C2WeeksPaidVocationPerHour" ColumnName="2WeeksPaidVocationPerHour" />
+          <ScalarProperty Name="Holidays" ColumnName="Holidays" />
+          <ScalarProperty Name="HolidaysPerHour" ColumnName="HolidaysPerHour" />
+          <ScalarProperty Name="AdministrativeCost" ColumnName="AdministrativeCost" />
+          <ScalarProperty Name="AdministrativeCostPerHour" ColumnName="AdministrativeCostPerHour" />
+          <ScalarProperty Name="Relocation" ColumnName="Relocation" />
+          <ScalarProperty Name="RelocationPerHour" ColumnName="RelocationPerHour" />
+          <ScalarProperty Name="PaidBench" ColumnName="PaidBench" />
+          <ScalarProperty Name="PaidBenchPerHour" ColumnName="PaidBenchPerHour" />
+          <ScalarProperty Name="Bonus" ColumnName="Bonus" />
+          <ScalarProperty Name="BonusPerHour" ColumnName="BonusPerHour" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsersForProjects">
+      <EntityTypeMapping TypeName="Model.UsersForProject">
+        <MappingFragment StoreEntitySet="UsersForProjects">
+          <ScalarProperty Name="Ufp_UsersForProjectsID" ColumnName="Ufp_UsersForProjectsID" />
+          <ScalarProperty Name="Ufp_ProjectID" ColumnName="Ufp_ProjectID" />
+          <ScalarProperty Name="Ufp_UserID" ColumnName="Ufp_UserID" />
+          <ScalarProperty Name="Ufp_StartDate" ColumnName="Ufp_StartDate" />
+          <ScalarProperty Name="Ufp_EndDate" ColumnName="Ufp_EndDate" />
+          <ScalarProperty Name="Ufp_ParticipationPercentage" ColumnName="Ufp_ParticipationPercentage" />
+          <ScalarProperty Name="Ufp_ActiveStatus" ColumnName="Ufp_ActiveStatus" />
+          <ScalarProperty Name="Ufp_Version" ColumnName="Ufp_Version" />
+          <ScalarProperty Name="Ufp_CreatedDate" ColumnName="Ufp_CreatedDate" />
+          <ScalarProperty Name="Ufp_CreatedBy" ColumnName="Ufp_CreatedBy" />
+          <ScalarProperty Name="Ufp_ModifiedDate" ColumnName="Ufp_ModifiedDate" />
+          <ScalarProperty Name="Ufp_ModifiedBy" ColumnName="Ufp_ModifiedBy" />
+          <ScalarProperty Name="Ufp_isDeleted" ColumnName="Ufp_isDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserSkills">
+      <EntityTypeMapping TypeName="Model.UserSkill">
+        <MappingFragment StoreEntitySet="UserSkills">
+          <ScalarProperty Name="Usr_SkillId" ColumnName="Usr_SkillId" />
+          <ScalarProperty Name="Usr_UserId" ColumnName="Usr_UserId" />
+          <ScalarProperty Name="SkillId" ColumnName="SkillId" />
+          <ScalarProperty Name="Experience" ColumnName="Experience" />
+          <ScalarProperty Name="Usk_CreatedDate" ColumnName="Usk_CreatedDate" />
+          <ScalarProperty Name="Usk_ModifiedDate" ColumnName="Usk_ModifiedDate" />
+          <ScalarProperty Name="Is_Deleted" ColumnName="Is_Deleted" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserSocialMediaProfiles">
+      <EntityTypeMapping TypeName="Model.UserSocialMediaProfile">
+        <MappingFragment StoreEntitySet="UserSocialMediaProfiles">
+          <ScalarProperty Name="SocialMediaProfileId" ColumnName="SocialMediaProfileId" />
+          <ScalarProperty Name="Usmp_UserID" ColumnName="Usmp_UserID" />
+          <ScalarProperty Name="Usmp_SocialMediaId" ColumnName="Usmp_SocialMediaId" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="Usmp_CreatedDate" ColumnName="Usmp_CreatedDate" />
+          <ScalarProperty Name="Usmp_ModifiedDate" ColumnName="Usmp_ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsersProfiles">
+      <EntityTypeMapping TypeName="Model.UsersProfile">
+        <MappingFragment StoreEntitySet="UsersProfile">
+          <ScalarProperty Name="UsrP_UserProfileID" ColumnName="UsrP_UserProfileID" />
+          <ScalarProperty Name="UsrP_UserID" ColumnName="UsrP_UserID" />
+          <ScalarProperty Name="UsrP_FirstName" ColumnName="UsrP_FirstName" />
+          <ScalarProperty Name="UsrP_LastName" ColumnName="UsrP_LastName" />
+          <ScalarProperty Name="UsrP_EmployeeID" ColumnName="UsrP_EmployeeID" />
+          <ScalarProperty Name="UsrP_EmailID" ColumnName="UsrP_EmailID" />
+          <ScalarProperty Name="Usrp_MobileNumber" ColumnName="Usrp_MobileNumber" />
+          <ScalarProperty Name="Usrp_CountryCode" ColumnName="Usrp_CountryCode" />
+          <ScalarProperty Name="Usrp_ProfilePicture" ColumnName="Usrp_ProfilePicture" />
+          <ScalarProperty Name="UsrP_DOB" ColumnName="UsrP_DOB" />
+          <ScalarProperty Name="UsrP_ActiveStatus" ColumnName="UsrP_ActiveStatus" />
+          <ScalarProperty Name="UsrP_Version" ColumnName="UsrP_Version" />
+          <ScalarProperty Name="UsrP_CreatedDate" ColumnName="UsrP_CreatedDate" />
+          <ScalarProperty Name="UsrP_CreatedBy" ColumnName="UsrP_CreatedBy" />
+          <ScalarProperty Name="UsrP_ModifiedDate" ColumnName="UsrP_ModifiedDate" />
+          <ScalarProperty Name="UsrP_ModifiedBy" ColumnName="UsrP_ModifiedBy" />
+          <ScalarProperty Name="UsrP_isDeleted" ColumnName="UsrP_isDeleted" />
+          <ScalarProperty Name="Usr_Titleid" ColumnName="Usr_Titleid" />
+          <ScalarProperty Name="Usr_GenderId" ColumnName="Usr_GenderId" />
+          <ScalarProperty Name="Marital_Status" ColumnName="Marital_Status" />
+          <ScalarProperty Name="PermanentAddress" ColumnName="PermanentAddress" />
+          <ScalarProperty Name="TemporaryAddress" ColumnName="TemporaryAddress" />
+          <ScalarProperty Name="passcode" ColumnName="passcode" />
+          <ScalarProperty Name="Usrp_DOJ" ColumnName="Usrp_DOJ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserTitles">
+      <EntityTypeMapping TypeName="Model.UserTitle">
+        <MappingFragment StoreEntitySet="UserTitle">
+          <ScalarProperty Name="Usr_Titleid" ColumnName="Usr_Titleid" />
+          <ScalarProperty Name="TitlePrefix" ColumnName="TitlePrefix" />
+          <ScalarProperty Name="Acc_AccountID" ColumnName="Acc_AccountID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserTypes">
+      <EntityTypeMapping TypeName="Model.UserType">
+        <MappingFragment StoreEntitySet="UserType">
+          <ScalarProperty Name="UsT_UserTypeID" ColumnName="UsT_UserTypeID" />
+          <ScalarProperty Name="UsT_AccountID" ColumnName="UsT_AccountID" />
+          <ScalarProperty Name="UsT_UserTypeCode" ColumnName="UsT_UserTypeCode" />
+          <ScalarProperty Name="UsT_UserType" ColumnName="UsT_UserType" />
+          <ScalarProperty Name="UsT_UserTypeDescription" ColumnName="UsT_UserTypeDescription" />
+          <ScalarProperty Name="UsT_ActiveStatus" ColumnName="UsT_ActiveStatus" />
+          <ScalarProperty Name="UsT_Version" ColumnName="UsT_Version" />
+          <ScalarProperty Name="UsT_CreatedDate" ColumnName="UsT_CreatedDate" />
+          <ScalarProperty Name="UsT_CreatedBy" ColumnName="UsT_CreatedBy" />
+          <ScalarProperty Name="UsT_ModifiedDate" ColumnName="UsT_ModifiedDate" />
+          <ScalarProperty Name="UsT_ModifiedBy" ColumnName="UsT_ModifiedBy" />
+          <ScalarProperty Name="UsT_isDeleted" ColumnName="UsT_isDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserworkfromHomes">
+      <EntityTypeMapping TypeName="Model.UserworkfromHome">
+        <MappingFragment StoreEntitySet="UserworkfromHome">
+          <ScalarProperty Name="UserwfhID" ColumnName="UserwfhID" />
+          <ScalarProperty Name="Usrl_UserId" ColumnName="Usrl_UserId" />
+          <ScalarProperty Name="UserwfhStartDate" ColumnName="UserwfhStartDate" />
+          <ScalarProperty Name="UserwfhEndDate" ColumnName="UserwfhEndDate" />
+          <ScalarProperty Name="Tot_No_Days" ColumnName="Tot_No_Days" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="L_StatusId" ColumnName="L_StatusId" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="RejectedDate" ColumnName="RejectedDate" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="RejectedBy" ColumnName="RejectedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Is_WorkFromHome" ColumnName="Is_WorkFromHome" />
+          <ScalarProperty Name="OnHoldDate" ColumnName="OnHoldDate" />
+          <ScalarProperty Name="OnHoldBy" ColumnName="OnHoldBy" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="CL_Projectid" ColumnName="CL_Projectid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USSalaryComponents">
+      <EntityTypeMapping TypeName="Model.USSalaryComponent">
+        <MappingFragment StoreEntitySet="USSalaryComponents">
+          <ScalarProperty Name="USSalaryComponentID" ColumnName="USSalaryComponentID" />
+          <ScalarProperty Name="USSalaryComponent1" ColumnName="USSalaryComponent" />
+          <ScalarProperty Name="USSalaryComponentValue" ColumnName="USSalaryComponentValue" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VisaTypes">
+      <EntityTypeMapping TypeName="Model.VisaType">
+        <MappingFragment StoreEntitySet="VisaType">
+          <ScalarProperty Name="VisaTypeID" ColumnName="VisaTypeID" />
+          <ScalarProperty Name="VisaType1" ColumnName="VisaType" />
+          <ScalarProperty Name="VisaTypeShortForm" ColumnName="VisaTypeShortForm" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RequestMessages">
+      <EntityTypeMapping TypeName="Model.RequestMessage">
+        <MappingFragment StoreEntitySet="RequestMessages">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="database_firewall_rules">
+      <EntityTypeMapping TypeName="Model.database_firewall_rules">
+        <MappingFragment StoreEntitySet="database_firewall_rules">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="start_ip_address" ColumnName="start_ip_address" />
+          <ScalarProperty Name="end_ip_address" ColumnName="end_ip_address" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="Model.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionName="Model.Store.DateRange_To_Table" FunctionImportName="DateRange_To_Table">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.DateRange_To_Table_Result">
+          <ScalarProperty Name="WeekDate" ColumnName="WeekDate" />
+          <ScalarProperty Name="WeekDateName" ColumnName="WeekDateName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Model.Store.fn_CountWeekDays" FunctionImportName="fn_CountWeekDays">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.fn_CountWeekDays_Result">
+          <ScalarProperty Name="NoOfWeekDays" ColumnName="NoOfWeekDays" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Model.Store.SplitString" FunctionImportName="SplitString">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.SplitString_Result">
+          <ScalarProperty Name="Item" ColumnName="Item" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Model.Store.udf_weeks_of_month" FunctionImportName="udf_weeks_of_month">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.udf_weeks_of_month_Result">
+          <ScalarProperty Name="WeekOfMonth" ColumnName="WeekOfMonth" />
+          <ScalarProperty Name="Week" ColumnName="Week" />
+          <ScalarProperty Name="WeekStart" ColumnName="WeekStart" />
+          <ScalarProperty Name="WeekEnd" ColumnName="WeekEnd" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AddorEditUsersProfileByUser" FunctionName="Model.Store.AddorEditUsersProfileByUser" />
+    <FunctionImportMapping FunctionImportName="AddSubmitTaskDetails" FunctionName="Model.Store.AddSubmitTaskDetails" />
+    <FunctionImportMapping FunctionImportName="AddSubmitTimesheetWeb" FunctionName="Model.Store.AddSubmitTimesheetWeb" />
+    <FunctionImportMapping FunctionImportName="AddSubmitTimesheetWebByWeekly" FunctionName="Model.Store.AddSubmitTimesheetWebByWeekly" />
+    <FunctionImportMapping FunctionImportName="AddTimesheet_Comments" FunctionName="Model.Store.AddTimesheet_Comments">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.AddTimesheet_Comments_Result">
+          <ScalarProperty Name="Usr_UserID" ColumnName="Usr_UserID" />
+          <ScalarProperty Name="Usr_AccountID" ColumnName="Usr_AccountID" />
+          <ScalarProperty Name="Usr_UserTypeID" ColumnName="Usr_UserTypeID" />
+          <ScalarProperty Name="Usr_RoleID" ColumnName="Usr_RoleID" />
+          <ScalarProperty Name="Usr_Username" ColumnName="Usr_Username" />
+          <ScalarProperty Name="Usr_LoginId" ColumnName="Usr_LoginId" />
+          <ScalarProperty Name="Usr_Password" ColumnName="Usr_Password" />
+          <ScalarProperty Name="Usr_ActiveStatus" ColumnName="Usr_ActiveStatus" />
+          <ScalarProperty Name="Usr_TaskID" ColumnName="Usr_TaskID" />
+          <ScalarProperty Name="Usr_Version" ColumnName="Usr_Version" />
+          <ScalarProperty Name="Usr_salt" ColumnName="Usr_salt" />
+          <ScalarProperty Name="Usr_Manager" ColumnName="Usr_Manager" />
+          <ScalarProperty Name="Usr_Manager2" ColumnName="Usr_Manager2" />
+          <ScalarProperty Name="Usr_CreatedDate" ColumnName="Usr_CreatedDate" />
+          <ScalarProperty Name="Usr_CreatedBy" ColumnName="Usr_CreatedBy" />
+          <ScalarProperty Name="Usr_ModifiedDate" ColumnName="Usr_ModifiedDate" />
+          <ScalarProperty Name="Usr_ModifiedBy" ColumnName="Usr_ModifiedBy" />
+          <ScalarProperty Name="Usr_isDeleted" ColumnName="Usr_isDeleted" />
+          <ScalarProperty Name="Url_token" ColumnName="Url_token" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Admin_WebGetTimeSheetforApproval" FunctionName="Model.Store.Admin_WebGetTimeSheetforApproval">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.Admin_WebGetTimeSheetforApproval_Result">
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="TimesheetID" ColumnName="TimesheetID" />
+          <ScalarProperty Name="MonthYearName" ColumnName="MonthYearName" />
+          <ScalarProperty Name="WorkedHours" ColumnName="WorkedHours" />
+          <ScalarProperty Name="TimesheetType" ColumnName="TimesheetType" />
+          <ScalarProperty Name="MonthYearName1" ColumnName="MonthYearName1" />
+          <ScalarProperty Name="ByWeeklyStartDate" ColumnName="ByWeeklyStartDate" />
+          <ScalarProperty Name="ByWeeklyEndDate" ColumnName="ByWeeklyEndDate" />
+          <ScalarProperty Name="TimesheetDuration" ColumnName="TimesheetDuration" />
+          <ScalarProperty Name="Companyworkinghours" ColumnName="Companyworkinghours" />
+          <ScalarProperty Name="Proj_ProjectName" ColumnName="Proj_ProjectName" />
+          <ScalarProperty Name="Proj_ProjectID" ColumnName="Proj_ProjectID" />
+          <ScalarProperty Name="ResultSubmitStatus" ColumnName="ResultSubmitStatus" />
+          <ScalarProperty Name="modifieddate" ColumnName="modifieddate" />
+          <ScalarProperty Name="Usr_Username" ColumnName="Usr_Username" />
+          <ScalarProperty Name="L1_ManagerName" ColumnName="L1_ManagerName" />
+          <ScalarProperty Name="L2_ManagerName" ColumnName="L2_ManagerName" />
+          <ScalarProperty Name="UProj_L1_ManagerId" ColumnName="UProj_L1_ManagerId" />
+          <ScalarProperty Name="UProj_L2_ManagerId" ColumnName="UProj_L2_ManagerId" />
+          <ScalarProperty Name="SubmittedDate" ColumnName="SubmittedDate" />
+          <ScalarProperty Name="L1_ApproverDate" ColumnName="L1_ApproverDate" />
+          <ScalarProperty Name="TimesheetMonth" ColumnName="TimesheetMonth" />
+          <ScalarProperty Name="ByMonthlyDates" ColumnName="ByMonthlyDates" />
+          <ScalarProperty Name="FinalStatus" ColumnName="FinalStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AlexaCheckStatus" FunctionName="Model.Store.AlexaCheckStatus" />
+    <FunctionImportMapping FunctionImportName="AlexaGetUserDetails" FunctionName="Model.Store.AlexaGetUserDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.AlexaGetUserDetails_Result">
+          <ScalarProperty Name="Usr_UserID" ColumnName="Usr_UserID" />
+          <ScalarProperty Name="UsrP_FirstName" ColumnName="UsrP_FirstName" />
+          <ScalarProperty Name="UsrP_LastName" ColumnName="UsrP_LastName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AlexaGetUsers" FunctionName="Model.Store.AlexaGetUsers">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.AlexaGetUsers_Result">
+          <ScalarProperty Name="Usr_UserID" ColumnName="Usr_UserID" />
+          <ScalarProperty Name="UsrP_FirstName" ColumnName="UsrP_FirstName" />
+          <ScalarProperty Name="UsrP_LastName" ColumnName="UsrP_LastName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AlexaGetWorkingHours" FunctionName="Model.Store.AlexaGetWorkingHours" />
+    <FunctionImportMapping FunctionImportName="AlexaGetWorkingHoursDetails" FunctionName="Model.Store.AlexaGetWorkingHoursDetails" />
+    <FunctionImportMapping FunctionImportName="AlexaSubmitTimesheet" FunctionName="Model.Store.AlexaSubmitTimesheet" />
+    <FunctionImportMapping FunctionImportName="AlexaSubmitTimesheetdetails" FunctionName="Model.Store.AlexaSubmitTimesheetdetails" />
+    <FunctionImportMapping FunctionImportName="AlexaValidatePasscode" FunctionName="Model.Store.AlexaValidatePasscode" />
+    <FunctionImportMapping FunctionImportName="AlexavalidatePhone" FunctionName="Model.Store.AlexavalidatePhone" />
+    <FunctionImportMapping FunctionImportName="AlexavalidatePin" FunctionName="Model.Store.AlexavalidatePin" />
+    <FunctionImportMapping FunctionImportName="AlexaValidateUser" FunctionName="Model.Store.AlexaValidateUser" />
+    <FunctionImportMapping FunctionImportName="AlexaWakeUp" FunctionName="Model.Store.AlexaWakeUp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.AlexaWakeUp_Result">
+          <ScalarProperty Name="UsrP_FirstName" ColumnName="UsrP_FirstName" />
+          <ScalarProperty Name="UsrP_LastName" ColumnName="UsrP_LastName" />
+          <ScalarProperty Name="Usrp_MobileNumber" ColumnName="Usrp_MobileNumber" />
+          <ScalarProperty Name="Titleprefix" ColumnName="Titleprefix" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AlexaWakeUpProc" FunctionName="Model.Store.AlexaWakeUpProc">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.AlexaWakeUpProc_Result">
+          <ScalarProperty Name="UsrP_FirstName" ColumnName="UsrP_FirstName" />
+          <ScalarProperty Name="UsrP_LastName" ColumnName="UsrP_LastName" />
+          <ScalarProperty Name="Usrp_MobileNumber" ColumnName="Usrp_MobileNumber" />
+          <ScalarProperty Name="Titleprefix" ColumnName="Titleprefix" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Assessmenttechnology" FunctionName="Model.Store.Assessmenttechnology">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.Assessmenttechnology_Result">
+          <ScalarProperty Name="TID" ColumnName="TID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Assessment_For_Position_Positionid" ColumnName="Assessment_For_Position_Positionid" />
+          <ScalarProperty Name="ischecked" ColumnName="ischecked" />
+          <ScalarProperty Name="No_of_Questions" ColumnName="No_of_Questions" />
+          <ScalarProperty Name="Assessment_TimePeriod_in_sec" ColumnName="Assessment_TimePeriod_in_sec" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ax_GetManagerEmailIds" FunctionName="Model.Store.Ax_GetManagerEmailIds">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.Ax_GetManagerEmailIds_Result">
+          <ScalarProperty Name="ManagerLevel1" ColumnName="ManagerLevel1" />
+          <ScalarProperty Name="ManagerLevel2" ColumnName="ManagerLevel2" />
+          <ScalarProperty Name="Acc_EmailID" ColumnName="Acc_EmailID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserEmailid" ColumnName="UserEmailid" />
+          <ScalarProperty Name="L1_ManagerID" ColumnName="L1_ManagerID" />
+          <ScalarProperty Name="L2_ManagerID" ColumnName="L2_ManagerID" />
+          <ScalarProperty Name="Usr_AccountID" ColumnName="Usr_AccountID" />
+          <ScalarProperty Name="L1_ManagerName" ColumnName="L1_ManagerName" />
+          <ScalarProperty Name="L2_ManagerName" ColumnName="L2_ManagerName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Ax_getTimeSheetEmailDetails" FunctionName="Model.Store.Ax_getTimeSheetEmailDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.Ax_getTimeSheetEmailDetails_Result">
+          <ScalarProperty Name="TimesheetId" ColumnName="TimesheetId" />
+          <ScalarProperty Name="TimesheetMonth" ColumnName="TimesheetMonth" />
+          <ScalarProperty Name="TimesheetMonthforMail" ColumnName="TimesheetMonthforMail" />
+          <ScalarProperty Name="Usr_UserID" ColumnName="Usr_UserID" />
+          <ScalarProperty Name="Employee_Name" ColumnName="Employee Name" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="Proj_ClientName" ColumnName="Proj_ClientName" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="SubmittedDate" ColumnName="SubmittedDate" />
+          <ScalarProperty Name="TotalWorkingHours" ColumnName="TotalWorkingHours" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AX_GetUsersTimeSheetDetails" FunctionName="Model.Store.AX_GetUsersTimeSheetDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.AX_GetUsersTimeSheetDetails_Result">
+          <ScalarProperty Name="Proj_ProjectID" ColumnName="Proj_ProjectID" />
+          <ScalarProperty Name="Proj_ClientName" ColumnName="Proj_ClientName" />
+          <ScalarProperty Name="Proj_ProjectName" ColumnName="Proj_ProjectName" />
+          <ScalarProperty Name="TotalWeekDays" ColumnName="TotalWeekDays" />
+          <ScalarProperty Name="CompanyDeclaredHolidays" ColumnName="CompanyDeclaredHolidays" />
+          <ScalarProperty Name="TotalWorkingDays" ColumnName="TotalWorkingDays" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ByMonthly_WebGetTimeSheetforApproval" FunctionName="Model.Store.ByMonthly_WebGetTimeSheetforApproval">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.ByMonthly_WebGetTimeSheetforApproval_Result">
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+          <ScalarProperty Name="TimesheetID" ColumnName="TimesheetID" />
+          <ScalarProperty Name="MonthYearName" ColumnName="MonthYearName" />
+          <ScalarProperty Name="ByWeeklyStartDate" ColumnName="ByWeeklyStartDate" />
+          <ScalarProperty Name="ByWeeklyEndDate" ColumnName="ByWeeklyEndDate" />
+          <ScalarProperty Name="WorkedHours" ColumnName="WorkedHours" />
+          <ScalarProperty Name="Proj_ProjectID" ColumnName="Proj_ProjectID" />
+          <ScalarProperty Name="Proj_ProjectName" ColumnName="Proj_ProjectName" />
+          <ScalarProperty Name="ClientProjtId" ColumnName="ClientProjtId" />
+          <ScalarProperty Name="ResultSubmitStatus" ColumnName="ResultSubmitStatus" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="modifieddate" ColumnName="modifieddate" />
+          <ScalarProperty Name="Usr_Username" ColumnName="Usr_Username" />
+          <ScalarProperty Name="L1_ManagerName" ColumnName="L1_ManagerName" />
+          <ScalarProperty Name="L2_ManagerName" ColumnName="L2_ManagerName" />
+          <ScalarProperty Name="SubmittedDate" ColumnName="SubmittedDate" />
+          <ScalarProperty Name="L1_ApproverDate" ColumnName="L1_ApproverDate" />
+          <ScalarProperty Name="L2_ApproverDate" ColumnName="L2_ApproverDate" />
+          <ScalarProperty Name="TimesheetMonth" ColumnName="TimesheetMonth" />
+          <ScalarProperty Name="UProj_L1_ManagerId" ColumnName="UProj_L1_ManagerId" />
+          <ScalarProperty Name="UProj_L2_ManagerId" ColumnName="UProj_L2_ManagerId" />
+          <ScalarProperty Name="Companyworkinghours" ColumnName="Companyworkinghours" />
+          <ScalarProperty Name="ByMonthlyDates" ColumnName="ByMonthlyDates" />
+          <ScalarProperty Name="FinalStatus" ColumnName="FinalStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ByMonthly_WebGetTimeSheetforApproval15day" FunctionName="Model.Store.ByMonthly_WebGetTimeSheetforApproval15day">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.ByMonthly_WebGetTimeSheetforApproval15day_Result">
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+          <ScalarProperty Name="timesheetid" ColumnName="timesheetid" />
+          <ScalarProperty Name="monthyearname" ColumnName="monthyearname" />
+          <ScalarProperty Name="byweeklystartdate" ColumnName="byweeklystartdate" />
+          <ScalarProperty Name="byweeklyenddate" ColumnName="byweeklyenddate" />
+          <ScalarProperty Name="workedhours" ColumnName="workedhours" />
+          <ScalarProperty Name="proj_projectid" ColumnName="proj_projectid" />
+          <ScalarProperty Name="proj_projectname" ColumnName="proj_projectname" />
+          <ScalarProperty Name="clientprojtid" ColumnName="clientprojtid" />
+          <ScalarProperty Name="ClientProjTitle" ColumnName="ClientProjTitle" />
+          <ScalarProperty Name="timesheetmode" ColumnName="timesheetmode" />
+          <ScalarProperty Name="resultsubmitstatus" ColumnName="resultsubmitstatus" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="modifieddate" ColumnName="modifieddate" />
+          <ScalarProperty Name="usr_username" ColumnName="usr_username" />
+          <ScalarProperty Name="l1_managername" ColumnName="l1_managername" />
+          <ScalarProperty Name="l2_managername" ColumnName="l2_managername" />
+          <ScalarProperty Name="submitteddate" ColumnName="submitteddate" />
+          <ScalarProperty Name="l1_approverdate" ColumnName="l1_approverdate" />
+          <ScalarProperty Name="l2_approverdate" ColumnName="l2_approverdate" />
+          <ScalarProperty Name="timesheetmonth" ColumnName="timesheetmonth" />
+          <ScalarProperty Name="uproj_l1_managerid" ColumnName="uproj_l1_managerid" />
+          <ScalarProperty Name="uproj_l2_managerid" ColumnName="uproj_l2_managerid" />
+          <ScalarProperty Name="companyworkinghours" ColumnName="companyworkinghours" />
+          <ScalarProperty Name="ByMonthlyDates" ColumnName="ByMonthlyDates" />
+          <ScalarProperty Name="FinalStatus" ColumnName="FinalStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ByWeeklygetTimeSheetEmailDetails" FunctionName="Model.Store.ByWeeklygetTimeSheetEmailDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.ByWeeklygetTimeSheetEmailDetails_Result">
+          <ScalarProperty Name="TimesheetId" ColumnName="TimesheetId" />
+          <ScalarProperty Name="TimesheetMonth" ColumnName="TimesheetMonth" />
+          <ScalarProperty Name="TimesheetMonthforMail" ColumnName="TimesheetMonthforMail" />
+          <ScalarProperty Name="Usr_UserID" ColumnName="Usr_UserID" />
+          <ScalarProperty Name="Employee_Name" ColumnName="Employee Name" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="Proj_ClientName" ColumnName="Proj_ClientName" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="SubmittedDate" ColumnName="SubmittedDate" />
+          <ScalarProperty Name="TotalWorkingHours" ColumnName="TotalWorkingHours" />
+          <ScalarProperty Name="ClientProjtId" ColumnName="ClientProjtId" />
+          <ScalarProperty Name="TimesheetType" ColumnName="TimesheetType" />
+          <ScalarProperty Name="comments" ColumnName="comments" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ByWeeklyWebValidTimesheetMonthExits" FunctionName="Model.Store.ByWeeklyWebValidTimesheetMonthExits" />
+    <FunctionImportMapping FunctionImportName="ChangeOrUpdatePasswd" FunctionName="Model.Store.ChangeOrUpdatePasswd" />
+    <FunctionImportMapping FunctionImportName="CheckTimesheettypebyUserId" FunctionName="Model.Store.CheckTimesheettypebyUserId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.CheckTimesheettypebyUserId_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CreateDefaultRoles" FunctionName="Model.Store.CreateDefaultRoles" />
+    <FunctionImportMapping FunctionImportName="EditSubmitTaskDetails" FunctionName="Model.Store.EditSubmitTaskDetails" />
+    <FunctionImportMapping FunctionImportName="EditSubmitTimesheet" FunctionName="Model.Store.EditSubmitTimesheet" />
+    <FunctionImportMapping FunctionImportName="EditWeeklySubmitTaskDetails" FunctionName="Model.Store.EditWeeklySubmitTaskDetails" />
+    <FunctionImportMapping FunctionImportName="Get_ApprovedLeavesForUS" FunctionName="Model.Store.Get_ApprovedLeavesForUS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.Get_ApprovedLeavesForUS_Result">
+          <ScalarProperty Name="Usrl_UserId" ColumnName="Usrl_UserId" />
+          <ScalarProperty Name="LeaveStartDate" ColumnName="LeaveStartDate" />
+          <ScalarProperty Name="LeaveEndDate" ColumnName="LeaveEndDate" />
+          <ScalarProperty Name="Usrl_LeaveId" ColumnName="Usrl_LeaveId" />
+          <ScalarProperty Name="UsrP_FirstName" ColumnName="UsrP_FirstName" />
+          <ScalarProperty Name="UsrP_LastName" ColumnName="UsrP_LastName" />
+          <ScalarProperty Name="UProj_ProjectID" ColumnName="UProj_ProjectID" />
+          <ScalarProperty Name="L_StatusId" ColumnName="L_StatusId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GET_ClientProjectId_Basedon_TimesheetId" FunctionName="Model.Store.GET_ClientProjectId_Basedon_TimesheetId" />
+    <FunctionImportMapping FunctionImportName="Get_EmailsByProjectId" FunctionName="Model.Store.Get_EmailsByProjectId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.Get_EmailsByProjectId_Result">
+          <ScalarProperty Name="UProj_UserProjectID" ColumnName="UProj_UserProjectID" />
+          <ScalarProperty Name="UProj_ProjectID" ColumnName="UProj_ProjectID" />
+          <ScalarProperty Name="UProj_UserID" ColumnName="UProj_UserID" />
+          <ScalarProperty Name="UProj_StartDate" ColumnName="UProj_StartDate" />
+          <ScalarProperty Name="UProj_EndDate" ColumnName="UProj_EndDate" />
+          <ScalarProperty Name="UProj_ParticipationPercentage" ColumnName="UProj_ParticipationPercentage" />
+          <ScalarProperty Name="UProj_ActiveStatus" ColumnName="UProj_ActiveStatus" />
+          <ScalarProperty Name="UProj_Version" ColumnName="UProj_Version" />
+          <ScalarProperty Name="UProj_CreatedDate" ColumnName="UProj_CreatedDate" />
+          <ScalarProperty Name="UProj_CreatedBy" ColumnName="UProj_CreatedBy" />
+          <ScalarProperty Name="UProj_ModifiedDate" ColumnName="UProj_ModifiedDate" />
+          <ScalarProperty Name="UProj_ModifiedBy" ColumnName="UProj_ModifiedBy" />
+          <ScalarProperty Name="UProj_isDeleted" ColumnName="UProj_isDeleted" />
+          <ScalarProperty Name="UProj_L1_ManagerId" ColumnName="UProj_L1_ManagerId" />
+          <ScalarProperty Name="UProj_L2_ManagerId" ColumnName="UProj_L2_ManagerId" />
+          <ScalarProperty Name="Is_L1_Manager" ColumnName="Is_L1_Manager" />
+          <ScalarProperty Name="Is_L2_Manager" ColumnName="Is_L2_Manager" />
+          <ScalarProperty Name="ClientprojID" ColumnName="ClientprojID" />
+          <ScalarProperty Name="TimesheetMode" ColumnName="TimesheetMode" />
+          <ScalarProperty Name="IsDirectManager" ColumnName="IsDirectManager" />
+          <ScalarProperty Name="isclientcalendar" ColumnName="isclientcalendar" />
+          <ScalarProperty Name="UsrP_UserProfileID" ColumnName="UsrP_UserProfileID" />
+          <ScalarProperty Name="UsrP_UserID" ColumnName="UsrP_UserID" />
+          <ScalarProperty Name="UsrP_FirstName" ColumnName="UsrP_FirstName" />
+          <ScalarProperty Name="UsrP_LastName" ColumnName="UsrP_LastName" />
+          <ScalarProperty Name="UsrP_EmployeeID" ColumnName="UsrP_EmployeeID" />
+          <ScalarProperty Name="UsrP_EmailID" ColumnName="UsrP_EmailID" />
+          <ScalarProperty Name="Usrp_MobileNumber" ColumnName="Usrp_MobileNumber" />
+          <ScalarProperty Name="Usrp_CountryCode" ColumnName="Usrp_CountryCode" />
+          <ScalarProperty Name="Usrp_ProfilePicture" ColumnName="Usrp_ProfilePicture" />
+          <ScalarProperty Name="UsrP_DOB" ColumnName="UsrP_DOB" />
+          <ScalarProperty Name="UsrP_ActiveStatus" ColumnName="UsrP_ActiveStatus" />
+          <ScalarProperty Name="UsrP_Version" ColumnName="UsrP_Version" />
+          <ScalarProperty Name="UsrP_CreatedDate" ColumnName="UsrP_CreatedDate" />
+          <ScalarProperty Name="UsrP_CreatedBy" ColumnName="UsrP_CreatedBy" />
+          <ScalarProperty Name="UsrP_ModifiedDate" ColumnName="UsrP_ModifiedDate" />
+          <ScalarProperty Name="UsrP_ModifiedBy" ColumnName="UsrP_ModifiedBy" />
+          <ScalarProperty Name="UsrP_isDeleted" ColumnName="UsrP_isDeleted" />
+          <ScalarProperty Name="Usr_Titleid" ColumnName="Usr_Titleid" />
+          <ScalarProperty Name="Usr_GenderId" ColumnName="Usr_GenderId" />
+          <ScalarProperty Name="Marital_Status" ColumnName="Marital_Status" />
+          <ScalarProperty Name="PermanentAddress" ColumnName="PermanentAddress" />
+          <ScalarProperty Name="TemporaryAddress" ColumnName="TemporaryAddress" />
+          <ScalarProperty Name="passcode" ColumnName="passcode" />
+          <ScalarProperty Name="Usrp_DOJ" ColumnName="Usrp_DOJ" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Get_LeavesCount" FunctionName="Model.Store.Get_LeavesCount">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.Get_LeavesCount_Result">
+          <ScalarProperty Name="UProj_UserID" ColumnName="UProj_UserID" />
+          <ScalarProperty Name="UsrP_FirstName" ColumnName="UsrP_FirstName" />
+          <ScalarProperty Name="LeaveStartDate" ColumnName="LeaveStartDate" />
+          <ScalarProperty Name="LeaveEndDate" ColumnName="LeaveEndDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Get_ManagerEmailDetails" FunctionName="Model.Store.Get_ManagerEmailDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.Get_ManagerEmailDetails_Result">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Proj_ProjectName" ColumnName="Proj_ProjectName" />
+          <ScalarProperty Name="ManagerLevel1" ColumnName="ManagerLevel1" />
+          <ScalarProperty Name="ManagerLevel2" ColumnName="ManagerLevel2" />
+          <ScalarProperty Name="L1_ManagerID" ColumnName="L1_ManagerID" />
+          <ScalarProperty Name="L2_ManagerID" ColumnName="L2_ManagerID" />
+          <ScalarProperty Name="L1_ManagerName" ColumnName="L1_ManagerName" />
+          <ScalarProperty Name="L2_ManagerName" ColumnName="L2_ManagerName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Get_Managers" FunctionName="Model.Store.Get_Managers">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.Get_Managers_Result">
+          <ScalarProperty Name="Usr_UserID" ColumnName="Usr_UserID" />
+          <ScalarProperty Name="Usr_Username" ColumnName="Usr_Username" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Get_UserLeaves" FunctionName="Model.Store.Get_UserLeaves">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.Get_UserLeaves_Result">
+          <ScalarProperty Name="USerID" ColumnName="USerID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="LeaveDates" ColumnName="LeaveDates" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Get_UserLeavesCount" FunctionName="Model.Store.Get_UserLeavesCount">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.Get_UserLeavesCount_Result">
+          <ScalarProperty Name="Usrl_UserId" ColumnName="Usrl_UserId" />
+          <ScalarProperty Name="LeaveStartDate" ColumnName="LeaveStartDate" />
+          <ScalarProperty Name="LeaveEndDate" ColumnName="LeaveEndDate" />
+          <ScalarProperty Name="Usrl_LeaveId" ColumnName="Usrl_LeaveId" />
+          <ScalarProperty Name="LTyp_LeaveType" ColumnName="LTyp_LeaveType" />
+          <ScalarProperty Name="UsrP_FirstName" ColumnName="UsrP_FirstName" />
+          <ScalarProperty Name="UsrP_LastName" ColumnName="UsrP_LastName" />
+          <ScalarProperty Name="UsrP_EmployeeID" ColumnName="UsrP_EmployeeID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Get_UserLeavesforTimesheet" FunctionName="Model.Store.Get_UserLeavesforTimesheet" />
+    <FunctionImportMapping FunctionImportName="Get_UserOptionalLeavesforTimesheet" FunctionName="Model.Store.Get_UserOptionalLeavesforTimesheet" />
+    <FunctionImportMapping FunctionImportName="Get_UserWorkFromHome" FunctionName="Model.Store.Get_UserWorkFromHome">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.Get_UserWorkFromHome_Result">
+          <ScalarProperty Name="UserwfhID" ColumnName="UserwfhID" />
+          <ScalarProperty Name="Usrl_UserId" ColumnName="Usrl_UserId" />
+          <ScalarProperty Name="UserwfhStartDate" ColumnName="UserwfhStartDate" />
+          <ScalarProperty Name="UserwfhEndDate" ColumnName="UserwfhEndDate" />
+          <ScalarProperty Name="UsrP_FirstName" ColumnName="UsrP_FirstName" />
+          <ScalarProperty Name="UsrP_LastName" ColumnName="UsrP_LastName" />
+          <ScalarProperty Name="UsrP_EmployeeID" ColumnName="UsrP_EmployeeID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Get_USUserLeavesforApproval" FunctionName="Model.Store.Get_USUserLeavesforApproval">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.Get_USUserLeavesforApproval_Result">
+          <ScalarProperty Name="dates" ColumnName="dates" />
+          <ScalarProperty Name="LeaveDates" ColumnName="LeaveDates" />
+          <ScalarProperty Name="dayname" ColumnName="dayname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Get_USUserWFHforApproval" FunctionName="Model.Store.Get_USUserWFHforApproval">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.Get_USUserWFHforApproval_Result">
+          <ScalarProperty Name="dates" ColumnName="dates" />
+          <ScalarProperty Name="LeaveDates" ColumnName="LeaveDates" />
+          <ScalarProperty Name="dayname" ColumnName="dayname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Get_WorkfromHomeTimesheet" FunctionName="Model.Store.Get_WorkfromHomeTimesheet" />
+    <FunctionImportMapping FunctionImportName="GETALL_USERSTIMESHEETS_WEB" FunctionName="Model.Store.GETALL_USERSTIMESHEETS_WEB">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GETALL_USERSTIMESHEETS_WEB_Result">
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+          <ScalarProperty Name="timesheetid" ColumnName="timesheetid" />
+          <ScalarProperty Name="companyworkinghours" ColumnName="companyworkinghours" />
+          <ScalarProperty Name="MonthYearName" ColumnName="MonthYearName" />
+          <ScalarProperty Name="timesheetmonth" ColumnName="timesheetmonth" />
+          <ScalarProperty Name="workedhours" ColumnName="workedhours" />
+          <ScalarProperty Name="proj_projectid" ColumnName="proj_projectid" />
+          <ScalarProperty Name="proj_projectname" ColumnName="proj_projectname" />
+          <ScalarProperty Name="clientprojtid" ColumnName="clientprojtid" />
+          <ScalarProperty Name="ClientProjTitle" ColumnName="ClientProjTitle" />
+          <ScalarProperty Name="timesheetmode" ColumnName="timesheetmode" />
+          <ScalarProperty Name="resultsubmitstatus" ColumnName="resultsubmitstatus" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="modifieddate" ColumnName="modifieddate" />
+          <ScalarProperty Name="usr_username" ColumnName="usr_username" />
+          <ScalarProperty Name="l1_managername" ColumnName="l1_managername" />
+          <ScalarProperty Name="l2_managername" ColumnName="l2_managername" />
+          <ScalarProperty Name="submitteddate" ColumnName="submitteddate" />
+          <ScalarProperty Name="l1_approverdate" ColumnName="l1_approverdate" />
+          <ScalarProperty Name="l2_approverdate" ColumnName="l2_approverdate" />
+          <ScalarProperty Name="uproj_L1_ManagerId" ColumnName="uproj_L1_ManagerId" />
+          <ScalarProperty Name="uproj_l2_managerid" ColumnName="uproj_l2_managerid" />
+          <ScalarProperty Name="FinalStatus" ColumnName="FinalStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllCalendarDates" FunctionName="Model.Store.GetAllCalendarDates">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GetAllCalendarDates_Result">
+          <ScalarProperty Name="day" ColumnName="day" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetallQuestions" FunctionName="Model.Store.GetallQuestions">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GetallQuestions_Result">
+          <ScalarProperty Name="No" ColumnName="No" />
+          <ScalarProperty Name="QBID" ColumnName="QBID" />
+          <ScalarProperty Name="TechnologyStackId" ColumnName="TechnologyStackId" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Option1" ColumnName="Option1" />
+          <ScalarProperty Name="Option2" ColumnName="Option2" />
+          <ScalarProperty Name="Option3" ColumnName="Option3" />
+          <ScalarProperty Name="Option4" ColumnName="Option4" />
+          <ScalarProperty Name="No_of_Questions" ColumnName="No_of_Questions" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GETALLTickets" FunctionName="Model.Store.GETALLTickets">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GETALLTickets_Result">
+          <ScalarProperty Name="TID" ColumnName="TID" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TypeOfIssue" ColumnName="TypeOfIssue" />
+          <ScalarProperty Name="TypeOfIssueDescription" ColumnName="TypeOfIssueDescription" />
+          <ScalarProperty Name="Ticket_raise_date" ColumnName="Ticket_raise_date" />
+          <ScalarProperty Name="Ticket_Forecast_date" ColumnName="Ticket_Forecast_date" />
+          <ScalarProperty Name="Ticket_Closed_date" ColumnName="Ticket_Closed_date" />
+          <ScalarProperty Name="ClosedBy" ColumnName="ClosedBy" />
+          <ScalarProperty Name="closedbyName" ColumnName="closedbyName" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="Prioritydescription" ColumnName="Prioritydescription" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getAssignedUsersList" FunctionName="Model.Store.getAssignedUsersList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.getAssignedUsersList_Result">
+          <ScalarProperty Name="UProj_ProjectID" ColumnName="UProj_ProjectID" />
+          <ScalarProperty Name="ClientProjTitle" ColumnName="ClientProjTitle" />
+          <ScalarProperty Name="ClientprojID" ColumnName="ClientprojID" />
+          <ScalarProperty Name="Timesheetmode" ColumnName="Timesheetmode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetClientsByAccountId" FunctionName="Model.Store.GetClientsByAccountId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GetClientsByAccountId_Result">
+          <ScalarProperty Name="Proj_ProjectID" ColumnName="Proj_ProjectID" />
+          <ScalarProperty Name="Proj_AccountID" ColumnName="Proj_AccountID" />
+          <ScalarProperty Name="Proj_ProjectCode" ColumnName="Proj_ProjectCode" />
+          <ScalarProperty Name="Proj_ProjectName" ColumnName="Proj_ProjectName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetDashBoardTimesheet" FunctionName="Model.Store.GetDashBoardTimesheet">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GetDashBoardTimesheet_Result">
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+          <ScalarProperty Name="TimesheetID" ColumnName="TimesheetID" />
+          <ScalarProperty Name="MonthYearName" ColumnName="MonthYearName" />
+          <ScalarProperty Name="Companyworkinghours" ColumnName="Companyworkinghours" />
+          <ScalarProperty Name="WorkedHours" ColumnName="WorkedHours" />
+          <ScalarProperty Name="Proj_ProjectID" ColumnName="Proj_ProjectID" />
+          <ScalarProperty Name="Proj_ProjectName" ColumnName="Proj_ProjectName" />
+          <ScalarProperty Name="ResultSubmitStatus" ColumnName="ResultSubmitStatus" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="modifieddate" ColumnName="modifieddate" />
+          <ScalarProperty Name="Usr_Username" ColumnName="Usr_Username" />
+          <ScalarProperty Name="L1_ManagerName" ColumnName="L1_ManagerName" />
+          <ScalarProperty Name="L2_ManagerName" ColumnName="L2_ManagerName" />
+          <ScalarProperty Name="SubmittedDate" ColumnName="SubmittedDate" />
+          <ScalarProperty Name="L1_ApproverDate" ColumnName="L1_ApproverDate" />
+          <ScalarProperty Name="FinalStatus" ColumnName="FinalStatus" />
+          <ScalarProperty Name="TimesheetMode" ColumnName="TimesheetMode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetDatesofByWeekly" FunctionName="Model.Store.GetDatesofByWeekly">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GetDatesofByWeekly_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetDatesofByWeekly15days" FunctionName="Model.Store.GetDatesofByWeekly15days">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GetDatesofByWeekly15days_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetDatesofByWeeklyTesting" FunctionName="Model.Store.GetDatesofByWeeklyTesting">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GetDatesofByWeeklyTesting_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetDatesofWeekly" FunctionName="Model.Store.GetDatesofWeekly">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GetDatesofWeekly_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetDatesofWeeklyTesting" FunctionName="Model.Store.GetDatesofWeeklyTesting">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GetDatesofWeeklyTesting_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetEmployeesByProjectId" FunctionName="Model.Store.GetEmployeesByProjectId" />
+    <FunctionImportMapping FunctionImportName="getEMployeesforClientProjectid" FunctionName="Model.Store.getEMployeesforClientProjectid">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.getEMployeesforClientProjectid_Result">
+          <ScalarProperty Name="Usr_UserID" ColumnName="Usr_UserID" />
+          <ScalarProperty Name="ManagerName" ColumnName="ManagerName" />
+          <ScalarProperty Name="ClientprojID" ColumnName="ClientprojID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetLeaveCategoreries" FunctionName="Model.Store.GetLeaveCategoreries">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GetLeaveCategoreries_Result">
+          <ScalarProperty Name="LSchm_LeaveTypeID" ColumnName="LSchm_LeaveTypeID" />
+          <ScalarProperty Name="LTyp_LeaveType" ColumnName="LTyp_LeaveType" />
+          <ScalarProperty Name="leavecount" ColumnName="leavecount" />
+          <ScalarProperty Name="HolidaysUsed" ColumnName="HolidaysUsed" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetManagerEmailIds" FunctionName="Model.Store.GetManagerEmailIds">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GetManagerEmailIds_Result">
+          <ScalarProperty Name="ManagerLevel1" ColumnName="ManagerLevel1" />
+          <ScalarProperty Name="ManagerLevel2" ColumnName="ManagerLevel2" />
+          <ScalarProperty Name="Acc_EmailID" ColumnName="Acc_EmailID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Acc_CompanyLogo" ColumnName="Acc_CompanyLogo" />
+          <ScalarProperty Name="UserEmailid" ColumnName="UserEmailid" />
+          <ScalarProperty Name="L1_ManagerID" ColumnName="L1_ManagerID" />
+          <ScalarProperty Name="L2_ManagerID" ColumnName="L2_ManagerID" />
+          <ScalarProperty Name="Usr_AccountID" ColumnName="Usr_AccountID" />
+          <ScalarProperty Name="L1_ManagerName" ColumnName="L1_ManagerName" />
+          <ScalarProperty Name="L2_ManagerName" ColumnName="L2_ManagerName" />
+          <ScalarProperty Name="IsL2_DirectManager" ColumnName="IsL2_DirectManager" />
+          <ScalarProperty Name="Usr_UserID" ColumnName="Usr_UserID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetManagerEmailIdsTesting" FunctionName="Model.Store.GetManagerEmailIdsTesting">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GetManagerEmailIdsTesting_Result">
+          <ScalarProperty Name="ManagerLevel1" ColumnName="ManagerLevel1" />
+          <ScalarProperty Name="ManagerLevel2" ColumnName="ManagerLevel2" />
+          <ScalarProperty Name="Acc_EmailID" ColumnName="Acc_EmailID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Acc_CompanyLogo" ColumnName="Acc_CompanyLogo" />
+          <ScalarProperty Name="UserEmailid" ColumnName="UserEmailid" />
+          <ScalarProperty Name="L1_ManagerID" ColumnName="L1_ManagerID" />
+          <ScalarProperty Name="L2_ManagerID" ColumnName="L2_ManagerID" />
+          <ScalarProperty Name="Usr_AccountID" ColumnName="Usr_AccountID" />
+          <ScalarProperty Name="L1_ManagerName" ColumnName="L1_ManagerName" />
+          <ScalarProperty Name="L2_ManagerName" ColumnName="L2_ManagerName" />
+          <ScalarProperty Name="IsL2_DirectManager" ColumnName="IsL2_DirectManager" />
+          <ScalarProperty Name="Usr_UserID" ColumnName="Usr_UserID" />
+          <ScalarProperty Name="TimesheetID" ColumnName="TimesheetID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetManagersByProjectId" FunctionName="Model.Store.GetManagersByProjectId" />
+    <FunctionImportMapping FunctionImportName="GetProfileDetails" FunctionName="Model.Store.GetProfileDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GetProfileDetails_Result">
+          <ScalarProperty Name="UsrP_UserProfileID" ColumnName="UsrP_UserProfileID" />
+          <ScalarProperty Name="UsrP_UserID" ColumnName="UsrP_UserID" />
+          <ScalarProperty Name="UsrName" ColumnName="UsrName" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="Emailid" ColumnName="Emailid" />
+          <ScalarProperty Name="Mobile_Number" ColumnName="Mobile Number" />
+          <ScalarProperty Name="Usrp_MobileNumber" ColumnName="Usrp_MobileNumber" />
+          <ScalarProperty Name="Dateofjoing" ColumnName="Dateofjoing" />
+          <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetProjectsByUserID" FunctionName="Model.Store.GetProjectsByUserID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GetProjectsByUserID_Result">
+          <ScalarProperty Name="Proj_ProjectID" ColumnName="Proj_ProjectID" />
+          <ScalarProperty Name="Proj_ProjectName" ColumnName="Proj_ProjectName" />
+          <ScalarProperty Name="Timesheetmode" ColumnName="Timesheetmode" />
+          <ScalarProperty Name="clientprojid" ColumnName="clientprojid" />
+          <ScalarProperty Name="ClientProjTitle" ColumnName="ClientProjTitle" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetTempTimesheetLeavesandHolidays" FunctionName="Model.Store.GetTempTimesheetLeavesandHolidays">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GetTempTimesheetLeavesandHolidays_Result">
+          <ScalarProperty Name="HoursWorked" ColumnName="HoursWorked" />
+          <ScalarProperty Name="colour" ColumnName="colour" />
+          <ScalarProperty Name="worktype" ColumnName="worktype" />
+          <ScalarProperty Name="MonthYearName" ColumnName="MonthYearName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetTicketsByID" FunctionName="Model.Store.GetTicketsByID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GetTicketsByID_Result">
+          <ScalarProperty Name="TID" ColumnName="TID" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TypeOfIssue" ColumnName="TypeOfIssue" />
+          <ScalarProperty Name="TypeOfIssueDescription" ColumnName="TypeOfIssueDescription" />
+          <ScalarProperty Name="Ticket_raise_date" ColumnName="Ticket_raise_date" />
+          <ScalarProperty Name="Ticket_Forecast_date" ColumnName="Ticket_Forecast_date" />
+          <ScalarProperty Name="Ticket_Closed_date" ColumnName="Ticket_Closed_date" />
+          <ScalarProperty Name="ClosedBy" ColumnName="ClosedBy" />
+          <ScalarProperty Name="closedbyName" ColumnName="closedbyName" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="Prioritydescription" ColumnName="Prioritydescription" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetTimeSheetDetailsOfUser" FunctionName="Model.Store.GetTimeSheetDetailsOfUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GetTimeSheetDetailsOfUser_Result">
+          <ScalarProperty Name="Usr_UserID" ColumnName="Usr_UserID" />
+          <ScalarProperty Name="Usr_Username" ColumnName="Usr_Username" />
+          <ScalarProperty Name="tsk_TaskID" ColumnName="tsk_TaskID" />
+          <ScalarProperty Name="HoursWorked" ColumnName="HoursWorked" />
+          <ScalarProperty Name="tsk_TaskName" ColumnName="tsk_TaskName" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="TaskDetailsID" ColumnName="TaskDetailsID" />
+          <ScalarProperty Name="TaskDate" ColumnName="TaskDate" />
+          <ScalarProperty Name="projectid" ColumnName="projectid" />
+          <ScalarProperty Name="SubmittedType" ColumnName="SubmittedType" />
+          <ScalarProperty Name="TimeSheetId" ColumnName="TimeSheetId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getTimeSheetEmailDetails" FunctionName="Model.Store.getTimeSheetEmailDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.getTimeSheetEmailDetails_Result">
+          <ScalarProperty Name="TimesheetId" ColumnName="TimesheetId" />
+          <ScalarProperty Name="TimesheetMonth" ColumnName="TimesheetMonth" />
+          <ScalarProperty Name="TimesheetMonthforMail" ColumnName="TimesheetMonthforMail" />
+          <ScalarProperty Name="Usr_UserID" ColumnName="Usr_UserID" />
+          <ScalarProperty Name="Employee_Name" ColumnName="Employee Name" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="Proj_ClientName" ColumnName="Proj_ClientName" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="CPID" ColumnName="CPID" />
+          <ScalarProperty Name="SubmittedDate" ColumnName="SubmittedDate" />
+          <ScalarProperty Name="TotalWorkingHours" ColumnName="TotalWorkingHours" />
+          <ScalarProperty Name="TimesheetType" ColumnName="TimesheetType" />
+          <ScalarProperty Name="comments" ColumnName="comments" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetTimeSheetforApproval" FunctionName="Model.Store.GetTimeSheetforApproval">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GetTimeSheetforApproval_Result">
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+          <ScalarProperty Name="TimesheetID" ColumnName="TimesheetID" />
+          <ScalarProperty Name="MonthYearName" ColumnName="MonthYearName" />
+          <ScalarProperty Name="Companyworkinghours" ColumnName="Companyworkinghours" />
+          <ScalarProperty Name="WorkedHours" ColumnName="WorkedHours" />
+          <ScalarProperty Name="ResultSubmitStatus" ColumnName="ResultSubmitStatus" />
+          <ScalarProperty Name="Usr_UserID" ColumnName="Usr_UserID" />
+          <ScalarProperty Name="Proj_ProjectID" ColumnName="Proj_ProjectID" />
+          <ScalarProperty Name="Proj_ProjectName" ColumnName="Proj_ProjectName" />
+          <ScalarProperty Name="ClientprojID" ColumnName="ClientprojID" />
+          <ScalarProperty Name="ClientProjTitle" ColumnName="ClientProjTitle" />
+          <ScalarProperty Name="TimesheetMode" ColumnName="TimesheetMode" />
+          <ScalarProperty Name="TimeModeName" ColumnName="TimeModeName" />
+          <ScalarProperty Name="Usr_Username" ColumnName="Usr_Username" />
+          <ScalarProperty Name="TimesheetDuration" ColumnName="TimesheetDuration" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetTimeSheetforApprovalTesting" FunctionName="Model.Store.GetTimeSheetforApprovalTesting">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GetTimeSheetforApprovalTesting_Result">
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+          <ScalarProperty Name="TimesheetID" ColumnName="TimesheetID" />
+          <ScalarProperty Name="MonthYearName" ColumnName="MonthYearName" />
+          <ScalarProperty Name="Companyworkinghours" ColumnName="Companyworkinghours" />
+          <ScalarProperty Name="WorkedHours" ColumnName="WorkedHours" />
+          <ScalarProperty Name="TotalTimesheetIds" ColumnName="TotalTimesheetIds" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetTotalOptionalHolidays" FunctionName="Model.Store.GetTotalOptionalHolidays">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GetTotalOptionalHolidays_Result">
+          <ScalarProperty Name="IsOptionalHolidayCount" ColumnName="IsOptionalHolidayCount" />
+          <ScalarProperty Name="TotalOptionalHolidays" ColumnName="TotalOptionalHolidays" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetUserHolidayCalender" FunctionName="Model.Store.GetUserHolidayCalender">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GetUserHolidayCalender_Result">
+          <ScalarProperty Name="HolidayDate" ColumnName="HolidayDate" />
+          <ScalarProperty Name="HolidayName" ColumnName="HolidayName" />
+          <ScalarProperty Name="isOptionalHoliday" ColumnName="isOptionalHoliday" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetUserLeavesforApproval" FunctionName="Model.Store.GetUserLeavesforApproval">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GetUserLeavesforApproval_Result">
+          <ScalarProperty Name="Usr_Username" ColumnName="Usr_Username" />
+          <ScalarProperty Name="UsrP_EmployeeID" ColumnName="UsrP_EmployeeID" />
+          <ScalarProperty Name="UsrP_EmailID" ColumnName="UsrP_EmailID" />
+          <ScalarProperty Name="Proj_ProjectName" ColumnName="Proj_ProjectName" />
+          <ScalarProperty Name="Usrl_LeaveId" ColumnName="Usrl_LeaveId" />
+          <ScalarProperty Name="Usrl_UserId" ColumnName="Usrl_UserId" />
+          <ScalarProperty Name="LeaveStartDate" ColumnName="LeaveStartDate" />
+          <ScalarProperty Name="LeaveEndDate" ColumnName="LeaveEndDate" />
+          <ScalarProperty Name="No_Of_Days" ColumnName="No_Of_Days" />
+          <ScalarProperty Name="L_StatusId" ColumnName="L_StatusId" />
+          <ScalarProperty Name="Acc_EmailID" ColumnName="Acc_EmailID" />
+          <ScalarProperty Name="UProj_L1_ManagerId" ColumnName="UProj_L1_ManagerId" />
+          <ScalarProperty Name="ResultSubmitStatus" ColumnName="ResultSubmitStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetUserLeavesforApprovalForUS" FunctionName="Model.Store.GetUserLeavesforApprovalForUS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GetUserLeavesforApprovalForUS_Result">
+          <ScalarProperty Name="Usrl_LeaveId" ColumnName="Usrl_LeaveId" />
+          <ScalarProperty Name="Usr_Username" ColumnName="Usr_Username" />
+          <ScalarProperty Name="UsrP_EmployeeID" ColumnName="UsrP_EmployeeID" />
+          <ScalarProperty Name="UsrP_EmailID" ColumnName="UsrP_EmailID" />
+          <ScalarProperty Name="Proj_ProjectName" ColumnName="Proj_ProjectName" />
+          <ScalarProperty Name="Usrl_UserId" ColumnName="Usrl_UserId" />
+          <ScalarProperty Name="LeaveStartDate" ColumnName="LeaveStartDate" />
+          <ScalarProperty Name="LeaveEndDate" ColumnName="LeaveEndDate" />
+          <ScalarProperty Name="No_Of_Days" ColumnName="No_Of_Days" />
+          <ScalarProperty Name="L_StatusId" ColumnName="L_StatusId" />
+          <ScalarProperty Name="Acc_EmailID" ColumnName="Acc_EmailID" />
+          <ScalarProperty Name="UProj_L1_ManagerId" ColumnName="UProj_L1_ManagerId" />
+          <ScalarProperty Name="ResultSubmitStatus" ColumnName="ResultSubmitStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetUsersDatabyLogin" FunctionName="Model.Store.GetUsersDatabyLogin" />
+    <FunctionImportMapping FunctionImportName="getUserTimesheet" FunctionName="Model.Store.getUserTimesheet">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.getUserTimesheet_Result">
+          <ScalarProperty Name="Usr_UserID" ColumnName="Usr_UserID" />
+          <ScalarProperty Name="Usr_Username" ColumnName="Usr_Username" />
+          <ScalarProperty Name="tsk_TaskID" ColumnName="tsk_TaskID" />
+          <ScalarProperty Name="HoursWorked" ColumnName="HoursWorked" />
+          <ScalarProperty Name="tsk_TaskName" ColumnName="tsk_TaskName" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="TaskDate" ColumnName="TaskDate" />
+          <ScalarProperty Name="projectid" ColumnName="projectid" />
+          <ScalarProperty Name="SubmittedType" ColumnName="SubmittedType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetUserTimeSheetList" FunctionName="Model.Store.GetUserTimeSheetList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GetUserTimeSheetList_Result">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="TimesheetID" ColumnName="TimesheetID" />
+          <ScalarProperty Name="MonthYearName" ColumnName="MonthYearName" />
+          <ScalarProperty Name="WorkedHours" ColumnName="WorkedHours" />
+          <ScalarProperty Name="Companyworkinghours" ColumnName="Companyworkinghours" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetUserWorkFrmHomeApproval" FunctionName="Model.Store.GetUserWorkFrmHomeApproval">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GetUserWorkFrmHomeApproval_Result">
+          <ScalarProperty Name="UserwfhID" ColumnName="UserwfhID" />
+          <ScalarProperty Name="Usr_Username" ColumnName="Usr_Username" />
+          <ScalarProperty Name="UsrP_EmployeeID" ColumnName="UsrP_EmployeeID" />
+          <ScalarProperty Name="UsrP_EmailID" ColumnName="UsrP_EmailID" />
+          <ScalarProperty Name="Proj_ProjectName" ColumnName="Proj_ProjectName" />
+          <ScalarProperty Name="LeaveStartDate" ColumnName="LeaveStartDate" />
+          <ScalarProperty Name="LeaveEndDate" ColumnName="LeaveEndDate" />
+          <ScalarProperty Name="L_StatusId" ColumnName="L_StatusId" />
+          <ScalarProperty Name="Usrl_UserId" ColumnName="Usrl_UserId" />
+          <ScalarProperty Name="Acc_EmailID" ColumnName="Acc_EmailID" />
+          <ScalarProperty Name="Tot_No_Days" ColumnName="Tot_No_Days" />
+          <ScalarProperty Name="UProj_L1_ManagerId" ColumnName="UProj_L1_ManagerId" />
+          <ScalarProperty Name="ResultSubmitStatus" ColumnName="ResultSubmitStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetUserWorkFrmHomeApprovalForUS" FunctionName="Model.Store.GetUserWorkFrmHomeApprovalForUS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GetUserWorkFrmHomeApprovalForUS_Result">
+          <ScalarProperty Name="UserwfhID" ColumnName="UserwfhID" />
+          <ScalarProperty Name="Usr_Username" ColumnName="Usr_Username" />
+          <ScalarProperty Name="UsrP_EmployeeID" ColumnName="UsrP_EmployeeID" />
+          <ScalarProperty Name="UsrP_EmailID" ColumnName="UsrP_EmailID" />
+          <ScalarProperty Name="Proj_ProjectName" ColumnName="Proj_ProjectName" />
+          <ScalarProperty Name="LeaveEndDate" ColumnName="LeaveEndDate" />
+          <ScalarProperty Name="LeaveStartDate" ColumnName="LeaveStartDate" />
+          <ScalarProperty Name="L_StatusId" ColumnName="L_StatusId" />
+          <ScalarProperty Name="Usrl_UserId" ColumnName="Usrl_UserId" />
+          <ScalarProperty Name="Acc_EmailID" ColumnName="Acc_EmailID" />
+          <ScalarProperty Name="UProj_L1_ManagerId" ColumnName="UProj_L1_ManagerId" />
+          <ScalarProperty Name="Tot_No_Days" ColumnName="Tot_No_Days" />
+          <ScalarProperty Name="ResultSubmitStatus" ColumnName="ResultSubmitStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GgetProjectIdByTimeshhet" FunctionName="Model.Store.GgetProjectIdByTimeshhet" />
+    <FunctionImportMapping FunctionImportName="Insert_AccountSpecificTasks" FunctionName="Model.Store.Insert_AccountSpecificTasks">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.Insert_AccountSpecificTasks_Result">
+          <ScalarProperty Name="tsk_TaskID" ColumnName="tsk_TaskID" />
+          <ScalarProperty Name="tsk_TaskName" ColumnName="tsk_TaskName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Insert_UserLeaves" FunctionName="Model.Store.Insert_UserLeaves" />
+    <FunctionImportMapping FunctionImportName="Insert_UserLeavesConsumed" FunctionName="Model.Store.Insert_UserLeavesConsumed" />
+    <FunctionImportMapping FunctionImportName="Insert_UserWorkFromHome" FunctionName="Model.Store.Insert_UserWorkFromHome" />
+    <FunctionImportMapping FunctionImportName="INSERTUPDATEAssessment_For_Position" FunctionName="Model.Store.INSERTUPDATEAssessment_For_Position" />
+    <FunctionImportMapping FunctionImportName="InsertUserLeaves" FunctionName="Model.Store.InsertUserLeaves" />
+    <FunctionImportMapping FunctionImportName="LoadTimesheetsforManagerAprroval" FunctionName="Model.Store.LoadTimesheetsforManagerAprroval" />
+    <FunctionImportMapping FunctionImportName="LoginByUsernamePassword" FunctionName="Model.Store.LoginByUsernamePassword">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.LoginByUsernamePassword_Result">
+          <ScalarProperty Name="Usr_UserID" ColumnName="Usr_UserID" />
+          <ScalarProperty Name="Usr_LoginId" ColumnName="Usr_LoginId" />
+          <ScalarProperty Name="Usr_Password" ColumnName="Usr_Password" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="MailsAppOrRejStatus" FunctionName="Model.Store.MailsAppOrRejStatus">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.MailsAppOrRejStatus_Result">
+          <ScalarProperty Name="ManagerLevel1" ColumnName="ManagerLevel1" />
+          <ScalarProperty Name="ManagerLevel2" ColumnName="ManagerLevel2" />
+          <ScalarProperty Name="Acc_EmailID" ColumnName="Acc_EmailID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Acc_CompanyLogo" ColumnName="Acc_CompanyLogo" />
+          <ScalarProperty Name="UserEmailid" ColumnName="UserEmailid" />
+          <ScalarProperty Name="L1_ManagerID" ColumnName="L1_ManagerID" />
+          <ScalarProperty Name="L2_ManagerID" ColumnName="L2_ManagerID" />
+          <ScalarProperty Name="Usr_AccountID" ColumnName="Usr_AccountID" />
+          <ScalarProperty Name="L1_ManagerName" ColumnName="L1_ManagerName" />
+          <ScalarProperty Name="L2_ManagerName" ColumnName="L2_ManagerName" />
+          <ScalarProperty Name="IsL2_DirectManager" ColumnName="IsL2_DirectManager" />
+          <ScalarProperty Name="Usr_UserID" ColumnName="Usr_UserID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ManagerActionsfromEmail" FunctionName="Model.Store.ManagerActionsfromEmail" />
+    <FunctionImportMapping FunctionImportName="Sp_GetHolidays" FunctionName="Model.Store.Sp_GetHolidays">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.Sp_GetHolidays_Result">
+          <ScalarProperty Name="HolidayCalendarID" ColumnName="HolidayCalendarID" />
+          <ScalarProperty Name="HolidayName" ColumnName="HolidayName" />
+          <ScalarProperty Name="HolidayDate" ColumnName="HolidayDate" />
+          <ScalarProperty Name="isOptionalHoliday" ColumnName="isOptionalHoliday" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="CL_ProjectID" ColumnName="CL_ProjectID" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetLeaveTypes" FunctionName="Model.Store.sp_GetLeaveTypes">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.sp_GetLeaveTypes_Result">
+          <ScalarProperty Name="ltyp_leavetype" ColumnName="ltyp_leavetype" />
+          <ScalarProperty Name="AppliedLeaves" ColumnName="AppliedLeaves" />
+          <ScalarProperty Name="LTyp_LeaveTypeID" ColumnName="LTyp_LeaveTypeID" />
+          <ScalarProperty Name="lschm_leavecount" ColumnName="lschm_leavecount" />
+          <ScalarProperty Name="Acc_EmailID" ColumnName="Acc_EmailID" />
+          <ScalarProperty Name="LSchm_LeaveSchemeID" ColumnName="LSchm_LeaveSchemeID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_GetProjects" FunctionName="Model.Store.Sp_GetProjects">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.Sp_GetProjects_Result">
+          <ScalarProperty Name="Proj_ProjectID" ColumnName="Proj_ProjectID" />
+          <ScalarProperty Name="Proj_ProjectName" ColumnName="Proj_ProjectName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_GetProjSpecificTasks" FunctionName="Model.Store.Sp_GetProjSpecificTasks">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.Sp_GetProjSpecificTasks_Result">
+          <ScalarProperty Name="Proj_SpecificTaskId" ColumnName="Proj_SpecificTaskId" />
+          <ScalarProperty Name="Proj_SpecificTaskName" ColumnName="Proj_SpecificTaskName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_GetTasks" FunctionName="Model.Store.Sp_GetTasks">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.Sp_GetTasks_Result">
+          <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+          <ScalarProperty Name="TaskName" ColumnName="TaskName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_month_dates" FunctionName="Model.Store.sp_month_dates" />
+    <FunctionImportMapping FunctionImportName="Sp_WeeklyDaysandDates" FunctionName="Model.Store.Sp_WeeklyDaysandDates" />
+    <FunctionImportMapping FunctionImportName="SpecificUser" FunctionName="Model.Store.SpecificUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.SpecificUser_Result">
+          <ScalarProperty Name="Usr_UserID" ColumnName="Usr_UserID" />
+          <ScalarProperty Name="ManagerName" ColumnName="ManagerName" />
+          <ScalarProperty Name="Proj_ProjectID" ColumnName="Proj_ProjectID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="TempAddByWeeklyTimesheet" FunctionName="Model.Store.TempAddByWeeklyTimesheet">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.TempAddByWeeklyTimesheet_Result">
+          <ScalarProperty Name="HoursWorked" ColumnName="HoursWorked" />
+          <ScalarProperty Name="colour" ColumnName="colour" />
+          <ScalarProperty Name="worktype" ColumnName="worktype" />
+          <ScalarProperty Name="MonthYearName" ColumnName="MonthYearName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="TempSubmitTimesheet" FunctionName="Model.Store.TempSubmitTimesheet">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.TempSubmitTimesheet_Result">
+          <ScalarProperty Name="HoursWorked" ColumnName="HoursWorked" />
+          <ScalarProperty Name="MonthYearName" ColumnName="MonthYearName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="TempTimesheetonLeavesandHolidays" FunctionName="Model.Store.TempTimesheetonLeavesandHolidays">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.TempTimesheetonLeavesandHolidays_Result">
+          <ScalarProperty Name="HoursWorked" ColumnName="HoursWorked" />
+          <ScalarProperty Name="colour" ColumnName="colour" />
+          <ScalarProperty Name="worktype" ColumnName="worktype" />
+          <ScalarProperty Name="MonthYearName" ColumnName="MonthYearName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="TEST_GETALL_USERSTIMESHEETS_WEB" FunctionName="Model.Store.TEST_GETALL_USERSTIMESHEETS_WEB">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.TEST_GETALL_USERSTIMESHEETS_WEB_Result">
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+          <ScalarProperty Name="timesheetid" ColumnName="timesheetid" />
+          <ScalarProperty Name="companyworkinghours" ColumnName="companyworkinghours" />
+          <ScalarProperty Name="MonthYearName" ColumnName="MonthYearName" />
+          <ScalarProperty Name="timesheetmonth" ColumnName="timesheetmonth" />
+          <ScalarProperty Name="workedhours" ColumnName="workedhours" />
+          <ScalarProperty Name="proj_projectid" ColumnName="proj_projectid" />
+          <ScalarProperty Name="proj_projectname" ColumnName="proj_projectname" />
+          <ScalarProperty Name="clientprojtid" ColumnName="clientprojtid" />
+          <ScalarProperty Name="ClientProjTitle" ColumnName="ClientProjTitle" />
+          <ScalarProperty Name="timesheetmode" ColumnName="timesheetmode" />
+          <ScalarProperty Name="resultsubmitstatus" ColumnName="resultsubmitstatus" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="modifieddate" ColumnName="modifieddate" />
+          <ScalarProperty Name="usr_username" ColumnName="usr_username" />
+          <ScalarProperty Name="l1_managername" ColumnName="l1_managername" />
+          <ScalarProperty Name="l2_managername" ColumnName="l2_managername" />
+          <ScalarProperty Name="submitteddate" ColumnName="submitteddate" />
+          <ScalarProperty Name="l1_approverdate" ColumnName="l1_approverdate" />
+          <ScalarProperty Name="l2_approverdate" ColumnName="l2_approverdate" />
+          <ScalarProperty Name="uproj_L1_ManagerId" ColumnName="uproj_L1_ManagerId" />
+          <ScalarProperty Name="uproj_l2_managerid" ColumnName="uproj_l2_managerid" />
+          <ScalarProperty Name="FinalStatus" ColumnName="FinalStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="TimesheetManagerActions" FunctionName="Model.Store.TimesheetManagerActions" />
+    <FunctionImportMapping FunctionImportName="UpdateHoliday" FunctionName="Model.Store.UpdateHoliday" />
+    <FunctionImportMapping FunctionImportName="UpdateOtp" FunctionName="Model.Store.UpdateOtp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.UpdateOtp_Result">
+          <ScalarProperty Name="Usr_LoginId" ColumnName="Usr_LoginId" />
+          <ScalarProperty Name="Url_token" ColumnName="Url_token" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USE__Ez_EvolutyzCornerWebDev_" FunctionName="Model.Store.USE__Ez_EvolutyzCornerWebDev_">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.USE__Ez_EvolutyzCornerWebDev__Result">
+          <ScalarProperty Name="TimesheetID" ColumnName="TimesheetID" />
+          <ScalarProperty Name="Usr_UserID" ColumnName="Usr_UserID" />
+          <ScalarProperty Name="Usr_Username" ColumnName="Usr_Username" />
+          <ScalarProperty Name="taskid" ColumnName="taskid" />
+          <ScalarProperty Name="taskname" ColumnName="taskname" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="Proj_ProjectName" ColumnName="Proj_ProjectName" />
+          <ScalarProperty Name="HoursWorked" ColumnName="HoursWorked" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="MonthYearName" ColumnName="MonthYearName" />
+          <ScalarProperty Name="TaskDate" ColumnName="TaskDate" />
+          <ScalarProperty Name="SubmittedType" ColumnName="SubmittedType" />
+          <ScalarProperty Name="TotalMonthName" ColumnName="TotalMonthName" />
+          <ScalarProperty Name="SubmittedDate" ColumnName="SubmittedDate" />
+          <ScalarProperty Name="L1_ApproverDate" ColumnName="L1_ApproverDate" />
+          <ScalarProperty Name="L1_ManagerName" ColumnName="L1_ManagerName" />
+          <ScalarProperty Name="L2_ManagerName" ColumnName="L2_ManagerName" />
+          <ScalarProperty Name="ClientProjTitle" ColumnName="ClientProjTitle" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USE__Ez_EvolutyzCornerWebProd_" FunctionName="Model.Store.USE__Ez_EvolutyzCornerWebProd_">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.USE__Ez_EvolutyzCornerWebProd__Result">
+          <ScalarProperty Name="TimesheetID" ColumnName="TimesheetID" />
+          <ScalarProperty Name="Usr_UserID" ColumnName="Usr_UserID" />
+          <ScalarProperty Name="Usr_Username" ColumnName="Usr_Username" />
+          <ScalarProperty Name="taskid" ColumnName="taskid" />
+          <ScalarProperty Name="taskname" ColumnName="taskname" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="Proj_ProjectName" ColumnName="Proj_ProjectName" />
+          <ScalarProperty Name="HoursWorked" ColumnName="HoursWorked" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="MonthYearName" ColumnName="MonthYearName" />
+          <ScalarProperty Name="TaskDate" ColumnName="TaskDate" />
+          <ScalarProperty Name="SubmittedType" ColumnName="SubmittedType" />
+          <ScalarProperty Name="TotalMonthName" ColumnName="TotalMonthName" />
+          <ScalarProperty Name="SubmittedDate" ColumnName="SubmittedDate" />
+          <ScalarProperty Name="L1_ApproverDate" ColumnName="L1_ApproverDate" />
+          <ScalarProperty Name="L1_ManagerName" ColumnName="L1_ManagerName" />
+          <ScalarProperty Name="L2_ManagerName" ColumnName="L2_ManagerName" />
+          <ScalarProperty Name="ClientProjTitle" ColumnName="ClientProjTitle" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USE__Ez_EvolutyzCornerWebTesting_" FunctionName="Model.Store.USE__Ez_EvolutyzCornerWebTesting_">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.USE__Ez_EvolutyzCornerWebTesting__Result">
+          <ScalarProperty Name="TimesheetID" ColumnName="TimesheetID" />
+          <ScalarProperty Name="Usr_UserID" ColumnName="Usr_UserID" />
+          <ScalarProperty Name="Usr_Username" ColumnName="Usr_Username" />
+          <ScalarProperty Name="taskid" ColumnName="taskid" />
+          <ScalarProperty Name="taskname" ColumnName="taskname" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="Proj_ProjectName" ColumnName="Proj_ProjectName" />
+          <ScalarProperty Name="HoursWorked" ColumnName="HoursWorked" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="MonthYearName" ColumnName="MonthYearName" />
+          <ScalarProperty Name="TaskDate" ColumnName="TaskDate" />
+          <ScalarProperty Name="SubmittedType" ColumnName="SubmittedType" />
+          <ScalarProperty Name="TotalMonthName" ColumnName="TotalMonthName" />
+          <ScalarProperty Name="SubmittedDate" ColumnName="SubmittedDate" />
+          <ScalarProperty Name="L1_ApproverDate" ColumnName="L1_ApproverDate" />
+          <ScalarProperty Name="L1_ManagerName" ColumnName="L1_ManagerName" />
+          <ScalarProperty Name="L2_ManagerName" ColumnName="L2_ManagerName" />
+          <ScalarProperty Name="ClientProjTitle" ColumnName="ClientProjTitle" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UserAuthenticateWithToken" FunctionName="Model.Store.UserAuthenticateWithToken">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.UserAuthenticateWithToken_Result">
+          <ScalarProperty Name="Usr_UserID" ColumnName="Usr_UserID" />
+          <ScalarProperty Name="Usr_UserTypeID" ColumnName="Usr_UserTypeID" />
+          <ScalarProperty Name="Usr_Username" ColumnName="Usr_Username" />
+          <ScalarProperty Name="Proj_ProjectID" ColumnName="Proj_ProjectID" />
+          <ScalarProperty Name="UsT_UserTypeCode" ColumnName="UsT_UserTypeCode" />
+          <ScalarProperty Name="UsT_UserType" ColumnName="UsT_UserType" />
+          <ScalarProperty Name="Acc_CompanyLogo" ColumnName="Acc_CompanyLogo" />
+          <ScalarProperty Name="Acc_AccountID" ColumnName="Acc_AccountID" />
+          <ScalarProperty Name="Proj_ProjectName" ColumnName="Proj_ProjectName" />
+          <ScalarProperty Name="UsT_UserTypeID" ColumnName="UsT_UserTypeID" />
+          <ScalarProperty Name="tsk_TaskID" ColumnName="tsk_TaskID" />
+          <ScalarProperty Name="tsk_TaskName" ColumnName="tsk_TaskName" />
+          <ScalarProperty Name="Rol_RoleName" ColumnName="Rol_RoleName" />
+          <ScalarProperty Name="UsrP_EmployeeID" ColumnName="UsrP_EmployeeID" />
+          <ScalarProperty Name="UsrP_EmailID" ColumnName="UsrP_EmailID" />
+          <ScalarProperty Name="Usrp_DOJ" ColumnName="Usrp_DOJ" />
+          <ScalarProperty Name="UsrP_FirstName" ColumnName="UsrP_FirstName" />
+          <ScalarProperty Name="UsrP_LastName" ColumnName="UsrP_LastName" />
+          <ScalarProperty Name="Rol_RoleID" ColumnName="Rol_RoleID" />
+          <ScalarProperty Name="RoleType" ColumnName="RoleType" />
+          <ScalarProperty Name="TimesheetMode" ColumnName="TimesheetMode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UserLeaveManagerActionsfromEmail" FunctionName="Model.Store.UserLeaveManagerActionsfromEmail" />
+    <FunctionImportMapping FunctionImportName="UserWFHManagerActionsfromEmail" FunctionName="Model.Store.UserWFHManagerActionsfromEmail" />
+    <FunctionImportMapping FunctionImportName="ValidatetoResetPassword" FunctionName="Model.Store.ValidatetoResetPassword" />
+    <FunctionImportMapping FunctionImportName="WebEditSubmitTaskDetails" FunctionName="Model.Store.WebEditSubmitTaskDetails" />
+    <FunctionImportMapping FunctionImportName="WebEditSubmitTimesheet" FunctionName="Model.Store.WebEditSubmitTimesheet" />
+    <FunctionImportMapping FunctionImportName="WebGetAccountHolderTimeSheets" FunctionName="Model.Store.WebGetAccountHolderTimeSheets">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.WebGetAccountHolderTimeSheets_Result">
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="TimesheetID" ColumnName="TimesheetID" />
+          <ScalarProperty Name="MonthYearName" ColumnName="MonthYearName" />
+          <ScalarProperty Name="WorkedHours" ColumnName="WorkedHours" />
+          <ScalarProperty Name="TimesheetType" ColumnName="TimesheetType" />
+          <ScalarProperty Name="MonthYearName1" ColumnName="MonthYearName1" />
+          <ScalarProperty Name="ByWeeklyStartDate" ColumnName="ByWeeklyStartDate" />
+          <ScalarProperty Name="ByWeeklyEndDate" ColumnName="ByWeeklyEndDate" />
+          <ScalarProperty Name="TimesheetDuration" ColumnName="TimesheetDuration" />
+          <ScalarProperty Name="Companyworkinghours" ColumnName="Companyworkinghours" />
+          <ScalarProperty Name="Proj_ProjectName" ColumnName="Proj_ProjectName" />
+          <ScalarProperty Name="Proj_ProjectID" ColumnName="Proj_ProjectID" />
+          <ScalarProperty Name="ClientProjTitle" ColumnName="ClientProjTitle" />
+          <ScalarProperty Name="ClientProjtId" ColumnName="ClientProjtId" />
+          <ScalarProperty Name="ResultSubmitStatus" ColumnName="ResultSubmitStatus" />
+          <ScalarProperty Name="modifieddate" ColumnName="modifieddate" />
+          <ScalarProperty Name="Usr_Username" ColumnName="Usr_Username" />
+          <ScalarProperty Name="L1_ManagerName" ColumnName="L1_ManagerName" />
+          <ScalarProperty Name="L2_ManagerName" ColumnName="L2_ManagerName" />
+          <ScalarProperty Name="UProj_L1_ManagerId" ColumnName="UProj_L1_ManagerId" />
+          <ScalarProperty Name="UProj_L2_ManagerId" ColumnName="UProj_L2_ManagerId" />
+          <ScalarProperty Name="SubmittedDate" ColumnName="SubmittedDate" />
+          <ScalarProperty Name="L1_ApproverDate" ColumnName="L1_ApproverDate" />
+          <ScalarProperty Name="TimesheetMonth" ColumnName="TimesheetMonth" />
+          <ScalarProperty Name="ByMonthlyDates" ColumnName="ByMonthlyDates" />
+          <ScalarProperty Name="FinalStatus" ColumnName="FinalStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WebGetProfileDetails" FunctionName="Model.Store.WebGetProfileDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.WebGetProfileDetails_Result">
+          <ScalarProperty Name="Usr_Titleid" ColumnName="Usr_Titleid" />
+          <ScalarProperty Name="Usr_GenderId" ColumnName="Usr_GenderId" />
+          <ScalarProperty Name="UsrP_FirstName" ColumnName="UsrP_FirstName" />
+          <ScalarProperty Name="UsrP_LastName" ColumnName="UsrP_LastName" />
+          <ScalarProperty Name="UsrP_EmployeeID" ColumnName="UsrP_EmployeeID" />
+          <ScalarProperty Name="UsrP_EmailID" ColumnName="UsrP_EmailID" />
+          <ScalarProperty Name="Usrp_MobileNumber" ColumnName="Usrp_MobileNumber" />
+          <ScalarProperty Name="Usrp_MobileNumber1" ColumnName="Usrp_MobileNumber1" />
+          <ScalarProperty Name="Usrp_ProfilePicture" ColumnName="Usrp_ProfilePicture" />
+          <ScalarProperty Name="UsrP_DOB" ColumnName="UsrP_DOB" />
+          <ScalarProperty Name="Usrp_DOJ" ColumnName="Usrp_DOJ" />
+          <ScalarProperty Name="Usr_GenderId1" ColumnName="Usr_GenderId1" />
+          <ScalarProperty Name="Marital_Status" ColumnName="Marital_Status" />
+          <ScalarProperty Name="PermanentAddress" ColumnName="PermanentAddress" />
+          <ScalarProperty Name="TemporaryAddress" ColumnName="TemporaryAddress" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WebGetTimeSheetforApproval" FunctionName="Model.Store.WebGetTimeSheetforApproval">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.WebGetTimeSheetforApproval_Result">
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+          <ScalarProperty Name="TimesheetID" ColumnName="TimesheetID" />
+          <ScalarProperty Name="Companyworkinghours" ColumnName="Companyworkinghours" />
+          <ScalarProperty Name="MonthYearName" ColumnName="MonthYearName" />
+          <ScalarProperty Name="TimesheetMonth" ColumnName="TimesheetMonth" />
+          <ScalarProperty Name="WorkedHours" ColumnName="WorkedHours" />
+          <ScalarProperty Name="Proj_ProjectID" ColumnName="Proj_ProjectID" />
+          <ScalarProperty Name="Proj_ProjectName" ColumnName="Proj_ProjectName" />
+          <ScalarProperty Name="ClientProjtId" ColumnName="ClientProjtId" />
+          <ScalarProperty Name="ResultSubmitStatus" ColumnName="ResultSubmitStatus" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="modifieddate" ColumnName="modifieddate" />
+          <ScalarProperty Name="Usr_Username" ColumnName="Usr_Username" />
+          <ScalarProperty Name="L1_ManagerName" ColumnName="L1_ManagerName" />
+          <ScalarProperty Name="L2_ManagerName" ColumnName="L2_ManagerName" />
+          <ScalarProperty Name="SubmittedDate" ColumnName="SubmittedDate" />
+          <ScalarProperty Name="L1_ApproverDate" ColumnName="L1_ApproverDate" />
+          <ScalarProperty Name="L2_ApproverDate" ColumnName="L2_ApproverDate" />
+          <ScalarProperty Name="UProj_L1_ManagerId" ColumnName="UProj_L1_ManagerId" />
+          <ScalarProperty Name="UProj_L2_ManagerId" ColumnName="UProj_L2_ManagerId" />
+          <ScalarProperty Name="FinalStatus" ColumnName="FinalStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WebgetUserbyMonthlyTimesheet" FunctionName="Model.Store.WebgetUserbyMonthlyTimesheet">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.WebgetUserbyMonthlyTimesheet_Result">
+          <ScalarProperty Name="TimesheetID" ColumnName="TimesheetID" />
+          <ScalarProperty Name="Usr_UserID" ColumnName="Usr_UserID" />
+          <ScalarProperty Name="Usr_Username" ColumnName="Usr_Username" />
+          <ScalarProperty Name="taskid" ColumnName="taskid" />
+          <ScalarProperty Name="taskname" ColumnName="taskname" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="Proj_ProjectName" ColumnName="Proj_ProjectName" />
+          <ScalarProperty Name="HoursWorked" ColumnName="HoursWorked" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="MonthYearName" ColumnName="MonthYearName" />
+          <ScalarProperty Name="TaskDate" ColumnName="TaskDate" />
+          <ScalarProperty Name="SubmittedType" ColumnName="SubmittedType" />
+          <ScalarProperty Name="TotalMonthName" ColumnName="TotalMonthName" />
+          <ScalarProperty Name="SubmittedDate" ColumnName="SubmittedDate" />
+          <ScalarProperty Name="L1_ApproverDate" ColumnName="L1_ApproverDate" />
+          <ScalarProperty Name="L2_ApproverDate" ColumnName="L2_ApproverDate" />
+          <ScalarProperty Name="L1_ManagerName" ColumnName="L1_ManagerName" />
+          <ScalarProperty Name="L2_ManagerName" ColumnName="L2_ManagerName" />
+          <ScalarProperty Name="ClientProjTitle" ColumnName="ClientProjTitle" />
+          <ScalarProperty Name="L1_ApproverStatus" ColumnName="L1_ApproverStatus" />
+          <ScalarProperty Name="L2_ApproverStatus" ColumnName="L2_ApproverStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WebgetUserbyMonthlyTimesheet15days" FunctionName="Model.Store.WebgetUserbyMonthlyTimesheet15days">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.WebgetUserbyMonthlyTimesheet15days_Result">
+          <ScalarProperty Name="TimesheetID" ColumnName="TimesheetID" />
+          <ScalarProperty Name="Usr_UserID" ColumnName="Usr_UserID" />
+          <ScalarProperty Name="Usr_Username" ColumnName="Usr_Username" />
+          <ScalarProperty Name="taskid" ColumnName="taskid" />
+          <ScalarProperty Name="taskname" ColumnName="taskname" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="Proj_ProjectName" ColumnName="Proj_ProjectName" />
+          <ScalarProperty Name="HoursWorked" ColumnName="HoursWorked" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="MonthYearName" ColumnName="MonthYearName" />
+          <ScalarProperty Name="TaskDate" ColumnName="TaskDate" />
+          <ScalarProperty Name="SubmittedType" ColumnName="SubmittedType" />
+          <ScalarProperty Name="TotalMonthName" ColumnName="TotalMonthName" />
+          <ScalarProperty Name="SubmittedDate" ColumnName="SubmittedDate" />
+          <ScalarProperty Name="L1_ApproverDate" ColumnName="L1_ApproverDate" />
+          <ScalarProperty Name="L1_ManagerName" ColumnName="L1_ManagerName" />
+          <ScalarProperty Name="L2_ManagerName" ColumnName="L2_ManagerName" />
+          <ScalarProperty Name="ClientProjTitle" ColumnName="ClientProjTitle" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WebgetUserbyweeklyTimesheet" FunctionName="Model.Store.WebgetUserbyweeklyTimesheet">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.WebgetUserbyweeklyTimesheet_Result">
+          <ScalarProperty Name="TimesheetID" ColumnName="TimesheetID" />
+          <ScalarProperty Name="Usr_UserID" ColumnName="Usr_UserID" />
+          <ScalarProperty Name="Usr_Username" ColumnName="Usr_Username" />
+          <ScalarProperty Name="taskid" ColumnName="taskid" />
+          <ScalarProperty Name="taskname" ColumnName="taskname" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="Proj_ProjectName" ColumnName="Proj_ProjectName" />
+          <ScalarProperty Name="HoursWorked" ColumnName="HoursWorked" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="MonthYearName" ColumnName="MonthYearName" />
+          <ScalarProperty Name="TaskDate" ColumnName="TaskDate" />
+          <ScalarProperty Name="SubmittedType" ColumnName="SubmittedType" />
+          <ScalarProperty Name="TotalMonthName" ColumnName="TotalMonthName" />
+          <ScalarProperty Name="SubmittedDate" ColumnName="SubmittedDate" />
+          <ScalarProperty Name="L1_ApproverDate" ColumnName="L1_ApproverDate" />
+          <ScalarProperty Name="L1_ManagerName" ColumnName="L1_ManagerName" />
+          <ScalarProperty Name="L2_ManagerName" ColumnName="L2_ManagerName" />
+          <ScalarProperty Name="ClientProjTitle" ColumnName="ClientProjTitle" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WebgetUserTimesheet" FunctionName="Model.Store.WebgetUserTimesheet">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.WebgetUserTimesheet_Result">
+          <ScalarProperty Name="timesheetid" ColumnName="timesheetid" />
+          <ScalarProperty Name="usr_userid" ColumnName="usr_userid" />
+          <ScalarProperty Name="usr_username" ColumnName="usr_username" />
+          <ScalarProperty Name="taskid" ColumnName="taskid" />
+          <ScalarProperty Name="taskname" ColumnName="taskname" />
+          <ScalarProperty Name="projectid" ColumnName="projectid" />
+          <ScalarProperty Name="proj_projectname" ColumnName="proj_projectname" />
+          <ScalarProperty Name="HoursWorked" ColumnName="HoursWorked" />
+          <ScalarProperty Name="timesheetmonth" ColumnName="timesheetmonth" />
+          <ScalarProperty Name="comments" ColumnName="comments" />
+          <ScalarProperty Name="monthyearname" ColumnName="monthyearname" />
+          <ScalarProperty Name="taskdate" ColumnName="taskdate" />
+          <ScalarProperty Name="submittedtype" ColumnName="submittedtype" />
+          <ScalarProperty Name="TotalMonthName" ColumnName="TotalMonthName" />
+          <ScalarProperty Name="SubmittedDate" ColumnName="SubmittedDate" />
+          <ScalarProperty Name="l1_approverdate" ColumnName="l1_approverdate" />
+          <ScalarProperty Name="l2_approverdate" ColumnName="l2_approverdate" />
+          <ScalarProperty Name="L1_ManagerName" ColumnName="L1_ManagerName" />
+          <ScalarProperty Name="L2_ManagerName" ColumnName="L2_ManagerName" />
+          <ScalarProperty Name="clientprojtitle" ColumnName="clientprojtitle" />
+          <ScalarProperty Name="ClientProjtId" ColumnName="ClientProjtId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WebValidTimesheetMonthExits" FunctionName="Model.Store.WebValidTimesheetMonthExits" />
+    <FunctionImportMapping FunctionImportName="Weekly_WebGetTimeSheetforApproval" FunctionName="Model.Store.Weekly_WebGetTimeSheetforApproval">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.Weekly_WebGetTimeSheetforApproval_Result">
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+          <ScalarProperty Name="TimesheetID" ColumnName="TimesheetID" />
+          <ScalarProperty Name="MonthYearName" ColumnName="MonthYearName" />
+          <ScalarProperty Name="ByWeeklyStartDate" ColumnName="ByWeeklyStartDate" />
+          <ScalarProperty Name="ByWeeklyEndDate" ColumnName="ByWeeklyEndDate" />
+          <ScalarProperty Name="WorkedHours" ColumnName="WorkedHours" />
+          <ScalarProperty Name="Proj_ProjectID" ColumnName="Proj_ProjectID" />
+          <ScalarProperty Name="Proj_ProjectName" ColumnName="Proj_ProjectName" />
+          <ScalarProperty Name="ClientProjtId" ColumnName="ClientProjtId" />
+          <ScalarProperty Name="ClientProjTitle" ColumnName="ClientProjTitle" />
+          <ScalarProperty Name="ResultSubmitStatus" ColumnName="ResultSubmitStatus" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="modifieddate" ColumnName="modifieddate" />
+          <ScalarProperty Name="Usr_Username" ColumnName="Usr_Username" />
+          <ScalarProperty Name="L1_ManagerName" ColumnName="L1_ManagerName" />
+          <ScalarProperty Name="L2_ManagerName" ColumnName="L2_ManagerName" />
+          <ScalarProperty Name="SubmittedDate" ColumnName="SubmittedDate" />
+          <ScalarProperty Name="L1_ApproverDate" ColumnName="L1_ApproverDate" />
+          <ScalarProperty Name="L2_ApproverDate" ColumnName="L2_ApproverDate" />
+          <ScalarProperty Name="TimesheetMonth" ColumnName="TimesheetMonth" />
+          <ScalarProperty Name="UProj_L1_ManagerId" ColumnName="UProj_L1_ManagerId" />
+          <ScalarProperty Name="UProj_L2_ManagerId" ColumnName="UProj_L2_ManagerId" />
+          <ScalarProperty Name="Companyworkinghours" ColumnName="Companyworkinghours" />
+          <ScalarProperty Name="TimesheetMode" ColumnName="TimesheetMode" />
+          <ScalarProperty Name="ByMonthlyDates" ColumnName="ByMonthlyDates" />
+          <ScalarProperty Name="FinalStatus" ColumnName="FinalStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

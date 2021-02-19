@@ -1,0 +1,876 @@
+﻿@model evolCorner.Models.UserProjectdetailsEntity
+@{
+
+    ViewBag.Title = "Usertimesheet";
+}
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+@*
+<script src="~/Scripts/bootstrap.min.js"></script>*@
+<link href="~/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" />
+<script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="~/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="~/EvolutyzCornerScripts/AdminPreview.js"></script>
+
+<style>
+    table > tbody > tr.brown {
+        background: #ffdfdd;
+    }
+
+        table > tbody > tr.brown > td {
+            border-color: #ff996a;
+        }
+    fieldset.note-status {
+        float: left;
+        text-align: left;
+        padding: 5px 15px 10px;
+        margin: 0 2px;
+        border: 1px solid silver;
+    }
+
+        fieldset.note-status > legend {
+            width: auto;
+            margin-bottom: auto;
+            font-size: 16px;
+            font-weight: 600;
+            border: 0;
+            padding: 0 10px;
+        }
+
+        fieldset.note-status > label {
+            margin: 0 5px;
+        }
+
+            fieldset.note-status > label:before {
+                content: "*";
+                width: 18px;
+                height: 18px;
+                line-height: 22px;
+                display: inline-block;
+                color: #fff;
+                text-align: center;
+                border-radius: 50%;
+                margin-right: 5px;
+            }
+
+            /*fieldset.note-status > label.black:before {
+                background-color: black;
+            }*/
+
+            fieldset.note-status > label.green:before {
+                background-color: green;
+            }
+
+            fieldset.note-status > label.red:before {
+                background-color: red;
+            }
+
+            fieldset.note-status > label.blue:before {
+                background-color: blue;
+            }
+
+    .box.box-solid.box-brown {
+        border: 1px solid #aaaaaa;
+    }
+
+    .flex {
+        display: flex;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+    }
+
+    .box.box-solid.box-brown > .box-header {
+        /*background-color: #a3765b;
+        color: #fff;*/
+        border-color: #aaaaaa;
+        background: #cccccc url(../Content/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png) 50% 50% repeat-x;
+        color: #222222;
+    }
+
+    /*.box.box-solid.box-brown .btn-warning
+        {
+            background-color: #f97045;
+            border-color: #fe450b;
+        }
+
+        .box.box-solid.box-brown .btn-success
+        {
+            background-color: #fea728;
+            border-color: #FF9800;
+        }*/
+    .block-content .btn-warning {
+        background-color: #f97045;
+        border-color: #fe450b;
+    }
+
+    .block-content .btn-success {
+        background-color: #fea728;
+        border-color: #FF9800;
+    }
+
+    #divhiduserid ~ label {
+        margin: 7px auto;
+    }
+</style>
+<style>
+    /*b[class^="ts_ManagerNames"],*/
+    table#ClientDetails td > b ~ b {
+        display: block;
+    }
+
+    table[id^="SubTable"] td.colored {
+        color: #555;
+        background-color: #fff;
+        border: 1px solid #ccc;
+    }
+
+    .box.box-solid.box-brown {
+        border: 1px solid #aaaaaa;
+    }
+
+        .box.box-solid.box-brown > .box-header {
+            /*background-color: #a3765b;
+        color: #fff;*/
+            border-color: #aaaaaa;
+            background: #cccccc url(../Content/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png) 50% 50% repeat-x;
+            color: #222222;
+        }
+
+    /*.box.box-solid.box-brown .btn-warning
+        {
+            background-color: #f97045;
+            border-color: #fe450b;
+        }
+
+        .box.box-solid.box-brown .btn-success
+        {
+            background-color: #fea728;
+            border-color: #FF9800;
+        }*/
+    .block-content .btn-warning {
+        background-color: #f97045;
+        border-color: #fe450b;
+    }
+
+    .block-content .btn-success {
+        background-color: #fea728;
+        border-color: #FF9800;
+    }
+
+    #divhiduserid ~ label {
+        margin: 7px auto;
+    }
+</style>
+<style>
+    .evInputBtn {
+        display: inline-block;
+        padding: 5px 10px;
+        margin: 3px 5px;
+        background: #848484;
+        color: #FFF !important;
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+        border: none;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        box-shadow: inset 0px -10px 15px rgba(0, 0, 0, 0.2), 1px 1px 5px rgba(0,0,0,0.2);
+        -webkit-box-shadow: inset 0px -10px 15px rgba(0, 0, 0, 0.2), 1px 1px 5px rgba(0,0,0,0.2);
+        -moz-box-shadow: inset 0px -10px 15px rgba(0, 0, 0, 0.2), 1px 1px 5px rgba(0,0,0,0.2);
+        cursor: pointer;
+    }
+
+    #btnSave.evInputBtn,
+    #btnSaveUpdate.evInputBtn {
+        background: #ff9800;
+    }
+
+    #btnSend.evInputBtn,
+    #btnSubmitUpdate.evInputBtn {
+        background: #4CAF50;
+    }
+    /*.evInputBtn:hover {
+            background: #FF6600;
+        }*/
+
+
+    .contentArea {
+        background: #FFF url(../images/shadow.png) repeat-x;
+        box-shadow: 0px 5px 8px rgba(183, 35, 35, 0.81);
+        padding: 30px;
+        min-height: 350px;
+    }
+
+    #MainTable {
+        border: 0px !important;
+    }
+
+    #SubTable {
+        border: 0px !important;
+    }
+
+    #SubTable2 {
+        border: 0px !important;
+    }
+
+    table#ClientDetails td {
+        border: none;
+        width: auto;
+    }
+
+    tbody > tr:only-child:nth-child(odd) {
+        background: none;
+    }
+
+    .evAdminTable th {
+        border-bottom: 0px solid #EAEAEA;
+        padding: 5px;
+        background: #666;
+        color: #FFF;
+    }
+
+    table td, table th {
+        padding: 3px 6px;
+    }
+
+    table tr:nth-of-type(odd) {
+        background: #f9f9f9;
+    }
+
+    #MainTable > td[id^="td"] {
+        border: 0;
+        width: 50%;
+        vertical-align: top;
+    }
+
+    table td > .form-control {
+        border-radius: 0px;
+        height: auto;
+        padding: 2px;
+    }
+
+    table td > select.form-control {
+        width: 100%;
+    }
+
+    table #MainTable > td[id^="td"]:first-child {
+        padding-left: 0;
+    }
+
+    table#MainTable > td[id^="td"]:last-child {
+        padding-right: 0;
+    }
+
+    table [id^="SubTable"] tr > td:last-child {
+        display: none;
+    }
+
+    table[id^="SubTable"] {
+        background-color: #fff;
+    }
+
+        table[id^="SubTable"] tr > td:first-child {
+            word-spacing: 5px;
+            text-align: right;
+            padding-right: 15px;
+        }
+
+    .evAdminTable th {
+        border-bottom: 0px solid #EAEAEA;
+        padding: 5px;
+        background: #666;
+        color: #FFF;
+    }
+
+    @@page {
+        size: A4 landscape;
+    }
+    /*@@media print {
+        .nonPrintable {
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        .skin-blue .main-header .navbar {
+            background-color: #3b464e !important;
+        }
+
+        .main-footer {
+            background: #142837 !important;
+            color: #FFF !important;
+        }
+      }*/
+
+</style>
+<style>
+    #loading-image {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 1035;
+        background-color: rgba(243, 243, 243, 0.75);
+        /*opacity: .8;*/
+    }
+
+        #loading-image > img {
+            /*width: 56px;
+            height: 56px;
+            border: 8px solid rgba(255, 87, 34, 0.25);
+            border-top-color: #f37a41;
+            border-radius: 50%;*/
+            position: absolute;
+            /* animation: loader-rotate 1s linear infinite; */
+            top: 50%;
+            left: 50%;
+            margin: -60px auto 0;
+            max-width: 100%;
+            display: block;
+            height: 100px;
+        }
+
+        #loading-image > span {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            animation: loader-circles 1s linear infinite;
+            top: 50%;
+            left: 50%;
+            margin: -20px auto 0;
+        }
+
+        #loading-image > strong {
+            position: absolute;
+            top: 50%;
+            left: 48%;
+            margin: 0px auto 0;
+            font-size: 10px;
+        }
+
+    @@keyframes loader-circles {
+        0% {
+            box-shadow: 0 -85px 0 0 rgba(255, 87, 34, 0.05), 61px -61px 0 0 rgba(255, 87, 34, 0.1), 85px 0 0 0 rgba(255, 87, 34, 0.2), 61px 61px 0 0 rgba(255, 87, 34, 0.3), 0 85px 0 0 rgba(255, 87, 34, 0.4), -61px 61px 0 0 rgba(255, 87, 34, 0.6), -85px 0 0 0 rgba(255, 87, 34, 0.8), -61px -61px 0 0 #f37a41;
+        }
+
+        12.5% {
+            box-shadow: 0 -85px 0 0 #f37a41, 61px -61px 0 0 rgba(255, 87, 34, 0.05), 85px 0 0 0 rgba(255, 87, 34, 0.1), 61px 61px 0 0 rgba(255, 87, 34, 0.2), 0 85px 0 0 rgba(255, 87, 34, 0.3), -61px 61px 0 0 rgba(255, 87, 34, 0.4), -85px 0 0 0 rgba(255, 87, 34, 0.6), -61px -61px 0 0 rgba(255, 87, 34, 0.8);
+        }
+
+        25% {
+            box-shadow: 0 -85px 0 0 rgba(255, 87, 34, 0.8), 61px -61px 0 0 #f37a41, 85px 0 0 0 rgba(255, 87, 34, 0.05), 61px 61px 0 0 rgba(255, 87, 34, 0.1), 0 85px 0 0 rgba(255, 87, 34, 0.2), -61px 61px 0 0 rgba(255, 87, 34, 0.3), -85px 0 0 0 rgba(255, 87, 34, 0.4), -61px -61px 0 0 rgba(255, 87, 34, 0.6);
+        }
+
+        37.5% {
+            box-shadow: 0 -85px 0 0 rgba(255, 87, 34, 0.6), 61px -61px 0 0 rgba(255, 87, 34, 0.8), 85px 0 0 0 #f37a41, 61px 61px 0 0 rgba(255, 87, 34, 0.05), 0 85px 0 0 rgba(255, 87, 34, 0.1), -61px 61px 0 0 rgba(255, 87, 34, 0.2), -85px 0 0 0 rgba(255, 87, 34, 0.3), -61px -61px 0 0 rgba(255, 87, 34, 0.4);
+        }
+
+        50% {
+            box-shadow: 0 -85px 0 0 rgba(255, 87, 34, 0.4), 61px -61px 0 0 rgba(255, 87, 34, 0.6), 85px 0 0 0 rgba(255, 87, 34, 0.8), 61px 61px 0 0 #f37a41, 0 85px 0 0 rgba(255, 87, 34, 0.05), -61px 61px 0 0 rgba(255, 87, 34, 0.1), -85px 0 0 0 rgba(255, 87, 34, 0.2), -61px -61px 0 0 rgba(255, 87, 34, 0.3);
+        }
+
+        62.5% {
+            box-shadow: 0 -85px 0 0 rgba(255, 87, 34, 0.3), 61px -61px 0 0 rgba(255, 87, 34, 0.4), 85px 0 0 0 rgba(255, 87, 34, 0.6), 61px 61px 0 0 rgba(255, 87, 34, 0.8), 0 85px 0 0 #f37a41, -61px 61px 0 0 rgba(255, 87, 34, 0.05), -85px 0 0 0 rgba(255, 87, 34, 0.1), -61px -61px 0 0 rgba(255, 87, 34, 0.2);
+        }
+
+        75% {
+            box-shadow: 0 -85px 0 0 rgba(255, 87, 34, 0.2), 61px -61px 0 0 rgba(255, 87, 34, 0.3), 85px 0 0 0 rgba(255, 87, 34, 0.4), 61px 61px 0 0 rgba(255, 87, 34, 0.6), 0 85px 0 0 rgba(255, 87, 34, 0.8), -61px 61px 0 0 #f37a41, -85px 0 0 0 rgba(255, 87, 34, 0.05), -61px -61px 0 0 rgba(255, 87, 34, 0.1);
+        }
+
+        87.5% {
+            box-shadow: 0 -85px 0 0 rgba(255, 87, 34, 0.1), 61px -61px 0 0 rgba(255, 87, 34, 0.2), 85px 0 0 0 rgba(255, 87, 34, 0.3), 61px 61px 0 0 rgba(255, 87, 34, 0.4), 0 85px 0 0 rgba(255, 87, 34, 0.6), -61px 61px 0 0 rgba(255, 87, 34, 0.8), -85px 0 0 0 #f37a41, -61px -61px 0 0 rgba(255, 87, 34, 0.05);
+        }
+
+        100% {
+            box-shadow: 0 -85px 0 0 rgba(255, 87, 34, 0.05), 61px -61px 0 0 rgba(255, 87, 34, 0.1), 85px 0 0 0 rgba(255, 87, 34, 0.2), 61px 61px 0 0 rgba(255, 87, 34, 0.3), 0 85px 0 0 rgba(255, 87, 34, 0.4), -61px 61px 0 0 rgba(255, 87, 34, 0.6), -85px 0 0 0 rgba(255, 87, 34, 0.8), -61px -61px 0 0 #f37a41;
+        }
+    }
+
+    /* #f37a41 - rgb(255, 87, 34) , #f8c26c - rgb(248, 194, 108) */
+
+
+
+</style>
+<style type="text/css" media="print">
+
+    .nonPrintable {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .skin-blue .main-header .navbar {
+        background-color: #3b464e !important;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .main-footer {
+        background: #142837 !important;
+        -webkit-print-color-adjust: exact;
+    }
+
+        .main-footer *,
+        .skin-blue .main-header .navbar .nav > li > a *,
+        .skin-blue .main-header .navbar .sidebar-toggle:before,
+        .block-content .btn-warning {
+            color: #FFF !important;
+        }
+
+    .block-content .btn-warning {
+        background-color: #f97045 !important;
+        -webkit-print-color-adjust: exact;
+    }
+
+    #btnSave.evInputBtn, #btnSaveUpdate.evInputBtn {
+        background: #ff9800 !important;
+        -webkit-print-color-adjust: exact;
+    }
+
+    #btnSend.evInputBtn, #btnSubmitUpdate.evInputBtn {
+        background: #4CAF50 !important;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .evInputBtn {
+        background: #848484 !important;
+        -webkit-print-color-adjust: exact;
+    }
+
+    header.main-header,
+    .navbar {
+        display: block !important;
+    }
+
+    a[href]:after {
+        content: "" !important;
+    }
+</style>
+
+<style>
+
+    #ManagerGridData td > span.badge.badge-radius[id="Saved Timesheet"] {
+        background-color: yellow;
+    }
+
+
+    #ManagerGridData td > span.badge.badge-radius[id="Waiting for Approval at Both Managers"] {
+        background-color: deepskyblue;
+    }
+
+
+    #ManagerGridData td > span.badge.badge-radius[id="Waiting for Approval at Level_1 Manager"] {
+        background-color: deepskyblue;
+    }
+
+
+    #ManagerGridData td > span.badge.badge-radius[id="Waiting for Approval at Level_2 Manager"] {
+        background-color: deepskyblue;
+    }
+
+
+    #ManagerGridData td > span.badge.badge-radius[id="Waiting for Approval"] {
+        background-color: deepskyblue;
+    }
+
+
+    #ManagerGridData td > span.badge.badge-radius[id="Waiting for Approval at Both Managers"] {
+        background-color: deepskyblue;
+    }
+
+
+    #ManagerGridData td > span.badge.badge-radius[id="Approved by Both Managers"] {
+        background-color: green;
+    }
+
+
+    #ManagerGridData td > span.badge.badge-radius[id="Approved By Level_1 Manager"] {
+        background-color: green;
+    }
+
+
+
+    #ManagerGridData td > span.badge.badge-radius[id="Approved By Level_2 Manager"] {
+        background-color: green;
+    }
+
+
+
+    #ManagerGridData td > span.badge.badge-radius[id="Approved By Level_1 Manager and Pending at Level_2 Manager"] {
+        background-color: #deaa7c;
+    }
+
+
+    #ManagerGridData td > span.badge.badge-radius[id="Pending at Level_1 Manager and Approved by Level_2 Manager"] {
+        background-color: orange;
+    }
+
+
+    #ManagerGridData td > span.badge.badge-radius[id="Rejected at Level_1 Manager"] {
+        background-color: red;
+    }
+
+
+    #ManagerGridData td > span.badge.badge-radius[id="Rejected"] {
+        background-color: red;
+    }
+
+
+    #ManagerGridData td > span.badge.badge-radius[id="Rejected at Level_2 Manager"] {
+        background-color: red;
+    }
+
+    #ManagerGridData td > span.badge.badge-radius[id="No Action"] {
+        background-color: greenyellow;
+    }
+#ManagerGridData td > span.badge.badge-radius[id="Revoked at Admin"] 
+
+{ background-color: red; 
+
+}
+
+
+    .box.box-solid.box-brown > .box-header > .btn-app {
+        border-radius: 50%;
+        margin: auto;
+        height: auto;
+        line-height: 0;
+        min-width: inherit;
+        float: right;
+        padding: 0;
+        background-color: transparent;
+        border: 0;
+    }
+
+        .box.box-solid.box-brown > .box-header > .btn-app > .fa {
+            font-size: 24px;
+        }
+
+    span.badge.badge-radius {
+        float: none;
+        position: relative;
+        background-color: #555;
+        color: #fff;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        display: inline-block;
+    }
+    /*span.badge.badge-radius[title]:hover:after {
+            content: attr(title);
+            padding: 4px 8px;
+            color: #333;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            white-space: nowrap;
+            z-index: 20;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            -moz-box-shadow: 0px 0px 4px #222;
+            -webkit-box-shadow: 0px 0px 4px #222;
+            box-shadow: 0px 0px 4px #222;
+            background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
+            background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #eeeeee),color-stop(1, #cccccc));
+            background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
+            background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
+            background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
+            background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
+        }*/
+    .evInputBtn {
+        display: inline-block;
+        padding: 5px 10px;
+        margin: 3px 5px;
+        background: #848484;
+        color: #FFF !important;
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+        border: none;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        box-shadow: inset 0px -10px 15px rgba(0, 0, 0, 0.2), 1px 1px 5px rgba(0,0,0,0.2);
+        -webkit-box-shadow: inset 0px -10px 15px rgba(0, 0, 0, 0.2), 1px 1px 5px rgba(0,0,0,0.2);
+        -moz-box-shadow: inset 0px -10px 15px rgba(0, 0, 0, 0.2), 1px 1px 5px rgba(0,0,0,0.2);
+        cursor: pointer;
+    }
+
+    /*.evInputBtn:hover {
+            background: #FF6600;
+        }*/
+
+    #Cmtsave {
+        padding: 0 10px;
+    }
+
+    .contentArea {
+        background: #FFF url(../images/shadow.png) repeat-x;
+        box-shadow: 0px 5px 8px rgba(183, 35, 35, 0.81);
+        padding: 30px;
+        min-height: 350px;
+    }
+
+    #MainTable {
+        border: 0px !important;
+    }
+
+    #SubTable {
+        border: 0px !important;
+    }
+
+    #SubTable2 {
+        border: 0px !important;
+    }
+
+    table#ClientDetails td {
+        border: 0;
+        width: auto;
+    }
+
+    tbody > tr:only-child:nth-child(odd) {
+        background: none;
+    }
+
+    .evAdminTable th {
+        border-bottom: 0px solid #EAEAEA;
+        padding: 5px;
+        background: #666;
+        color: #FFF;
+    }
+
+    table td, table th {
+        padding: 3px 6px;
+    }
+
+    table tr:nth-of-type(odd) {
+        background: #f9f9f9;
+    }
+
+    table #MainTable > td[id^="td"] {
+        border: 0;
+        width: 50%;
+        vertical-align: top;
+    }
+
+    table td > .form-control {
+        border-radius: 0px;
+        height: auto;
+        padding: 2px;
+    }
+
+    table td > select.form-control {
+        width: 100%;
+    }
+
+    table #MainTable > td[id^="td"]:first-child {
+        padding-left: 0;
+    }
+
+    table#MainTable > td[id^="td"]:last-child {
+        padding-right: 0;
+    }
+
+    table [id^="SubTable"] tr > td:last-child {
+        display: none;
+    }
+
+    .box .panel-heading > h3.panel-title {
+        font-weight: 600;
+        font-family: 'Titillium Web', sans-serif;
+    }
+
+    .form-group.row label.col-md-1.control-label {
+        margin-bottom: 30px;
+    }
+
+    .form-group.row label.col-md-1.control-label {
+        margin: 7px auto;
+    }
+</style>
+<!-- Horizontal Form -->
+<div id="loading-image" style="display:none">
+    @*<img src="~/Content/images/demo_wait.gif" />*@
+    <span></span>
+    <strong>Loading Please Wait....</strong>
+</div>
+
+<div class="block-content" id="PdfPrint">
+
+    <div class="">
+        <h4 class="heading-fancy">Timesheets</h4>
+
+    </div>
+
+    <div id="dvTimesheetid">
+        <span id="dvTimesheetids" style="display:none"></span>
+    </div>
+    <div class="clearfix">
+        <div id="StardateToEnddate" style="color:coral;font-size:large;float:left;width: 90%;text-align:center;font-weight:600"></div>
+
+    </div>
+    <table cellspacing="0" cellpadding="0" border="0" id="ClientDetails" style="display:none;margin: 10px auto;width:98%;border:1px solid #aaaaaa;">
+        <tbody>
+            <tr>
+                <td align="right" width="100" class="alt">
+                    <b>Client Name:</b>
+                    <b id="ts_approid">Approved on:</b>
+                </td>
+                <td>
+                    <div id="ts_ClientNameid">  </div>
+                    <div id="ts_Approveid"></div>
+                </td>
+                <td align="right" width="110" class="alt">
+                    <b>Project Name:</b>
+                    <b id="ts_submited">Submitted on:</b>
+                </td>
+                <td>
+                    <div id="ts_ProjectNameid"></div>
+                    <div id="ts_Submittedid"></div>
+                </td>
+                <td width="100" align="right" class="alt">
+                    <b>Manager 1:</b>
+                    <b id="ts_Manager2">Manager 2:</b>
+                </td>
+                <td>
+                    <div id="ts_ManagerNamesid1"></div>
+                    <div id="ts_ManagerNamesid2"></div>
+                </td>
+                <td><b>Duration :</b><b>Timesheet Mode:</b></td>
+                <td><div id="Timesheet_Duration"></div><div id="Timesheet_dvTSMode">Monthly</div></td>
+            </tr>
+        </tbody>
+
+
+
+    </table>
+    <div class="box-body no-padding" id="body">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="form-group row" id="divMonthYear">
+                    <div>
+                        <label for="inputPassword3" class="col-md-1 control-label">Projects:</label>
+                        <select class="form-control col-md-3 Pro" name="AdminProjectsid" id="AdminProjectsid"></select>
+                    </div>
+                    <div>
+                        <label for="inputPassword3" class="col-md-1 control-label">Year : </label>
+                        <select class="form-control col-md-3" name="year" id="year"></select>
+                    </div>
+                    <div>
+                        <label for="inputPassword3" class="col-md-1 control-label">Month :</label>
+                        <select class="form-control col-md-3" name="month" id="month"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 text-left">
+                <button class="btn btn-success margin-r-5" id="submit" value="1" onclick="LoadProjectsofAllusers()">Load</button>
+            </div>
+        </div>
+
+        <div class="box-body no-padding" id="body">
+            <div class="panel panel-default" id="ManagerGridPanel" style="display:none">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Employee Timesheets</h3>
+                </div>
+
+                <div class="panel-body">
+                    <table id="ManagerGridData">
+                        <thead id="tblheadid">
+                            <tr>
+                                <th>Userid</th>
+                                <th>TimesheetMonth</th>
+                                <th>TimesheetID</th>
+                                <th>ProjectId</th>
+                                <th>AdminEmailid</th>
+                                <th>AdminName</th>
+                                <th>Project</th>
+                                <th>Employee</th>
+                                <th>Month</th>
+                                <th>Actual Hours</th>
+                                <th>Worked Hours </th>
+                                <th>Status</th>
+                                <th id="actions2">Actions</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+
+        <div id='Cmtsave' style="display:none">
+            <label style='color:coral'>Additional Comments</label>
+            <div>
+                <textarea name='tnameDescription' rows='2' cols='20' id='txtDescription' style='width:100%;'></textarea>
+
+            </div>
+            <div class='clearfix' style='padding: 10px;text-align:right;'>
+                <fieldset class="note-status">
+                    <legend>Note :</legend>
+                    <label class="green">Work from Home</label>
+                    <label class="red">Leaves</label>
+                    <label class="blue">Holidays</label>
+                </fieldset>
+                <input type='submit' name='btnSave' value='Save &amp; Close' id='btnSave' class='evInputBtn' />
+                &nbsp;&nbsp;
+                <input type='submit' name='btnSend' value='Save &amp; Submit Timesheet' id='btnSend' class='evInputBtn' />
+                &nbsp;&nbsp;
+                <input type='submit' name='SaveUpdate' value='Save &amp;Update' id='btnSaveUpdate' style="display:none" class='evInputBtn' />
+                &nbsp;&nbsp;
+                <input type='submit' name='SubmitUpdate' value='Submit&amp;Update' id='btnSubmitUpdate' style="display:none" class='evInputBtn' />
+                &nbsp;&nbsp;
+                <input type='submit' id='btnclose' name='bntClose' value='Close' title="Close" class='evInputBtn' />
+                @*<input type='submit' id='btnPrint' name='bntPrint' value='Print' class='evInputBtn' onClick='print_page()'>
+                <input type='submit' name='btnpdf' value='Pdf' id='btnpdf' class='evInputBtn'>*@
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<aside class="control-sidebar control-sidebar-dark">
+    <!-- Create the tabs -->
+    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+        <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+        <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+    </ul>
+    <!-- Tab panes -->
+
+</aside>
+
+<div class="control-sidebar-bg"></div>
+<div class="modal fade-in" id="ContainerGridDetail" role="dialog">
+
+    <div class="modal-dialog modal-custom">
+        @*<label id="succ"></label>*@
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" onclick="LoadAllTimesheets()" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" id="PopupAppRejId"></h4>
+            </div>
+
+            <div class="modal-body">
+                <p id="ProjectNameid" style="margin-bottom:auto;"></p>
+            </div>
+            <div class="modal-footer" style="text-align:left;">
+
+                <input type="submit" id="btnRej" class="btn btn-custom2" style="display:none" value="Revoke" onclick=RevokeTimesheet('5')>
+                <button type="button" id="btncancel" class="btn btn-clr1" onclick="LoadAllTimesheets()">Cancel</button>
+                @*<button type="button" class="btn btn-clr1" data-dismiss="modal" id="close" onclick="LoadAllTimesheets()">Close</button>*@
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+
+
+
+</script>
+
+
